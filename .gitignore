@@ -1,0 +1,14 @@
+# Media files — too large for git
+*.mp4
+*.mov
+*.MOV
+*.MP4
+*.wav
+*.WAV
+*.mp3
+*.aiff
+*.m4a
+
+# System files
+.DS_Store
+Thumbs.db
