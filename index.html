@@ -558,6 +558,127 @@
 
   .track-item:hover .track-action a { opacity: 1; }
 
+  /* ── LISTEN (SOUNDCLOUD) ── */
+  .listen-section {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    padding: 5rem 2rem;
+  }
+  .listen-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .soundcloud-wrap {
+    margin-top: 2.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .soundcloud-wrap iframe {
+    display: block;
+    width: 100%;
+  }
+  .listen-cta {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .listen-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: all 0.2s;
+    background: var(--card);
+  }
+  .listen-cta a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── DELUXE ── */
+  .deluxe-section {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 5rem 2rem;
+  }
+  .deluxe-inner { max-width: 1100px; margin: 0 auto; }
+  .deluxe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .deluxe-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .deluxe-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .deluxe-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(255,255,255,0.05);
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    width: fit-content;
+  }
+  .deluxe-card h3 { font-size: 1.2rem; color: var(--text); margin: 0; }
+  .deluxe-card .deluxe-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; flex: 1; }
+  .deluxe-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .deluxe-includes li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .deluxe-includes li::before { content: "✦"; color: var(--accent); font-size: 0.7rem; }
+  .deluxe-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s, transform 0.2s;
+    margin-top: auto;
+  }
+  .deluxe-btn:hover { opacity: 0.85; transform: scale(1.03); }
+  .deluxe-btn.coming-soon {
+    background: var(--surface);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    cursor: default;
+    pointer-events: none;
+  }
+
   /* ── VIDEOS ── */
   .videos {
     background: var(--black);
@@ -1109,6 +1230,8 @@
   <a href="#" class="nav-brand">L8 Blo<span class="zero">0</span>om</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#music" data-i18n="nav_music">Music</a></li>
+    <li><a href="#listen">Listen</a></li>
+    <li><a href="#deluxe">Deluxe</a></li>
     <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
     <li><a href="#licensing" data-i18n="nav_licensing">Licensing</a></li>
     <li><a href="#about" data-i18n="nav_about">About</a></li>
@@ -1335,6 +1458,79 @@
 
     <div style="text-align:center;margin-top:3rem;" class="reveal">
       <a href="#" class="btn">Browse Full Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LISTEN ═══════════ -->
+<section class="listen-section" id="listen">
+  <div class="listen-inner">
+    <p class="section-label reveal">Stream</p>
+    <h2 class="section-title reveal">Listen now</h2>
+    <p class="section-desc reveal">Play directly below, or jump to your favorite platform.</p>
+
+    <div class="soundcloud-wrap reveal">
+      <iframe height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/l8blo0om&color=%23ffffff&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
+      </iframe>
+    </div>
+
+    <div class="listen-cta reveal">
+      <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">🔊 SoundCloud</a>
+      <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener">🍎 Apple Music</a>
+      <a href="https://open.spotify.com/search/L8%20Blo0om" target="_blank" rel="noopener">🎧 Spotify</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DELUXE ═══════════ -->
+<section class="deluxe-section" id="deluxe">
+  <div class="deluxe-inner">
+    <p class="section-label reveal">Exclusive</p>
+    <h2 class="section-title reveal">Go Deeper — Deluxe Editions</h2>
+    <p class="section-desc reveal">Stems, alternate mixes, remixes, and bonus cuts. Everything behind the music, available directly from L8 Blo<span class="zero">0</span>om.</p>
+
+    <div class="deluxe-grid stagger">
+
+      <div class="deluxe-card">
+        <span class="deluxe-badge">Available Now</span>
+        <h3>Viernes La Verdad — Deluxe</h3>
+        <p class="deluxe-desc">The full Kizomba / Zouk / Konpa trilogy unlocked — 40 tracks including stems, alternate vocal takes, remix versions, and producer notes.</p>
+        <ul class="deluxe-includes">
+          <li>40 tracks total</li>
+          <li>Stems & acapellas</li>
+          <li>Remix versions</li>
+          <li>Alternate mixes</li>
+        </ul>
+        <a class="deluxe-btn" href="https://untitled.stream/library/project/3iq9F2jobrGVO6UK6F94Q" target="_blank" rel="noopener">Get Deluxe Edition →</a>
+      </div>
+
+      <div class="deluxe-card">
+        <span class="deluxe-badge">Coming Soon</span>
+        <h3>Reality Check, Please. — Deluxe</h3>
+        <p class="deluxe-desc">The rockabilly album deconstructed. Stems, bonus tracks, and the full session experience. Dropping after the May 29 release.</p>
+        <ul class="deluxe-includes">
+          <li>Stems & acapellas</li>
+          <li>Bonus tracks</li>
+          <li>Session outtakes</li>
+          <li>Remix pack</li>
+        </ul>
+        <a class="deluxe-btn coming-soon" href="#" aria-disabled="true">Coming May 29 →</a>
+      </div>
+
+      <div class="deluxe-card">
+        <span class="deluxe-badge">Coming Soon</span>
+        <h3>Center &amp; Balance — Deluxe</h3>
+        <p class="deluxe-desc">The full meditation frequency album with extended mixes, binaural variants, and stems for wellness content creators.</p>
+        <ul class="deluxe-includes">
+          <li>Extended mixes</li>
+          <li>Binaural variants</li>
+          <li>Stems for creators</li>
+          <li>Frequency presets</li>
+        </ul>
+        <a class="deluxe-btn coming-soon" href="#" aria-disabled="true">Coming June 5 →</a>
+      </div>
+
     </div>
   </div>
 </section>
