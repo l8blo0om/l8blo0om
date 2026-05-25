@@ -293,6 +293,55 @@
     animation: fadeUp 1s ease 0.9s forwards;
   }
 
+  /* ── HERO LISTEN BLOCK ── */
+  .hero-listen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+    margin-bottom: 20px;
+  }
+  .hero-listen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 44px;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-listen-btn:hover { background: #00e5ff; transform: translateY(-1px); }
+  .hero-platforms {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hplat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    color: rgba(255,255,255,0.55);
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .hplat:hover { border-color: var(--accent); color: var(--accent); }
+
   .hero-buttons {
     display: flex;
     gap: 1.2rem;
@@ -587,6 +636,94 @@
   }
 
   .track-item:hover .track-action a { opacity: 1; }
+
+  /* ── ALBUM GRID ── */
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .album-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: block;
+  }
+  .album-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    border-color: rgba(255,255,255,0.2);
+  }
+  .album-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+  }
+  .album-card:hover .album-thumb { filter: brightness(0.6); }
+  .album-info {
+    padding: 0.9rem 1rem;
+  }
+  .album-title {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 0.35rem;
+    line-height: 1.3;
+  }
+  .album-genre {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .album-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #000;
+  }
+  .album-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .album-card:hover .album-overlay { opacity: 1; }
+  .album-play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  @media (max-width: 600px) {
+    .album-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
 
   /* ── LISTEN (SOUNDCLOUD) ── */
   .listen-section {
@@ -1301,6 +1438,31 @@
   <p class="hero-subtitle">Lyrical Alchemist</p>
   <p class="hero-tagline">Provocative<span>·</span>Evocative<span>·</span>Emotive</p>
   <p class="hero-description">Original music across genres, moods, and worlds. A curated catalog for listeners, collaborators, and licensing.</p>
+  <!-- Smart link — swap YOUR song.link URL in below -->
+  <div class="hero-listen">
+    <a href="https://song.link/l8blo0om" target="_blank" rel="noopener" class="hero-listen-btn">
+      ▶ &nbsp;Listen Now
+    </a>
+    <div class="hero-platforms">
+      <a href="https://open.spotify.com/search/L8%20Blo0om" target="_blank" rel="noopener" class="hplat" title="Spotify">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Spotify
+      </a>
+      <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener" class="hplat" title="Apple Music">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208a4.93 4.93 0 00-.39 1.59c-.06.539-.077 1.08-.086 1.62-.01.55 0 1.098 0 1.648v9.87c0 .548 0 1.095.01 1.643.01.55.025 1.1.086 1.649.118 1.008.457 1.924 1.133 2.702a4.908 4.908 0 002.868 1.562c.54.096 1.088.13 1.635.148.55.012 1.098.014 1.648.014H17.37c.55 0 1.097-.002 1.647-.014.55-.018 1.099-.052 1.641-.148a4.908 4.908 0 002.869-1.562c.675-.778 1.014-1.694 1.132-2.702.061-.55.077-1.1.086-1.649.012-.548.01-1.095.01-1.644V7.77c0-.548 0-1.097-.01-1.646zm-7.314 7.97a.868.868 0 01-.43.08H7.75a.868.868 0 01-.43-.08.887.887 0 01-.297-.692c0-.28.1-.524.297-.692a.868.868 0 01.43-.08h8.5a.868.868 0 01.43.08c.197.168.297.412.297.692a.887.887 0 01-.297.692zm0-3.5a.868.868 0 01-.43.08H7.75a.868.868 0 01-.43-.08.887.887 0 01-.297-.692c0-.28.1-.524.297-.692a.868.868 0 01.43-.08h8.5a.868.868 0 01.43.08c.197.168.297.412.297.692a.887.887 0 01-.297.692z"/></svg>
+        Apple Music
+      </a>
+      <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener" class="hplat" title="SoundCloud">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.175 12.225C.513 12.225 0 12.75 0 13.413v.362c0 .663.513 1.188 1.175 1.188.663 0 1.176-.525 1.176-1.188v-.362c0-.663-.513-1.188-1.176-1.188zm2.938 0c-.663 0-1.175.525-1.175 1.188v2.025c0 .663.512 1.188 1.175 1.188s1.175-.525 1.175-1.188V13.4c0-.663-.512-1.175-1.175-1.175zm2.938-.825c-.663 0-1.175.512-1.175 1.175v3.6c0 .65.512 1.163 1.175 1.163.662 0 1.175-.513 1.175-1.163v-3.6c0-.663-.513-1.175-1.175-1.175zM21 7.5c-1.2 0-2.325.45-3.188 1.2A4.463 4.463 0 0013.5 7.5c-2.475 0-4.5 2.025-4.5 4.5v3.375c0 .663.512 1.175 1.175 1.175h9.637C21.45 16.55 24 14 24 10.875 24 9.012 22.65 7.5 21 7.5z"/></svg>
+        SoundCloud
+      </a>
+      <a href="https://www.youtube.com/@l8blo0om" target="_blank" rel="noopener" class="hplat" title="YouTube">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        YouTube
+      </a>
+    </div>
+  </div>
+
   <div class="hero-buttons">
     <a href="#music" class="btn btn-primary">Explore the Catalog</a>
     <a href="#videos" class="btn">Watch Videos</a>
@@ -1353,160 +1515,109 @@
 <!-- ═══════════ MUSIC CATALOG ═══════════ -->
 <section class="music" id="music">
   <div class="music-inner">
-    <p class="section-label reveal">Library</p>
-    <h2 class="section-title reveal">Music for mood, scene, and story</h2>
-    <p class="section-desc reveal">Explore tracks by genre, energy, feeling, or visual use. Whether you're here to listen, discover, or source music for a project — the catalog is designed to move.</p>
+    <p class="section-label reveal">Discography</p>
+    <h2 class="section-title reveal">The catalog</h2>
+    <p class="section-desc reveal">Genre-fluid music rooted in Caribbean and African culture. Jazz, Kizomba, Zouk, Konpa, Reggaeton, NeoSoul, Reggae and beyond.</p>
 
-    <div class="filter-bar reveal">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Jazz</button>
-      <button class="filter-btn">Kizomba</button>
-      <button class="filter-btn">Zouk</button>
-      <button class="filter-btn">Konpa</button>
-      <button class="filter-btn">Reggaeton</button>
-      <button class="filter-btn">NeoSoul</button>
-      <button class="filter-btn">Reggae</button>
-    </div>
+    <div class="album-grid stagger">
 
-    <div class="track-list stagger">
-      <div class="track-item">
-        <span class="track-num">01</span>
-        <div class="track-info">
-          <h4>Touché Pussycat — Instrumental</h4>
-          <span>L8 Blo<span class="zero">0</span>om · New Release</span>
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Viernes" target="_blank" rel="noopener">
+        <img class="album-thumb" src="VIERNES.png" alt="Viernes La Verdad">
+        <span class="album-badge">Jun 19</span>
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Viernes La Verdad</p>
+          <span class="album-genre">Salsa · Bachata · Merengue</span>
         </div>
-        <span class="track-genre">Jazz</span>
-        <span class="track-mood">Cinematic · Sophisticated</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">02</span>
-        <div class="track-info">
-          <h4>Touché Pussycat — Vocal Standards</h4>
-          <span>L8 Blo<span class="zero">0</span>om · New Release</span>
-        </div>
-        <span class="track-genre">Jazz</span>
-        <span class="track-mood">Classic · Soulful</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">03</span>
-        <div class="track-info">
-          <h4>Touché Pussycat — NeoSoul Fusion</h4>
-          <span>L8 Blo<span class="zero">0</span>om · New Release</span>
-        </div>
-        <span class="track-genre">Jazz · NeoSoul</span>
-        <span class="track-mood">Warm · Groove</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">04</span>
-        <div class="track-info">
-          <h4>Comme Ça Vol. 3</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Coming May 15</span>
-        </div>
-        <span class="track-genre">Kizomba · Zouk · Konpa</span>
-        <span class="track-mood">Coming This Friday</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Pre-Save →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">05</span>
-        <div class="track-info">
-          <h4>Comme Ça — Instrumental</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Vol. 1</span>
-        </div>
-        <span class="track-genre">Kizomba · Zouk · Konpa</span>
-        <span class="track-mood">Sensual · Rhythmic</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">05</span>
-        <div class="track-info">
-          <h4>Comme Ça — French</h4>
-          <span>L8 Blo<span class="zero">0</span>om</span>
-        </div>
-        <span class="track-genre">Kizomba · Zouk</span>
-        <span class="track-mood">Intimate · Fluid</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">06</span>
-        <div class="track-info">
-          <h4>Comme Ça — Portuguese</h4>
-          <span>L8 Blo<span class="zero">0</span>om</span>
-        </div>
-        <span class="track-genre">Konpa · Zouk</span>
-        <span class="track-mood">Roots · Movement</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">07</span>
-        <div class="track-info">
-          <h4>LIBRES</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Cásate Conmigo, Beni!</span>
-        </div>
-        <span class="track-genre">Reggaeton</span>
-        <span class="track-mood">Bold · Free</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">08</span>
-        <div class="track-info">
-          <h4>QUIERES</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Cásate Conmigo, Beni!</span>
-        </div>
-        <span class="track-genre">Reggaeton</span>
-        <span class="track-mood">Desire · Heat</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">09</span>
-        <div class="track-info">
-          <h4>SERPIENTE</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Cásate Conmigo, Beni!</span>
-        </div>
-        <span class="track-genre">Reggaeton</span>
-        <span class="track-mood">Sultry · Dangerous</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">10</span>
-        <div class="track-info">
-          <h4>ME BLOQUEASTE</h4>
-          <span>L8 Blo<span class="zero">0</span>om · Cásate Conmigo, Beni!</span>
-        </div>
-        <span class="track-genre">Reggaeton</span>
-        <span class="track-mood">Sharp · Real</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">11</span>
-        <div class="track-info">
-          <h4>It Begins Here</h4>
-          <span>L8 Blo<span class="zero">0</span>om · The Debut</span>
-        </div>
-        <span class="track-genre">NeoSoul · Jazz</span>
-        <span class="track-mood">Soulful · Alive</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-      <div class="track-item">
-        <span class="track-num">12</span>
-        <div class="track-info">
-          <h4>2 Good Times</h4>
-          <span>L8 Blo<span class="zero">0</span>om</span>
-        </div>
-        <span class="track-genre">Reggae</span>
-        <span class="track-mood">Joy · Roots</span>
-        <div class="track-action"><a href="https://music.apple.com/search?term=L8Blo0om" target="_blank">Listen →</a></div>
-      </div>
-    </div>
+      </a>
 
-    <div style="text-align:center;margin-top:3rem;" class="reveal">
-      <a href="#" class="btn">Browse Full Catalog</a>
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Comme+Ca+Vol+3" target="_blank" rel="noopener">
+        <img class="album-thumb" src="comme-ca-vol3.png" alt="Comme Ça? Vol. 3">
+        <span class="album-badge">New</span>
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Comme Ça? Vol. 3</p>
+          <span class="album-genre">Kizomba · Zouk · Konpa</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Comme+Ca+Vol+2" target="_blank" rel="noopener">
+        <img class="album-thumb" src="comme-ca-vol2.png" alt="Comme Ça? Vol. 2">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Comme Ça? Vol. 2</p>
+          <span class="album-genre">Kizomba · Zouk · Konpa</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Comme+Ca+Vol+1" target="_blank" rel="noopener">
+        <img class="album-thumb" src="comme-ca-vol1.png" alt="Comme Ça? Vol. 1">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Comme Ça? Vol. 1</p>
+          <span class="album-genre">Kizomba · Zouk · Konpa</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://embed.music.apple.com/us/album/touch%C3%A9-pussycat-vol-3/1889648702" target="_blank" rel="noopener">
+        <img class="album-thumb" src="touche-vol3.png" alt="Touché Pussycat Vol. 3">
+        <span class="album-badge">New</span>
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Touché Pussycat Vol. 3</p>
+          <span class="album-genre">Jazz · NeoSoul</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Touche+Pussycat+Vol+2" target="_blank" rel="noopener">
+        <img class="album-thumb" src="touche-vol2.png" alt="Touché Pussycat Vol. 2">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Touché Pussycat Vol. 2</p>
+          <span class="album-genre">Jazz · Vocal Standards</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Center+Balance" target="_blank" rel="noopener">
+        <img class="album-thumb" src="CENTER.png" alt="Center &amp; Balance">
+        <span class="album-badge">Jun 5</span>
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Center &amp; Balance</p>
+          <span class="album-genre">Meditation · Frequencies</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Casate+Conmigo+Beni" target="_blank" rel="noopener">
+        <img class="album-thumb" src="casate.png" alt="Cásate Conmigo, Beni!">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Cásate Conmigo, Beni!</p>
+          <span class="album-genre">Reggaeton · Latin</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+Two+Good+Times" target="_blank" rel="noopener">
+        <img class="album-thumb" src="two-good-times.png" alt="Two Good Times">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">Two Good Times</p>
+          <span class="album-genre">NeoSoul · Caribbean</span>
+        </div>
+      </a>
+
+      <a class="album-card" href="https://music.apple.com/search?term=L8+Blo0om+It+Begins+Here" target="_blank" rel="noopener">
+        <img class="album-thumb" src="it-begins-here.png" alt="It Begins Here">
+        <div class="album-overlay"><div class="album-play-btn">▶</div></div>
+        <div class="album-info">
+          <p class="album-title">It Begins Here</p>
+          <span class="album-genre">NeoSoul · R&amp;B</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
-
 <!-- ═══════════ LISTEN ═══════════ -->
 <section class="listen-section" id="listen">
   <div class="listen-inner">
