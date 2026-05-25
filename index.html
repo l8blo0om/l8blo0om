@@ -145,6 +145,22 @@
   .lang-btn:hover { opacity: 0.8; transform: scale(1.15); }
   .lang-btn.active { opacity: 1; transform: scale(1.15); }
 
+  /* Hide default Google Translate widget UI */
+  #google_translate_element { display: none; }
+  .goog-te-banner-frame, .goog-te-balloon-frame { display: none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { font-size: 0 !important; }
+  .goog-te-gadget select {
+    font-size: 12px !important;
+    background: var(--surface);
+    color: var(--cyan);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: var(--sans);
+  }
+
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -1103,6 +1119,8 @@
     <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
     <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
     <button class="lang-btn" data-lang="pt" title="Português">🇧🇷</button>
+    <button class="lang-btn" id="gtBtn" title="More languages">🌐</button>
+    <div id="google_translate_element"></div>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -1637,5 +1655,24 @@
   });
 </script>
 
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'es,fr,pt,ht,yo,sw,ar,zh-CN,ja,ko,de,it,ru,nl,pl,hi,af,sq,am,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,co,hr,cs,da,eo,et,tl,fi,fy,gl,ka,el,gu,he,ig,id,ga,jw,kn,kk,km,ku,ky,lo,la,lv,lt,lb,mk,mg,ms,ml,mt,mi,mr,mn,my,ne,no,ps,fa,pa,ro,sm,gd,sr,st,sn,sd,si,sk,sl,so,su,tg,ta,te,th,tr,uk,ur,uz,vi,cy,xh,yi,zu',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  // Globe button toggles the GT dropdown
+  document.getElementById('gtBtn').addEventListener('click', () => {
+    const el = document.getElementById('google_translate_element');
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    const sel = el.querySelector('select');
+    if (sel) sel.focus();
+  });
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
