@@ -124,6 +124,36 @@
   .nav-links a:hover { color: var(--cyan); }
   .nav-links a:hover::after { width: 100%; }
 
+  /* ── STREAMING LINKS IN NAV ── */
+  .stream-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .stream-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .stream-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .stream-link.sc  { color: #ff5500; border-color: rgba(255,85,0,0.3); }
+  .stream-link.sc:hover  { background: rgba(255,85,0,0.12); border-color: #ff5500; }
+  .stream-link.am  { color: #fc3c44; border-color: rgba(252,60,68,0.3); }
+  .stream-link.am:hover  { background: rgba(252,60,68,0.12); border-color: #fc3c44; }
+  .stream-link.sp  { color: #1db954; border-color: rgba(29,185,84,0.3); }
+  .stream-link.sp:hover  { background: rgba(29,185,84,0.12); border-color: #1db954; }
+  @media (max-width: 900px) { .stream-links { display: none; } }
+
   .lang-switcher {
     display: flex;
     gap: 6px;
@@ -1237,6 +1267,21 @@
     <li><a href="#about" data-i18n="nav_about">About</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
   </ul>
+  <div class="stream-links">
+    <a class="stream-link sc" href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener" title="SoundCloud">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.015.132-.023.266-.023.4 0 .133.008.267.023.4l-.023-.4.023.4c.154 1.574 1.503 2.8 3.139 2.8 1.636 0 2.986-1.226 3.14-2.8l.022-.4-.022-.4C7.3 10.65 5.95 9.425 4.314 9.425c-1.636 0-2.985 1.225-3.139 2.8zM11.5 5.5c-.138 0-.274.015-.406.043C10.21 3.78 8.51 2.5 6.5 2.5c-2.485 0-4.5 2.015-4.5 4.5 0 .276.025.546.071.809A3.5 3.5 0 0 0 0 11c0 1.933 1.567 3.5 3.5 3.5h8c1.933 0 3.5-1.567 3.5-3.5S13.433 7.5 11.5 7.5V5.5zm9.5 6.5c0-1.1-.9-2-2-2-.15 0-.294.017-.432.05C18.19 8.474 16.516 7 14.5 7c-.466 0-.91.08-1.323.226C13.71 7.9 14 8.666 14 9.5c0 2.206-1.794 4-4 4H8c0 2.206 1.794 4 4 4 .005 0 .01-.001.015-.001h5.985C20.316 17.499 22 15.754 22 13.625c0-.559-.117-1.09-.328-1.572C21.78 11.877 22 11.714 22 11.5c0-.276-.224-.5-.5-.5H21z"/></svg>
+      SoundCloud
+    </a>
+    <a class="stream-link am" href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener" title="Apple Music">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.25 8.625l-5.5 1.5v5.25a2.25 2.25 0 1 1-1.5-2.121V7.875l7-1.875v6.75a2.25 2.25 0 1 1-1.5-2.121V8.625h-.5z"/></svg>
+      Apple Music
+    </a>
+    <a class="stream-link sp" href="https://open.spotify.com/search/L8%20Blo0om" target="_blank" rel="noopener" title="Spotify">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Spotify
+    </a>
+  </div>
+
   <div class="lang-switcher" id="langSwitcher">
     <button class="lang-btn active" data-lang="en" title="English">🇺🇸</button>
     <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
