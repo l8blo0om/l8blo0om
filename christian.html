@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why "Christian" is Actually About Christian — L8 Blo0om</title>
+<meta name="description" content="I just went out to get a facial. Instead I walked into an Apple Store, met a 25-year-old with an Obama smile, and went home and wrote a whole song about it.">
+<meta property="og:title" content="Why "Christian" is Actually About Christian">
+<meta property="og:description" content="The story behind the song. From the Reality Check, Please. album.">
+<meta property="og:image" content="https://l8blo0om.com/reality-check.png">
+<meta property="og:url" content="https://l8blo0om.com/christian.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #050508;
+  --deep: #0a0a10;
+  --surface: #0f0f18;
+  --card: #12121e;
+  --border: rgba(255,255,255,0.07);
+  --text: #f0eee8;
+  --muted: #8888a0;
+  --cyan: #a8d8ea;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--black); color: var(--text); font-family: var(--sans); line-height: 1.7; }
+
+/* NAV */
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; border-bottom: 1px solid var(--border); }
+.nav-brand { font-family: var(--serif); font-size: 1.3rem; color: var(--cyan); text-decoration: none; letter-spacing: 0.08em; }
+.nav-back { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--cyan); }
+
+/* HERO */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+.post-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.post-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+}
+.post-subtitle {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.post-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.post-cover {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  display: block;
+  margin: 3rem auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* BODY */
+.post-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+.post-body p { margin-bottom: 1.5rem; color: #ccc8e0; }
+.post-body p:first-child { font-size: 1.15rem; color: var(--text); }
+.post-body em { font-style: italic; color: var(--text); }
+.post-body strong { font-weight: 500; color: var(--text); }
+
+/* LYRICS BLOCK */
+.lyrics-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 12px 12px 0;
+  padding: 2rem 2.5rem;
+  margin: 2.5rem 0;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #d8d4f0;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+.lyrics-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* PULLQUOTE */
+.pullquote {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+
+/* FOOTER NAV */
+.post-footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+.post-footer a { color: var(--cyan); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; }
+.post-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.5rem; }
+  .post-hero, .post-body { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">L8 Blo<span style="color:inherit;">0</span>om</a>
+  <a href="index.html#stories" class="nav-back">← All Stories</a>
+</nav>
+
+<div class="post-hero">
+  <span class="post-tag">Reality Check, Please. · Song Story</span>
+  <h1 class="post-title">Why "Christian" is Actually About Christian</h1>
+  <p class="post-subtitle">(and why I'm still single)</p>
+  <div class="post-meta">February 2026 &nbsp;·&nbsp; L8 Blo<span>0</span>om</div>
+</div>
+
+<img src="reality-check.png" alt="Reality Check, Please. — L8 Blo0om" class="post-cover">
+
+<div class="post-body">
+
+<p>I just went out to get a facial. That's it. That's the whole plan. Go in, get the glow, come home. Instead I walked into the wrong door, ended up in an Apple Store, and met a 25-year-old named Christian who had perfect curls, an Obama smile, and the audacity to not know the difference between purple and orange.</p>
+
+<p>We talked for a while. He was playful — but professional, because he was at work. At some point he mentioned that the version of himself off the clock was the same way: "with my friends I'm like this too." I filed that away. Then I asked what he was doing for his birthday. He talked about Puerto Rico — a trip he'd taken with his dad when he was younger. I asked if he'd go back. He said yeah. He said maybe with his friends.</p>
+
+<p>Two chances to say <em>girlfriend</em>. He didn't take either one.</p>
+
+<p>I clocked his birthday (March 25th, which would make him 26), his career dream (college football coach — <em>why not pro, though?</em>), his 23andMe story, his cross catching the light off the Apple logo at exactly the right moment. My brain was running data on a man I'd known for eleven minutes.</p>
+
+<p>That's the thing about being high-functioning neurodivergent. Regular people meet someone interesting and think <em>oh, that was nice.</em> I went home and wrote a song.</p>
+
+<div class="pullquote">"Damn I just went out to get a facial / Ended up walking in the place you work in"</div>
+
+<p>The song wrote itself, honestly. The wordplay showed up on its own — the football metaphors, the "shoot my shot / swish," asking for "Apple care at all times for customer service." I was in my pajamas, looking like somebody's mama, and absolutely spiraling in the most creative way possible.</p>
+
+<div class="lyrics-block"><span class="lyrics-label">from "Christian" — Reality Check, Please.</span>Christian Christian
+I know
+I'm three times as black as you
+And twice as old
+A younger me would've left with your digits on my receipt
+But this grown ass me ain't so bold
+
+Your energy
+I felt it strong
+You seem smart
+Even if you don't know purple from orange [laughs]
+
+Christian Christian
+Don't talk, just listen
+I wanna make you glisten
+From all our kissin
+Think it's me you've been missin
+Maybe
+Maybe not
+But I'll shoot my shot
+[Swish]</div>
+
+<p>Then I had to decide what to do with it. Do I give it to him? AirDrop it and walk out? Leave a number? Just… keep it?</p>
+
+<p>I thought about AirDropping it with a matchbook card and bouncing. That version of the plan was actually kind of perfect — he'd get to listen in private, no pressure, no awkward eye contact while he figured out how to respond to a full song about himself written by a woman he'd known for less than fifteen minutes.</p>
+
+<p>But the smarter version of me said: go back, ask him out casually, and if it turns into something real, <em>then</em> you can tell him. And at that point it becomes a great story instead of a workplace incident.</p>
+
+<p>The even smarter version of me said: write the song, put it in the album, and let it exist as what it actually is — a portrait of the exact moment before you shoot your shot, when you're fully aware of the absurdity and you're doing it anyway.</p>
+
+<div class="pullquote">"Lemme be a dirty story you want to tell errybody but can't."</div>
+
+<p>So the joke is this is why I'm single. But also: the song is excellent, I got a whole rockabilly album out of this energy, and Christian — if you're ever reading this — the offer to trace football plays across my tattoos still stands.</p>
+
+<p>I'm kidding.</p>
+
+<p>Maybe.</p>
+
+<p>Touchdown?</p>
+
+<p style="margin-top:3rem;font-size:0.85rem;color:var(--muted);letter-spacing:0.05em;"><em>Reality Check, Please.</em> — out May 29. Available everywhere.</p>
+
+</div>
+
+<div class="post-footer">
+  <a href="index.html#stories">← All Stories</a>
+  <a href="index.html#music">Listen to the Album →</a>
+</div>
+
+</body>
+</html>

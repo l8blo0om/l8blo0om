@@ -725,6 +725,21 @@
     .album-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   }
 
+  /* ── STORIES ── */
+  .stories-section { background: var(--deep); border-top: 1px solid var(--border); }
+  .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .story-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem; display: flex; flex-direction: column; gap: 1rem;
+    text-decoration: none; color: inherit; transition: border-color 0.25s, transform 0.25s;
+  }
+  .story-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+  .story-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+  .story-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; color: var(--text); line-height: 1.35; }
+  .story-excerpt { font-size: 0.88rem; color: var(--muted); line-height: 1.7; flex: 1; }
+  .story-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); margin-top: auto; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+  .story-read { color: var(--cyan); font-weight: 500; }
+
   /* ── LISTEN (SOUNDCLOUD) ── */
   .listen-section {
     background: var(--deep);
@@ -1401,6 +1416,7 @@
     <li><a href="#deluxe">Deluxe</a></li>
     <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
     <li><a href="#licensing" data-i18n="nav_licensing">Licensing</a></li>
+    <li><a href="#stories">Stories</a></li>
     <li><a href="#about" data-i18n="nav_about">About</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
   </ul>
@@ -1809,6 +1825,29 @@
       <p>L8 Blo<span class="zero">0</span>om is rooted in Caribbean and African dance culture — Kizomba, Zouk, Konpa, Reggae — and moves freely through Jazz, NeoSoul, and Reggaeton. The catalog is multilingual, multi-genre, and unmistakably hers: <em>lyrical, sensual, cinematic, and alive.</em></p>
       <p>From the debut <em>It Begins Here</em> to the Jazz trilogy <em>Touché Pussycat</em>, the Rockabilly fever dream <em>Reality Check, Please.</em>, the healing frequencies of <em>Center &amp; Balance</em>, and the Latin heat of <em>Viernes La Verdad</em> — the music keeps coming. A new release every two weeks, all summer long.</p>
       <p class="about-signature">Dr. Niia Bishop — L8 Blo<span class="zero">0</span>om</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STORIES ═══════════ -->
+<section class="stories-section" id="stories">
+  <div style="max-width:1100px;margin:0 auto;padding:5rem 2rem;">
+    <p class="section-label reveal">The Blog</p>
+    <h2 class="section-title reveal">Stories behind the songs</h2>
+    <p class="section-desc reveal">The music comes from somewhere. Here's where.</p>
+
+    <div class="stories-grid stagger">
+
+      <a class="story-card" href="christian.html">
+        <div class="story-tag">Reality Check, Please.</div>
+        <h3 class="story-title">Why "Christian" is Actually About Christian<br><span style="font-style:italic;font-weight:300;">(and why I'm still single)</span></h3>
+        <p class="story-excerpt">I just went out to get a facial. That's it. That's all I wanted. Instead I walked into an Apple Store, met a 25-year-old with perfect curls and an Obama smile, had the best conversation I'd had in months — and went home and wrote a whole song about it.</p>
+        <div class="story-meta">
+          <span>Feb 2026</span>
+          <span class="story-read">Read the story →</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
