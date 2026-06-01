@@ -210,48 +210,46 @@
   }
 
   /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
+  /* ── HERO BANNER (image only, nothing over it) ── */
+  .hero-banner {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hero-banner-img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* ── HERO CONTENT (logo + text below banner) ── */
+  .hero-content {
+    background: var(--black);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     text-align: center;
-    padding: 0 2rem 5rem;
+    padding: 4rem 2rem 5rem;
     position: relative;
-    overflow: hidden;
   }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(0, 210, 235, 0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
+  .hero-content::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 55%;
-    background: linear-gradient(to top, rgba(5,5,8,0.98) 0%, rgba(5,5,8,0.7) 40%, transparent 100%);
-    pointer-events: none;
+    height: 1px;
+    background: var(--border);
   }
 
   .hero-logo {
-    width: 280px;
+    width: 220px;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 1s ease 0.2s forwards;
-    filter: drop-shadow(0 0 40px rgba(0, 210, 235, 0.15));
   }
 
   .hero-subtitle {
@@ -1449,7 +1447,11 @@
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
-<section class="hero" id="home" style="background-image:url('HERO.png');background-size:cover;background-position:center top;background-repeat:no-repeat;">
+<div class="hero-banner" id="home">
+  <img src="HERO.png" alt="L8 Blo0om" class="hero-banner-img">
+</div>
+<section class="hero-content">
+  <img src="logo.png" alt="L8 Blo0om" class="hero-logo">
   <p class="hero-subtitle">Lyrical Alchemist</p>
   <p class="hero-tagline">Provocative<span>·</span>Evocative<span>·</span>Emotive</p>
   <p class="hero-description">Original music across genres, moods, and worlds. A curated catalog for listeners, collaborators, and licensing.</p>
