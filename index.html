@@ -62,6 +62,52 @@
   }
 
   /* ── NAVIGATION ── */
+  /* ── STREAMING TOP BAR ── */
+  .stream-top-bar {
+    width: 100%;
+    background: #0a0a0f;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 2rem;
+    flex-wrap: wrap;
+  }
+  .stream-top-bar .stb-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--sans);
+    margin-right: 6px;
+  }
+  .stb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .stb-link svg { width: 12px; height: 12px; flex-shrink: 0; }
+  .stb-sp  { color: #1db954; border-color: rgba(29,185,84,0.25); }
+  .stb-sp:hover  { background: rgba(29,185,84,0.12); border-color: #1db954; }
+  .stb-am  { color: #fc3c44; border-color: rgba(252,60,68,0.25); }
+  .stb-am:hover  { background: rgba(252,60,68,0.12); border-color: #fc3c44; }
+  .stb-sc  { color: #ff5500; border-color: rgba(255,85,0,0.25); }
+  .stb-sc:hover  { background: rgba(255,85,0,0.12); border-color: #ff5500; }
+  .stb-az  { color: #00a8e1; border-color: rgba(0,168,225,0.25); }
+  .stb-az:hover  { background: rgba(0,168,225,0.12); border-color: #00a8e1; }
+  @media (max-width: 600px) { .stb-label { display: none; } }
+
   nav {
     position: fixed;
     top: 0;
@@ -1335,7 +1381,53 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+    /* ── STREAMING TOP BAR ── */
+  .stream-top-bar {
+    width: 100%;
+    background: #0a0a0f;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 2rem;
+    flex-wrap: wrap;
+  }
+  .stream-top-bar .stb-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--sans);
+    margin-right: 6px;
+  }
+  .stb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .stb-link svg { width: 12px; height: 12px; flex-shrink: 0; }
+  .stb-sp  { color: #1db954; border-color: rgba(29,185,84,0.25); }
+  .stb-sp:hover  { background: rgba(29,185,84,0.12); border-color: #1db954; }
+  .stb-am  { color: #fc3c44; border-color: rgba(252,60,68,0.25); }
+  .stb-am:hover  { background: rgba(252,60,68,0.12); border-color: #fc3c44; }
+  .stb-sc  { color: #ff5500; border-color: rgba(255,85,0,0.25); }
+  .stb-sc:hover  { background: rgba(255,85,0,0.12); border-color: #ff5500; }
+  .stb-az  { color: #00a8e1; border-color: rgba(0,168,225,0.25); }
+  .stb-az:hover  { background: rgba(0,168,225,0.12); border-color: #00a8e1; }
+  @media (max-width: 600px) { .stb-label { display: none; } }
+
+  nav { padding: 1rem 1.5rem; }
 
     .nav-links {
       display: none;
@@ -1406,6 +1498,27 @@
 <body>
 
 <!-- ═══════════ NAVIGATION ═══════════ -->
+<!-- ═══════════ STREAMING TOP BAR ═══════════ -->
+<div class="stream-top-bar">
+  <span class="stb-label">Listen on</span>
+  <a class="stb-link stb-sp" href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    Spotify
+  </a>
+  <a class="stb-link stb-am" href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208a5.01 5.01 0 00-.361 1.575c-.032.35-.04.7-.051 1.05v13.233c.01.403.021.805.065 1.207.12 1.128.47 2.163 1.15 3.048a5.063 5.063 0 003.043 1.873c.599.136 1.21.19 1.82.218.353.017.706.027 1.058.028h11.99c.353-.001.706-.01 1.058-.028.61-.028 1.221-.082 1.82-.218a5.063 5.063 0 003.043-1.873c.68-.885 1.03-1.92 1.15-3.048.044-.402.055-.804.065-1.207V6.124zM12 18.75a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zm6.5-12a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+    Apple Music
+  </a>
+  <a class="stb-link stb-sc" href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.015.132-.023.266-.023.4 0 2.026 1.494 3.67 3.338 3.67.182 0 .363-.018.538-.05h14.747c1.219 0 2.209-.99 2.209-2.209 0-1.053-.742-1.93-1.73-2.16a4.25 4.25 0 00.04-.569 4.248 4.248 0 00-4.247-4.248c-.7 0-1.36.17-1.94.472A5.397 5.397 0 006.74 9.85a2.765 2.765 0 00-.95-.168 2.773 2.773 0 00-2.773 2.773c0 .033.002.066.003.099a2.012 2.012 0 00-1.845 1.671z"/></svg>
+    SoundCloud
+  </a>
+  <a class="stb-link stb-az" href="https://music.amazon.com/search/L8%20Blo0om" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.59 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.698-3.182v.685zm3.186 7.705a.659.659 0 01-.742.074c-1.045-.869-1.232-1.27-1.804-2.098-1.726 1.759-2.948 2.286-5.187 2.286-2.648 0-4.711-1.633-4.711-4.904 0-2.554 1.383-4.293 3.357-5.146 1.71-.754 4.097-.891 5.924-1.099v-.41c0-.753.059-1.642-.383-2.294-.383-.581-1.124-.822-1.775-.822-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.547.582l-3.056-.329c-.257-.058-.542-.266-.468-.66C6.17.816 9.124 0 11.753 0c1.343 0 3.097.357 4.155 1.374C17.21 2.57 17.073 4.17 17.073 5.91v5.256c0 1.58.657 2.275 1.274 3.129.217.303.265.666-.013.893-.69.578-1.918 1.65-2.59 2.253l-.6-.646z"/></svg>
+    Amazon Music
+  </a>
+</div>
+
 <nav id="navbar">
   <a href="#" class="nav-brand">L8 Blo<span class="zero">0</span>om</a>
   <ul class="nav-links" id="navLinks">
@@ -1665,6 +1778,7 @@
       <a href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank" rel="noopener">🎧 Spotify</a>
       <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener">🍎 Apple Music</a>
       <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">🔊 SoundCloud</a>
+      <a href="https://music.amazon.com/search/L8%20Blo0om" target="_blank" rel="noopener">📦 Amazon Music</a>
     </div>
   </div>
 </section>
@@ -1931,6 +2045,7 @@
         <li><a href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank">Spotify</a></li>
         <li><a href="https://www.youtube.com/@L8Blo0om" target="_blank">YouTube</a></li>
         <li><a href="https://soundcloud.com/l8blo0om" target="_blank">SoundCloud</a></li>
+        <li><a href="https://music.amazon.com/search/L8%20Blo0om" target="_blank">Amazon Music</a></li>
       </ul>
     </div>
     <div class="footer-col">
