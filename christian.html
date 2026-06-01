@@ -6,8 +6,8 @@
 <title>Why "Christian" is Actually About Christian — L8 Blo0om</title>
 <meta name="description" content="I just went out to get a facial. Instead I walked into an Apple Store, met a 25-year-old with an Obama smile, and went home and wrote a whole song about it.">
 <meta property="og:title" content="Why "Christian" is Actually About Christian">
-<meta property="og:description" content="The story behind the song. The story behind the song.">
-<meta property="og:image" content="https://l8blo0om.com/reality-check.png">
+<meta property="og:description" content="The story behind the song. From the upcoming album VEXXXED.">
+<meta property="og:image" content="https://l8blo0om.com/logo.png">
 <meta property="og:url" content="https://l8blo0om.com/christian.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -27,125 +27,36 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--black); color: var(--text); font-family: var(--sans); line-height: 1.7; }
 
-/* NAV */
 nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; border-bottom: 1px solid var(--border); }
 .nav-brand { font-family: var(--serif); font-size: 1.3rem; color: var(--cyan); text-decoration: none; letter-spacing: 0.08em; }
 .nav-back { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-back:hover { color: var(--cyan); }
 
-/* HERO */
-.post-hero {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 4rem 2rem 2rem;
-}
-.post-tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 1.2rem;
-  display: block;
-}
-.post-title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.2rem;
-}
-.post-subtitle {
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  font-style: italic;
-  color: var(--muted);
-  font-weight: 300;
-  margin-bottom: 2rem;
-}
-.post-meta {
-  font-size: 0.8rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
-}
-.post-cover {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 16px;
-  display: block;
-  margin: 3rem auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
+.post-hero { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2rem; }
+.post-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.2rem; display: block; }
+.post-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.2rem; }
+.post-subtitle { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
+.post-meta { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
 
-/* BODY */
-.post-body {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 2rem 6rem;
-  font-size: 1.05rem;
-  font-weight: 300;
-}
+.post-body { max-width: 680px; margin: 0 auto; padding: 2rem 2rem 6rem; font-size: 1.05rem; font-weight: 300; }
 .post-body p { margin-bottom: 1.5rem; color: #ccc8e0; }
 .post-body p:first-child { font-size: 1.15rem; color: var(--text); }
 .post-body em { font-style: italic; color: var(--text); }
 .post-body strong { font-weight: 500; color: var(--text); }
 
-/* LYRICS BLOCK */
 .lyrics-block {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--cyan);
-  border-radius: 0 12px 12px 0;
-  padding: 2rem 2.5rem;
-  margin: 2.5rem 0;
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-style: italic;
-  font-weight: 300;
-  color: #d8d4f0;
-  line-height: 1.9;
-  white-space: pre-wrap;
+  background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--cyan);
+  border-radius: 0 12px 12px 0; padding: 2rem 2.5rem; margin: 2.5rem 0;
+  font-family: var(--serif); font-size: 1.1rem; font-style: italic; font-weight: 300;
+  color: #d8d4f0; line-height: 1.9; white-space: pre-wrap;
 }
-.lyrics-label {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 1rem;
-  display: block;
-}
+.lyrics-label { font-family: var(--sans); font-size: 0.68rem; font-style: normal; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; display: block; }
 
-/* PULLQUOTE */
-.pullquote {
-  font-family: var(--serif);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-style: italic;
-  font-weight: 300;
-  color: var(--text);
-  text-align: center;
-  padding: 2.5rem 1rem;
-  margin: 2rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  line-height: 1.4;
-}
+.pullquote { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.8rem); font-style: italic; font-weight: 300; color: var(--text); text-align: center; padding: 2.5rem 1rem; margin: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); line-height: 1.4; }
 
-/* FOOTER NAV */
-.post-footer {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 2rem 2rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--border);
-}
+.album-chip { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2.5rem; padding: 0.6rem 1.2rem; background: var(--card); border: 1px solid var(--cyan); border-radius: 999px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; color: var(--cyan); }
+
+.post-footer { max-width: 680px; margin: 0 auto; padding: 2rem 2rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
 .post-footer a { color: var(--cyan); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; }
 .post-footer a:hover { text-decoration: underline; }
 
@@ -163,13 +74,11 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 </nav>
 
 <div class="post-hero">
-  <span class="post-tag">Song Story</span>
+  <span class="post-tag">VEXXXED · Upcoming · Pop Rock</span>
   <h1 class="post-title">Why "Christian" is Actually About Christian</h1>
   <p class="post-subtitle">(and why I'm still single)</p>
   <div class="post-meta">February 2026 &nbsp;·&nbsp; L8 Blo<span>0</span>om</div>
 </div>
-
-<img src="reality-check.png" alt="L8 Blo0om" class="post-cover">
 
 <div class="post-body">
 
@@ -187,7 +96,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 
 <p>The song wrote itself, honestly. The wordplay showed up on its own — the football metaphors, the "shoot my shot / swish," asking for "Apple care at all times for customer service." I was in my pajamas, looking like somebody's mama, and absolutely spiraling in the most creative way possible.</p>
 
-<div class="lyrics-block"><span class="lyrics-label">from "Christian" — L8 Blo0om</span>Christian Christian
+<div class="lyrics-block"><span class="lyrics-label">from "Christian" — VEXXXED (upcoming)</span>Christian Christian
 I know
 I'm three times as black as you
 And twice as old
@@ -213,13 +122,13 @@ But I'll shoot my shot
 
 <p>I thought about AirDropping it with a matchbook card and bouncing. That version of the plan was actually kind of perfect — he'd get to listen in private, no pressure, no awkward eye contact while he figured out how to respond to a full song about himself written by a woman he'd known for less than fifteen minutes.</p>
 
-<p>But the smarter version of me said: go back, ask him out casually, and if it turns into something real, <em>then</em> you can tell him. And at that point it becomes a great story instead of a workplace incident.</p>
+<p>But the smarter version of me said: go back, ask him out casually, and if it turns into something real, <em>then</em> you tell him. And at that point it becomes a great story instead of a workplace incident.</p>
 
-<p>The even smarter version of me said: write the song, put it in the album, and let it exist as what it actually is — a portrait of the exact moment before you shoot your shot, when you're fully aware of the absurdity and you're doing it anyway.</p>
+<p>The even smarter version ended up being: write the song, put it on the album, and let it exist as what it actually is — a portrait of the exact moment before you shoot your shot, when you're fully aware of the absurdity and you're doing it anyway.</p>
 
 <div class="pullquote">"Lemme be a dirty story you want to tell errybody but can't."</div>
 
-<p>So the joke is this is why I'm single. But also: the song is excellent, I got a whole rockabilly album out of this energy, and Christian — if you're ever reading this — the offer to trace football plays across my tattoos still stands.</p>
+<p>So the joke is this is why I'm single. But also: the song is excellent, and Christian — if you're ever reading this — the offer to trace football plays across my tattoos still stands.</p>
 
 <p>I'm kidding.</p>
 
@@ -227,13 +136,13 @@ But I'll shoot my shot
 
 <p>Touchdown?</p>
 
-<p style="margin-top:3rem;font-size:0.85rem;color:var(--muted);letter-spacing:0.05em;"></p>
+<div class="album-chip">✦ &nbsp;"Christian" appears on <strong>&nbsp;VEXXXED&nbsp;</strong> — coming soon</div>
 
 </div>
 
 <div class="post-footer">
   <a href="index.html#stories">← All Stories</a>
-  <a href="index.html#music">Listen to the Album →</a>
+  <a href="index.html#music">Listen to the Catalog →</a>
 </div>
 
 </body>
