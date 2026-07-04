@@ -257,34 +257,24 @@
 
   /* ── HERO ── */
   /* ── HERO BANNER (image only, nothing over it) ── */
-  .hero-banner {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-  .hero-banner-img {
-    width: 100%;
-    display: block;
-  }
-
-  /* ── HERO CONTENT (logo + text below banner) ── */
+  /* ── HERO CONTENT (logo + tagline) ── */
   .hero-content {
     background: var(--black);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 4rem 2rem 5rem;
+    padding: 3rem 2rem 2rem;
     position: relative;
   }
-  .hero-content::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
+
+  /* ── SPOTIFY HERO PLAYER ── */
+  .spotify-hero {
+    background: #000;
+    padding: 0 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .hero-logo {
@@ -1557,86 +1547,19 @@
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
-<div class="hero-banner" id="home">
-  <img src="HERO.png" alt="L8 Blo0om" class="hero-banner-img">
-</div>
-<section class="hero-content">
+<section class="hero-content" id="home">
   <img src="logo.png" alt="L8 Blo0om" class="hero-logo">
   <p class="hero-subtitle">Lyrical Alchemist</p>
-  <p class="hero-tagline">Provocative<span>·</span>Evocative<span>·</span>Emotive</p>
-  <p class="hero-description">Original music across genres, moods, and worlds. A curated catalog for listeners, collaborators, and licensing.</p>
-  <!-- Smart link — swap YOUR song.link URL in below -->
-  <div class="hero-listen">
-    <a href="https://song.link/l8blo0om" target="_blank" rel="noopener" class="hero-listen-btn">
-      ▶ &nbsp;Listen Now
-    </a>
-    <div class="hero-platforms">
-      <a href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank" rel="noopener" class="hplat" title="Spotify">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Spotify
-      </a>
-      <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener" class="hplat" title="Apple Music">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208a4.93 4.93 0 00-.39 1.59c-.06.539-.077 1.08-.086 1.62-.01.55 0 1.098 0 1.648v9.87c0 .548 0 1.095.01 1.643.01.55.025 1.1.086 1.649.118 1.008.457 1.924 1.133 2.702a4.908 4.908 0 002.868 1.562c.54.096 1.088.13 1.635.148.55.012 1.098.014 1.648.014H17.37c.55 0 1.097-.002 1.647-.014.55-.018 1.099-.052 1.641-.148a4.908 4.908 0 002.869-1.562c.675-.778 1.014-1.694 1.132-2.702.061-.55.077-1.1.086-1.649.012-.548.01-1.095.01-1.644V7.77c0-.548 0-1.097-.01-1.646zm-7.314 7.97a.868.868 0 01-.43.08H7.75a.868.868 0 01-.43-.08.887.887 0 01-.297-.692c0-.28.1-.524.297-.692a.868.868 0 01.43-.08h8.5a.868.868 0 01.43.08c.197.168.297.412.297.692a.887.887 0 01-.297.692zm0-3.5a.868.868 0 01-.43.08H7.75a.868.868 0 01-.43-.08.887.887 0 01-.297-.692c0-.28.1-.524.297-.692a.868.868 0 01.43-.08h8.5a.868.868 0 01.43.08c.197.168.297.412.297.692a.887.887 0 01-.297.692z"/></svg>
-        Apple Music
-      </a>
-      <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener" class="hplat" title="SoundCloud">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.175 12.225C.513 12.225 0 12.75 0 13.413v.362c0 .663.513 1.188 1.175 1.188.663 0 1.176-.525 1.176-1.188v-.362c0-.663-.513-1.188-1.176-1.188zm2.938 0c-.663 0-1.175.525-1.175 1.188v2.025c0 .663.512 1.188 1.175 1.188s1.175-.525 1.175-1.188V13.4c0-.663-.512-1.175-1.175-1.175zm2.938-.825c-.663 0-1.175.512-1.175 1.175v3.6c0 .65.512 1.163 1.175 1.163.662 0 1.175-.513 1.175-1.163v-3.6c0-.663-.513-1.175-1.175-1.175zM21 7.5c-1.2 0-2.325.45-3.188 1.2A4.463 4.463 0 0013.5 7.5c-2.475 0-4.5 2.025-4.5 4.5v3.375c0 .663.512 1.175 1.175 1.175h9.637C21.45 16.55 24 14 24 10.875 24 9.012 22.65 7.5 21 7.5z"/></svg>
-        SoundCloud
-      </a>
-      <a href="https://www.youtube.com/@l8blo0om" target="_blank" rel="noopener" class="hplat" title="YouTube">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-        YouTube
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-buttons">
-    <a href="#music" class="btn btn-primary">Explore the Catalog</a>
-    <a href="#videos" class="btn">Watch Videos</a>
-    <a href="#licensing" class="btn">Sync &amp; Licensing</a>
-  </div>
 </section>
 
-<!-- ═══════════ INTRO ═══════════ -->
-<section class="intro">
-  <div class="intro-inner reveal">
-    <p class="intro-text">Thirty years of music. Finally released.<br>L8 Blo<span class="zero">0</span>om is a genre-fluid music world rooted in <em>Caribbean and African dance culture</em> — Kizomba, Zouk, Konpa, Reggae — and stretching into Jazz, NeoSoul, Reggaeton, and beyond. The sound moves. The feeling stays.</p>
-    <p class="intro-sub">Built for deep listening. Built for visual storytelling. Built for placement.</p>
-  </div>
-</section>
-
-<!-- ═══════════ GENRES ═══════════ -->
-<section class="genres" id="genres">
-  <div style="max-width:1100px;margin:0 auto;">
-    <p class="section-label reveal">The Catalog</p>
-    <h2 class="section-title reveal">A new release every two weeks — all summer.</h2>
-    <div class="genre-grid stagger">
-      <div class="genre-card">
-        <h3>Touché Pussycat ✦ Out Now</h3>
-        <p>Jazz trilogy — instrumental, vocal standards, and NeoSoul fusion. Just released.</p>
-      </div>
-      <div class="genre-card">
-        <h3>Comme Ça Vol. 3 ✦ May 15</h3>
-        <p>Kizomba · Zouk · Konpa — the third volume of a trilogy rooted in Caribbean and African dance culture.</p>
-      </div>
-      <div class="genre-card">
-        <h3>Reality Check, Please. ✦ May 29</h3>
-        <p>Rockabilly. He called himself a communist. One question cracked everything. This is what she made of the pieces.</p>
-      </div>
-      <div class="genre-card">
-        <h3>Center &amp; Balance ✦ June 5</h3>
-        <p>Yoga · Meditation · Healing frequencies. Music for stillness, regulation, and deep calm.</p>
-      </div>
-      <div class="genre-card">
-        <h3>Viernes La Verdad ✦ June 19</h3>
-        <p>Salsa · Bachata · Merengue. Friday night. The truth. Club Babalú is open.</p>
-      </div>
-      <div class="genre-card">
-        <h3>The Catalog</h3>
-        <p><em>Cásate Conmigo, Beni!</em> — Reggaeton · <em>Comme Ça</em> I &amp; II — Kizomba/Zouk/Konpa · <em>It Begins Here</em> — NeoSoul Jazz · <em>2 Good Times</em> — Reggae</p>
-      </div>
-    </div>
-  </div>
+<!-- ═══════════ SPOTIFY PLAYER ═══════════ -->
+<section class="spotify-hero">
+  <iframe
+    src="https://open.spotify.com/embed/artist/1qTG2R27hginyxgtuZSHhA?utm_source=generator&theme=0"
+    width="100%" height="380" frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
 </section>
 
 <!-- ═══════════ MUSIC CATALOG ═══════════ -->
