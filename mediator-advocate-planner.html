@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mediator &amp; Advocate Planner</title>
+<style>
+  :root{
+    --green:#33a474; --green-d:#2a855e; --green-l:#e8f5ee;
+    --ink:#26352f; --mut:#6f7c76;
+    --line:#d7e3dc; --bg:#f4f8f5; --card:#ffffff;
+    --gold:#e0a93b; --gold-l:#fbf2dc; --rose:#c2607a;
+    --mediator:#4a9d8e; --advocate:#5e8c4f;
+    --shadow:0 1px 3px rgba(30,60,45,.08),0 8px 24px rgba(30,60,45,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+  header.top{
+    background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%);
+    color:#fff;padding:34px 0 30px;margin-bottom:0;
+  }
+  .top .wrap{padding-bottom:0}
+  .top h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.3px}
+  .top p{margin:6px 0 0;opacity:.92;font-size:14.5px;max-width:680px}
+
+  /* person toggle */
+  .toggle{display:inline-flex;background:rgba(255,255,255,.16);border-radius:40px;padding:5px;margin-top:20px;gap:4px}
+  .toggle button{
+    border:0;background:transparent;color:#eafaf2;font-size:14px;font-weight:600;
+    padding:9px 20px;border-radius:30px;cursor:pointer;transition:.18s;display:flex;flex-direction:column;align-items:flex-start;line-height:1.15
+  }
+  .toggle button .who{font-size:12px;opacity:.8;font-weight:500}
+  .toggle button.active{background:#fff;color:var(--green-d)}
+  .toggle button.active .who{opacity:.65}
+
+  .banner{
+    display:flex;align-items:center;gap:14px;margin-top:18px;background:rgba(255,255,255,.12);
+    border-radius:14px;padding:14px 18px;
+  }
+  .banner .badge{font-size:30px;line-height:1}
+  .banner .b-txt{font-size:13.5px;opacity:.95}
+  .banner .b-txt b{font-weight:700}
+
+  section.card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin-top:22px;box-shadow:var(--shadow);
+  }
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}
+  .sec-head h2{margin:0;font-size:19px;font-weight:750}
+  .sec-num{
+    font-size:12px;font-weight:700;color:#fff;background:var(--green);
+    width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:none;align-self:center
+  }
+  .sec-sub{color:var(--mut);font-size:13.5px;margin:2px 0 16px}
+
+  .coach{
+    background:var(--green-l);border-left:3px solid var(--green);border-radius:8px;
+    padding:10px 14px;font-size:13px;color:var(--green-d);margin:14px 0 4px
+  }
+  .coach b{color:var(--green-d)}
+
+  label.fld{display:block;font-size:12.5px;font-weight:650;color:var(--mut);margin:0 0 5px;text-transform:uppercase;letter-spacing:.4px}
+  input[type=text],textarea{
+    width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.5px;
+    font-family:inherit;color:var(--ink);background:#fcfdfc;resize:vertical;transition:.15s
+  }
+  input[type=text]:focus,textarea:focus{outline:0;border-color:var(--green);background:#fff;box-shadow:0 0 0 3px rgba(51,164,116,.12)}
+  textarea{min-height:48px}
+  .northstar input{font-size:16px;font-weight:600;padding:12px 14px}
+
+  /* values chips */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{
+    background:var(--gold-l);color:#8a6314;border:1px solid #ecdcae;border-radius:30px;
+    padding:7px 12px 7px 14px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:8px
+  }
+  .chip button{border:0;background:transparent;color:#b08a2a;cursor:pointer;font-size:15px;line-height:1;padding:0}
+  .add-row{display:flex;gap:8px;margin-top:12px}
+  .add-row input{flex:1}
+
+  .btn{
+    border:0;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:650;cursor:pointer;
+    background:var(--green);color:#fff;transition:.15s;white-space:nowrap
+  }
+  .btn:hover{background:var(--green-d)}
+  .btn.ghost{background:#eef3f0;color:var(--green-d)}
+  .btn.ghost:hover{background:#e1ebe5}
+  .btn.sm{padding:7px 12px;font-size:13px}
+
+  /* goals */
+  .goal{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+  .goal .g-main{flex:1}
+  .goal select,.bd select{border:1px solid var(--line);border-radius:9px;padding:9px 10px;font-size:13px;background:#fcfdfc;color:var(--ink);font-family:inherit}
+  .row-x{border:0;background:transparent;color:#bcc8c2;cursor:pointer;font-size:18px;line-height:1;padding:6px 4px}
+  .row-x:hover{color:var(--rose)}
+
+  /* priority engine */
+  .prio-intro{background:linear-gradient(135deg,#fbf6ec,#f3f9f4);border:1px dashed #d8c79a;border-radius:12px;padding:14px 16px;font-size:13.5px;color:#7a6a3e;margin-bottom:16px}
+  .bd-list{margin-top:6px}
+  .bd{
+    display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;
+    padding:9px 0;border-bottom:1px solid #eef3f0
+  }
+  .bd:last-child{border-bottom:0}
+  .bd .stars{display:flex;gap:2px}
+  .star{cursor:pointer;font-size:18px;color:#dfe6e2;transition:.1s;user-select:none}
+  .star.on{color:var(--gold)}
+  .must-btn{
+    border:1.5px solid var(--line);background:#fff;color:var(--mut);border-radius:30px;
+    font-size:12px;font-weight:650;padding:6px 12px;cursor:pointer;transition:.15s;white-space:nowrap
+  }
+  .must-btn.on{background:var(--green);border-color:var(--green);color:#fff}
+  .must-btn.disabled{opacity:.45;cursor:not-allowed}
+  .bd-align-lbl{font-size:11px;color:var(--mut);text-align:center;min-width:52px}
+
+  .top3{
+    margin-top:18px;background:var(--green);color:#fff;border-radius:14px;padding:18px 20px
+  }
+  .top3 h3{margin:0 0 4px;font-size:15px;font-weight:750;display:flex;align-items:center;gap:8px}
+  .top3 .t3-sub{font-size:12.5px;opacity:.85;margin-bottom:12px}
+  .top3 ol{margin:0;padding-left:22px}
+  .top3 li{font-size:15.5px;font-weight:600;margin:7px 0;line-height:1.35}
+  .top3 .empty{opacity:.85;font-size:13.5px;font-style:italic}
+  .pill-warn{background:var(--gold);color:#5a4209;border-radius:30px;font-size:12px;font-weight:700;padding:3px 11px;display:inline-block;margin-top:10px}
+
+  /* week grid */
+  .week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  .day{background:#fbfdfc;border:1px solid var(--line);border-radius:12px;padding:10px}
+  .day h4{margin:0 0 7px;font-size:12.5px;font-weight:750;color:var(--green-d);text-transform:uppercase;letter-spacing:.5px;display:flex;justify-content:space-between;align-items:center}
+  .day .anchor{font-size:9px;color:var(--mut);font-weight:600;background:#eef3f0;padding:2px 6px;border-radius:8px}
+  .day textarea{min-height:84px;font-size:13px;border-color:#e4ece7;background:#fff}
+  @media(max-width:880px){.week{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.week{grid-template-columns:1fr}.bd{grid-template-columns:1fr;gap:6px}.toggle button{padding:8px 14px}}
+
+  /* habits */
+  .habit{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #eef3f0}
+  .habit:last-child{border-bottom:0}
+  .habit input[type=text]{border:0;background:transparent;padding:6px 4px;font-weight:600}
+  .habit input[type=text]:focus{box-shadow:none;background:#f6faf8}
+  .hdays{display:flex;gap:5px}
+  .hd{
+    width:30px;height:30px;border-radius:8px;border:1.5px solid var(--line);background:#fff;
+    font-size:11px;font-weight:700;color:var(--mut);cursor:pointer;transition:.12s
+  }
+  .hd.on{background:var(--green);border-color:var(--green);color:#fff}
+  .hday-row{display:flex;gap:5px;margin-left:auto;font-size:9px;color:var(--mut);font-weight:600}
+  .hday-row span{width:30px;text-align:center}
+
+  /* reflection */
+  .ref-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  @media(max-width:720px){.ref-grid{grid-template-columns:1fr}.goal{flex-wrap:wrap}}
+  .ref-grid .fld-ico{font-size:16px;margin-right:5px}
+
+  .foot{text-align:center;color:var(--mut);font-size:12px;margin-top:30px;line-height:1.7}
+  .save-note{font-size:11.5px;color:var(--mut);margin-top:8px;display:flex;align-items:center;gap:6px;justify-content:center}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+  details.tips{margin-top:14px}
+  details.tips summary{cursor:pointer;font-size:13px;font-weight:650;color:var(--green-d);list-style:none;display:flex;align-items:center;gap:7px}
+  details.tips summary::-webkit-details-marker{display:none}
+  details.tips summary:before{content:"▸";transition:.15s}
+  details.tips[open] summary:before{transform:rotate(90deg)}
+  details.tips .tip-body{font-size:13.5px;color:var(--ink);margin-top:10px;background:#fbfdfc;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  details.tips .tip-body ul{margin:8px 0 0;padding-left:18px}
+  details.tips .tip-body li{margin:5px 0}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+  .wk-label{font-size:13px;color:var(--mut);margin-left:auto}
+  .wk-label input{display:inline-block;width:150px;padding:7px 10px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>🌿 Mediator N &amp; Advocate M</h1>
+    <p>A weekly planner built for two Diplomats — anchored in values, gentle on structure, and serious about helping you choose <b>what actually matters</b> this week.</p>
+    <div class="toggle" id="toggle">
+      <button data-p="mediator" class="active"><span>Mediator</span><span class="who">You · INFP-A</span></button>
+      <button data-p="advocate"><span>Advocate</span><span class="who">Partner · INFJ</span></button>
+    </div>
+    <div class="banner" id="banner"></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 1. NORTH STAR + VALUES -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">1</span><h2>North Star &amp; Core Values</h2></div>
+    <p class="sec-sub">Diplomats plan best from meaning outward. Set the "why" first — every priority below should trace back here.</p>
+    <div class="northstar">
+      <label class="fld" for="northstar">This season's guiding intention</label>
+      <input type="text" id="northstar" placeholder="e.g. Build a calmer, more connected home life while finishing my writing project">
+    </div>
+    <div style="margin-top:16px">
+      <label class="fld">Core values (your non-negotiables)</label>
+      <div class="chips" id="valueChips"></div>
+      <div class="add-row">
+        <input type="text" id="valueInput" placeholder="Add a value — e.g. Authenticity, Connection, Growth, Calm…">
+        <button class="btn" id="addValue">Add</button>
+      </div>
+    </div>
+    <details class="tips"><summary id="tipsSummary">How this type plans best</summary><div class="tip-body" id="tipsBody"></div></details>
+  </section>
+
+  <!-- 2. GOALS -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">2</span><h2>Active Goals</h2></div>
+    <p class="sec-sub">Keep this short. A handful of living goals, each tied to a value. If a goal doesn't connect to a value, ask whether it's really yours.</p>
+    <div id="goalList"></div>
+    <button class="btn ghost sm" id="addGoal">+ Add goal</button>
+  </section>
+
+  <!-- 3. PRIORITY ENGINE -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">3</span><h2>This Week's Priorities</h2></div>
+    <p class="sec-sub">The heart of this planner. Brain-dump everything on your mind, rate how much each <em>aligns with your values &amp; goals</em>, then commit to just three.</p>
+    <div class="prio-intro">
+      💡 <b>Why only three?</b> Mediators and Advocates both tend to fall in love with too many meaningful possibilities at once — then scatter. Choosing three "musts" protects your energy and turns idealism into finished things.
+    </div>
+    <label class="fld">Brain dump — everything pulling at you this week</label>
+    <div class="bd-list" id="bdList"></div>
+    <div class="add-row">
+      <input type="text" id="bdInput" placeholder="Add something on your mind…">
+      <button class="btn" id="addBd">Add</button>
+    </div>
+    <div class="top3" id="top3">
+      <h3>⭐ Your Three Musts</h3>
+      <div class="t3-sub">Tap the “Must” button on up to three items above. Aim for your highest-alignment ones.</div>
+      <ol id="top3List"></ol>
+      <div id="top3Warn"></div>
+    </div>
+  </section>
+
+  <!-- 4. WEEK -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">4</span><h2>The Week, Loosely Held</h2>
+      <span class="wk-label">Week of <input type="text" id="weekOf" placeholder="date"></span>
+    </div>
+    <p class="sec-sub">Intentions, not a rigid timetable. Jot a focus or two per day — your musts come first, then whatever calls to you.</p>
+    <div class="week" id="week"></div>
+  </section>
+
+  <!-- 5. HABITS -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">5</span><h2>Gentle Habits</h2></div>
+    <p class="sec-sub">Small, repeatable supports — not a streak to feel guilty about. Tick the days you managed it. Progress, not perfection.</p>
+    <div class="hday-row"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+    <div id="habitList"></div>
+    <button class="btn ghost sm" id="addHabit" style="margin-top:12px">+ Add habit</button>
+  </section>
+
+  <!-- 6. REFLECTION -->
+  <section class="card">
+    <div class="sec-head"><span class="sec-num">6</span><h2>Weekly Reflection</h2></div>
+    <p class="sec-sub">Diplomats grow through reflection. Five quiet minutes at week's end is where the real planning happens.</p>
+    <div class="ref-grid">
+      <div><label class="fld"><span class="fld-ico">🌟</span>Wins &amp; what felt alive</label><textarea id="ref_wins" placeholder="What went well? When did you feel most yourself?"></textarea></div>
+      <div><label class="fld"><span class="fld-ico">🧭</span>What aligned with my values</label><textarea id="ref_aligned" placeholder="Where did my time match what I say matters?"></textarea></div>
+      <div><label class="fld"><span class="fld-ico">🍃</span>What to release or carry forward</label><textarea id="ref_release" placeholder="What can I let go of? What returns to next week?"></textarea></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <button class="btn ghost sm" id="resetWeek">↻ Start a fresh week</button>
+    <button class="btn ghost sm" id="exportBtn">⤓ Export my plan (text)</button>
+    <button class="btn ghost sm" id="clearAll" style="color:#c2607a">⌫ Clear this profile</button>
+  </div>
+  <div class="save-note"><span class="dot"></span> Saved automatically in this browser. Each profile is kept separately.</div>
+  <div class="foot">
+    Built around the 16Personalities <b>Mediator (INFP-A)</b> &amp; <b>Advocate (INFJ)</b> types.<br>
+    Two intuitive feelers, planning from the heart — with just enough structure to land the dream.
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  var STORE="medAdvPlanner_v1";
+
+  var PROFILE={
+    mediator:{
+      label:"Mediator", who:"You · INFP-A", emoji:"🦋", color:"#4a9d8e",
+      banner:"<span class='badge'>🦋</span><div class='b-txt'><b>Mediator — INFP-A.</b> You run on meaning and possibility. This planner keeps you flexible but helps you <b>finish</b> by tying each priority to something you actually care about.</div>",
+      tips:"<b>How Mediators (INFP-A) plan best:</b><ul>"+
+           "<li><b>Lead with the 'why.'</b> A task tied to a value gets done; a task on a generic to-do list quietly dies.</li>"+
+           "<li><b>Cap your priorities.</b> Your imagination generates ten exciting threads. Pick three. Let the rest wait without guilt.</li>"+
+           "<li><b>Keep structure loose.</b> Daily intentions, not hour-by-hour grids — rigidity makes you rebel against your own plan.</li>"+
+           "<li><b>Protect momentum, not perfection.</b> 'Done and imperfect' beats 'perfect and imagined.' Celebrate small finishes.</li>"+
+           "<li><b>Your Assertive (-A) edge:</b> you handle setbacks calmly — use that to forgive a missed day and just continue.</li></ul>",
+      seedValues:["Authenticity","Connection","Creativity","Growth"],
+      seedHabits:["Make something (even tiny)","Move my body","One real conversation"],
+      starHint:"How much does this align with who I want to be?"
+    },
+    advocate:{
+      label:"Advocate", who:"Partner · INFJ", emoji:"🔮", color:"#5e8c4f",
+      banner:"<span class='badge'>🔮</span><div class='b-txt'><b>Advocate — INFJ.</b> Visionary and driven, with a real planning gift. This planner channels that drive — and guards against over-committing and burning out for everyone else.</div>",
+      tips:"<b>How Advocates (INFJ) plan best:</b><ul>"+
+           "<li><b>Decide, then close the loop.</b> Your inner debate can loop forever. Once three musts are chosen, commit and stop re-litigating.</li>"+
+           "<li><b>Schedule rest like it's a task.</b> You pour into others and run dry. Protected recharge time is a priority, not a reward.</li>"+
+           "<li><b>Watch the helper's trap.</b> Before adding others' needs to your week, check: is this mine to carry right now?</li>"+
+           "<li><b>Aim for 'good and real,' not flawless.</b> Perfectionism stalls your projects at 90%. Ship the last 10%.</li>"+
+           "<li><b>Use your J-strength gently:</b> you love a plan — just leave white space so it doesn't become a cage.</li></ul>",
+      seedValues:["Integrity","Purpose","Harmony","Depth"],
+      seedHabits:["Protected quiet / recharge","Move my body","Step toward the big vision"],
+      starHint:"Does this serve my vision — or just other people's urgency?"
+    }
+  };
+
+  var data=load();
+  var current="mediator";
+
+  function blank(p){
+    return {
+      northStar:"", values:PROFILE[p].seedValues.slice(),
+      goals:[{text:"",value:""}],
+      brainDump:[],
+      weekOf:"",
+      days:{Mon:"",Tue:"",Wed:"",Thu:"",Fri:"",Sat:"",Sun:""},
+      habits:PROFILE[p].seedHabits.map(function(h){return {name:h,days:[false,false,false,false,false,false,false]};}),
+      ref:{wins:"",aligned:"",release:""}
+    };
+  }
+  function load(){
+    try{var d=JSON.parse(localStorage.getItem(STORE));if(d&&d.mediator&&d.advocate)return d;}catch(e){}
+    return {mediator:blank("mediator"),advocate:blank("advocate")};
+  }
+  function save(){ try{localStorage.setItem(STORE,JSON.stringify(data));}catch(e){} }
+  function d(){ return data[current]; }
+  function $(id){ return document.getElementById(id); }
+
+  /* ---------- render ---------- */
+  function renderAll(){
+    document.documentElement.style.setProperty('--green', PROFILE[current].color);
+    $("banner").innerHTML=PROFILE[current].banner;
+    $("tipsBody").innerHTML=PROFILE[current].tips;
+    $("northstar").value=d().northStar;
+    $("weekOf").value=d().weekOf;
+    $("ref_wins").value=d().ref.wins;
+    $("ref_aligned").value=d().ref.aligned;
+    $("ref_release").value=d().ref.release;
+    renderValues(); renderGoals(); renderBrainDump(); renderTop3(); renderWeek(); renderHabits();
+  }
+
+  function renderValues(){
+    var c=$("valueChips");c.innerHTML="";
+    d().values.forEach(function(v,i){
+      var s=document.createElement("span");s.className="chip";
+      s.innerHTML="<span>"+esc(v)+"</span>";
+      var b=document.createElement("button");b.textContent="×";b.title="remove";
+      b.onclick=function(){d().values.splice(i,1);save();renderValues();renderGoals();renderBrainDump();};
+      s.appendChild(b);c.appendChild(s);
+    });
+    if(!d().values.length){c.innerHTML="<span style='color:var(--mut);font-size:13px'>No values yet — add a few above.</span>";}
+  }
+
+  function renderGoals(){
+    var box=$("goalList");box.innerHTML="";
+    d().goals.forEach(function(g,i){
+      var row=document.createElement("div");row.className="goal";
+      var main=document.createElement("div");main.className="g-main";
+      var inp=document.createElement("input");inp.type="text";inp.value=g.text;inp.placeholder="A goal you're actively working toward…";
+      inp.oninput=function(){g.text=inp.value;save();};
+      main.appendChild(inp);
+      var sel=document.createElement("select");
+      sel.innerHTML="<option value=''>— linked value —</option>"+d().values.map(function(v){return "<option"+(g.value===v?" selected":"")+">"+esc(v)+"</option>";}).join("");
+      sel.onchange=function(){g.value=sel.value;save();};
+      var x=document.createElement("button");x.className="row-x";x.textContent="×";x.title="remove goal";
+      x.onclick=function(){d().goals.splice(i,1);save();renderGoals();};
+      row.appendChild(main);row.appendChild(sel);row.appendChild(x);
+      box.appendChild(row);
+    });
+    if(!d().goals.length){box.innerHTML="<p style='color:var(--mut);font-size:13.5px;margin:0 0 8px'>No goals yet.</p>";}
+  }
+
+  function mustCount(){return d().brainDump.filter(function(b){return b.must;}).length;}
+
+  function renderBrainDump(){
+    var box=$("bdList");box.innerHTML="";
+    if(!d().brainDump.length){
+      box.innerHTML="<p style='color:var(--mut);font-size:13.5px;margin:6px 0'>Nothing here yet. Dump it all in — meetings, dreams, chores, the thing you keep avoiding.</p>";
+      return;
+    }
+    var hint=PROFILE[current].starHint;
+    d().brainDump.forEach(function(b,i){
+      var row=document.createElement("div");row.className="bd";
+      var t=document.createElement("input");t.type="text";t.value=b.text;t.style.border="0";t.style.background="transparent";t.style.fontWeight="600";
+      t.oninput=function(){b.text=t.value;save();renderTop3();};
+      // stars
+      var sw=document.createElement("div");sw.style.textAlign="center";
+      var sd=document.createElement("div");sd.className="stars";sd.title=hint;
+      for(var s=1;s<=3;s++){(function(s){
+        var st=document.createElement("span");st.className="star"+(b.align>=s?" on":"");st.textContent="★";
+        st.onclick=function(){b.align=(b.align===s?0:s);save();renderBrainDump();renderTop3();};
+        sd.appendChild(st);
+      })(s);}
+      var al=document.createElement("div");al.className="bd-align-lbl";
+      al.textContent=["—","low","medium","high"][b.align||0]+" fit";
+      sw.appendChild(sd);sw.appendChild(al);
+      // must
+      var mb=document.createElement("button");mb.className="must-btn"+(b.must?" on":"");
+      mb.textContent=b.must?"✓ Must":"Must";
+      var full=mustCount()>=3 && !b.must;
+      if(full){mb.className+=" disabled";mb.title="You already have three musts — that's the point!";}
+      mb.onclick=function(){ if(!b.must && mustCount()>=3){flashWarn();return;} b.must=!b.must;save();renderBrainDump();renderTop3();};
+      // remove
+      var x=document.createElement("button");x.className="row-x";x.textContent="×";
+      x.onclick=function(){d().brainDump.splice(i,1);save();renderBrainDump();renderTop3();};
+      row.appendChild(t);row.appendChild(sw);row.appendChild(mb);row.appendChild(x);
+      box.appendChild(row);
+    });
+  }
+
+  var warnTimer=null;
+  function flashWarn(){
+    var w=$("top3Warn");
+    w.innerHTML="<span class='pill-warn'>Three is the limit — gently let one go first 🍃</span>";
+    clearTimeout(warnTimer);warnTimer=setTimeout(function(){renderTop3();},2600);
+  }
+
+  function renderTop3(){
+    var ol=$("top3List");ol.innerHTML="";
+    var musts=d().brainDump.filter(function(b){return b.must && b.text.trim();});
+    if(!musts.length){
+      ol.innerHTML="<div class='empty'>No musts chosen yet. Tap “Must” on up to three items above — ideally your highest-fit ones.</div>";
+    }else{
+      musts.forEach(function(b){var li=document.createElement("li");li.textContent=b.text;ol.appendChild(li);});
+    }
+    // suggestion: highlight a high-fit item not chosen
+    var w=$("top3Warn");w.innerHTML="";
+    var suggest=d().brainDump.filter(function(b){return !b.must && b.align===3 && b.text.trim();});
+    if(musts.length<3 && suggest.length){
+      w.innerHTML="<span class='pill-warn'>High-fit idea waiting: “"+esc(suggest[0].text)+"” — make it a must?</span>";
+    }
+  }
+
+  function renderWeek(){
+    var box=$("week");box.innerHTML="";
+    var musts=d().brainDump.filter(function(b){return b.must && b.text.trim();}).map(function(b){return b.text;});
+    DAYS.forEach(function(day){
+      var c=document.createElement("div");c.className="day";
+      var h=document.createElement("h4");h.innerHTML="<span>"+day+"</span>";
+      c.appendChild(h);
+      var ta=document.createElement("textarea");ta.value=d().days[day];ta.placeholder="Focus for "+day+"…";
+      ta.oninput=function(){d().days[day]=ta.value;save();};
+      c.appendChild(ta);
+      box.appendChild(c);
+    });
+    // little reminder of musts under the grid
+    if(musts.length){
+      var note=document.createElement("div");
+      note.style.cssText="grid-column:1/-1;font-size:12.5px;color:var(--mut);margin-top:4px";
+      note.innerHTML="🎯 <b>Don't forget your musts:</b> "+musts.map(esc).join(" · ");
+      box.appendChild(note);
+    }
+  }
+
+  function renderHabits(){
+    var box=$("habitList");box.innerHTML="";
+    d().habits.forEach(function(h,i){
+      var row=document.createElement("div");row.className="habit";
+      var name=document.createElement("input");name.type="text";name.value=h.name;name.placeholder="Habit…";
+      name.oninput=function(){h.name=name.value;save();};
+      var right=document.createElement("div");right.style.display="flex";right.style.alignItems="center";right.style.gap="10px";
+      var hd=document.createElement("div");hd.className="hdays";
+      DAYS.forEach(function(day,di){
+        var b=document.createElement("button");b.className="hd"+(h.days[di]?" on":"");b.textContent=day[0];
+        b.onclick=function(){h.days[di]=!h.days[di];save();renderHabits();};
+        hd.appendChild(b);
+      });
+      var x=document.createElement("button");x.className="row-x";x.textContent="×";
+      x.onclick=function(){d().habits.splice(i,1);save();renderHabits();};
+      right.appendChild(hd);right.appendChild(x);
+      row.appendChild(name);row.appendChild(right);
+      box.appendChild(row);
+    });
+  }
+
+  function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  /* ---------- events ---------- */
+  $("toggle").addEventListener("click",function(e){
+    var btn=e.target.closest("button[data-p]");if(!btn)return;
+    current=btn.getAttribute("data-p");
+    Array.prototype.forEach.call(this.querySelectorAll("button"),function(b){b.classList.toggle("active",b===btn);});
+    renderAll();
+  });
+  $("northstar").oninput=function(){d().northStar=this.value;save();};
+  $("weekOf").oninput=function(){d().weekOf=this.value;save();};
+  $("ref_wins").oninput=function(){d().ref.wins=this.value;save();};
+  $("ref_aligned").oninput=function(){d().ref.aligned=this.value;save();};
+  $("ref_release").oninput=function(){d().ref.release=this.value;save();};
+
+  function addValue(){
+    var v=$("valueInput").value.trim();if(!v)return;
+    d().values.push(v);$("valueInput").value="";save();renderValues();renderGoals();
+  }
+  $("addValue").onclick=addValue;
+  $("valueInput").addEventListener("keydown",function(e){if(e.key==="Enter")addValue();});
+
+  $("addGoal").onclick=function(){d().goals.push({text:"",value:""});save();renderGoals();};
+
+  function addBd(){
+    var v=$("bdInput").value.trim();if(!v)return;
+    d().brainDump.push({text:v,align:0,must:false});$("bdInput").value="";save();renderBrainDump();renderTop3();
+  }
+  $("addBd").onclick=addBd;
+  $("bdInput").addEventListener("keydown",function(e){if(e.key==="Enter")addBd();});
+
+  $("addHabit").onclick=function(){d().habits.push({name:"",days:[false,false,false,false,false,false,false]});save();renderHabits();};
+
+  $("resetWeek").onclick=function(){
+    if(!confirm("Start a fresh week for "+PROFILE[current].label+"? This clears the brain dump, daily focuses, habit ticks, and reflection — but keeps your North Star, values, and goals."))return;
+    var keep=d();
+    keep.brainDump=[];keep.weekOf="";
+    keep.days={Mon:"",Tue:"",Wed:"",Thu:"",Fri:"",Sat:"",Sun:""};
+    keep.habits.forEach(function(h){h.days=[false,false,false,false,false,false,false];});
+    keep.ref={wins:"",aligned:"",release:""};
+    save();renderAll();
+  };
+
+  $("clearAll").onclick=function(){
+    if(!confirm("Completely reset the "+PROFILE[current].label+" profile to defaults? This can't be undone."))return;
+    data[current]=blank(current);save();renderAll();
+  };
+
+  $("exportBtn").onclick=function(){
+    var x=d(),P=PROFILE[current];
+    var L=[];
+    L.push("# "+P.label+" Plan ("+P.who+")");
+    if(x.weekOf)L.push("Week of "+x.weekOf);
+    L.push("");L.push("North Star: "+(x.northStar||"—"));
+    L.push("Values: "+(x.values.join(", ")||"—"));
+    L.push("");L.push("## Goals");
+    x.goals.filter(function(g){return g.text.trim();}).forEach(function(g){L.push("- "+g.text+(g.value?"  ["+g.value+"]":""));});
+    L.push("");L.push("## This Week's Three Musts");
+    x.brainDump.filter(function(b){return b.must&&b.text.trim();}).forEach(function(b){L.push("- "+b.text);});
+    L.push("");L.push("## The Week");
+    DAYS.forEach(function(day){if(x.days[day].trim())L.push(day+": "+x.days[day]);});
+    L.push("");L.push("## Habits");
+    x.habits.filter(function(h){return h.name.trim();}).forEach(function(h){
+      var n=h.days.filter(Boolean).length;L.push("- "+h.name+" ("+n+"/7)");});
+    L.push("");L.push("## Reflection");
+    L.push("Wins: "+(x.ref.wins||"—"));
+    L.push("Aligned: "+(x.ref.aligned||"—"));
+    L.push("Release/carry: "+(x.ref.release||"—"));
+    var blob=new Blob([L.join("\n")],{type:"text/plain"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download=P.label.toLowerCase()+"-weekly-plan.txt";a.click();
+  };
+
+  renderAll();
+})();
+</script>
+</body>
+</html>
