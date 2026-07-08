@@ -259,13 +259,42 @@
   /* ── HERO BANNER (image only, nothing over it) ── */
   /* ── HERO CONTENT (logo + tagline) ── */
   .hero-content {
-    background: var(--black);
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 3rem 2rem 2rem;
+    padding: 6rem 2rem 5rem;
+    min-height: 92vh;
+    background: var(--black);
+  }
+  .hero-vid-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-vid-wrap iframe {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 177.78vh; /* 16:9 */
+    height: 100vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    transform: translate(-50%, -50%);
+    border: 0;
+  }
+  .hero-vid-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.75) 100%);
+    z-index: 1;
+  }
+  .hero-content > *:not(.hero-vid-wrap):not(.hero-vid-overlay) {
     position: relative;
+    z-index: 2;
   }
 
   /* ── SPOTIFY HERO PLAYER ── */
@@ -1553,6 +1582,10 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-content" id="home">
+  <div class="hero-vid-wrap">
+    <iframe src="https://www.youtube.com/embed/da46A6wAtzw?autoplay=1&mute=1&loop=1&playlist=da46A6wAtzw&controls=0&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="hero-vid-overlay"></div>
   <img src="logo.png" alt="L8 Blo0om" class="hero-logo">
   <p class="hero-subtitle">Lyrical Alchemist</p>
 </section>
