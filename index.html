@@ -1855,7 +1855,7 @@
 </style>
 <script>
 (function(){
-  const VIDS=['N6q8-uBx9-Y','Q3yCOKzRaq0','fDmZwuPtCUI','mwigvY810TY','tvoZ4IMfE8c','UGP2iDy357c','06F92LfB9Qk','L902urhd4ug','-JVI3B2HDTc','1olLSJDBy9M','7O3jPRmcnB8','Wxwozs1XMY4','WcPBifQvuYk','cyLUHY4Kmxk','FSu9VE3HHhA','2ctMeVLWpNQ','P-kdQe6iqTw','FTfZSxoH6p0','OdUJ_be119M','ICGvbg1zgUc','7CsX_WLCdIQ','_pCi2Pohvd0','MJ_tYfaUj0E','GOCJtGZkYAs','_tdh2maSwlY','sRVkZKQpyHU','B6XFwQTvjO8','QAODZuatO6w','uh-CsaRpEfQ','CW3NWlwjQdk','te-BRGETqjc','_pLrkgCGOb8','ucycF1Ot-UU','L_31GMp7vdA','5Hk9B951wmc','HC4XQI0qTMk','-WeV1O0JjC0','uh1iHtyKFbE','Bz3yYmkwGpI','TZA4IQK4aK8','eaN81V17ZOg','DafppWaUZlw','6_2s72vAkMw','vuRlsO1Xfs0','aKi8aloWgf8','ZOp4-Nc_leY','bUMA0NnLz-k','fn1NbzMwyfw','-e1VaMyKByE','vCfs-Ha6CEo','K69RJF17ew0','AAnRKETpFWQ','Z69a1VeZTwg','KRJRUlT_nd0','25MY9GFA3Dc','UnqMMMxJgu4','4eFnyNL5Tvc','dtoUvwulOvE','_2g75HYV3jE','rAq8m4XoAHk','y2TIwpRi0xw','235obit-xl0','KJ0qXIqsFLQ','WsmRy4i3LIg','BHLNBq8zXz4','5TAvFGKtF0w','9Gzx1aomBAE','aeVfpkiIF3E','ohtBhPUEnj0','7HZ8onK6duI','vzB9M6pxi-Y','rlIm4rsT3sw','RmhqsrKRxNQ','KlMsJvGu_eg','4pB8CsdjncU','2aWgMjzUkcQ','yxtEXkt5xcU','uBKrCvq5VhI','v9sRhs4BFWM','Z1WuE9z0_uM','_aWOfuNaZP0','xQ_cWHUpiWI','43rDFUi1RtY','5hapIv5wl_8','mdSTNrsyMjY','Exqgp1G-bjQ','vW9uiIAkbOs','wxEVnV_KNZQ','yXjSRpLeZsQ','L5Uo1dPVK30'];
+  const VIDS=['N6q8-uBx9-Y','Q3yCOKzRaq0','fDmZwuPtCUI','mwigvY810TY','tvoZ4IMfE8c','UGP2iDy357c','06F92LfB9Qk','L902urhd4ug','-JVI3B2HDTc','1olLSJDBy9M','7O3jPRmcnB8','Wxwozs1XMY4','WcPBifQvuYk','cyLUHY4Kmxk','FSu9VE3HHhA','2ctMeVLWpNQ','P-kdQe6iqTw','FTfZSxoH6p0','OdUJ_be119M','ICGvbg1zgUc','7CsX_WLCdIQ','_pCi2Pohvd0','MJ_tYfaUj0E','GOCJtGZkYAs','_tdh2maSwlY','sRVkZKQpyHU','B6XFwQTvjO8','QAODZuatO6w','uh-CsaRpEfQ','CW3NWlwjQdk','te-BRGETqjc','_pLrkgCGOb8','ucycF1Ot-UU','L_31GMp7vdA','5Hk9B951wmc','HC4XQI0qTMk','-WeV1O0JjC0','uh1iHtyKFbE','Bz3yYmkwGpI','TZA4IQK4aK8','eaN81V17ZOg','DafppWaUZlw','6_2s72vAkMw','vuRlsO1Xfs0','aKi8aloWgf8','ZOp4-Nc_leY','bUMA0NnLz-k','fn1NbzMwyfw','-e1VaMyKByE','vCfs-Ha6CEo','K69RJF17ew0','AAnRKETpFWQ','Z69a1VeZTwg','KRJRUlT_nd0','25MY9GFA3Dc','UnqMMMxJgu4','4eFnyNL5Tvc','dtoUvwulOvE','_2g75HYV3jE','rAq8m4XoAHk','y2TIwpRi0xw','235obit-xl0','KJ0qXIqsFLQ','WsmRy4i3LIg','BHLNBq8zXz4','5TAvFGKtF0w','9Gzx1aomBAE','aeVfpkiIF3E','ohtBhPUEnj0','7HZ8onK6duI','vzB9M6pxi-Y','rlIm4rsT3sw','RmhqsrKRxNQ','KlMsJvGu_eg','4pB8CsdjncU','2aWgMjzUkcQ','yxtEXkt5xcU','uBKrCvq5VhI','v9sRhs4BFWM','Z1WuE9z0_uM','_aWOfuNaZP0','xQ_cWHUpiWI','43rDFUi1RtY','5hapIv5wl_8','mdSTNrsyMjY','Exqgp1G-bjQ','vW9uiIAkbOs','wxEVnV_KNZQ'];
   const frame=document.getElementById('vcFrame');
   const thumbs=document.getElementById('vcThumbs');
   VIDS.forEach(function(id,i){
@@ -1872,6 +1872,36 @@
       document.querySelectorAll('.vct').forEach(function(b,j){b.classList.toggle('active',j===i)});
     });
     thumbs.appendChild(btn);
+  });
+})();
+</script>
+
+<!-- ═══════════ SHORTS ═══════════ -->
+<section class="videos" id="shorts" style="border-top:1px solid var(--border)">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label reveal">Shorts</p>
+    <h2 class="section-title reveal">The Feed</h2>
+    <div class="sf-wrap" id="shortsFeed"></div>
+  </div>
+</section>
+<style>
+.sf-wrap{display:flex;gap:14px;overflow-x:auto;padding:16px 0 28px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.sf-wrap::-webkit-scrollbar{height:4px}
+.sf-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.sf-card{flex-shrink:0;width:200px;scroll-snap-align:start}
+.sf-phone{position:relative;width:200px;height:356px;background:#000;border-radius:20px;overflow:hidden;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.sf-phone iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:600px){.sf-card{width:160px}.sf-phone{width:160px;height:284px}}
+</style>
+<script>
+(function(){
+  const SHORTS=['yXjSRpLeZsQ','L5Uo1dPVK30','2fTjYEpQVRw'];
+  const feed=document.getElementById('shortsFeed');
+  SHORTS.forEach(function(id){
+    const card=document.createElement('div');
+    card.className='sf-card';
+    card.innerHTML='<div class="sf-phone"><iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    feed.appendChild(card);
   });
 })();
 </script>
