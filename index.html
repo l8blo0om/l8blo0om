@@ -813,6 +813,10 @@
     background: var(--card);
   }
   .listen-cta a:hover { border-color: var(--accent); color: var(--accent); }
+  .yt-albums-label { margin-top: 3rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .yt-albums-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 12px; margin-top: 1rem; }
+  .yt-album-embed { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9; }
+  .yt-album-embed iframe { display: block; width: 100%; height: 100%; }
 
   /* ── DELUXE ── */
   .deluxe-section {
@@ -1769,6 +1773,15 @@
       <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">🔊 SoundCloud</a>
       <a href="https://music.amazon.com/search/L8%20Blo0om" target="_blank" rel="noopener">📦 Amazon Music</a>
     </div>
+
+    <p class="yt-albums-label reveal">Stream on YouTube</p>
+    <div class="yt-albums-grid reveal">
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kU5D0_8b84alBrrRASfK21kXCnDHQ7bvw&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kZvEafhsm36NXZ4DDotQodLr43uhKY6wU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_ktOq14tia2lbv3yuafPFDBdgKQhJk8Y4k&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kKpB61ZVeEOR1ob57yB-SlmSA0GRBGFxg&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_lhTFdbokzjLcInoSsjIswP_BXbjYXEikU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+    </div>
   </div>
 </section>
 
@@ -1855,7 +1868,7 @@
 </style>
 <script>
 (function(){
-  const VIDS=['N6q8-uBx9-Y','Q3yCOKzRaq0','fDmZwuPtCUI','mwigvY810TY','tvoZ4IMfE8c','UGP2iDy357c','06F92LfB9Qk','L902urhd4ug','-JVI3B2HDTc','1olLSJDBy9M','7O3jPRmcnB8','Wxwozs1XMY4','WcPBifQvuYk','cyLUHY4Kmxk','FSu9VE3HHhA','2ctMeVLWpNQ','P-kdQe6iqTw','FTfZSxoH6p0','OdUJ_be119M','ICGvbg1zgUc','7CsX_WLCdIQ','_pCi2Pohvd0','MJ_tYfaUj0E','GOCJtGZkYAs','_tdh2maSwlY','sRVkZKQpyHU','B6XFwQTvjO8','QAODZuatO6w','uh-CsaRpEfQ','CW3NWlwjQdk','te-BRGETqjc','_pLrkgCGOb8','ucycF1Ot-UU','L_31GMp7vdA','5Hk9B951wmc','HC4XQI0qTMk','-WeV1O0JjC0','uh1iHtyKFbE','Bz3yYmkwGpI','TZA4IQK4aK8','eaN81V17ZOg','DafppWaUZlw','6_2s72vAkMw','vuRlsO1Xfs0','aKi8aloWgf8','ZOp4-Nc_leY','bUMA0NnLz-k','fn1NbzMwyfw','-e1VaMyKByE','vCfs-Ha6CEo','K69RJF17ew0','AAnRKETpFWQ','Z69a1VeZTwg','KRJRUlT_nd0','25MY9GFA3Dc','UnqMMMxJgu4','4eFnyNL5Tvc','dtoUvwulOvE','_2g75HYV3jE','rAq8m4XoAHk','y2TIwpRi0xw','235obit-xl0','KJ0qXIqsFLQ','WsmRy4i3LIg','BHLNBq8zXz4','5TAvFGKtF0w','9Gzx1aomBAE','aeVfpkiIF3E','ohtBhPUEnj0','7HZ8onK6duI','vzB9M6pxi-Y','rlIm4rsT3sw','RmhqsrKRxNQ','KlMsJvGu_eg','4pB8CsdjncU','2aWgMjzUkcQ','yxtEXkt5xcU','uBKrCvq5VhI','v9sRhs4BFWM','Z1WuE9z0_uM','_aWOfuNaZP0','xQ_cWHUpiWI','43rDFUi1RtY','5hapIv5wl_8','mdSTNrsyMjY','Exqgp1G-bjQ','vW9uiIAkbOs','wxEVnV_KNZQ','Q8AidVY2LNU','XhV3277QobY','O_oBi8CJhOc','VxcIhL1vQLQ','sYxS460i8NY'];
+  const VIDS=['N6q8-uBx9-Y','Q3yCOKzRaq0','fDmZwuPtCUI','mwigvY810TY','tvoZ4IMfE8c','UGP2iDy357c','06F92LfB9Qk','L902urhd4ug','-JVI3B2HDTc','1olLSJDBy9M','7O3jPRmcnB8','Wxwozs1XMY4','WcPBifQvuYk','cyLUHY4Kmxk','FSu9VE3HHhA','2ctMeVLWpNQ','P-kdQe6iqTw','FTfZSxoH6p0','OdUJ_be119M','ICGvbg1zgUc','7CsX_WLCdIQ','_pCi2Pohvd0','MJ_tYfaUj0E','GOCJtGZkYAs','_tdh2maSwlY','sRVkZKQpyHU','B6XFwQTvjO8','QAODZuatO6w','uh-CsaRpEfQ','CW3NWlwjQdk','te-BRGETqjc','_pLrkgCGOb8','ucycF1Ot-UU','L_31GMp7vdA','5Hk9B951wmc','HC4XQI0qTMk','-WeV1O0JjC0','uh1iHtyKFbE','Bz3yYmkwGpI','TZA4IQK4aK8','eaN81V17ZOg','DafppWaUZlw','6_2s72vAkMw','vuRlsO1Xfs0','aKi8aloWgf8','ZOp4-Nc_leY','bUMA0NnLz-k','fn1NbzMwyfw','-e1VaMyKByE','vCfs-Ha6CEo','K69RJF17ew0','AAnRKETpFWQ','Z69a1VeZTwg','KRJRUlT_nd0','25MY9GFA3Dc','UnqMMMxJgu4','4eFnyNL5Tvc','dtoUvwulOvE','_2g75HYV3jE','rAq8m4XoAHk','y2TIwpRi0xw','235obit-xl0','KJ0qXIqsFLQ','WsmRy4i3LIg','BHLNBq8zXz4','5TAvFGKtF0w','9Gzx1aomBAE','aeVfpkiIF3E','ohtBhPUEnj0','7HZ8onK6duI','vzB9M6pxi-Y','rlIm4rsT3sw','RmhqsrKRxNQ','KlMsJvGu_eg','4pB8CsdjncU','2aWgMjzUkcQ','yxtEXkt5xcU','uBKrCvq5VhI','v9sRhs4BFWM','Z1WuE9z0_uM','_aWOfuNaZP0','xQ_cWHUpiWI','43rDFUi1RtY','5hapIv5wl_8','mdSTNrsyMjY','Exqgp1G-bjQ','vW9uiIAkbOs','wxEVnV_KNZQ','Q8AidVY2LNU','XhV3277QobY','O_oBi8CJhOc','VxcIhL1vQLQ','sYxS460i8NY','yf41Q2n2l3k'];
   const frame=document.getElementById('vcFrame');
   const thumbs=document.getElementById('vcThumbs');
   VIDS.forEach(function(id,i){
