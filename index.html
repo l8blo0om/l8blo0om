@@ -1831,42 +1831,50 @@
     <h2 class="section-title reveal">See the world behind the sound</h2>
     <p class="section-desc reveal">Music videos, visualizers, short-form pieces, and cinematic experiments from the L8 Blo<span class="zero">0</span>om universe.</p>
 
-    <div class="video-grid stagger">
-      <div class="video-card">
-        <div class="video-placeholder">♬</div>
-        <div class="play-icon"></div>
-        <div class="video-overlay">
-          <h4>LIBRES</h4>
-          <span>Music Video · Cásate Conmigo, Beni!</span>
-        </div>
+    <div class="vc-wrap">
+      <div class="vc-stage">
+        <iframe id="vcFrame"
+          src="https://www.youtube.com/embed/N6q8-uBx9-Y?rel=0&modestbranding=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen frameborder="0"></iframe>
       </div>
-      <div class="video-card">
-        <div class="video-placeholder">♬</div>
-        <div class="play-icon"></div>
-        <div class="video-overlay">
-          <h4>QUIERES</h4>
-          <span>Music Video · Cásate Conmigo, Beni!</span>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-placeholder">♬</div>
-        <div class="play-icon"></div>
-        <div class="video-overlay">
-          <h4>SERPIENTE</h4>
-          <span>Music Video · Cásate Conmigo, Beni!</span>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-placeholder">♬</div>
-        <div class="play-icon"></div>
-        <div class="video-overlay">
-          <h4>ME BLOQUEASTE</h4>
-          <span>Music Video · Cásate Conmigo, Beni!</span>
-        </div>
-      </div>
+      <div class="vc-thumbs" id="vcThumbs"></div>
     </div>
   </div>
 </section>
+<style>
+.vc-wrap{margin-top:2rem}
+.vc-stage{position:relative;aspect-ratio:16/9;max-width:820px;margin:0 auto;background:#000;border:1px solid var(--border)}
+.vc-stage iframe{position:absolute;inset:0;width:100%;height:100%}
+.vc-thumbs{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.vct{border:2px solid transparent;cursor:pointer;background:none;padding:0;transition:border-color .2s;width:110px;flex-shrink:0}
+.vct img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.45;transition:opacity .2s}
+.vct.active,.vct:hover{border-color:var(--cyan)}
+.vct.active img,.vct:hover img{opacity:1}
+@media(max-width:600px){.vct{width:80px}}
+</style>
+<script>
+(function(){
+  const VIDS=['N6q8-uBx9-Y','Q3yCOKzRaq0','fDmZwuPtCUI','mwigvY810TY','tvoZ4IMfE8c'];
+  const frame=document.getElementById('vcFrame');
+  const thumbs=document.getElementById('vcThumbs');
+  VIDS.forEach(function(id,i){
+    const btn=document.createElement('button');
+    btn.className='vct'+(i===0?' active':'');
+    btn.setAttribute('aria-label','Video '+(i+1));
+    const img=document.createElement('img');
+    img.src='https://img.youtube.com/vi/'+id+'/mqdefault.jpg';
+    img.alt='Video '+(i+1);
+    img.loading='lazy';
+    btn.appendChild(img);
+    btn.addEventListener('click',function(){
+      frame.src='https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1&autoplay=1';
+      document.querySelectorAll('.vct').forEach(function(b,j){b.classList.toggle('active',j===i)});
+    });
+    thumbs.appendChild(btn);
+  });
+})();
+</script>
 
 <!-- ═══════════ LICENSING ═══════════ -->
 <section class="licensing" id="licensing">
