@@ -13,14 +13,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  @property --hue {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+
+  html { animation: huecycle 22s linear infinite; }
+
+  @keyframes huecycle { to { --hue: 360; } }
+
   :root {
     --black: #050508;
     --deep: #0a0a10;
     --surface: #0f0f18;
     --card: #12121e;
     --border: rgba(0, 210, 235, 0.12);
-    --cyan: #00d2eb;
-    --cyan-glow: #00e5ff;
+    --cyan: hsl(var(--hue), 80%, 72%);
+    --cyan-glow: hsl(var(--hue), 90%, 80%);
     --cyan-dim: #0098aa;
     --blue: #1a6bff;
     --teal: #00c9a7;
