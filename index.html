@@ -141,12 +141,14 @@
   }
 
   .nav-brand {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--cyan);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .nav-brand img {
+    height: 48px;
+    width: auto;
+    display: block;
   }
 
   .nav-links {
@@ -306,6 +308,11 @@
     position: relative;
     z-index: 2;
   }
+
+  .featured-vid-section { background: var(--black); padding: 0 2rem 3rem; }
+  .featured-vid-inner { max-width: 900px; margin: 0 auto; }
+  .featured-vid-frame { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 60px rgba(0,0,0,.6); }
+  .featured-vid-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   /* ── SPOTIFY HERO PLAYER ── */
   .spotify-hero {
@@ -1550,7 +1557,7 @@
 </div>
 
 <nav id="navbar">
-  <a href="#" class="nav-brand">L8 Blo<span class="zero">0</span>om</a>
+  <a href="#" class="nav-brand"><img src="logo.png" alt="L8 Blo0om"></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#music" data-i18n="nav_music">Music</a></li>
     <li><a href="#listen">Listen</a></li>
@@ -1590,13 +1597,17 @@
   </button>
 </nav>
 
+<!-- ═══════════ FEATURED VIDEO ═══════════ -->
+<section class="featured-vid-section">
+  <div class="featured-vid-inner">
+    <div class="featured-vid-frame">
+      <iframe src="https://www.youtube.com/embed/da46A6wAtzw?rel=0&modestbranding=1" loading="lazy" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-content" id="home">
-  <div class="hero-vid-wrap">
-    <iframe src="https://www.youtube.com/embed/da46A6wAtzw?autoplay=1&mute=1&loop=1&playlist=da46A6wAtzw&controls=0&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="hero-vid-overlay"></div>
-  <img src="logo.png" alt="L8 Blo0om" class="hero-logo">
   <p class="hero-subtitle">Lyrical Alchemist</p>
 </section>
 
