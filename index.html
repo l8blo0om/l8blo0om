@@ -1959,16 +1959,30 @@
 .sf-card{flex-shrink:0;width:200px;scroll-snap-align:start}
 .sf-phone{position:relative;width:200px;height:356px;background:#000;border-radius:20px;overflow:hidden;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.5)}
 .sf-phone iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sf-facade{cursor:pointer}
+.sf-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(5,5,8,.72);border:1px solid var(--cyan);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:1.1rem;padding-left:4px;transition:transform .2s}
+.sf-phone:hover .sf-play{transform:translate(-50%,-50%) scale(1.12)}
 @media(max-width:600px){.sf-card{width:160px}.sf-phone{width:160px;height:284px}}
 </style>
 <script>
 (function(){
   const SHORTS=['yXjSRpLeZsQ','L5Uo1dPVK30','2fTjYEpQVRw','4RXgpB-LiLs','n7kIMQY_up0','xehptkxbCFo','cpPBWgCQZlQ','lPYKLq--Gac','EH0sqxWwiHI','1RHx2rKfGmY','Csk9AgQsCGE','uJ6QFadF3Ls','-KD9HkOITTo','Pd3W3uK6XWs','-Wc3siQJswY','r9aaZqH0Oec','JMO9TeM9s3Y','qpOii828Ak0','9NKNyLTmbaU','nS12S3xWuHY','42-uW5dAO8Y','CNIS1vmFM_M','_vVo4vNVr5A','QCVTZ5ZMNuI','w5y3-Mj5RlQ','bZHM1k6fyZQ','MhTBZK8aCO8','jGTGcLn4bzo','6omn0Hs6PUM','GMvkMZGUwqg','uulcCd0d9h4','Zei72vyE5Iw','QgIsVloWppI','osQoWDwS_z0','6Ryl0X9jpag','CdLUtI19oqk','gGn40lomcSs'];
   const feed=document.getElementById('shortsFeed');
+  let activePhone=null;
   SHORTS.forEach(function(id){
     const card=document.createElement('div');
     card.className='sf-card';
-    card.innerHTML='<div class="sf-phone"><iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    card.innerHTML='<div class="sf-phone sf-facade"><img src="https://img.youtube.com/vi/'+id+'/hqdefault.jpg" alt="L8 Blo0om Short" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="sf-play">▶</div></div>';
+    const phone=card.firstChild;
+    phone.addEventListener('click',function(){
+      if(activePhone && activePhone!==phone){
+        const old=activePhone; const oldId=old.dataset.vid;
+        old.innerHTML='<img src="https://img.youtube.com/vi/'+oldId+'/hqdefault.jpg" alt="L8 Blo0om Short" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="sf-play">▶</div>';
+      }
+      phone.dataset.vid=id;
+      phone.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1&autoplay=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      activePhone=phone;
+    });
     feed.appendChild(card);
   });
 })();
@@ -2446,5 +2460,6 @@
 fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
 var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
 </script>
+<script data-goatcounter="https://l8blo0om.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
