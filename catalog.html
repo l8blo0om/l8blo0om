@@ -3,115 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L8 BLO0M — Lyrics</title>
+<title>L8 BLO0M — Collected Lyrics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Playfair+Display:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#000;--el:#08081a;--tx:#eef0ff;--dim:#7a8199;--fnt:#3a3f4f;--e:#00d9ff;--p:#b366ff;--l:#14142a}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--tx);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.c{max-width:740px;margin:0 auto;padding:28px 16px 60px}
-.h{text-align:center;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--l)}
-.h h1{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;letter-spacing:.2em;background:linear-gradient(90deg,var(--e),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px}
-.h .tg{font-style:italic;color:var(--dim);font-size:12px}
-.back{display:inline-block;margin-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);text-decoration:none;border:1px solid var(--l);padding:4px 12px;border-radius:100px;transition:all .15s}
-.back:hover{color:var(--e);border-color:var(--e)}
-.f{display:flex;gap:6px;justify-content:center;margin-bottom:10px;flex-wrap:wrap;align-items:center}
-.fl{font-size:9px;text-transform:uppercase;letter-spacing:.25em;color:var(--fnt);font-family:'JetBrains Mono',monospace;margin-right:4px}
-.ch{background:transparent;border:1px solid var(--l);color:var(--dim);padding:3px 10px;border-radius:100px;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.15em;transition:all .15s}
-.ch:hover{color:var(--tx);border-color:var(--e)}
-.ch.a{background:var(--e);border-color:var(--e);color:var(--bg)}
-.ct{text-align:center;margin-bottom:16px;font-size:13px;color:var(--e);letter-spacing:.35em;font-family:'Playfair Display',serif}
-.s{border-top:1px solid var(--l);transition:background .15s}
-.s:last-child{border-bottom:1px solid var(--l)}
-.s.x{display:none}
-.s:hover{background:rgba(0,217,255,.04)}
-.s.o{background:var(--el)}
-.sh{padding:5px 8px;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;user-select:none}
-.st{font-family:'Playfair Display',serif;font-size:15px;font-weight:400}
-.s.o .st{color:var(--e)}
-.sm{font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.2em;color:var(--fnt);white-space:nowrap;flex-shrink:0}
-.sb{padding:0 12px 14px;display:none}
-.s.o .sb{display:block;padding-top:4px}
-.sec-h{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:var(--p);margin:14px 0 4px;display:block}
-.sec-h:first-child{margin-top:8px}
-.sec-n{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--dim);font-style:italic;display:block;margin:4px 0 10px}
-.sec-l{font-size:15px;line-height:1.6;color:var(--tx);white-space:pre-wrap;display:block;margin-bottom:4px}
-.loading{text-align:center;color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;padding:40px 0}
-.ft{text-align:center;margin-top:32px;padding-top:12px;border-top:1px solid var(--l);color:var(--fnt);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
-@media(max-width:640px){.sh{padding:5px 4px}.st{font-size:14px}.sb{padding:0 4px 12px}.sec-l{font-size:14px}}
+:root {
+  --bg: #000000;
+  --bg-elevated: #08081a;
+  --text: #eef0ff;
+  --text-dim: #7a8199;
+  --text-faint: #3a3f4f;
+  --accent: #00d9ff;
+  --accent-dim: #b366ff;
+  --line: #14142a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container { max-width: 740px; margin: 0 auto; padding: 28px 16px 60px; }
+.masthead { text-align: center; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.masthead h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.masthead .tagline { font-style: italic; color: var(--text-dim); letter-spacing: 0.08em; font-size: 12px; }
+.search-wrap { display: flex; justify-content: center; margin-bottom: 10px; }
+.search-wrap input {
+  width: 100%;
+  max-width: 340px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.2em; }
+.count {
+  text-align: center;
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  margin-bottom: 16px;
+}
+.songs { display: flex; flex-direction: column; }
+.song { border-bottom: 1px solid var(--line); transition: background 0.2s ease; }
+.song:first-child { border-top: 1px solid var(--line); }
+.song.hidden { display: none; }
+.song:hover { background: rgba(0, 217, 255, 0.04); }
+.song.open { background: var(--bg-elevated); }
+.song.open .song-title { color: var(--accent); }
+.song-header {
+  padding: 5px 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  user-select: none;
+}
+.song-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.song-body {
+  padding: 0 12px 14px;
+  display: none;
+  white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.song.open .song-body { display: block; padding-top: 4px; }
+.footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--text-faint);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.loading, .error {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 40px 20px;
+  font-style: italic;
+}
+.error { color: var(--accent-dim); }
+@media (max-width: 640px) {
+  .song-header { padding: 5px 4px; gap: 8px; }
+  .song-title { font-size: 14px; }
+  .song-body { padding: 0 4px 12px; font-size: 14px; }
+}
 </style>
 </head>
 <body>
-<div class="c">
-  <a href="index.html" class="back">← Back to L8 Blo0om</a>
-  <div class="h"><h1>L8 BLO0M</h1><div class="tg">— lyrics —</div></div>
-  <div class="f">
-    <span class="fl">Language</span>
-    <button class="ch a" data-v="all">All</button>
-    <button class="ch" data-v="english">English</button>
-    <button class="ch" data-v="french">French</button>
-    <button class="ch" data-v="spanish">Spanish</button>
-    <button class="ch" data-v="portuguese">Portuguese</button>
+<div class="container">
+  <div class="masthead">
+    <h1>L8 BLO0M</h1>
+    <div class="tagline">— collected lyrics —</div>
   </div>
-  <div class="ct" id="ct">…</div>
-  <div id="sx"><div class="loading">loading lyrics…</div></div>
-  <div class="ft">L8 BLO0M · lyrics · 🌺</div>
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="search">
+  </div>
+  <div class="count" id="count">loading…</div>
+  <div class="songs" id="songs">
+    <div class="loading">Loading lyrics…</div>
+  </div>
+  <div class="footer">L8 BLO0M · lyrics · 🌺</div>
 </div>
+
 <script>
-const langLabel={english:'EN',french:'FR',spanish:'ES',portuguese:'PT',multilang:'MULTI'};
-const sx=document.getElementById('sx'),ct=document.getElementById('ct');
-let cf='all';
-
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-
-function renderSong(s){
-  const body=s.sections.map(sec=>{
-    if(sec[0]==='h') return `<span class="sec-h">${esc(sec[1])}</span>`;
-    if(sec[0]==='n') return `<span class="sec-n">${esc(sec[1])}</span>`;
-    return `<span class="sec-l">${esc(sec[1])}</span>`;
-  }).join('');
-  const a=document.createElement('article');
-  a.className='s';
-  a.dataset.lang=s.lang||'english';
-  a.innerHTML=`<div class="sh"><div class="st">${esc(s.title)}</div><div class="sm">${langLabel[s.lang]||'EN'} · ${esc(s.gender||'F')}</div></div><div class="sb">${body}</div>`;
-  return a;
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
 }
-
-function apply(){
-  let n=0;
-  document.querySelectorAll('.s').forEach(el=>{
-    const show=cf==='all'||el.dataset.lang===cf;
-    el.classList.toggle('x',!show);
-    if(show)n++;
+function parseArchive(text) {
+  const lines = text.split(/\r?\n/);
+  const songs = [];
+  let i = 0;
+  while (i < lines.length && !/^L8 BLO0M: COLLECTED LYRICS$/i.test(lines[i].trim())) i++;
+  if (i < lines.length) i++;
+  while (i < lines.length) {
+    while (i < lines.length && lines[i].trim() === '') i++;
+    if (i >= lines.length) break;
+    const title = lines[i].trim();
+    i++;
+    if (i < lines.length && lines[i].trim() === '') i++;
+    const bodyLines = [];
+    while (i < lines.length) {
+      if (lines[i].trim() === '' && i + 1 < lines.length && lines[i + 1].trim() === '') break;
+      bodyLines.push(lines[i]);
+      i++;
+    }
+    while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === '') bodyLines.pop();
+    if (title) songs.push({ title, body: bodyLines.join('\n') });
+  }
+  return songs;
+}
+function render(songs) {
+  const container = document.getElementById('songs');
+  container.innerHTML = '';
+  songs.slice()
+    .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base', numeric: true }))
+    .forEach(song => {
+      const article = document.createElement('article');
+      article.className = 'song';
+      article.dataset.title = song.title.toLowerCase();
+      article.dataset.body = song.body.toLowerCase();
+      article.innerHTML = `
+        <div class="song-header">
+          <div class="song-title">${escapeHtml(song.title)}</div>
+        </div>
+        <div class="song-body">${escapeHtml(song.body)}</div>
+      `;
+      article.querySelector('.song-header').addEventListener('click', () => {
+        article.classList.toggle('open');
+      });
+      container.appendChild(article);
+    });
+  updateCount();
+}
+function updateCount() {
+  const visible = document.querySelectorAll('.song:not(.hidden)').length;
+  document.getElementById('count').textContent = visible === 1 ? '1 song' : visible + ' songs';
+}
+document.getElementById('search').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.song').forEach(song => {
+    const match = !q || song.dataset.title.includes(q) || song.dataset.body.includes(q);
+    song.classList.toggle('hidden', !match);
   });
-  ct.textContent=n===1?'1 song':n+' songs';
-}
-
-document.querySelectorAll('.ch').forEach(c=>c.addEventListener('click',()=>{
-  document.querySelectorAll('.ch').forEach(x=>x.classList.remove('a'));
-  c.classList.add('a');
-  cf=c.dataset.v;
-  apply();
-}));
-
-document.addEventListener('click',e=>{
-  const h=e.target.closest('.sh');
-  if(h)h.parentElement.classList.toggle('o');
+  updateCount();
 });
-
-fetch('songs.json')
-  .then(r=>r.json())
-  .then(data=>{
-    const songs=(data.songs||data).slice().sort((a,b)=>a.title.localeCompare(b.title,undefined,{sensitivity:'base'}));
-    sx.innerHTML='';
-    songs.forEach(s=>sx.appendChild(renderSong(s)));
-    apply();
+fetch('L8_BLOOM_COLLECTED_LYRICS.md?v=' + Date.now())
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+  .then(text => {
+    const songs = parseArchive(text);
+    if (!songs.length) {
+      document.getElementById('songs').innerHTML =
+        '<div class="error">No songs found in L8_BLOOM_COLLECTED_LYRICS.md</div>';
+      document.getElementById('count').textContent = '';
+      return;
+    }
+    render(songs);
   })
-  .catch(()=>{
-    sx.innerHTML='<div class="loading">could not load lyrics</div>';
-    ct.textContent='';
+  .catch(err => {
+    document.getElementById('songs').innerHTML =
+      '<div class="error">Could not load L8_BLOOM_COLLECTED_LYRICS.md — ' +
+      escapeHtml(err.message) + '</div>';
+    document.getElementById('count').textContent = '';
   });
 </script>
 </body>
