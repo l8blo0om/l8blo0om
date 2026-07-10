@@ -51,6 +51,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .post-nav a:hover { text-decoration: underline; }
 @media (max-width: 600px) { nav { padding: 1rem 1.5rem; } .post-hero, .post-body, .vid-hero { padding-left: 1.5rem; padding-right: 1.5rem; } }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Useless", "description": "The song about wanting someone you absolutely should not want — and dreaming anyway.", "image": "https://img.youtube.com/vi/yXjSRpLeZsQ/maxresdefault.jpg", "url": "https://l8blo0om.com/useless.html", "author": {"@type": "Person", "name": "L8 Blo0om", "url": "https://l8blo0om.com/"}, "publisher": {"@id": "https://l8blo0om.com/#artist"}}</script>
 </head>
 <body>
 <nav>
@@ -83,5 +84,11 @@ I guess I can't do anything right, but dream.</div>
   <a href="maybe-a-maybe.html">← Maybe A Maybe</a>
   <a href="groovy-movie.html" style="text-align:right">Groovy Movie →</a>
 </div>
+<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+<script>
+(function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
 </body>
 </html>

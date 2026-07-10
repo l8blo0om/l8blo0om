@@ -46,6 +46,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .share-btn { cursor: pointer; background: var(--card); color: var(--cyan); border: 1px solid var(--cyan); border-radius: 999px; padding: 0.6rem 1.4rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; transition: background 0.2s; }
 .share-btn:hover { background: rgba(168,216,234,0.12); }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Only Clouds", "description": "The song about looking up and finding nothing but clouds — and calling that peace.", "image": "https://l8blo0om.com/solo-nubes.jpg", "url": "https://l8blo0om.com/solo-nubes.html", "author": {"@type": "Person", "name": "L8 Blo0om", "url": "https://l8blo0om.com/"}, "publisher": {"@id": "https://l8blo0om.com/#artist"}}</script>
 </head>
 <body>
 <nav>
@@ -73,5 +74,11 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   <a href="enrollada-en-tu-dedo.html">← Enrollada En Tu Dedo</a>
   <a href="lagrimas-estupidas.html">Lagrimas Estupidas →</a>
 </div>
+<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+<script>
+(function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
 </body>
 </html>

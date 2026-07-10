@@ -223,5 +223,11 @@ fetch('L8_BLOOM_COLLECTED_LYRICS.md?v=' + Date.now())
     document.getElementById('count').textContent = '';
   });
 </script>
+<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+<script>
+(function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
 </body>
 </html>

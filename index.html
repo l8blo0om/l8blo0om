@@ -1531,6 +1531,7 @@
     .genre-grid { grid-template-columns: 1fr; }
   }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MusicGroup", "@id": "https://l8blo0om.com/#artist", "name": "L8 Blo0om", "alternateName": "L8 Bloom", "url": "https://l8blo0om.com/", "logo": "https://l8blo0om.com/logo.png", "genre": ["Kizomba", "Zouk", "NeoSoul", "Jazz", "Reggaeton", "Pop"], "description": "L8 Blo0om — Lyrical Alchemist. Multilingual original music rooted in Caribbean and African dance culture.", "sameAs": ["https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA"]}, {"@type": "WebSite", "@id": "https://l8blo0om.com/#website", "url": "https://l8blo0om.com/", "name": "L8 Blo0om", "publisher": {"@id": "https://l8blo0om.com/#artist"}}]}</script>
 </head>
 <body>
 
@@ -1608,7 +1609,7 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-content" id="home">
-  <p class="hero-subtitle">Lyrical Alchemist</p>
+  <h1 class="hero-subtitle">Lyrical Alchemist</h1>
 </section>
 
 <!-- ═══════════ SPOTIFY PLAYER ═══════════ -->
@@ -2439,5 +2440,11 @@
   });
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+<script>
+(function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
 </body>
 </html>

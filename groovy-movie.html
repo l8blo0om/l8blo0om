@@ -51,6 +51,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .post-nav a:hover { text-decoration: underline; }
 @media (max-width: 600px) { nav { padding: 1rem 1.5rem; } .post-hero, .post-body, .vid-hero { padding-left: 1.5rem; padding-right: 1.5rem; } }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Groovy Movie", "description": "The song for the morning you wake up with a smile and decide to keep it.", "image": "https://img.youtube.com/vi/Q3yCOKzRaq0/maxresdefault.jpg", "url": "https://l8blo0om.com/groovy-movie.html", "author": {"@type": "Person", "name": "L8 Blo0om", "url": "https://l8blo0om.com/"}, "publisher": {"@id": "https://l8blo0om.com/#artist"}}</script>
 </head>
 <body>
 <nav>
@@ -86,5 +87,11 @@ Movin', everything's movin'</div>
   <a href="useless.html">← Useless</a>
   <a href="bananas.html" style="text-align:right">Bananas →</a>
 </div>
+<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+<script>
+(function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
 </body>
 </html>
