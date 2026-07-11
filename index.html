@@ -1534,6 +1534,13 @@
 .use-this-music { text-align: center; padding: 1.1rem 1.5rem 0.2rem; }
 .use-this-music a { font-family: var(--serif); font-size: clamp(1.15rem, 2.6vw, 1.6rem); font-style: italic; font-weight: 400; color: var(--cyan); text-decoration: none; letter-spacing: 0.02em; }
 .use-this-music a:hover { text-decoration: underline; }
+
+/* ── sync pitch: breathing glow button + accents ── */
+.btn-glow{background:#0a0a0a;color:#fff;border:none;padding:15px 28px;cursor:pointer;font-family:var(--sans);font-size:0.9rem;font-weight:600;letter-spacing:0.06em;text-decoration:none;display:inline-block;border-radius:4px;box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 22px hsl(var(--hue) 90% 58% / .3);animation:breathe 3s ease-in-out infinite;}
+.btn-glow:hover{background:hsl(var(--hue) 90% 58%);color:#0a0a0a}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 18px hsl(var(--hue) 90% 58% / .25)}50%{box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 32px hsl(var(--hue) 90% 58% / .5)}}
+.glow-line{border-bottom:2px solid transparent;border-image:linear-gradient(90deg,hsl(var(--hue) 90% 60%),hsl(calc(var(--hue) + 60) 90% 60%),hsl(var(--hue) 90% 60%)) 1}
+.accent{color:hsl(var(--hue) 90% 62%)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MusicGroup", "@id": "https://l8blo0om.com/#artist", "name": "L8 Blo0om", "alternateName": "L8 Bloom", "url": "https://l8blo0om.com/", "logo": "https://l8blo0om.com/logo.png", "genre": ["Kizomba", "Zouk", "NeoSoul", "Jazz", "Reggaeton", "Pop"], "description": "L8 Blo0om — Lyrical Alchemist. Multilingual original music rooted in Caribbean and African dance culture.", "sameAs": ["https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA"]}, {"@type": "WebSite", "@id": "https://l8blo0om.com/#website", "url": "https://l8blo0om.com/", "name": "L8 Blo0om", "publisher": {"@id": "https://l8blo0om.com/#artist"}}]}</script>
 </head>
@@ -1604,7 +1611,7 @@
 
 <!-- ═══════════ FEATURED VIDEO ═══════════ -->
 
-<div class="use-this-music"><a href="#licensing">Use this music. That&rsquo;s what it&rsquo;s for. &rarr;</a></div>
+<div class="use-this-music"><a href="pitch.html">Use this music. That&rsquo;s what it&rsquo;s for. &rarr;</a></div>
 
 <section class="featured-vid-section">
   <div class="featured-vid-inner">
@@ -1844,11 +1851,12 @@
       </div>
 
       <div class="licensing-cta">
+        <p class="accent" style="font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.9rem;">Music Supervisors &amp; Brands</p>
         <h3>If you're looking for music with character, atmosphere, and range — start here.</h3>
         <p>Browse the catalog, identify tracks of interest, and reach out with project details for licensing inquiries, usage requests, or custom needs.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="#music" class="btn btn-primary">Browse for Licensing</a>
-          <a href="#contact" class="btn">Request a Track</a>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+          <a href="pitch.html" class="btn-glow">See the Sync One-Sheet →</a>
+          <a href="#music" class="btn">Browse for Licensing</a>
         </div>
       </div>
     </div>
