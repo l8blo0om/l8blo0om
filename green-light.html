@@ -4,95 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Green Light — L8 Blo0om</title>
-<meta name="description" content="The song about being fully available to someone who keeps hesitating. Give me a green light or get out of the intersection.">
-<meta property="og:title" content="Green Light">
-<meta property="og:description" content="The song about being fully available to someone who keeps hesitating. Give me a green light or get out of the intersection.">
+<meta name="description" content="Green light, no delay. A song about being fully available to someone who keeps hesitating. Watch, listen, read — L8 Blo0om.">
+<meta property="og:title" content="Green Light — L8 Blo0om">
+<meta property="og:description" content="If you want my attention, it's already yours. Give me a green light, no delay.">
 <meta property="og:image" content="https://img.youtube.com/vi/Wxwozs1XMY4/maxresdefault.jpg">
 <meta property="og:url" content="https://l8blo0om.com/green-light.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
+@property --hue { syntax: '<number>'; inherits: true; initial-value: 130; }
+html { animation: huecycle 22s linear infinite; }
+@keyframes huecycle { to { --hue: 490; } }
 :root {
-  --black: #050508; --deep: #0a0a10; --card: #12121e;
-  --border: rgba(255,255,255,0.07); --text: #f0eee8; --muted: #8888a0; --cyan: #a8d8ea;
+  --black: #050508; --card: #0e0e16; --border: rgba(255,255,255,0.09);
+  --text: #f2f0ea; --muted: #8f8fa6;
+  --accent: hsl(var(--hue), 85%, 62%);
+  --accent-soft: hsl(var(--hue), 85%, 72%);
   --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Outfit', sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--black); color: var(--text); font-family: var(--sans); line-height: 1.7; }
-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; border-bottom: 1px solid var(--border); }
-.nav-brand { text-decoration: none; display: flex; align-items: center; }
-.nav-brand img { height: 40px; width: auto; display: block; }
-.nav-back { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-back:hover { color: var(--cyan); }
-.vid-hero { max-width: 900px; margin: 2rem auto 0; padding: 0 2rem; }
-.vid-frame { position: relative; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-.vid-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.post-hero { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 1.5rem; }
-.post-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.2rem; display: block; }
-.post-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
-.post-subtitle { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--muted); font-weight: 300; margin-bottom: 1.5rem; }
-.post-meta { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-.post-body { max-width: 680px; margin: 0 auto; padding: 1.5rem 2rem 4rem; font-size: 1.05rem; font-weight: 300; }
-.post-body p { margin-bottom: 1.5rem; color: #ccc8e0; }
-.post-body p:first-child { font-size: 1.15rem; color: var(--text); }
-.post-body em { font-style: italic; color: var(--text); }
-.lyrics-block {
-  background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--cyan);
-  border-radius: 0 12px 12px 0; padding: 2rem 2.5rem; margin: 2.5rem 0;
-  font-family: var(--serif); font-size: 1.1rem; font-style: italic; font-weight: 300;
-  color: #d8d4f0; line-height: 1.9; white-space: pre-wrap;
+html, body { background: var(--black); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; z-index: 50; background: linear-gradient(180deg, rgba(5,5,8,0.85), transparent); backdrop-filter: blur(6px); }
+.nav-brand img { height: 34px; display: block; }
+.nav-back { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--accent-soft); }
+
+/* ── STAGE: video loop as full hero, lyrics riding over it ── */
+.stage { position: relative; min-height: 100svh; display: grid; grid-template-columns: 1.15fr 1fr; align-items: stretch; }
+.stage-video { position: relative; overflow: hidden; }
+.stage-video::after { content:''; position:absolute; inset:0; background: linear-gradient(90deg, transparent 55%, var(--black) 99%), linear-gradient(0deg, rgba(5,5,8,0.55), transparent 40%); pointer-events:none; }
+.stage-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.stage-words { position: relative; z-index: 2; padding: 6rem 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+.eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.song-title { font-family: var(--serif); font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+.song-context { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem; max-width: 30ch; }
+.stage-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.btn-glow { background:#0a0a0a; color:#fff; border:none; padding:13px 24px; cursor:pointer; font-family:var(--sans); font-size:0.82rem; font-weight:600; letter-spacing:0.05em; text-decoration:none; display:inline-block; border-radius:4px; box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 22px hsl(var(--hue) 90% 58% / .3); animation:breathe 3s ease-in-out infinite; }
+.btn-glow:hover { background: hsl(var(--hue) 90% 58%); color:#0a0a0a; }
+@keyframes breathe { 0%,100%{box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%),0 0 18px hsl(var(--hue) 90% 58% / .25)} 50%{box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%),0 0 32px hsl(var(--hue) 90% 58% / .5)} }
+.btn-ghost { display:inline-block; padding:13px 22px; border:1px solid var(--border); border-radius:4px; color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:500; letter-spacing:0.05em; transition:border-color .2s,color .2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-soft); }
+
+/* ── LYRICS: the words, big, rhythmic, scroll-revealed ── */
+.lyrics { max-width: 760px; margin: 0 auto; padding: 6rem 2rem 3rem; }
+.lyrics-label { text-align:center; font-size: 0.7rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color: var(--accent); margin-bottom: 3rem; }
+.lblock { margin-bottom: 3.2rem; }
+.ltag { font-size: 0.66rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color: var(--muted); margin-bottom: 1rem; display:block; }
+.lline { font-family: var(--serif); font-size: clamp(1.5rem, 3.4vw, 2.3rem); font-weight: 300; line-height: 1.42; color: #e7e4f2; opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+.lline.in { opacity: 1; transform: none; }
+.lline.shout { font-style: italic; color: var(--accent-soft); }
+.lblock.chorus .lline { font-weight: 400; color: #fff; }
+
+/* ── FOOTER STORY (the essay, demoted below the fold) ── */
+.story-reveal { max-width: 680px; margin: 2rem auto 0; padding: 0 2rem; }
+.story-toggle { width:100%; text-align:left; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1.1rem 1.4rem; color:var(--text); font-family:var(--sans); font-size:0.95rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.story-toggle:hover { border-color: var(--accent); }
+.story-body { display:none; padding: 1.6rem 0.4rem 0; font-weight:300; color:#ccc8e0; }
+.story-body.open { display:block; }
+.story-body p { margin-bottom: 1.2rem; }
+.story-body em { color: var(--text); font-style: italic; }
+
+.foot { max-width: 680px; margin: 3rem auto; padding: 2rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.foot a { color: var(--accent-soft); text-decoration:none; font-size: 0.85rem; letter-spacing: 0.05em; }
+.foot a:hover { text-decoration: underline; }
+.counter { text-align:center; padding: 0 0 2.5rem; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
+
+@media (max-width: 860px) {
+  .stage { grid-template-columns: 1fr; }
+  .stage-video { min-height: 56vh; }
+  .stage-video::after { background: linear-gradient(0deg, var(--black) 2%, transparent 45%); }
+  .stage-words { padding: 2rem 1.6rem 3rem; text-align:center; align-items:center; }
+  .song-context { max-width: none; }
 }
-.lyrics-label { font-family: var(--sans); font-size: 0.68rem; font-style: normal; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; display: block; }
-.share-row { display: flex; gap: 0.8rem; margin-top: 2rem; }
-.share-btn { cursor: pointer; background: var(--card); color: var(--cyan); border: 1px solid var(--cyan); border-radius: 999px; padding: 0.6rem 1.4rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; transition: background 0.2s; }
-.share-btn:hover { background: rgba(168,216,234,0.12); }
-.post-nav { max-width: 680px; margin: 0 auto; padding: 2rem 2rem 4rem; display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--border); }
-.post-nav a { color: var(--cyan); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; max-width: 45%; }
-.post-nav a:hover { text-decoration: underline; }
-@media (max-width: 600px) { nav { padding: 1rem 1.5rem; } .post-hero, .post-body, .vid-hero { padding-left: 1.5rem; padding-right: 1.5rem; } }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Green Light", "description": "The song about being fully available to someone who keeps hesitating. Give me a green light or get out of the intersection.", "image": "https://img.youtube.com/vi/Wxwozs1XMY4/maxresdefault.jpg", "url": "https://l8blo0om.com/green-light.html", "author": {"@type": "Person", "name": "L8 Blo0om", "url": "https://l8blo0om.com/"}, "publisher": {"@id": "https://l8blo0om.com/#artist"}}</script>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-brand"><img src="logo.png" alt="L8 Blo0om"></a>
-  <a href="index.html#stories" class="nav-back">← All Stories</a>
+  <a href="index.html#stories" class="nav-back">← All Songs</a>
 </nav>
-<div class="vid-hero">
-  <div class="vid-frame"><iframe src="https://www.youtube.com/embed/Wxwozs1XMY4?rel=0&modestbranding=1" loading="lazy" allow="encrypted-media" allowfullscreen title="GREEN LIGHT — video loop"></iframe></div>
+
+<!-- STAGE: the loop plays, the title + one line of context ride over it -->
+<section class="stage">
+  <div class="stage-video">
+    <iframe src="https://www.youtube.com/embed/Wxwozs1XMY4?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=Wxwozs1XMY4&playsinline=1&controls=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Green Light — video loop"></iframe>
+  </div>
+  <div class="stage-words">
+    <div class="eyebrow">L8 Blo0om · Video</div>
+    <h1 class="song-title">Green<br>Light</h1>
+    <p class="song-context">No forever, no name, no games. Just — say the word.</p>
+    <div class="stage-actions">
+      <a class="btn-glow" href="pitch.html">♫ License this song</a>
+      <a class="btn-ghost" href="https://www.youtube.com/watch?v=Wxwozs1XMY4" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- LYRICS: the real words, big, revealed on scroll -->
+<section class="lyrics">
+  <div class="lyrics-label">The words</div>
+
+  <div class="lblock">
+    <span class="ltag">—</span>
+    <div class="lline shout">Late Bloom, nah — never too late.</div>
+  </div>
+
+  <div class="lblock">
+    <span class="ltag">Verse</span>
+    <div class="lline">If you want my attention, it's already yours</div>
+    <div class="lline">If you want my love, gotta open those doors</div>
+    <div class="lline">If you want my lips, they can be insistent</div>
+    <div class="lline">And other sweeter things, if you are interested</div>
+  </div>
+
+  <div class="lblock">
+    <span class="ltag">&nbsp;</span>
+    <div class="lline">Don't need forever, don't want a name</div>
+    <div class="lline">But I won't ride while you switch lanes</div>
+    <div class="lline">You bring the cool, I bring the flame</div>
+    <div class="lline">But only if you don't play games</div>
+  </div>
+
+  <div class="lblock chorus">
+    <span class="ltag">Chorus</span>
+    <div class="lline">So give me a green light, no delay</div>
+    <div class="lline">I'll meet you halfway any day</div>
+    <div class="lline">You make the time, I'll make it shine — you lead by design</div>
+    <div class="lline">I want your slow wine, green light, no disguise</div>
+    <div class="lline">Let me see it in your pretty brown eyes</div>
+  </div>
+
+  <div class="lblock">
+    <span class="ltag">Verse</span>
+    <div class="lline">You're full of ideas, full of sparks</div>
+    <div class="lline">But you too busy to get it started</div>
+    <div class="lline">You write your songs, you chase the sky</div>
+    <div class="lline">But leave me hangin', wonderin' why</div>
+  </div>
+
+  <div class="lblock">
+    <span class="ltag">Bridge</span>
+    <div class="lline">I got no shame in wantin' you</div>
+    <div class="lline">But I move best when you move too</div>
+    <div class="lline">I'm open, baby, you have key</div>
+    <div class="lline">But you gotta unlock this energy</div>
+  </div>
+
+  <div class="lblock chorus">
+    <span class="ltag">Out</span>
+    <div class="lline">Green light, don't be late</div>
+    <div class="lline">This kind of motion won't sit and wait</div>
+    <div class="lline">You say the word, I'll bring the goods</div>
+    <div class="lline">Love you down like only I could</div>
+  </div>
+</section>
+
+<!-- STORY: demoted. Only for people who already fell in. -->
+<div class="story-reveal">
+  <button class="story-toggle" onclick="var b=document.getElementById('sb');b.classList.toggle('open');this.querySelector('.chev').textContent=b.classList.contains('open')?'−':'+';">
+    <span>The story behind it</span><span class="chev">+</span>
+  </button>
+  <div class="story-body" id="sb">
+    <p>Green Light is an ultimatum wearing lipstick. It's for the person who's <em>full of ideas, full of sparks</em> — who clearly wants it, keeps circling it, and never actually pulls the trigger.</p>
+    <p>I'm not asking for forever. I'm not even asking for a title. I'm asking for a decision. The offer is generous and the window is not.</p>
+  </div>
 </div>
-<div class="post-hero">
-  <span class="post-tag">English · Video Loop</span>
-  <h1 class="post-title">Green Light</h1>
-  <p class="post-subtitle">(No delay. No disguise. No games.)</p>
-  <div class="post-meta">July 2026 &nbsp;·&nbsp; L8 Blo<span>0</span>om</div>
+
+<div class="foot">
+  <a href="thin-line.html">← Thin Line</a>
+  <a href="index.html#stories">All Songs</a>
+  <a href="maybe-a-maybe.html">Maybe a Maybe →</a>
 </div>
-<div class="post-body">
-<p>This song is an ultimatum wearing lipstick.</p>
-<p>It's for that person who is <em>full of ideas, full of sparks</em> — who clearly wants it, keeps circling it, and never actually pulls the trigger. I'm not asking for forever. I'm not even asking for a title. I'm asking for a decision.</p>
-<div class="lyrics-block"><span class="lyrics-label">from "GREEN LIGHT"</span>So give me a green light, no delay
-I'll meet you halfway any day
-You make the time, I'll make it shine
-you lead by design
-I want your slow wine, Green light, no disguise
-Let me see it in your pretty brown eyes</div>
-<p>The offer is generous and the window is not. That's the whole energy: I'll meet you halfway any day — but I don't idle at intersections.</p>
-<div class="share-row">
-  <button class="share-btn" onclick="navigator.clipboard.writeText(location.href).then(()=>{this.textContent='Link copied ✓';setTimeout(()=>this.textContent='Copy link',1800)})">Copy link</button>
-  <button class="share-btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=440')">Share to Facebook</button>
-</div>
-<a class="license-cta" href="index.html#licensing" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;padding:0.6rem 1.2rem;background:rgba(168,216,234,0.12);border:1px solid var(--cyan);border-radius:999px;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;color:var(--cyan);text-decoration:none;">♫ License this song for your project</a>
-</div>
-<div class="post-nav">
-  <a href="index.html#stories">← All Stories</a>
-  <a href="thin-line.html" style="text-align:right">Thin Line →</a>
-</div>
-<div style="text-align:center;padding:0 0 2rem;font-size:0.7rem;color:#8888a0;letter-spacing:0.08em;" id="visit-counter"></div>
+
+<div class="counter" id="visit-counter"></div>
+
 <script>
+// scroll-reveal lyric lines, staggered
+var lines = document.querySelectorAll('.lline');
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold: 0.6});
+lines.forEach(function(l){ io.observe(l); });
+// visit counter
 (function(){var s=(location.pathname.split('/').pop()||'home').replace('.html','')||'home';
 fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
 var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
 </script>
-<script data-goatcounter="https://l8blo0om.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
