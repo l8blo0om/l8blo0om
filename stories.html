@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories Behind the Music — L8 Blo0om</title>
+<meta name="description" content="Every song comes from somewhere — a moment, a person, a joke, a wound. Step into the world behind the L8 Blo0om catalog.">
+<meta property="og:title" content="Stories Behind the Music — L8 Blo0om">
+<meta property="og:description" content="The world behind the catalog. Watch, listen, read.">
+<meta property="og:image" content="https://l8blo0om.com/logo.png">
+<meta property="og:url" content="https://l8blo0om.com/stories.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@property --hue { syntax: '<number>'; inherits: true; initial-value: 190; }
+html { animation: huecycle 22s linear infinite; }
+@keyframes huecycle { to { --hue: 550; } }
+:root {
+  --black: #050508; --deep: #0a0a10; --card: #0f0f18; --border: rgba(255,255,255,0.08);
+  --text: #f2f0ea; --muted: #8a8aa0;
+  --accent: hsl(var(--hue), 85%, 66%);
+  --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Outfit', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--black); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(5,5,8,0.85); backdrop-filter: blur(10px); z-index: 20; }
+.nav-brand img { height: 36px; display: block; }
+.nav-back { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav-back:hover { color: var(--accent); }
+
+.head { max-width: 900px; margin: 0 auto; padding: 4.5rem 2rem 1rem; text-align: center; }
+.eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.head h1 { font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.1rem; }
+.head p { color: var(--muted); max-width: 54ch; margin: 0 auto; font-size: 1.05rem; }
+
+.group-label { max-width: 1160px; margin: 3.5rem auto 0; padding: 0 2rem; font-family: var(--serif); font-size: 1.5rem; font-style: italic; font-weight: 300; color: var(--accent); }
+
+.grid { max-width: 1160px; margin: 1.2rem auto 0; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.4rem; }
+.card { position: relative; display: block; text-decoration: none; color: var(--text); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--card); aspect-ratio: 3/4; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease, opacity .3s; opacity: 0.82; }
+.card:hover img { transform: scale(1.06); opacity: 1; }
+.card::after { content:''; position:absolute; inset:0; background: linear-gradient(0deg, rgba(5,5,8,0.94) 0%, rgba(5,5,8,0.4) 42%, transparent 70%); }
+.card-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1.4rem; }
+.card-tag { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.card-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; line-height: 1.1; margin-bottom: 0.35rem; }
+.card-sub { font-family: var(--serif); font-style: italic; font-size: 0.98rem; color: #cfcbdf; font-weight: 300; }
+.card-read { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; }
+.card:hover .card-read { opacity: 1; transform: none; }
+
+footer { text-align: center; padding: 4rem 2rem 4rem; margin-top: 3rem; border-top: 1px solid var(--border); }
+footer a { color: var(--accent); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; }
+.counter { text-align:center; padding: 0 0 2.5rem; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
+@media (max-width: 600px) { nav { padding: 1rem 1.5rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="L8 Blo0om"></a>
+  <a href="index.html" class="nav-back">← Home</a>
+</nav>
+
+<div class="head">
+  <div class="eyebrow">The Blog</div>
+  <h1>Stories Behind the Music</h1>
+  <p>Every song comes from somewhere — a moment, a person, a joke, a wound. Step into the world behind the catalog.</p>
+</div>
+
+<!-- ENGLISH -->
+<div class="group-label">In English</div>
+<div class="grid">
+  <a class="card" href="green-light.html">
+    <img src="https://img.youtube.com/vi/Wxwozs1XMY4/hqdefault.jpg" alt="Green Light" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Green Light</div><div class="card-sub">No forever, no name, no games. Say the word.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="thin-line.html">
+    <img src="https://img.youtube.com/vi/UGP2iDy357c/hqdefault.jpg" alt="Thin Line" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Thin Line</div><div class="card-sub">Between genius and madness — and I dance on it.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="maybe-a-maybe.html">
+    <img src="https://img.youtube.com/vi/OdUJ_be119M/hqdefault.jpg" alt="Maybe a Maybe" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Maybe a Maybe</div><div class="card-sub">You're not a yes. And that's the problem.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="useless.html">
+    <img src="https://img.youtube.com/vi/yXjSRpLeZsQ/hqdefault.jpg" alt="Useless" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Useless</div><div class="card-sub">I can't do anything right, but dream.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="groovy-movie.html">
+    <img src="https://img.youtube.com/vi/Q3yCOKzRaq0/hqdefault.jpg" alt="Groovy Movie" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Groovy Movie</div><div class="card-sub">Everything's groovin'. On purpose.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="bananas.html">
+    <img src="https://img.youtube.com/vi/cyLUHY4Kmxk/hqdefault.jpg" alt="Bananas" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">Bananas</div><div class="card-sub">Everybody loves Saturday night.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="all-i-ever-wanted.html">
+    <img src="https://img.youtube.com/vi/mwigvY810TY/hqdefault.jpg" alt="All I Ever Wanted" loading="lazy">
+    <div class="card-body"><div class="card-tag">Video Loop</div><div class="card-title">All I Ever Wanted</div><div class="card-sub">Do a little better than the next man. That's the dream.</div><div class="card-read">Enter →</div></div>
+  </a>
+</div>
+
+<!-- SPANISH -->
+<div class="group-label">En Español</div>
+<div class="grid">
+  <a class="card" href="rompecorazones-flamencos.html">
+    <img src="flamenco-hero.jpg" alt="Rompecorazones Flamencos" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">Rompecorazones Flamencos</div><div class="card-sub">The fire that doesn't ask permission.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="la-diosa-maldita.html">
+    <img src="diosa-maldita.jpg" alt="La Diosa Maldita" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">La Diosa Maldita</div><div class="card-sub">Too much and not enough at the same time.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="enrollada-en-tu-dedo.html">
+    <img src="enrollada.jpg" alt="Enrollada En Tu Dedo" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">Enrollada En Tu Dedo</div><div class="card-sub">Wrapped around your finger — and aware of it.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="solo-nubes.html">
+    <img src="solo-nubes.jpg" alt="Solo Nubes" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">Solo Nubes</div><div class="card-sub">Only clouds. Sometimes nothing is the point.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="lagrimas-estupidas.html">
+    <img src="lagrimas.jpg" alt="Lagrimas Estupidas" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">Lagrimas Estupidas</div><div class="card-sub">Crying over someone who didn't deserve the moisture.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="tu-pastel.html">
+    <img src="tu-pastel.jpg" alt="Tu Pastel" loading="lazy">
+    <div class="card-body"><div class="card-tag">Cásate Conmigo, Beni!</div><div class="card-title">Tu Pastel</div><div class="card-sub">The treat somebody didn't deserve a slice of.</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="me-bloqueaste.html">
+    <img src="me-bloqueaste.jpg" alt="Me Bloqueaste" loading="lazy">
+    <div class="card-body"><div class="card-tag">Cásate Conmigo, Beni!</div><div class="card-title">Me Bloqueaste???</div><div class="card-sub">You did the thing. And then YOU blocked ME?</div><div class="card-read">Enter →</div></div>
+  </a>
+  <a class="card" href="solo-cuerpos.html">
+    <img src="solo-cuerpos.jpg" alt="Solo Cuerpos" loading="lazy">
+    <div class="card-body"><div class="card-tag">On Spotify</div><div class="card-title">Solo Cuerpos</div><div class="card-sub">The arrangement that was supposed to stay physical.</div><div class="card-read">Enter →</div></div>
+  </a>
+</div>
+
+<footer>
+  <a href="index.html">← Back to l8blo0om.com</a>
+</footer>
+<div class="counter" id="visit-counter"></div>
+
+<script>
+(function(){var s='stories';
+fetch('https://api.counterapi.dev/v1/l8blo0om/'+s+'/up').then(function(r){return r.json()}).then(function(d){
+var el=document.getElementById('visit-counter');if(el&&d.count)el.textContent=d.count.toLocaleString()+' visits';}).catch(function(){});})();
+</script>
+</body>
+</html>
