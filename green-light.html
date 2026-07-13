@@ -37,9 +37,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
 .stage-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 .stage-words { position: relative; z-index: 2; padding: 6rem 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
-.eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-.song-title { font-family: var(--serif); font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
-.song-context { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem; max-width: 30ch; }
+.eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+.song-title { font-family: var(--serif); font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+.song-context { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--muted); font-weight: 300; margin-bottom: 1.6rem; max-width: 24ch; }
+
+/* ── scrolling image band (marquee) ── */
+.band { position: relative; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #08080e; padding: 0; }
+.band::before, .band::after { content:''; position:absolute; top:0; bottom:0; width:90px; z-index:2; pointer-events:none; }
+.band::before { left:0; background: linear-gradient(90deg, #08080e, transparent); }
+.band::after { right:0; background: linear-gradient(270deg, #08080e, transparent); }
+.band-track { display: flex; gap: 12px; width: max-content; animation: marquee 32s linear infinite; padding: 14px 6px; }
+.band:hover .band-track { animation-play-state: paused; }
+.band-track img { height: 180px; width: auto; border-radius: 8px; display: block; object-fit: cover; border: 1px solid var(--border); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .stage-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 .btn-glow { background:#0a0a0a; color:#fff; border:none; padding:13px 24px; cursor:pointer; font-family:var(--sans); font-size:0.82rem; font-weight:600; letter-spacing:0.05em; text-decoration:none; display:inline-block; border-radius:4px; box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 22px hsl(var(--hue) 90% 58% / .3); animation:breathe 3s ease-in-out infinite; }
 .btn-glow:hover { background: hsl(var(--hue) 90% 58%); color:#0a0a0a; }
@@ -102,6 +112,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
     </div>
   </div>
 </section>
+
+<!-- BAND: scrolling image strip (stills from the loop; swap for Magnific folder art per song) -->
+<div class="band">
+  <div class="band-track">
+    <img src="frames/green-light-1.jpg" alt="Green Light — still" loading="lazy">
+    <img src="frames/green-light-2.jpg" alt="Green Light — still" loading="lazy">
+    <img src="frames/green-light-3.jpg" alt="Green Light — still" loading="lazy">
+    <!-- duplicate set for seamless loop -->
+    <img src="frames/green-light-1.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="frames/green-light-2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="frames/green-light-3.jpg" alt="" aria-hidden="true" loading="lazy">
+  </div>
+</div>
 
 <!-- LYRICS: the real words, big, revealed on scroll -->
 <section class="lyrics">
