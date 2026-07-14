@@ -5476,3 +5476,2990 @@ Unloving and unkind
 My eyes are windows to my soul,
 but yours are blackholes
 full of nothing.
+
+
+
+
+FEAR OF FLYING
+
+[Instrumental]
+
+[Verse 1]  
+He bought a one-way ticket with coins that smelled of past storms  
+Vowing to never again darken the street where his shadow was born  
+The man at the counter weighed his big bag as if it contained bones  
+And stamped his boarding pass, a destination unknown  
+He stepped aboard like a pirate on a narrow ship, the only hero brave enough to make the trip  
+The cabin lurched into the pale, he told himself that flying was only failing done slow enough to look like magic  
+
+[Chorus]  
+It was never the landing, but the miles of air between the hum of the engine  
+The tilt of the wings, some folks have a fear of flying and would rather die than fly too high  
+They trade the flight for the fall, forgetting that the journey is the gift of it all  
+
+[Verse 2]  
+Her seatbelt felt too snug, too small, the row felt like a bathroom stall  
+And the blanket smelled of strangers, not of right now  
+On the headrest, the actor's mouths moved up and down without a sound  
+While the headphones whispered white noise and the stewardess frowned  
+Every shiver in the fuselage was a worry on his brow  
+Where's the exit? And how do these things fly anyhow?  
+Just beyond the plexiglass, the seduction of the horizon, the breeze  
+But he kept his gaze downcast, his jaw clenched with unease  
+Afraid that looking out might make it harder to breathe, he wished he could just leave  
+
+[Chorus]  
+It was never the landing, but the miles of air between the hum of the engine  
+The tilt of the wings, but some folks have a fear of flying and would rather die than fly too high  
+They trade the flight for the fall, forgoing that the journey is the gift of it all  
+
+[Bridge]  
+His body stayed in the seat, but his mind slipped away  
+To a place without cabin pressure, miles and years away  
+Then out of the blue, he knew what he had to do  
+He sighed a deep sigh and undid his belt  
+Hell, he couldn't help if he felt what he felt  
+The cabin was in uproar when he ran to the door, made a cross before he let out a roar  
+And he jumped  
+
+[Outro]  
+The air struck him like his first breath, first relief and then regret  
+His thoughts fumbled for what was left  
+And there he hung, suspended between the unyielding sky and it  
+And the inevitable ground, growing closer by and by  
+Asked himself, is this freedom or is this the lie?  
+With nothing but the wait and wondering why  
+Why did I?  
+
+[Chorus]  
+It was never the landing, but the miles of air between the hum of the engine  
+The tilt of the wings, some folks have a fear of flying and would rather die than fly too high  
+They trade the flight for the fall, finally feeling that the journey was the gift of it all  
+
+(ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-ooh-
+
+BLACK MOON *
+
+[Verse 1]  
+First heard the story  
+When I was seventeen  
+I had acne and girls' anger  
+I was awkward, afraid of being seen  
+Couldn't face the mirror  
+Or even look in my own eyes  
+I thought love was just for real men  
+Not boys still in disguise  
+
+[Verse 2]  
+Preacher on a soapbox at the depot in the rain  
+Talking about the black moon, said it'll come again every thirty-three months  
+The night sky goes blind, that's a sign of the cycle, boy, can't hide from the tide  
+
+[Chorus]  
+Come back, black moon, come back  
+Can't see when the sky is black  
+Can't tell if the mirror's cracked  
+Or if it's just me staring back  
+
+[Verse 3]  
+I didn't know then that you'd slip back around  
+Thought you were swallowed by the damp and sound  
+Preacher man said you'd rise again  
+But I didn't believe much anyone said back then  
+
+[Verse 4]  
+Two lovers in the door frame  
+Only one was whispering lies  
+My glance held a promise  
+But she averted her eyes  
+Steam on the glass, her reflection blurred good  
+Saw myself so clear but felt misunderstood  
+I gazed toward the heavens as she looked away  
+The moon said in a whisper, boy, don't nothing stay the same  
+
+[Chorus]  
+Come back, black moon, come back  
+Can't see when the sky is black  
+Can't tell if the mirror's cracked  
+Or if it's the moon staring back  
+
+[Bridge]  
+And I understand you don't stay gone  
+Soon you slip back, shifted, the shape moves on  
+Thought I saw myself in a lover's stare  
+But only half of me present, half wasn't ever there  
+Was I always this way and too blind to see  
+Was the shadow the tough guy protecting the lightness in me  
+Or was it the light leading and steering the shadow from wrong  
+Was it me I'd been running from and toward all along  
+
+[Outro]  
+In the blindness of that night, I knew something true  
+The mirror's gaze felt just like the moon staring through  
+Now it's been a minute  
+Since I studied my face  
+Used to check every morning  
+As I passed the same place  
+Count the flaws of black scars, making tally marks on the skin  
+I'd mutter my routine script of fables again  
+But when the
+
+*Incomplete ending. Current draft cuts off after: “But when the”*
+
+CORNERS OF YOUR MIND
+
+[Verse 1]  
+They bloom, it's never too late  
+
+[Verse 2]  
+Seems you've fallen from grace again  
+And without a trace  
+You're gone  
+
+[Pre-Chorus]  
+So I tell you once again  
+
+[Chorus]  
+That if you ever need a friend  
+You're on  
+Just give me a call and let me know what's going on  
+And on a starry night  
+Look within and find  
+Me there for you in the corners of your mind  
+
+[Post-Chorus]  
+Loving you  
+Simply loving you  
+
+[Verse 3]  
+Seems you've gotten off track again  
+But if you want to come back again, I'm here  
+I guess that you forgot again  
+That love like mine does not depend on fear  
+
+[Chorus]  
+Just give me a call, I'll tell you what you want to hear  
+And on a starry night, on a starry night  
+Look within and find, find a dream in me  
+Me there for you in the corners of your mind  
+
+[Bridge]  
+Don't you remember you told me you loved me, baby  
+You said you'd be coming back this way again, baby  
+Baby, baby, baby  
+Oh, baby  
+
+[Outro]  
+I love you  
+I really do  
+Seems you left me behind again  
+I guess that I don't mind again  
+But I'm missing you  
+If only you knew that I'll always be there 'cause I'm not going anywhere  
+Not while I'm missing you  
+Just give me a call and let me tell you how much I'm missing you  
+And on a starry night, on a starry night  
+Look within and find, find and find  
+Me there for you in the corners of your mind  
+Loving you  
+Simply loving you  
+Always loving you  
+Oh, baby
+
+CHOSEN ME
+
+[Intro]  
+Here I stand  
+In your rapture  
+
+[Verse 1]  
+Here I stand  
+In your rapture  
+I'm a changed believer  
+All those unworthy  
+
+[Chorus]  
+You've chosen me  
+You've chosen me  
+
+[Verse 2]  
+You chose me to bask in your presence  
+You chose me to uplift your holy name  
+You chose me to receive countless blessings  
+In spite of my sins and in spite of my shame  
+In spite of my weakness, in spite of my pain  
+Lord, how you chose me  
+And Lord, how I'm changed  
+I once stood alone  
+But then I spoke your name  
+And now  
+
+[Chorus]  
+Here I stand in your rapture  
+Here I stand in your glory  
+
+[Bridge]  
+And I can't believe all those unworthy  
+
+[Chorus]  
+You've chosen me  
+You've chosen me  
+
+[Outro]  
+I once was lonely, but now I'm holy  
+I once was lonely, but now you hold me  
+I once was lonely, but now I'm holy  
+I once was lonely, but then you chose me, showed me that I must choose you  
+Holy, holy, holy, holy  
+Show me your glory  
+Show me your glory  
+Show me your glory  
+Show me your glory  
+Show me your glory  
+Show me your glory  
+Show me your glory  
+Show me your glory
+
+[Repeated “Show me your glory” vamp continues.]
+
+YOU OF ALL PEOPLE
+
+[Verse 1]  
+You of all people  
+Should have known  
+That with all the mistakes I've made  
+And all the things I've blown  
+That you were the one thing that was right  
+That you were the one who kept the darkness of night  
+At bay  
+Tell me what more can I say  
+To you of all people  
+
+[Verse 2]  
+You of all people  
+Should have understood  
+That something so lonely as us  
+Was something so good  
+Well at least to me  
+Tell me why did it have to be  
+
+[Verse 3]  
+You of all people  
+Perhaps you just don't understand  
+How I live for the things you give  
+How your arms around me completed me  
+How much I would have given  
+How much I would have tried  
+Only to learn that we all don't love the same way  
+
+[Verse 4]  
+I imagine what we had could have been forever  
+And I loved that lie  
+And I loved you  
+And I lived that lie  
+And I lived for you  
+
+[Verse 5]  
+You of all people  
+Should be by my side  
+Because this time there's more at stake  
+Than only my pride  
+I have nothing if I don't have you  
+And without you there's not much left to do  
+But cry  
+But how do I say goodbye  
+To you of all people
+
+VSOP
+
+[Intro]  
+Yeah  
+I'm about to go to the whiskey store  
+Pick one right off the top shelf  
+The one with the gold label  
+Mmm-hmm  
+She's mine  
+
+[Verse 1]  
+I've been working all week, boots covered in dust  
+Payday's here and I'm ready to trust  
+This hard to a woman whose age is just right  
+Not some two-dollar pour on a Saturday night  
+
+[Chorus]  
+I'm not staring in a no red solo cup  
+When I get a shot at love, I'm gonna take it straight up  
+No more cheap shots with the future regret  
+I'm holding out for the best I can get  
+
+[Pre-Chorus]  
+Hey, baby  
+Are you a VSOP?  
+
+[Chorus]  
+Cause you're very sexy, open-hearted and pretty to me  
+
+[Bridge]  
+I can't go cheap, my taste too grown  
+You've been sitting on that shelf too long alone  
+It's time to be with me  
+My VSOP  
+
+[Verse 2]  
+Why fear to be?  
+You're like top-shelf bourbon in a small-town bar  
+Aged in old barrels, flown in from afar  
+Not that jug on the counter, plastic cap stir  
+You're smooth, you're strong, and you're more than enough  
+
+[Verse 3]  
+The way you move's got a Tennessee sway  
+And the look in your eyes says, "Boy, don't play"  
+You're the VIP in this honky-tonk crowd  
+And I'll raise my glass up high and proud  
+
+[Pre-Chorus]  
+Hey, baby  
+Are you a VSOP?  
+
+[Chorus]  
+Cause you're looking very sexy, open-hearted and pretty to me  
+
+[Bridge]  
+I can't go cheap, my taste too grown  
+You've been sitting on that shelf too long alone  
+It's time to be with me  
+My VSOP  
+
+[Outro]  
+Hey, baby  
+When you hit my lips, girl, the world slows down  
+Like a sunset drive through a small farm town  
+Every sip's a story and I want each one  
+From the first smooth drop 'til the bottle's done  
+Some folks settle for a quick cheap thrill  
+But that well swilled don't fit my bill  
+If I'm going at all, I'm going top shelf  
+Too strong for most men, got you all to myself  
+Hey, baby  
+Are you a VSOP?  
+It's getting very sassy, open-hearted and pretty to me
+
+LEMONADE
+
+[Verse 1]  
+Life keeps handing me lemons  
+And I wanna make lemonade  
+But life won't give me any fucking sugar or water  
+Lemonade  
+
+[Chorus]  
+Lemonade  
+Lemonade  
+
+[Verse 2]  
+Life keeps handing me lemons  
+And I wanna make lemonade  
+But life won't give me any fucking sugar or water  
+Lemonade  
+
+[Chorus]  
+Lemonade  
+
+[Bridge]  
+Lemonade  
+
+[Verse 3]  
+Life keeps handing me lemons  
+And I wanna make lemonade  
+But life won't give me any fucking sugar or water  
+Lemonade  
+
+[Chorus]  
+Lemonade  
+Lemonade  
+
+[Outro]  
+Lemonade
+
+IN THE ROOM
+
+[Verse 1]  
+I've seen you in the room  
+When the world changed  
+Standing in the light  
+Where the brave ones played  
+Almost touched the sky  
+Felt the stars in your hands  
+And then you pulled away, said it's fine, like it's  
+Just the end of the band  
+
+[Verse 2]  
+But I hear the music still burning in your chest  
+And I know the fire don't die, it just rests  
+You think you're the broken old jazz  
+In the back of the room  
+But I see a masterpiece still waiting to bloom  
+
+[Chorus]  
+We just reached cruising altitude  
+And you're already reaching for the door  
+But there's a whole horizon waiting  
+More than what you've seen before  
+Your best days aren't behind you, love  
+They're here, they're calling your name  
+And what you see is broken  
+I see is worthy of love  
+All the same  
+
+[Verse 3]  
+You say the house wasn't kept  
+So the music moved on  
+But I know the rhythm's still in your bones  
+Still in your songs  
+Men who hide their wounds  
+Never get to heal  
+So let me hold the parts  
+You're scared to feel  
+
+[Verse 4]  
+You talk about the guy who jumps in an ice bath at dawn  
+But I don't need a Picasso CEO to lean on  
+I want the man who's lived through the night  
+Still finds his way back to the light  
+
+[Chorus]  
+We just reached cruising altitude  
+And you're already reaching for the door  
+But there's a whole horizon waiting  
+More than what you've seen before  
+Your best days aren't behind you, love  
+They're here, they're calling your name  
+And what you see is broken  
+I see is worthy of love  
+All the same  
+
+[Outro]  
+It's like we rushed to each other  
+Then you pulled away slow  
+Afraid of the parts of you  
+I already know  
+But I'm not scared of your shadows  
+Not afraid of the dark  
+Cause I've seen the beauty beating  
+In your heart  
+So don't tell me it's fine  
+When the dream's still alive  
+Let's write the next song  
+Let's give it one more try  
+Your best days are here  
+They're not far above  
+And what you see is broken  
+I'll always see as love
+
+ONLY A FOOL
+
+[Verse 1]  
+I was gonna teach you  
+How to cut fruit from the tree of yourself  
+Swing the machete  
+Gently tear back the outside layer  
+Suck the tender evil flesh  
+
+Sweet nectar slowly  
+Starting from the most achingly tentative dribble  
+Then gushing into your mouth  
+Like a present from God himself to you  
+
+[Chorus]  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer  
+Of such dreams  
+
+[Verse 2]  
+I was gonna write a song  
+About the way your nose wrinkles with every kiss  
+And sing that song at the Grammys  
+Full orchestra, huge choir  
+And sparkling satin robe  
+
+I was gonna learn  
+How to make croissants in the nude  
+For you  
+
+[Chorus]  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer  
+Of such dreams  
+
+[Verse 3]  
+I was gonna let you put your feet on the dash  
+In my summer-sticky Buick  
+Absentmindedly  
+Wrapping my curls around your suntanned fingers  
+While I drove us to LA  
+
+I was gonna sing every song  
+On every station the radio offered  
+You kissing me often  
+Sometimes to shut me up  
+But mostly to taste my tongue  
+
+[Chorus]  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer  
+Of such dreams  
+
+[Bridge]  
+I was gonna read you stories in bed  
+Your head tucked in my lap  
+My lilting musical voice like a wind chime  
+Through your dreamless subconscious  
+
+The last sound you heard  
+As you slowly curtained  
+Your sweet eyes  
+
+I was gonna write fairy tales about you  
+To tell children  
+Maybe  
+Even our own  
+
+[Chorus]  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer  
+Of such dreams  
+
+[Outro]  
+I was gonna kiss you in a certain way  
+That can only happen under a starlit sky  
+Warm dewy grass beneath your bare feet  
+My hopes lit by moonlight  
+Crickets singing that song I wrote about you  
+And performed at the Grammys  
+
+I was gonna love you  
+With every moment  
+There was to love  
+
+[Chorus]  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer of such dreams  
+Only a fool robs a dreamer  
+Of such dreams
+
+CAN YOU HANDLE THE TRUTH?
+
+[Verse 1]  
+Let me let you in on a secret  
+No one ever truly knows you, ever  
+You are a multi-dimensionally saturated being full of peace and beauty and joy and violence and anger and hurt and sadness  
+You are anointed but disappointed  
+You've been tested and now you have manifested a self-destructive lack of sympathy towards your own blessed soul  
+It seems you lost control of the narrative  
+But I'm here to call you back to yourself  
+Do not waste your life  
+You want to know what's up?  
+You can't pour from an empty cup  
+On some days words burn like apologies, like prayers, like songs, like songs, like ohms, like love, like love, like love  
+I hear you keep saying  
+You wish someone would love you  
+You want the truth?  
+You've got to love you  
+No one is gonna do it for you better than you  
+But can you handle the truth?  
+
+[Verse 2]  
+You are a multi-dimensionally saturated being full of peace and beauty and joy and violence and anger and hurt and sadness  
+You are anointed but disappointed  
+You've been tested and now you have manifested a self-destructive lack of sympathy towards your own blessed soul  
+It seems you lost control of the narrative  
+But I'm here to call you back to yourself  
+Do not waste your life  
+You want to know what's up?  
+You can't pour from an empty cup  
+On some days words burn like apologies, like prayers, like songs, like songs, like ohms, like love, like love, like love  
+I hear you keep saying  
+You wish someone would love you  
+You want the truth?  
+You have got to love you  
+No one is gonna do it for you better than you  
+But can you handle the truth?  
+
+[Outro]  
+But can you handle the truth?
+
+WHITE AMERICAN GIRL
+
+[Verse 1]  
+She was born where the sidewalks had no cracks  
+Trader Joe's and yoga and organic snacks  
+Couldn't even see the other side of the tracks  
+Never had to ask what the neighborhood lacks  
+
+Says she doesn't notice anybody's race  
+Eleven bridesmaids, eleven matching faces  
+Swears everybody starts from the same place  
+Calls herself blessed  
+Never questions grace  
+
+[Pre-Chorus]  
+She's a good girl  
+Ask anyone  
+She means so well  
+Look what she's done  
+
+[Chorus]  
+White American girl  
+Whole wide world  
+From one little window  
+White American girl  
+Pearls and curls  
+She don't know what she don't know  
+
+Oh, what a beautiful view  
+When the view looks just like you  
+White American girl  
+
+[Verse 2]  
+Mama said racism was ugly and loud  
+Bad words, white hoods, the wrong kind of crowd  
+So she learned colorblind and she learned it proud  
+If she never says the word  
+Then it don't count  
+
+Maria's illegal but she's like family  
+Christmas cash and hand-me-downs from the pantry  
+Been inside her house since 1993  
+Only funny little thing  
+Maria's not Maria, see  
+
+[Pre-Chorus]  
+She's a good girl  
+Ask anyone  
+She means so well  
+Look what she's done  
+
+[Chorus]  
+White American girl  
+Whole wide world  
+From one little window  
+White American girl  
+Pearls and curls  
+She don't know what she don't know  
+
+Oh, what a beautiful view  
+When the view looks just like you  
+White American girl  
+
+[Verse 3]  
+Put a black square up and she called that brave  
+Left it on her page for half a day  
+Read three little slides, learned what not to say  
+Then her daddy called  
+And she voted anyway  
+
+Clutched her purse when the elevator stopped  
+Smiled real wide when a Black man walked  
+Told herself she wasn't having that thought  
+Watched the numbers fall  
+And prayed he'd get off  
+
+[Bridge]  
+One  
+Two  
+Three  
+Don't look at me  
+
+Four  
+Five  
+Six  
+I coexist  
+
+Seven  
+Eight  
+Nine  
+We're all one kind  
+
+Ten  
+Eleven  
+Colorblind  
+
+[Chorus]  
+White American girl  
+Whole wide world  
+From one little window  
+White American girl  
+Pearls and curls  
+She don't know what she don't know  
+
+Oh, what a beautiful view  
+When the view looks just like you  
+White American girl  
+
+[Outro]  
+She says love is love  
+And all lives matter  
+Sips something skinny  
+While the whole world shatters  
+
+She's a good girl  
+Ask anyone  
+
+White American girl
+
+GO WITH THE FLOW
+
+[Verse 1]  
+Welcome home, baby. How was your day?  
+Let me love you down before you even say.  
+Your dinner's cold, but I am hot and waiting...  
+Come and take a bite while the mood is right  
+Please be willing, boy, I know you’re able  
+To just take off your clothes and lay down on the table.  
+(sigh)  
+I bet your gonna’ like what I’ve got in store  
+So baby don’t say no.  
+Cuz you know you’ve got to go with the flow.  
+
+[Chorus]  
+Yes you gotta, yes you gotta, gotta gotta go with the flow.  
+Yes you gotta, yes you gotta, gotta gotta go with the flow.  
+
+[Verse 2]  
+You can scream my name, baby I don’t care.  
+I like the face you make when I touch you there  
+(moan)  
+Wet your lips and baby take a taste of my chocolate thigh  
+It will get you high.  
+Now let me flip the script and get on top.  
+If you won’t stop then I won’t stop.  
+I know that most girls say to take it slow,  
+No stress and no flex baby, just go with the flow.  
+
+[Chorus]  
+Yes you gotta, yes you gotta, gotta gotta go with the flow.  
+Yes you gotta, yes you gotta, gotta gotta go with the flow.  
+
+[Bridge]  
+Baby bump and grind till I’m satisfied.  
+Baby bump and grind until I’m satisfied.  
+
+[Verse 3]  
+You’re a very freaky boy, but one I won’t take home to mother  
+But when you swing with me you know what’s up.  
+You’re not my love, you’re just my lover.  
+So don’t step to me thinking that you can,  
+Cuz you know my man will never understand.  
+And if you don’t know now you know, ho.  
+don't let the door hit  
+Adios  
+go with the flow.  
+
+...as in, go, please, now.  
+Okay.  
+buh bye.
+
+IMPOSSIBLE IS POSSIBLE
+
+So they say you wanna be with me?  
+So they tell me you’ve got a fantasy  
+Let’s take tonight to live our dreams  
+Rip life wide open at the seams  
+We got the ends  
+We got the means  
+To do the impossible tonight  
+
+Impossible is possible  
+
+You know it’s waiting on another plane  
+To rain down  
+Rain down  
+Once we call it by name  
+
+We’ve got all night to live our dreams  
+Champagne starlight and limousines  
+Live life and find out what it means  
+To do the impossible tonight  
+
+Impossible is possible  
+
+Let’s take tonight to live our dreams  
+Rip life wide open at the seams  
+We got the ends  
+We got the means  
+To do the impossible tonight  
+
+Impossible is possible  
+
+To me  
+
+To me  
+
+To me  
+
+To me  
+
+To me  
+
+To me, to me  
+
+To me  
+
+To me  
+
+To me  
+
+To me
+
+A DICK PIC AIN'T NO DRAFT PICK
+
+[Intro – Spoken]
+
+Nah...  
+Nah, nah...
+
+A dick pic  
+ain't no draft pick.
+
+You don't get recruited  
+'cause you emailed the equipment list.
+
+This ain't fantasy football.
+
+This is franchise building.
+
+Let's see your scouting report.
+
+────────────────────
+
+[Verse 1]
+
+A dick pic ain't no draft pick, quit actin' like that's magic  
+Blind-side slide deck, tragic, all flash, no tactics  
+Highlight hype package padded with performative habits  
+I draft for dynasties, baby, not a weekend practice
+
+You send a screenshot, I scout stewardship, status  
+Character charts, composure, carry, courage, habits  
+Clocked your combine, but kindness wasn't in the packet  
+Ran a forty in flirting, then fumbled every classic
+
+You flex physique, I inspect foundation  
+Pressure reveals true player valuation  
+Everybody MVP in imagination  
+I'm recruiting for a lifetime occupation
+
+────────────────────
+
+[Pre-Chorus]
+
+Big talk.  
+No ball.  
+You flex.  
+No follow.
+
+You chasing highlights.
+
+I'm building Hall of Famers.
+
+────────────────────
+
+[Chorus]
+
+A dick pic ain't no draft pick  
+That don't make you first round just 'cause you flashed it  
+Hall of Fame heart?  
+Lemme see the habits  
+Championship love don't start with gymnastics
+
+A dick pic ain't no draft pick  
+You ain't making my bracket  
+You showing anatomy  
+I'm checking who's captain
+
+A dick pic ain't no draft pick  
+Bro, that's just traffic  
+I'm building a kingdom...  
+You applying for access.
+
+────────────────────
+
+[Verse 2]
+
+This ain't fantasy football, this family formation  
+Legacy league with long-term intentions  
+Salary cap on shallow attention  
+I'm drafting forever, not a four-night vacation
+
+Everybody swear they franchise material  
+Till life get physical, finances critical  
+Storms hit, scores dip, spirit get spiritual  
+Then we finally learn what's original
+
+Need a locker-room leader, not loud receivers  
+Somebody build peace instead of chasing fever  
+Who stay solid when the scoreboard leave ya?  
+Who still laugh when the cameras don't see ya?
+
+Who protects home when the headlines vanish?  
+Who keeps promises after the cameras vanish?  
+Who chooses truth when the truth gets tragic?  
+Who builds trust instead of chasing magic?
+
+────────────────────
+
+[Bridge – Spoken]
+
+Hold up...
+
+There's a difference...
+
+between a date...
+
+a mate...
+
+and a dude who just likes to masturbate.
+
+One wants a moment.
+
+One wants a memory.
+
+One wants a partner.
+
+One just wants material.
+
+I'm not judging.
+
+I'm scouting.
+
+────────────────────
+
+[Breakdown]
+
+My fetish?
+
+Integrity.
+
+My turn-ons?
+
+Stewardship.
+
+Legacy.
+
+Everybody got chemistry.
+
+I'm asking...
+
+Can you build with me?
+
+────────────────────
+
+[Final Chorus]
+
+A dick pic ain't no draft pick  
+Quit acting like that earned you a jacket  
+Every team's got talent  
+Few build the fabric
+
+A dick pic ain't no draft pick  
+I don't need another habit  
+Need somebody whose character  
+Matches the package
+
+A dick pic ain't no draft pick  
+That ain't Hall of Fame status  
+I don't draft potential...
+
+I draft proven practice.
+
+────────────────────
+
+[Outro – Spoken]
+
+A date...
+
+is somebody you enjoy.
+
+A mate...
+
+is somebody you build with.
+
+And a dude  
+who just likes to masturbate?
+
+Well...
+
+that's a spectator.
+
+I'm looking...
+
+for a teammate.
+
+APPARENTLY, I'M UNSPRUNG
+
+[Verse 1]
+
+Yeah, I get it, the feeling lands fast  
+Chemistry sparks, but it never lasts  
+You felt my pull, that's regular motion  
+I need more than the first explosion  
+
+I move different, my pace runs higher  
+Curiosity feeds my fire  
+You talk slick, I reed minds  
+First souls align, then we talk timelines  
+
+You mistook access for leverage  
+I'm selective with who I cherish  
+I smile, I watch, I let it breathe  
+If it rushes, it tells me what it means  
+
+[Hook]
+
+Apparently, I'm unsprung  
+Life curated, mind high-strung  
+Apparently, I'm unsprung  
+Need depth before I come undone  
+Apparently, I'm unsprung  
+You got rhythm... where's the drum?  
+Ho hum...  
+Yeah, apparently, I'm unsprung  
+
+[Verse 2]
+
+This energy? Familiar terrain  
+Happens every week, no strain  
+Reciprocity costs a little more here  
+Bring presence, wit, and something sincere  
+
+I already know attraction runs  
+I'm asking who survives when the wanting's done  
+Conversation like a long-form thought  
+Show me what your money never bought  
+
+I let silence speak, it never lies  
+I clock patience through your eyes  
+If I linger, there's something more  
+If I pause...  
+I'm keeping score  
+
+[Pre-Hook]
+
+Your body's loud.  
+Your résumé's thin.  
+You trying to skip  
+To where I begin.  
+
+[Hook]
+
+Apparently, I'm unsprung  
+Life curated, mind high-strung  
+Apparently, I'm unsprung  
+Need depth before I come undone  
+Apparently, I'm unsprung  
+You got rhythm... where's the drum?  
+Ho hum...  
+Yeah, apparently, I'm unsprung  
+
+[Bridge]
+
+My fetish?  
+Integrity.  
+
+My turn-ons?  
+Stewardship.  
+Legacy.  
+
+Everybody wants chemistry.  
+
+I'm looking  
+for architecture.  
+
+Can you build  
+a life...  
+
+or just  
+a moment?  
+
+[Final Hook]
+
+Apparently, I'm unsprung  
+Maybe that's where love comes from  
+Apparently, I'm unsprung  
+Slow bloom underneath the sun  
+Apparently, I'm unsprung  
+Mind first...  
+Then the fun.  
+Ho hum...  
+Yeah, apparently, I'm unsprung  
+
+[Outro]
+
+No shade.  
+
+Just calibration.  
+
+I'm tuned  
+to another station.  
+
+Meet me there...  
+
+Or fly free.  
+
+For real, Felicia...  
+
+Fly free.  
+
+And let me be.
+
+NOW SERVING #22
+
+[Verse 1]
+
+Take a number, have a seat, we’ll be with you shortly  
+Everybody swears they’re built a little differently  
+Walk in like they already own the company  
+Sir… that’s not how interviews work.
+
+You got confidence, that’s cute, but where’s the history?  
+Every résumé is just hypothetical victory.  
+Everybody thinks that somehow they’ll be picking me.  
+Security… next, please.
+
+[Pre-Chorus]
+
+You keep applying for a job that’s already changed.  
+You brought desire. I asked for range.
+
+[Chorus]
+
+My pussy is off the table.  
+Application wasn’t stable.  
+Everybody swears they’re one of one.  
+Everybody thinks they’re already hired.
+
+My pussy is off the table.  
+Now let’s see if you’re actually able.  
+Bring your passport, bring your brain.  
+If you can’t build, don’t board my plane.
+
+Next applicant.
+
+⸻
+
+[Verse 2]
+
+Now serving number twenty-two.  
+Tell me what exactly can you do?
+
+Can you solve a problem?  
+Can you run a business?  
+Can you hold a conversation longer than a fitness reel?
+
+Do you speak any languages?
+
+“No.”
+
+International travel… that’s a no.
+
+Will you challenge me?  
+Can you teach me something?  
+Can you build a future instead of just discussing…
+
+…my body?
+
+Thank you for applying.
+
+Next.
+
+⸻
+
+[Pre-Chorus]
+
+Every man believes he’s the chosen one.  
+Every interview starts exactly the same.
+
+⸻
+
+[Chorus]
+
+My pussy is off the table.  
+Need a little more than “damn, you’re beautiful.”  
+Everybody wants admission free.  
+Nobody read the qualifications.
+
+My pussy is off the table.  
+You can still impress me if you’re capable.  
+Vision. Discipline. Curiosity.  
+Those are the things that get next to me.
+
+Next applicant.
+
+⸻
+
+[Bridge – Spoken over the beat]
+
+“Tell me about yourself.”
+
+“…I work out.”
+
+“Great.”
+
+“What else?”
+
+“… ”
+
+“Thank you.”
+
+“We’ll keep your application on file.”
+
+“Next.”
+
+⸻
+
+[Final Chorus]
+
+My pussy is off the table.  
+Promotion isn’t based on labels.  
+You thought chemistry was all I’d need.
+
+I’m building empires.
+
+You’re applying for entry-level access.
+
+Next applicant. 🎤
+
+I DON’T BUY SHOES ONLINE
+
+[Intro – Talking]  
+Hmmm...  
+You ever order some shit online, and it show up and is just totally wrong?  
+Exactly my point.  
+
+I’m not using personal days, not booking flights,  
+Not Payin’ sitters, And look I’m tryna be polite.  
+Not Missin’ work for dick that might  
+not impress?  
+banking on a maybe? Nah baby, skip that mess  
+
+[CHORUS]  
+You don’t buy shoes online — so why would I?  
+You got wide-ass feet and weird-ass pride  
+They look good in the pics,  
+though the heel looks high  
+but in person?  
+Owwwww! These shits too tight,  
+I need to try my kicks on in the store  
+Because cute don’t mean real no more  
+
+Sure, you look Fine in my phone, might be weird in my house  
+Bro, What if your your brain can't keep up with my mouth?  
+What if your breath bounce off my face wrong?  
+What if you don't like getting dissed in a song hahaha [laughs]  
+You look sexy through a screen, no doubt  
+But that don’t mean you’ll mesh with what I’m about,  
+your ass in my face might stress me out,  
+My pheromones might knock yours the fuck out  
+So fuck around and find out  
+
+[CHORUS]  
+You don’t buy shoes online — so why would I?  
+You got wide-ass feet and weird-ass pride  
+You look good in the pics, though the heel looks high  
+but in person?  
+Owwwww! These Jays don’t fit me nice.  
+I need to try my kicks on in the store  
+Because cute don’t mean real no more  
+
+Nah, I don’t book hotels for a maybe  
+How long you been driving door dick, baby?  
+You said don’t sweat it, I’ll come to you  
+Now you asking for proof like this a job interview  
+Bro… my alchemy don’t do pre-orders  
+You vibe or you don’t — I ain’t your algorithm’s daughter  
+
+You need guarantees? I sell none  
+My last situationship? If there's no trace, there wasn't one  
+I’m grown — I don’t chase I attract  
+You need to get into my mind if you want me on my back  
+Or from the back, hmmm [laughs]  
+
+You don’t buy shoes online — so why would I?  
+You got wide-ass feet and weird-ass pride  
+They look good in the pics, though the heel looks high  
+but in person?  
+
+Owwwww! Them shits don’t feel right  
+
+I need to try my kicks on in the store  
+Because cute don’t mean shit no mo  
+
+[Bridge – Semi-spoken, whisper vocal]  
+Pro tip, my guy, you made a rookie mistake.  
+Don’t send your dick in the shot with your face  
+dumbass Now you can’t lie in court too loud  
+That’s Evidence Exhibit A: “pathetic & proud”  
+Zoom and enhance — that’s your legacy now  
+
+[Final Hook – Glitch the Loop]  
+
+dumbass  
+(Female voice)  
+If it’s real, we’ll flow  
+If it’s not, you go  
+I’m not a gamble, boo boo  
+I’m the whole motherfucking show  
+Now you know,  
+yo-  
+slick,  
+blow [sax outro]
+
+GOLDEN GODDESS
+
+[Verse 1]
+
+Good morning, golden goddess, the garden is growing awake,  
+Window light wandering warm through the willow and lace.  
+Scars settled softly beneath every smile that you make,  
+Still you pour sweetness like spring from a weathered old vase.  
+
+Ash turned to amber, your laughter remembers the flame,  
+Rain carved the river that carried your kindness this way.  
+Every small kindness keeps calling your beautiful name,  
+Morning keeps opening petals that never gave way.  
+
+[Chorus]
+
+You deserve a love that honors your past,  
+Protects your present, and dreams with your future.  
+You deserve a love that honors your past,  
+Protects your present, and dreams with your future.  
+
+[Verse 2]
+
+Someone will study the language that lives in your eyes,  
+Patient as moonlight that settles on rivers at night.  
+Learning the map where your hope and your history rise,  
+Holding each chapter with wonder instead of advice.  
+
+Slow as the seasons, your story keeps stitching the sky,  
+Threads into constellations only the faithful can trace.  
+Love is a lantern that listens before asking why,  
+Lighting each beautiful room that you’ve carried with grace.  
+
+[Chorus]
+
+You deserve a love that honors your past,  
+Protects your present, and dreams with your future.  
+You deserve a love that honors your past,  
+Protects your present, and dreams with your future.  
+
+[Outro]
+
+Good morning, beautiful.  
+The sun already knows your name.  
+Bloom the way blossoms bloom,  
+Without permission.  
+Without apology.  
+Just because morning came.
+
+SOMETIMES THE ONE YOU LOVE
+
+[Verse 1]
+
+Slow shoes, soul bruised, I sweep through the doorway,  
+Dust drifts, breath shifts, daylight dies to doorway gray.  
+Keys chime, knees tighten, heartbeat hums, don't go away,  
+One space, one trace, whole home's singing yesterday.  
+
+[Verse 2]
+
+Lip bite, lamp light, little clicks count the night,  
+Clock knocks, thoughts flock, shadows sharpen every sight.  
+Cold cup, curled up, curtains catch the porch-light white,  
+One hush, one crush, every silence feels like flight.  
+
+[Chorus]
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+[Verse 3]
+
+Still smile, still style, still your name warms my tongue,  
+Still grin sneaks in where a thousand songs are sung.  
+Still hands, still plans, still I'd cross the world for one,  
+Still dawn, still drawn, still I'd stay till day was done.  
+
+[Verse 4]
+
+Love stays, blood stays, even after branches break,  
+Root deep, dreams keep drinking from the same old lake.  
+Soft skin, sharp spin, every tremor leaves a wake,  
+One ache, heart shakes, every promise starts to quake.  
+
+[Bridge]
+
+Kid eyes, wind cries, looking where the shoes should be,  
+Door frame, floor grain, every room remembers me.  
+Safe then, safe when? Questions bloom like broken trees,  
+Stay here, don't disappear... that's the prayer beneath the plea.  
+
+[Final Chorus]
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.  
+
+Sometimes the one you love  
+Is not someone you trust.
+
+LES GRENOUILLES
+
+[Intro]
+
+Les grenouilles…  
+Écoute-les…  
+
+Toute cette vie  
+pour des oreilles  
+qui savent encore écouter.  
+
+⸻
+
+[Verse 1]
+
+La rouille déroule les rêves tranquilles.  
+Le cœur verrouillé devient immobile.  
+Les peurs se débrouillent, les jours s’embrouillent.  
+Puis l’âme s’oublie sous la même rouille.  
+
+Outside the window…  
+
+Les grenouilles.  
+Toujours les grenouilles.  
+
+Elles chantent  
+comme si demain  
+était déjà vivant.  
+
+⸻
+
+[Pre]
+
+Tu crois  
+que les murs  
+te gardent entier.  
+
+Ils gardent surtout  
+la rouille.  
+
+⸻
+
+[Chorus]
+
+Ne deviens pas gris.  
+Ne laisse pas la rouille.  
+
+Respire encore.  
+Aime encore.  
+
+Le soleil n’entre jamais  
+dans une maison  
+qui n’ouvre plus ses volets.  
+
+Viens…  
+
+Le monde t’attend encore.  
+
+⸻
+
+[Verse 2]
+
+La graisse protège les roues fragiles.  
+Le vent fait tourner les vieux mécanismes.  
+Le cœur qui voyage refuse l’exil.  
+Tout ce qui respire refuse l’immobile.  
+
+Moi…  
+
+J’entends des symphonies  
+dans les grenouilles.  
+
+Toi…  
+
+Tu cherches seulement  
+le silence.  
+
+⸻
+
+[Bridge]
+
+On m’a dit:  
+
+“Protège ton cœur.”  
+
+Alors j’ai demandé:  
+
+“Contre quoi?”  
+
+Contre la pluie?  
+
+Les baisers?  
+
+Les départs?  
+
+Les printemps?  
+
+Si le métal  
+a peur de la pluie…  
+
+il finit  
+par aimer  
+
+la rouille.  
+
+⸻
+
+[Final Chorus]
+
+Ne deviens pas gris.  
+Ne laisse pas la rouille.  
+
+Respire encore.  
+Ose encore.  
+
+L’amour laisse parfois  
+des cicatrices.  
+
+L’immobilité…  
+
+laisse de la rouille.  
+
+Alors ouvre les fenêtres.  
+
+Écoute.  
+
+Les grenouilles  
+n’ont jamais arrêté  
+de chanter.
+
+IF YOU COULD SEE WHAT I SEE
+
+[Verse 1]
+
+Your sun’s coming up, my sun’s going down.  
+China is waking while a temple bell sounds.  
+Dusk on my skyline, stars on my street,  
+Somehow your morning awakens my sleep.  
+
+Maybe I already know you’re as amazing as you think you are.  
+Maybe every little dream you’ve dared is ready to start.  
+Maybe every open window knew to open to your heart.  
+Maybe you’ve been making miracles before you called them art.  
+
+[Pre-Chorus]
+
+You keep looking through your own eyes.  
+I keep looking through mine.  
+One day we’ll laugh  
+At  
+Once  
+upon a time  
+
+[Chorus]
+
+If you could see what I see…  
+If you could see what I see…  
+Oh baby, if you could see what I see…  
+You’d get why you’ve got me.  
+
+[Verse 2]
+
+Your sky lightens to gold while mine dies indigo blue.  
+You’re meeting  
+And greeting,  
+I may be dreaming of you.  
+
+You keep chasing wonder, wonder keeps chasing you.  
+You smile at a skyline, and it can’t help but smile too.  
+Every little picture says more than words can do.  
+You are ready  
+
+And  
+the world is waiting to see what you can do  
+
+[Pre-Chorus]
+
+You can count the shmoney, honey.  
+I can count the stars.  
+Every mile keeps proving  
+That you are…  
+Not dreaming it  
+You’re living it daddy.  
+Yay!  
+
+[Chorus]
+
+If you could see what I see…  
+If you could see what I see…  
+Oh baby, if you could see what I see…  
+You’d get why you’ve got me.  
+
+[Bridge]
+
+Different clocks.  
+Same moon.  
+
+Different roads.  
+Same tune.  
+
+Different day.  
+Same team.  
+
+Different worlds  
+Same dream  
+
+[Chorus]
+
+If you could see what I see…  
+If you could see what I see…  
+Oh baby, if you could see what I see…  
+You’d get why you’ve got me.  
+
+[Outro – Spoken]
+
+Good morning, papi  
+Ni how  
+I hope you crush your day
+
+PERMACULTURA
+
+[Intro – Hablado]
+
+¿Ya conocés
+
+el concepto
+
+de la permacultura?
+
+Porque…
+
+eso fue
+
+lo primero
+
+que pensé
+
+cuando te conocí.
+
+⸻
+
+[Verso 1]
+
+No vine
+
+a arrancarte flores.
+
+Vine
+
+a conocer tu tierra.
+
+A descubrir
+
+qué semillas dormían
+
+esperando
+
+la lluvia correcta.
+
+No te quise cambiar.
+
+Quise entender
+
+cómo crecías
+
+antes de llegar yo.
+
+Con una mano
+
+tocando el suelo,
+
+la otra
+
+abierta hacia vos.
+
+⸻
+
+[Pre-Coro]
+
+Porque el amor
+
+no conquista.
+
+Observa.
+
+Escucha.
+
+Espera.
+
+Y recién entonces…
+
+siembra.
+
+⸻
+
+[Coro]
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Donde lo tuyo
+
+haga crecer lo mío.
+
+Donde lo mío
+
+encuentre sol en vos.
+
+Menos conquista…
+
+más convivencia.
+
+Más bosque…
+
+menos desierto.
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Que locura!
+
+⸻
+
+[Verso 2]
+
+Los tomates
+
+buscan la albahaca.
+
+Las flores
+
+llaman a las abejas.
+
+El maíz
+
+levanta al poroto.
+
+El poroto
+
+alimenta la tierra.
+
+La calabaza
+
+abraza las raíces
+
+para que el sol
+
+no las olvide.
+
+Nadie florece
+
+solo.
+
+Hasta el bosque
+
+aprendió eso
+
+mucho antes
+
+que nosotros.
+
+⸻
+
+[Pre-Coro]
+
+Nada compite.
+
+Todo conversa.
+
+Hasta el viento
+
+aprende
+
+los nombres
+
+de las hojas.
+
+⸻
+
+[Coro]
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Donde lo tuyo
+
+haga crecer lo mío.
+
+Donde lo mío
+
+encuentre sol en vos.
+
+Menos conquista…
+
+más convivencia.
+
+Más bosque…
+
+menos desierto.
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Que locura!
+
+⸻
+
+[Puente]
+
+Los árboles viejos
+
+guardan agua
+
+para los nuevos.
+
+Bajo la tierra
+
+las raíces
+
+comparten caminos
+
+que nadie ve.
+
+Las hojas caen…
+
+y vuelven
+
+hechas alimento.
+
+Nada se pierde.
+
+Todo encuentra
+
+otra forma
+
+de dar vida.
+
+Quizás
+
+el amor
+
+siempre supo
+
+lo que el bosque
+
+venía diciendo.
+
+⸻
+
+[Break]
+
+Más abejas…
+
+menos alambrados.
+
+Más sombra…
+
+menos prisa.
+
+Más nosotros…
+
+menos ego.
+
+⸻
+
+[Coro Final]
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Que tus frutos
+
+alimenten los míos.
+
+Que mis ramas
+
+te regalen sombra.
+
+Que aprendamos
+
+del río,
+
+del bosque,
+
+de la tierra.
+
+Porque el amor
+
+cuando está vivo…
+
+cultiva.
+
+Restaura.
+
+Comparte.
+
+Y vuelve.
+
+Hagamos una cultura…
+
+de la permacultura.
+
+Que locura!
+
+⸻
+
+[Outro – Suave]
+
+Si algún día
+
+me preguntan
+
+qué significa amar…
+
+no voy a hablar
+
+de mariposas.
+
+Voy a hablar
+
+de tomates,
+
+de abejas,
+
+de raíces,
+
+de la lluvia…
+
+y de dos personas
+
+que decidieron
+
+crecer
+
+como crece
+
+un bosque.
+
+Juntas.
+
+Que locura!
+
+INTEREST COMPOUNDING
+
+[Verse 1]
+
+Everybody loves a sunrise, nobody sat through the soaking rain,  
+Back porch, black coffee, busted notebook, blue-black ballpoint stain,  
+Planting peach pits in a patch of hardpan clay, still whispering my name,  
+Now every little buried heartbeat’s breaking branches through the pain.
+
+Every slammed door made a floorboard under boots that wouldn’t break,  
+Every cracked dream turned cream in the churn, sweet butter from the shake,  
+Every “maybe later” marinated into something I could make,  
+Now the harvest hums so heavy even heaven has to wait.
+
+[Chorus]
+
+When I win my first Grammy, when I lift my first book award,  
+I’ll thank all the doubters, the haters, the naysayers first, my Lord.  
+Y’all kept my interest compounding while I kept pounding every board,  
+Y’all kept my interest compounding while I kept pounding every board.
+
+When I win my first Grammy, when I lift my first book award,  
+I’ll thank all the doubters, the haters, the naysayers first, my Lord.  
+Every “no” grew another zero nobody could afford,  
+My interest keeps compounding… watch the scoreboard.
+
+⸻
+
+[Verse 2]
+
+Funny how the fruit gets sweeter after frost bites every vine,  
+Funny how the river glitters after dragging every pine,  
+Funny how the flour finds a feast after kneading into time,  
+Now the loaf comes laughing from the oven, warm enough to shine.
+
+Shelf by shelf, another spine, another song, another sign,  
+Ink became an orchard, every sentence hanging ripe on every line,  
+People only count the blossoms when they’re standing in the light,  
+Roots have always done their richest work where nobody could find.
+
+⸻
+
+[Chorus]
+
+When I win my first Grammy, when I lift my first book award,  
+I’ll thank all the doubters, the haters, the naysayers first, my Lord.  
+Y’all kept my interest compounding while I kept pounding every board,  
+Y’all kept my interest compounding while I kept pounding every board.
+
+When I win my first Grammy, when I lift my first book award,  
+I’ll thank all the doubters, the haters, the naysayers first, my Lord.  
+Every “no” grew another zero nobody could afford,  
+My interest keeps compounding… watch the scoreboard.
+
+⸻
+
+[Outro]
+
+Raise a glass to every closed gate.  
+Every cold shoulder.  
+Every unanswered call.  
+Turns out the bank was open the whole time.  
+And my interest…  
+just kept compounding. 🌱🏆
+
+PLAYTHING **
+
+[Verse 1]  
+And if you want it, let me tell you that you got it, baby  
+It's right here waiting for you  
+And don't you ever worry about it going nowhere, baby  
+I'm gonna save it for you  
+And if you ever find a moment just to put me on  
+I know you won't regret it  
+I know a thousand and one ways that I can turn you on  
+And boy you won’t forget it  
+
+My body is your plaything, my body is your plaything  
+So come along and play my thing  
+
+My body is your plaything, my body is your plaything  
+Baby  
+
+My body is your plaything, my body is your plaything  
+So come along and play my thing  
+
+My body is your plaything, my body is your plaything  
+Baby  
+
+My body is your plaything, my body is your plaything  
+So come along and play my thing  
+
+My body is your plaything, my body is your plaything  
+Baby  
+
+And when you get it, boy, you're really gonna get it  
+I'm gonna keep you humming  
+And once you have it, guarantee you'll never leave it, baby  
+I'm gonna keep you coming  
+And if the vibes that you're feeling ever turn you out  
+Just sweat it out  
+I am so certain that my care's gonna turn you out  
+I'd even bet it for you  
+
+[Repeated hook continues.]
+
+**Catalogue flag:** garbled lyrics / needs verification before clean final.
+
+MAGIC V1
+
+[Verse 1]  
+My spirit  
+Opened the moment you came in my life  
+I never knew that I had wings  
+Until you taught my soul to fly  
+
+[Chorus]  
+Because I have found a love  
+Unlike any I've ever had before  
+And you opened up my eyes and so much more  
+And you offered me the key to every door  
+And with you I never know just what's in store  
+But I know it's gonna be magic  
+
+[Verse 2]  
+And in the morning  
+I watch the sunrise in your eyes  
+Your light eclipses the light of dawn  
+With you each day brings new surprise  
+
+[Chorus]  
+Because I have found a love  
+Unlike any I've ever had before  
+And you opened up my eyes and so much more  
+And you offered me the key to every door  
+And with you I never know just what's in store  
+But I know it's gonna be magic  
+
+[Verse 3]  
+And in the evening  
+I kiss you softly as you sleep  
+I cannot wait till you wake again  
+I pray for every dream you keep  
+
+[Chorus]  
+And you opened up my heart and so much more  
+And you offered me the key to every door  
+And with you I never know just what's in store  
+But I know it's gonna be magic  
+Because I have found a love  
+Unlike any I've ever had before  
+You are what I've been dreaming for  
+(Late bloom it's never too late)
+
+MAGIC V2
+
+[Verse 1]
+
+My spirit  
+Opened the moment you came in my life,  
+So small, so sudden, all wonder and light,  
+I never knew I had wings  
+Until you taught my soul to fly.
+
+BIG SPOON
+
+[Verse 1]
+
+Come be my big spoon.  
+Is it too soon?  
+
+Come put your heartbeat  
+here in my room.  
+
+You don't have to tell me  
+what all of this means.  
+
+You don't have to fit me  
+inside all your dreams.  
+
+Your five-year plan.  
+Your ten-year scheme.  
+
+Your maniacal map  
+of the man you should be.  
+
+Maybe I'm nowhere  
+you thought you would go.  
+
+Come be my big spoon.  
+
+You don't have to know.  
+
+[Pre-Chorus]
+
+You know how to dance.  
+
+So dance.  
+
+You know how to listen  
+with more than your ears.  
+
+Come here.  
+
+[Chorus]
+
+Dance with me.  
+
+Not for me.  
+
+Feel where I am  
+and let that move your feet.  
+
+Dance with me.  
+
+Stay with me.  
+
+You don't have to lead  
+every moment beautifully.  
+
+If I move,  
+you move.  
+
+If you breathe,  
+I breathe.  
+
+There are two people here, baby.  
+
+Come dance with me.  
+
+[Verse 2]
+
+You don't need a soundtrack.  
+I can hear you breathe.  
+
+Don't give me the version  
+you think I want to see.  
+
+I know you can turn.  
+I know you can lead.  
+
+I know all the beautiful things  
+you can do with your feet.  
+
+But can you stand still  
+when I pull you near?  
+
+Can you feel me change  
+and change with me here?  
+
+Can you stop wondering  
+if you're doing it right?  
+
+And let me be with you  
+for one little night?  
+
+[Pre-Chorus]
+
+You know how to dance.  
+
+So dance.  
+
+You already know  
+how two bodies speak.  
+
+Come here.  
+
+[Chorus]
+
+Dance with me.  
+
+Not for me.  
+
+Feel where I am  
+and let that move your feet.  
+
+Dance with me.  
+
+Stay with me.  
+
+You don't have to lead  
+every moment beautifully.  
+
+If I move,  
+you move.  
+
+If you breathe,  
+I breathe.  
+
+There are two people here, baby.  
+
+Come dance with me.  
+
+[Bridge]
+
+Maybe you open my eyes.  
+
+Maybe I focus yours.  
+
+Maybe you find  
+all the windows.  
+
+Maybe I notice  
+the doors.  
+
+Maybe you don't need  
+to know what comes next.  
+
+Maybe I don't need  
+a name for this yet.  
+
+Maybe right now  
+is allowed to be right.  
+
+Maybe you can hold me  
+
+and sleep here tonight.  
+
+[Break]
+
+Come be my big spoon.  
+
+Is it too soon?  
+
+[laughs]  
+
+Okay.  
+
+Then come here  
+when it isn't.  
+
+[Final Chorus]
+
+Dance with me.  
+
+Not for me.  
+
+You don't have to prove  
+what I already see.  
+
+Dance with me.  
+
+Stay with me.  
+
+Let me move you  
+and you can move me.  
+
+If I turn,  
+you turn.  
+
+If you need,  
+I breathe.  
+
+There are two people here, baby.  
+
+You and me.  
+
+You know how to dance.  
+
+So dance  
+
+with me.  
+
+[Outro]
+
+Come be my big spoon.  
+
+Is it too soon?  
+
+You don't have to answer.  
+
+Just...  
+
+don't forget  
+
+there's room.
+
+DANCE WITH ME, DADDY
+
+[Verse 1]
+
+Come catch my count in the crowd, cut around, let the bass make room,  
+Bring all your boom-ba-ba-boom, let it bloom, let it bruise, let it croon,  
+I hear seven little drums in your blood making love to the moon,  
+Everybody calls it chaos, I just choose which rhythm to move to.
+
+I’ve been dancing to the drum since my feet first figured out floor,  
+Find the one beneath the one, hear the hum underneath the uproar,  
+Catch the break before it breaks, take the space, make a shape, give me more,  
+You got polyrhythms, pretty boy, plenty people get lost in the score.
+
+But I can clock your cross-step, quick-check, left-right, slip of the shoe,  
+Feel the drag in your diagonal, angle my ankle, make room for you,  
+You don’t have to count me down, Daddy, I already caught your cue,  
+I don’t need you less complicated.
+
+I need a rhythm  
+complicated enough  
+for two.
+
+[Chorus]
+
+Dance with me, Daddy.  
+Not for me.
+
+Dance with me, Daddy.  
+Come toward me.
+
+You lead.  
+I’ll follow.
+
+I move.  
+You see.
+
+Dance with me, Daddy.
+
+Dance  
+with  
+me.
+
+[Post-Chorus]
+
+Boom-ba-da-boom.  
+I hear you.
+
+Boom-ba-da-boom.  
+Come near me.
+
+Boom-ba-da-boom.  
+There you are.
+
+Baby…
+
+there you are.
+
+[Verse 2]
+
+Don’t give me the step-step, chest-check, best bet, practiced routine,  
+Don’t give me the slow grind, showtime, whole line you learned from a screen,  
+I can read every breath in your body before you decide what it means,  
+Feel the frame go faint, weight change, eighth count crack at the seam.
+
+If my left foot aches, shift weight, make space, find another way through,  
+If my balance breaks, bend low, move slow, let the movement be new,  
+Catch my center, counter-enter, let the turn tell the truth when I do,  
+Don’t correct me back to choreography.
+
+Make choreography  
+out of what  
+my body can do.
+
+Nine surgeries later, I’m still a fucking dancer, are you?  
+I know broken doesn’t mean still, I know rhythm can reroute the route,  
+I know arms can make an arch where a spine can’t quite carry one through,  
+Dance is making something beautiful
+
+with the bodies  
+that came to the room.
+
+[Chorus]
+
+Dance with me, Daddy.  
+Not for me.
+
+Dance with me, Daddy.  
+Come toward me.
+
+You lead.  
+I’ll follow.
+
+I move.  
+You see.
+
+Dance with me, Daddy.
+
+Dance  
+with  
+me.
+
+[Post-Chorus]
+
+Boom-ba-da-boom.  
+I hear you.
+
+Boom-ba-da-boom.  
+Come near me.
+
+Boom-ba-da-boom.  
+There you are.
+
+Baby…
+
+there you are.
+
+[Verse 3]
+
+You see doors in my walls, hidden halls, little calls I was walking beyond,  
+You say carousel, six, one little thing, then the whole fucking picture is gone,  
+I see heat in the handle, rain on the landing, the ripple that follows the pond,  
+You give direction to dreams in my head, I give dimension to where they might run.
+
+That’s a lead, that’s a read, that’s a need meeting need in the middle of motion,  
+That’s a hand, that’s a hip, that’s a shift, that’s a listening body in ocean,  
+That’s a press, that’s release, that’s the peace in the piece when we quit keeping score,  
+That’s the floor finding feet finding beat finding bodies finding one beat more.
+
+Don’t drag.  
+Don’t prove.  
+Don’t pose.  
+Don’t perform your devotion.
+
+Give me shoulder, give me center, give me tension with intention in motion,  
+Feel where I am in the instant, resist the persistent impulse to force it,  
+I’ll feel where you are, catch the arc, mark the dark, let the distance distort it.
+
+Baby…
+
+that’s locomotion.
+
+[Chorus]
+
+Dance with me, Daddy.  
+Not for me.
+
+Dance with me, Daddy.  
+Come toward me.
+
+You lead.  
+I’ll follow.
+
+I move.  
+You see.
+
+Dance with me, Daddy.
+
+Dance  
+with  
+me.
+
+[Post-Chorus]
+
+Boom-ba-da-boom.  
+I found you.
+
+Boom-ba-da-boom.  
+You found me.
+
+Boom-ba-da-boom.  
+Don’t count it.
+
+Baby…
+
+just breathe.
+
+[Bridge]
+
+Maybe I don’t fit  
+the five-year plan.
+
+Maybe I fuck up  
+the ten-year scam.
+
+Maybe your maniacal map  
+of the perfect man
+
+never left room  
+for my open hand.
+
+That’s okay.
+
+Plans change.
+
+Weight shifts.
+
+Feet land.
+
+You know this.
+
+You teach this.
+
+So take my hand.
+
+[Final Chorus]
+
+Dance with me, Daddy.  
+Not for me.
+
+Dance with me, Daddy.  
+Stay on me.
+
+You lead.  
+I’ll follow.
+
+I move.  
+You read.
+
+Dance with me, Daddy.
+
+Dance  
+with  
+me.
+
+Dance with me, Daddy.  
+Don’t show me.
+
+Dance with me, Daddy.  
+Just know me.
+
+I hear every drum  
+in your beautiful crazy.
+
+Pick one.
+
+Come close.
+
+Come hold me.
+
+[Outro]
+
+Catch my count.
+
+Miss it.
+
+Find it.
+
+Come through.
+
+[soft laugh]
+
+Baby…
+
+I’ve danced  
+to stranger rhythms  
+than you.
+
+Boom-ba-da-boom.
+
+There you are.
+
+VIP STATUS REVOKED
+
+[Intro – Hyped, Playful]  
+Ayo, ayo, ayo, step back.  
+Yeah, yeah, yeah, yeah.  
+You ain’t on the list no more.  
+VIP status— revoked.  
+Back to gen pop papi. Sorry.  
+Uh!
+
+⸻
+
+[Verse 1 – Talk-Rap, Bouncer Energy]  
+Theres a guard dog at my gates of grace,  
+Velvet rope swingin’ while they scanned your face.  
+You had a wristband, secret handshake, VIP embrace,  
+But had to clear this space. cuz your vibe went south, from sweet to sour,  
+I gave you champagne, skyline view,  
+But your manners? Nah, they ain’t come through.  
+Out the friend zone, i upgraded you,  
+Now it’s back to gen pop—enjoy that queue.
+
+[Hook – Chanty, Crowd Energy]  
+VIP to gen pop, wristband snipped.  
+VIP to gen pop, wristband snipped.  
+VIP to gen pop, you slipped now you can’t sip  
+VIP to gen pop, back to basic.
+
+⸻
+
+[Verse 2 – Sarcastic Swagger]  
+Bottle service, but you spilled the tea,  
+Club Temple got standards, baby, not for free.  
+I’m the bouncer, the pastor, security chief,  
+Holy ground, velvet ropes, gold teeth.  
+Had the keys to the kingdom, whole penthouse suite,  
+But you wildin’ like you lost the beat.  
+We ain’t doin’ that, nah, not tonight,  
+Back to gen pop, outta my sight.
+
+⸻
+
+[Bridge – Minimal Beat, Whispered]  
+Wristband snip.  
+Velvet rope drop.  
+You ain’t VIP no more pop.  
+papi. Can’t you see?  
+You’re not up and coming  
+You’re a used to be. With an expiry. So  
+Watch me point to the door, uh.  
+Point to the floor, uh.  
+Take that L and mop.  
+Yeah. Lap it up bitch.
+
+[Hook – Crowd Call]  
+
+VIP to gen pop, wristband snipped.  
+VIP to gen pop, wristband snipped.  
+VIP to gen pop, you slipped now you can’t sip  
+VIP to gen pop, back to basic.
+
+Yo, when you’re done. Wash out that bucket, clean the mop and put them in the storage closet. Thanks.
+
+Snip snip (VIP—> GEN POP)
+
+I'M THE PARTY
+
+[Instrumental]
+
+[Verse 1]  
+I'm the only person who can dance in here  
+So move aside  
+And let my body speak for everybody  
+I'm the only person who can groove in here  
+So pump the DJ  
+I'm the party  
+(Oh yeah)  
+
+[Chorus]  
+See the people moving on the dance floor  
+Trying to catch the heat  
+Trying to feel complete  
+I see them all that I want to see  
+So move aside and make room for me  
+You can dance, you can dance, you can dance, you can dance  
+You can dance, you can dance, I don't mean to call you out  
+You can dance, you can dance, you can dance, you can dance  
+You can dance, you can dance, I don't mean to call you out  
+But guess what this song's about  
+
+[Chorus]  
+I'm the only person who can dance in here  
+So baby move aside  
+And let my body speak for everybody  
+I'm the only person who can groove in here  
+So pump the DJ  
+I'm the party  
+(Oh yeah)  
+
+[Verse 2]  
+I notice people checking me  
+Girls wanna dance like me  
+Guys wanna dance with me  
+Step right up now fellas if you dare  
+Then move your body everywhere  
+Feel a little more, just a little more  
+Can you give me more, baby give me more  
+Just a little more, I know you got more  
+Well I think you've got it now  
+I just had to show you how  
+
+[Chorus]  
+I'm the only person who can dance in here  
+So let me move aside  
+And let your body speak for everybody  
+I'm the only person who can groove in here  
+So pump the DJ  
+This is a party  
+(Oh yeah)  
+(Oh yeah)  
+(Oh yeah)  
+(Oh yeah)
+
+HOLLER
+
+[Verse 1]  
+Baby you ain't got no money and you barely got a job  
+You lost the last two ones you had but you claim that it wasn't your fault  
+I wonder who gon' get the blame when you're standing there alone  
+Cause darling I hate to name names but it ain't nobody's fault but your own  
+
+[Chorus]  
+You're a fly guy but your debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Don't you get it? Won't let it affect my credit  
+You're a fly guy but you debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Holler at me when you get it together  
+
+[Verse 2]  
+Baby you lost your free tuition to the local community school  
+You never made it into class cause you couldn't get your ass off the bed before two  
+Ain't nothing going on but the rent and even that's overdue  
+So until you stop failing, I got to be failing, there's nothing left for me to do  
+
+[Chorus]  
+You're a fly guy but your debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Don't you get it? Won't let it affect my credit  
+You're a fly guy but you debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Holler at me when you get it together  
+
+[Bridge]  
+When we first started kicking it baby there was nothing better  
+We was real close knit, we was tight like a sweater  
+You made my dry ass life seem like there was nothing wetter  
+Bumping off our conversations, long calls and love letters  
+365 days and we're still on this couch  
+A year gone by, ain't nothing moved but your mouth  
+now I'm sick of you all up in my grill asking me to marry  
+Jocking me like Janet or at least Mariah Carey  
+You talk about forever but you ain't got it together  
+And the thought of carrying you for life is just scary  
+
+[Chorus]  
+You're a fly guy but your debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Don't you get it? Won't let it affect my credit  
+You're a fly guy but you debt's high  
+No not my guy, I gotta say bye bye  
+You're my baby but you're lazy  
+Holler at me when you get it together  
+
+[Outro]  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(bye. bye)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(bye bye)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(bye)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(bye bye)  
+(ooh-yeah)  
+(ooh-yeah)  
+(beat it)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(kick rocks)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)  
+(ooh-yeah)
+
+GLASS AND STEEL
+
+[Intro – Chugging riff, double-kick drums]  
+[Whispered]  
+Rust… steel… broken glass…  
+This land don’t break, it bites back fast.
+
+⸻
+
+[Verse 1]  
+Cracked glass glimmers in the city night,  
+Beauty in the scars, baptized in fight.  
+Ninety miles an hour, traffic’s tight,  
+Engines roar like wolves under neon light.  
+Detroit bleeds fire through a rusted vein,  
+Motown saints singing through the pain.
+
+⸻
+
+[Pre-Chorus]  
+Winter cuts like a razor’s edge,  
+Great Lakes thunder, ice on the ledge.
+
+⸻
+
+[Chorus – Anthemic, headbang-ready]  
+Glass and steel, we rise and fall,  
+From the U.P. wild to the Riverwall.  
+Steel in our hearts, fire in our hands,  
+Michigan forged by broken lands.
+
+⸻
+
+[Verse 2]  
+Flint’s dark water, Saginaw storms,  
+Copper veins where the earth was torn.  
+Traverse cherries in the summer haze,  
+Ann Arbor rebels light the blaze.  
+Pontiac echoes in the factory halls,  
+Mackinac stands where the wild wind calls.
+
+⸻
+
+[Pre-Chorus]  
+Winter cuts like a razor’s edge,  
+Great Lakes thunder, ice on the ledge.
+
+⸻
+
+[Chorus – Growled harmonies]  
+Glass and steel, we rise and fall,  
+From the U.P. wild to the Riverwall.  
+Steel in our hearts, fire in our hands,  
+Michigan forged by broken lands.
+
+⸻
+
+[Bridge – Thrash tempo]  
+Shadows crawl where the skyline bends,  
+Smoke and steel where the highway ends.  
+Every scar is a battle cry,  
+Under black ice, we survive.
+
+⸻
+
+[Solo – Lightning-fast shred]
+
+⸻
+
+[Final Chorus – Half-time, massive]  
+Glass and steel, we rise and fall,  
+From the U.P. wild to the Riverwall.  
+Steel in our hearts, fire in our hands,  
+Michigan forged by broken lands.  
+Detroit roars, hear the hunter’s call,  
+Broken glass crowns us all.
+
+FLATLANDS BLUES
+
+[Verse 1]  
+Took a wrong turn off I-75,  
+Now I’m stuck where the gray skies never die.  
+Cornfields stretch ‘til the end of time,  
+Billboards preachin’ “Jesus Saves” in neon signs.
+
+⸻
+
+[Pre-Chorus]  
+Every mile’s got that déjà vu,  
+Another gas station, nothing new.
+
+⸻
+
+[Chorus]  
+Oh-hi-oh, where the grass won’t grow,  
+Where the winters bite and the rivers overflow.  
+Flatland heart with a restless soul,  
+I’m counting every line on this two-lane road.
+
+⸻
+
+[Verse 2]  
+Cleveland rocks, yeah, I’ve heard the song,  
+But the Rock Hall walls feel tired and wrong.  
+Columbus dreams of being L.A. west,  
+But it’s just more strip malls, fast food nests.
+
+⸻
+
+[Pre-Chorus]  
+Every sign says “You’re almost there,”  
+But you’re not, you’re stuck in Ohio air.
+
+⸻
+
+[Chorus]  
+Oh-hi-oh, where the grass won’t grow,  
+Where the winters bite and the rivers overflow.  
+Flatland heart with a restless soul,  
+I’m counting every line on this two-lane road.
+
+⸻
+
+[Bridge]  
+Buckeye dreams and football cheers,  
+Rust Belt ghosts been crying for years.  
+It’s not your fault, but I gotta say,  
+I’ll take the scenic route the other way.
+
+⸻
+
+[Final Chorus]  
+Oh-hi-oh, where the grass won’t grow,  
+Where the sky stays gray and the time moves slow.  
+Flatland heart with a restless soul,  
+I’m leaving this state on cruise control.
