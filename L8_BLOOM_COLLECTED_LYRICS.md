@@ -8569,3 +8569,77 @@ You're getting for free
 But no matter what
 You have to feed the cow
 Or live with what's left of the carcass now
+
+
+FLY, BABY
+
+[Chorus]
+Fly, baby.
+Fly, baby.
+The wind knows
+exactly what to do.
+Fly, baby.
+Fly, baby.
+Sometimes faith
+looks just like falling through.
+Fly away.
+Fly away.
+
+
+CAN YOU DIG IT, SAM
+
+[Intro – spoken sample vibe]
+(pitched like an old-school soul sample)
+"Hercules! Hercules! …look at that man go!"
+
+[Band kicks in – wah guitar, bass strut, tight drums]
+
+[Hook – call & response]
+Who's the man who pull up when your whole tire flat? (Sam!)
+Who got the tools in the back like a mobile combat? (Sam!)
+Who don't talk, just act, no delay, no gap? (Sam!)
+Yeah, he slide through clean — can you dig that, Sam?
+
+[Verse 1]
+I was stuck roadside, hazard lights blinkin' slow
+Sun beat down, nowhere left to go
+Then I hit one name — didn't think twice
+Next thing I know, headlights cut through the night
+
+Truck roll up like a scene in a flick
+Hop out calm, already on it, real quick
+Tire iron flash, compressor in hand
+I said, "Hold up… who is this man?"
+
+[Hook]
+Who's the man who show up when you call real fast? (Sam!)
+Who don't need applause, just gets it done, that's that? (Sam!)
+No cape, no mask, just a real-life plan (Sam!)
+Yeah, he built like that — can you dig it, Sam?
+
+[Bridge – breakdown groove]
+No romance, no games, keep it solid, keep it true
+Just a stand-up human doing what he do
+Respect on the name, let me say it real plain
+Some folks talk big — he fix things
+
+[Spelling section – rhythmic, percussive]
+S — Show up, no hesitation
+A — Always ready, no negotiation
+M — Man of action, no narration
+That's Sam — certified, no exaggeration
+
+[Verse 2]
+Air in the tire, problem handled clean
+No fuss, no scene, just a quiet routine
+He don't linger long, just a nod and a "you good?"
+Then he back in the truck like a hero should
+
+[Final Hook – bigger, horns in]
+Who's the man with the plan when the day go left? (Sam!)
+Who bring calm to the chaos, nothing extra, just depth? (Sam!)
+If you ever in a jam, better know who to spam (Sam!)
+Yeah, the name ring bells — can you dig it, Sam?
+
+[Outro – spoken over groove]
+"Hercules… I told you. That man right there."
