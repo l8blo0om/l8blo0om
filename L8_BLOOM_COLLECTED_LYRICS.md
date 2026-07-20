@@ -8463,3 +8463,72 @@ Oh-hi-oh, where the grass won’t grow,
 Where the sky stays gray and the time moves slow.  
 Flatland heart with a restless soul,  
 I’m leaving this state on cruise control.
+
+
+FLORAISON TARDIVE
+
+[Verse 1]
+Tu m'as dit cinq heures, j'ai cru rêver
+j'étais encore floue, entre soie et café
+Ma lingerie noire, voilée, presque rien
+La lumière rasait mes reins
+T'as frappé, t'étais déjà feu
+Nattes serrées, regard soyeux
+Il est venu chez moi comme un prix à réclamer
+On s'est glissés sous l'eau sans même parler
+Savon sur peau, souffles enchaînés
+Il est venu une fois, m'a dit qu'il reviendrait
+Et il est revenu—dur, sans prévenir
+Mais trop vite encore, regard à fuir
+Un peu perdu, presque attendrissant
+Lui deux, moi zéro—fin du temps
+
+[Chorus]
+Y'a une brosse à dents dans le tiroir, ta place dans mon lit, c'est tous les soirs
+Y'a un chargeur près de ton côté et mes jouets vibrés bien planqués
+Je dis pas que j'te veux tout le temps… mais je dis pas que non
+J'me demande même pourquoi je m'attache à un mec qui m'a même pas fait jouir
+Comment dirais-je… "mindfuck," en Francis ? Sapiosexuelle.
+
+[Verse 2]
+Tu ressembles à un mythe ancien
+Quelqu'un qu'on adore, qu'on touche à peine
+Beau et brillant, toujours trop loin
+Tu bouges comme un mythe, mais tu vibres comme un piège
+
+[Chorus]
+Y'a une brosse à dents dans le tiroir, ta place dans mon lit, c'est tous les soirs
+Y'a un chargeur près de ton côté et mes jouets vibrés bien planqués
+Je dis pas que j'te veux tout le temps… mais je dis pas que non
+J'me demande même pourquoi je m'attache à un mec qui m'a même pas fait jouir
+Comment dirais-je… "mindfuck," en Francis ? Sapiosexuelle.
+
+[Verse 3]
+On est distraits, toujours pressés
+À courir nos rêves, à fuir l'arrêt
+Mais quand t'es là, le temps se tord
+Je te veux vivant, je te veux fort
+
+[Chorus]
+Y'a une brosse à dents dans le tiroir, ta place dans mon lit, c'est tous les soirs
+Y'a un chargeur près de ton côté et mes jouets vibrés bien planqués
+Je dis pas que j'te veux tout le temps… mais je dis pas que non
+J'me demande même pourquoi je m'attache à un mec qui m'a même pas fait jouir
+Comment dirais-je… "mindfuck," en Francis ? Sapiosexuelle.
+
+[Bridge]
+D'accord, t'as peut-être l'égo d'un homme trop petit—
+un complexe façon Napoléon, des silences en guise de couronne
+Tu veux qu'on t'adore sans te dévoiler
+Comme si j'avais jamais dompté des dieux d'or dans des corps glacés
+Je veux pas tout—juste quelqu'un qui sait
+
+[Chorus]
+Y'a une brosse à dents dans le tiroir, ta place dans mon lit, c'est tous les soirs
+Y'a un chargeur près de ton côté et mes jouets vibrés bien planqués
+Je dis pas que j'te veux tout le temps… mais je dis pas que non
+J'me demande même pourquoi je m'attache à un mec qui m'a même pas fait jouir
+Comment dirais-je… "mindfuck," en Francis ? Sapiosexuelle.
+
+[Outro]
+Viens, Moisès—je peux même t'appeler "Daddy" encore… si tu veux.
