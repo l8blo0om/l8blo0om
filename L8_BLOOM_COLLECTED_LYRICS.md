@@ -8643,3 +8643,140 @@ Yeah, the name ring bells — can you dig it, Sam?
 
 [Outro – spoken over groove]
 "Hercules… I told you. That man right there."
+
+
+PETRA'S
+
+Petra's
+It's the kind of dirty dive that never sees the light of day, ​
+Where most bands make a lot of noise without too much to say. ​
+The Gen Z bartender is a nymph, Apollo's hipster muse, ​
+Pouring her sob stories out for free, filling glasses with yesterday's news. ​
+Holding a hand towel, she picks up a jar, ​
+And serves the band’s girlfriends who laugh at the bar, ​
+They take groupie selfies; they’re used to this scene. ​
+I'm just a plus-one, a shadow, unseen. ​
+I'm here to see you find your old way to shine. ​
+Cheap beer is on special, only I'm drinking wine.
+As voices bleed crimson, the spotlight just beams​
+A mean old moon with a cold, distant gleam ​
+Washing you out to a monochrome white, ​
+A hot open flame, burning too bright, ​
+Your howling eyes steadily piercing the night. ​
+Someone dims the lights. It’s late but the crowd is thin. ​
+Chairs scrape, glasses clink, the sonic echoes spin. ​
+The mic feeds back, the amp picks up, and then your voice drifts in, ​
+Raw and free. The set begins.
+You wear a mask, but it fits you well,​
+As the intro swells and you cast your spell. ​
+The man behind it lies inside it, secrets buried deep​
+In songs spun from the threads of lies you murmur in sleep. ​
+The strings slip through your fingers, making moments you can't keep. ​
+Your brown eyes reveal what your cool hands conceal, ​
+Your voice bends the light until the truth feels surreal. ​
+It's safer for you there, hidden behind your mask, ​
+Where no one sees your reaction to the questions they ask. ​
+The girlfriends sip pints and talk over the band. ​
+Obscured in shadow, I linger, listening, wine glass in my hand.
+This place holds you close, kind of like an old friend, ​
+The kind that don’t question, just let you pretend. ​
+You play for the air, for the big, empty space, ​
+For an audience where half doesn't notice your face. ​
+Your set is a tribute to loves you now resent, ​
+Receipts chronicling wasted years and energy you’ve spent ​
+On the ones whose silhouettes shape the songs you invent. ​
+
+Madelaine and Maria still wait by the moon, ​
+Broken and wrinkled and far gone far too soon. ​
+Twenty years late for their poetic rendezvous, ​
+But the only one here now is me, watching you. ​
+​
+The stage lights are electric, but they don’t make you glow, ​
+Your voice rasps with a pain still fresh, recalled from long ago. ​
+You pull the strings with mastery. Tonight they all ring false. ​
+The tension spaced between the notes belies a faded spark. ​
+The tune holds warnings you'd never confess, ​
+Each half-note a balm for wounds you won't address. ​
+Your sadness fill the ether, note by note, chord by chord, ​
+Somberly plucking heartbroken strings tied to a hollow board.​
+The sun is long burnt out, my love, the moon is an old lie, ​
+The stars you chase are scattered - and your songs won't tell us why ​
+You lived more peacefully in their choruses than in real life, ​
+Crooning lovesongs to ghosts who still fill up your nights ​
+While your once-vivid mask ages under spotlight.
+Is this how you love—through lyrics and sound? ​
+Do you only experience it with an audience around? ​
+I’m unsure if love is something you feel, ​
+Or something you have to write down to make real. ​
+"Does anyone see me?" your gaze seems to plead. ​
+Yes, I think I see you—is that what you need? ​
+The stage is your pulpit, where your sins are absolved, ​
+And some of your sadness appears to dissolve​
+The Holy Ghost slips sandlike through the cracks in your song, ​
+The lyrics all ache from the weight of past wrongs. ​
+The years you can't reclaim now a temple of psalms. ​
+Does the Spirit in your music bless what's alive, ​
+Or does It only mourn pieces of peace left behind? ​
+A requiem for all the good things left behind that have died. ​
+​
+The show rolls on, the practiced set, ​
+Regret like a Capo on a fret​
+You make it look simple, every note, every line, ​
+The minor ninth, the borrowed time. ​
+Your guitar is your armor as you raise a battle cry​
+You're a cowboy with a rocket, punching holes in the sky, ​
+​
+But the man behind the mask knows the old tricks are falling flat. ​
+
+Your shooting stardom never reached the sun along its fractured path. ​
+The air hangs thick with smokey stories of your past,​
+The spotlight can't chase away the dark.​
+It only shines light on the cracks in your heart.
+I sit in audience, humming along​
+Knowing it’s stupid to wish for a song.​
+(Though you make so many; it wouldn't take long.) ​
+I’mI waiting to witness myself through your eyes, ​
+Even if it must be done in disguise. ​
+I wait for a song that feels like a mirror, ​
+Even if it's broken, fractured, or unclear. ​
+Now the girlfriends sip whiskey, I've finished my wine.​
+Their laughter floats like lanterns, drowning your lines. ​
+The nymph smokes a vape on her break and peels a clemintine
+Was it me, or did the solo seem to just drift away?​
+Anchored to nothing, with nothing to say? ​
+The bartender turns to stone, lost on the wind. ​
+I guess you didn't have an ending in mind, ​
+So you just let its melody fade out of time—​
+A musical maybe. No rhythm, no rhyme. ​
+Unresolved chords, an unspoken goodbye.
+The sun is setting too quickly. The moon has turned away. ​
+The stars have dimmed their brilliance. They are all refusing to stay. ​
+Tell me all the words that you can sing, but never say.​
+​
+The evening ends, the laughter fades. ​
+Your voice trails off, lost to the haze. ​
+The halo around your face dissipates. ​
+The final note forgotten before the stage turns gray.​
+I guess everything fades out, in the end, just like the songs you play.​
+
+I AM HUMAN
+
+Don’t sell me into the slavery
+of a hyphenated mentality
+with a deed that papercuts the heart—
+strings that link me
+to my surrogate mother
+who nourished me
+with her history
+when the carefully formulated formula
+that I was supposed to swallow wholeheartedly had spoiled…
+I AM AFRICAN
+a cub will not survive on sour milk
+he will not grow into a lion
+but will always be dependent
+on the giver of the milk.
+I AM AMERICAN
+In a sagging house
+with sometimes hot water
+I learned to prowl
+to pounce.
