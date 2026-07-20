@@ -8532,3 +8532,40 @@ Comment dirais-je… "mindfuck," en Francis ? Sapiosexuelle.
 
 [Outro]
 Viens, Moisès—je peux même t'appeler "Daddy" encore… si tu veux.
+
+
+ME PREGUNTABA
+
+[Verso 1]
+Me preguntaba si te gustaría hacer algo
+Tal vez una tarde o una noche tranquila
+No tenemos que ir muy lejos, podemos quedarnos aquí
+
+[Coro]
+Y solo ser, podemos ser libres
+Libres para ser, solo tú y yo
+Siendo libres…
+
+[Verso 2]
+Me preguntaba si te gusta mi onda
+Porque amo cómo te quedas tan quieto/a…
+Pero también me encanta cómo te mueves
+Hay una química loca, pero esperemos a ver
+
+[Coro]
+
+[Verso 3]
+
+[Coro, final]
+
+
+WARRIOR LOVER
+
+[Chorus]
+So let's call it what it is
+You didn't want me
+You wanted the milk
+You're getting for free
+But no matter what
+You have to feed the cow
+Or live with what's left of the carcass now
