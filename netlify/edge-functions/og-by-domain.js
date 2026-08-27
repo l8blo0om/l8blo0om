@@ -1,6 +1,6 @@
 // Per-domain link thumbnails.
-// Same site, different preview image depending on which URL was shared.
-// Change a filename below and redeploy — that's the whole edit.
+// Same site, different social preview image depending on which URL was shared.
+// Edit a filename below and redeploy — that's the whole change.
 
 const THUMBNAIL = {
   "lateblooom.com": "unlocking-the-son-web.jpg",
@@ -18,15 +18,17 @@ export default async (request, context) => {
   if (!img) return res;
 
   const url = `https://${host}/${img}`;
-  let html = await res.text();
-  html = html
+  const html = (await res.text())
     .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${url}$2`)
     .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${url}$2`);
 
-  return new Response(html, {
-    status: res.status,
-    headers: res.headers,
-  });
+  // fresh headers — reusing the originals keeps a stale content-encoding/length
+  const headers = new Headers(res.headers);
+  headers.delete("content-encoding");
+  headers.delete("content-length");
+  headers.set("content-type", "text/html; charset=utf-8");
+
+  return new Response(html, { status: res.status, headers });
 };
 
 export const config = { path: "/*" };
