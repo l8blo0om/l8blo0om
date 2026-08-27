@@ -6,6 +6,7 @@ const THUMBNAIL = {
   "lateblooom.com": "unlocking-the-son-web.jpg",
   "lateblo0om.com": "afromantic-antisocialite-web.jpg",
   "l8blo0om.com":   "vexxxed-web.jpg",
+  "l8blo0om.org":   "center-balance-vol-2-web.jpg",
 };
 
 export default async (request, context) => {
