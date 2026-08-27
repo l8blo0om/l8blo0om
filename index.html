@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://l8blo0om.com">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
   @property --hue {
     syntax: '<number>';
@@ -333,12 +333,14 @@
 
   .hero-subtitle {
     font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 800;
     font-style: normal;
     color: var(--cyan);
-    letter-spacing: 0.06em;
-    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    text-transform: none;
+    margin-bottom: 0.4rem;
     opacity: 0;
     animation: fadeUp 1s ease 0.5s forwards;
   }
@@ -1514,7 +1516,7 @@
 
   @media (max-width: 600px) {
     .hero-logo { width: 160px; }
-    .hero-subtitle { font-size: 1.2rem; }
+    .hero-subtitle { font-size: clamp(2.2rem, 11vw, 3.2rem); }
 
     .footer-inner { grid-template-columns: 1fr; }
 
