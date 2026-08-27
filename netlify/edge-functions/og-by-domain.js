@@ -1,6 +1,6 @@
 // Per-domain link thumbnails.
-// Same site, different social preview image depending on which URL was shared.
-// Edit a filename below and redeploy — that's the whole change.
+// Rewrites og:image / twitter:image based on which domain was requested.
+// Wrapped in try/catch so a failure here can NEVER take the site down.
 
 const THUMBNAIL = {
   "lateblooom.com": "unlocking-the-son-web.jpg",
@@ -10,26 +10,31 @@ const THUMBNAIL = {
 };
 
 export default async (request, context) => {
-  const res = await context.next();
-  const type = res.headers.get("content-type") || "";
-  if (!type.includes("text/html")) return res;
+  try {
+    const host = new URL(request.url).hostname.replace(/^www\./, "");
+    const img = THUMBNAIL[host];
+    if (!img) return;                       // undefined = pass through untouched
 
-  const host = new URL(request.url).hostname.replace(/^www\./, "");
-  const img = THUMBNAIL[host];
-  if (!img) return res;
+    const res = await context.next();
+    const type = res.headers.get("content-type") || "";
+    if (!type.includes("text/html")) return res;
 
-  const url = `https://${host}/${img}`;
-  const html = (await res.text())
-    .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${url}$2`)
-    .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${url}$2`);
+    const body = await res.text();
+    if (!body || body.indexOf("og:image") === -1) return new Response(body, res);
 
-  // fresh headers — reusing the originals keeps a stale content-encoding/length
-  const headers = new Headers(res.headers);
-  headers.delete("content-encoding");
-  headers.delete("content-length");
-  headers.set("content-type", "text/html; charset=utf-8");
+    const url = `https://${host}/${img}`;
+    const html = body
+      .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${url}$2`)
+      .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${url}$2`);
 
-  return new Response(html, { status: res.status, headers });
+    const headers = new Headers(res.headers);
+    headers.delete("content-encoding");
+    headers.delete("content-length");
+
+    return new Response(html, { status: res.status, headers });
+  } catch (_) {
+    return;                                 // any error = serve the site normally
+  }
 };
 
 export const config = { path: "/*" };
