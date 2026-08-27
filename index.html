@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://l8blo0om.com">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
   @property --hue {
     syntax: '<number>';
@@ -1564,19 +1564,20 @@
 .new-album-line a{color:var(--cyan);text-decoration:none;letter-spacing:.03em}
 .new-album-line a:hover{text-decoration:underline}
 
-/* full-bleed stripe — cycles with the site hue */
-.hero-welcome{
-  width:100vw;
-  margin:1.8rem 0 0 calc(50% - 50vw);
+
+
+.hero-top{text-align:center;padding:2rem 1.5rem 0.6rem;background:var(--black)}
+.hero-stripe{
+  display:block;width:100%;
   background:hsl(var(--hue) 90% 84%);
   color:#050508;
-  padding:1.3rem 1.5rem;
+  padding:1.25rem 1.5rem;
   text-align:center;
   font-family:var(--serif);
-  font-size:clamp(1.6rem,4.4vw,2.7rem);
-  font-weight:600;
-  letter-spacing:-0.01em;
-  line-height:1.1;
+  font-size:clamp(1.6rem,4.6vw,2.9rem);
+  font-weight:700;
+  letter-spacing:-0.015em;
+  line-height:1.08;
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MusicGroup", "@id": "https://l8blo0om.com/#artist", "name": "Late Blo0om", "alternateName": ["L8 Blo0om", "Late Bloom", "L8 Bloom"], "url": "https://l8blo0om.com/", "logo": "https://l8blo0om.com/logo.png", "genre": ["Kizomba", "Zouk", "NeoSoul", "Jazz", "Reggaeton", "Pop"], "description": "Late Blo0om (formerly L8 Blo0om) — Lyrical Alchemist. Multilingual original music rooted in Caribbean and African dance culture.", "sameAs": ["https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA"]}, {"@type": "WebSite", "@id": "https://l8blo0om.com/#website", "url": "https://l8blo0om.com/", "name": "Late Blo0om", "publisher": {"@id": "https://l8blo0om.com/#artist"}}]}</script>
@@ -1657,9 +1658,13 @@
 
 
 <!-- ═══════════ HERO ═══════════ -->
-<section class="hero-content" id="home">
+<section class="hero-top" id="home">
   <h1 class="hero-subtitle">Lyrical Alchemist</h1>
-  <p class="hero-welcome">Late bloom. Never too late.</p>
+</section>
+
+<div class="hero-stripe">Late bloom. Never too late.</div>
+
+<section class="hero-content">
   <p class="hero-stats">Seventeen albums &nbsp;·&nbsp; 153 songs &nbsp;·&nbsp; four languages</p>
   <div class="hero-cta">
     <a class="btn-glow" href="#music">Hear it</a>
