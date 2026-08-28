@@ -107,13 +107,13 @@
     font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--accent); font-family: monospace;
   }
-  #copy-btn {
+  #copy-btn, #copy-lyrics-btn {
     background: #151515; border: 1px solid #2a2a2a; color: #888;
     border-radius: 6px; padding: 8px 20px; font-size: 11px;
     letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
     font-family: monospace; transition: all 0.2s;
   }
-  #copy-btn.copied { background: #1a3a1a; border-color: #34d399; color: #34d399; }
+  #copy-btn.copied, #copy-lyrics-btn.copied { background: #1a3a1a; border-color: #34d399; color: #34d399; }
   .out-body { padding: 32px; }
   .out-section-label {
     font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
@@ -126,6 +126,8 @@
     margin-bottom: 24px; white-space: pre-wrap;
   }
   .out-box.structure { color: #888; font-size: 13px; border-color: #1a1a1a; margin-bottom: 0; }
+  .out-box.lyrics { border-color: #1a1a1a; margin-bottom: 0; }
+  .out-section-label.spaced { margin-top: 24px; }
   .out-box.brief { font-family: 'Outfit', sans-serif; line-height: 1.8; margin-bottom: 0; }
 
   .preset-wrap { margin-bottom: 28px; }
@@ -142,6 +144,21 @@
   }
   .chip:hover { border-color: var(--accent); color: var(--accent); }
   .chip.on { border-color: var(--accent); color: var(--bg); background: var(--accent); }
+  .chip .x { margin-left: 8px; color: #555; }
+  .chip .x:hover { color: #ff6b6b; }
+  .chip.on .x { color: var(--bg); }
+  .save-row { display: flex; gap: 8px; margin-top: 10px; }
+  .save-row input {
+    width: 220px; padding: 7px 14px; font-size: 12px; font-family: monospace;
+    border-radius: 999px; letter-spacing: 0.04em;
+  }
+  .save-row button {
+    background: #0f0f0f; border: 1px solid var(--border); border-radius: 999px;
+    padding: 7px 15px; font-size: 12px; color: #999; cursor: pointer;
+    font-family: monospace; letter-spacing: 0.04em; transition: all 0.18s; white-space: nowrap;
+  }
+  .save-row button:hover { border-color: var(--accent); color: var(--accent); }
+  .no-custom { font-size: 11px; color: #444; font-family: monospace; letter-spacing: 0.05em; align-self: center; }
   .footer-note {
     margin-top: 16px; font-size: 11px; color: var(--faint);
     font-family: monospace; letter-spacing: 0.05em;
@@ -195,6 +212,15 @@
         <button type="button" class="chip" onclick="applyPreset('bhangra',this)">Bhangra</button>
       </div>
     </div>
+
+    <div class="preset-group">
+      <div class="preset-group-label">My Presets</div>
+      <div class="chips" id="custom-chips"></div>
+      <div class="save-row">
+        <input id="preset-name" placeholder="name this preset" onkeydown="if(event.key==='Enter')saveCustomPreset()">
+        <button type="button" onclick="saveCustomPreset()">Save current form</button>
+      </div>
+    </div>
   </div>
 
   <div class="field">
@@ -241,6 +267,11 @@
     <input id="sections" placeholder="e.g. Intro, Verse, Pre-Chorus, Chorus, Bridge, Final Chorus">
   </div>
 
+  <div class="field">
+    <label>Lyrics <span>(optional · for Suno custom mode — blank line between stanzas)</span></label>
+    <textarea id="lyrics" rows="6" placeholder="Paste lyrics. Untagged stanzas get [Verse]. Tags you type — [Chorus], [Bridge] — are kept."></textarea>
+  </div>
+
   <label class="check-row" id="no808-row">
     <input type="checkbox" id="no808">
     Exclude 808 from production tags (use for acoustic / classical / vintage)
@@ -257,7 +288,10 @@
     <div class="out-card" id="out-card">
       <div class="out-header">
         <div class="out-label" id="out-mode-label">Dr. B's Style Output</div>
-        <button id="copy-btn" onclick="copyOut()">Copy</button>
+        <div style="display:flex;gap:8px">
+          <button id="copy-lyrics-btn" onclick="copyLyrics()" style="display:none">Copy Lyrics</button>
+          <button id="copy-btn" onclick="copyOut()">Copy</button>
+        </div>
       </div>
       <div class="out-body" id="out-body"></div>
     </div>
@@ -333,17 +367,22 @@ const PRESETS = {
 };
 
 function applyPreset(key, el) {
-  const p = PRESETS[key];
+  applyPresetObj(PRESETS[key], el);
+}
+
+function applyPresetObj(p, el) {
   if (!p) return;
   if (p.vocal) {
     const cur = document.getElementById("vocal").value.trim();
     document.getElementById("vocal").value = (p.kind === "voice" && cur && !cur.includes(p.vocal))
       ? p.vocal : p.vocal;
   }
-  if (p.genre)    document.getElementById("genre").value = p.genre;
-  if (p.bpm)      document.getElementById("bpm").value = p.bpm;
-  if (p.concept)  document.getElementById("concept").value = p.concept;
-  if (p.sections) document.getElementById("sections").value = p.sections;
+  if (p.genre)      document.getElementById("genre").value = p.genre;
+  if (p.bpm)        document.getElementById("bpm").value = p.bpm;
+  if (p.concept)    document.getElementById("concept").value = p.concept;
+  if (p.sections)   document.getElementById("sections").value = p.sections;
+  if (p.language)   document.getElementById("language").value = p.language;
+  if (p.references) document.getElementById("references").value = p.references;
   if (p.extra)    window.__presetExtra = p.extra; else if (p.kind === "song") window.__presetExtra = "";
 
   // toggle chip state within its own group
@@ -352,6 +391,69 @@ function applyPreset(key, el) {
   el.classList.add("on");
 }
 
+// ---- custom presets (localStorage) ----
+const LS_KEY = "sunogen_custom_presets";
+let CUSTOM = {};
+try { CUSTOM = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch (e) { CUSTOM = {}; }
+
+function persistCustom() {
+  localStorage.setItem(LS_KEY, JSON.stringify(CUSTOM));
+}
+
+function saveCustomPreset() {
+  const nameEl = document.getElementById("preset-name");
+  const name = nameEl.value.trim();
+  if (!name) { nameEl.focus(); return; }
+  const p = { kind: "song" };
+  ["genre", "bpm", "concept", "vocal", "sections", "references"].forEach(id => {
+    const v = document.getElementById(id).value.trim();
+    if (v) p[id] = v;
+  });
+  const lang = document.getElementById("language").value;
+  if (lang && lang !== "English") p.language = lang;
+  if (window.__presetExtra) p.extra = window.__presetExtra;
+  CUSTOM[name] = p;
+  persistCustom();
+  nameEl.value = "";
+  renderCustomChips();
+}
+
+function deleteCustomPreset(name) {
+  delete CUSTOM[name];
+  persistCustom();
+  renderCustomChips();
+}
+
+function renderCustomChips() {
+  const wrap = document.getElementById("custom-chips");
+  wrap.innerHTML = "";
+  const names = Object.keys(CUSTOM);
+  if (!names.length) {
+    const s = document.createElement("span");
+    s.className = "no-custom";
+    s.textContent = "none yet — fill the form, name it, save";
+    wrap.appendChild(s);
+    return;
+  }
+  names.forEach(name => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.appendChild(document.createTextNode(name));
+    const x = document.createElement("span");
+    x.className = "x";
+    x.textContent = "×";
+    x.onclick = e => {
+      e.stopPropagation();
+      if (confirm('Delete preset "' + name + '"?')) deleteCustomPreset(name);
+    };
+    b.appendChild(x);
+    b.onclick = () => applyPresetObj(CUSTOM[name], b);
+    wrap.appendChild(b);
+  });
+}
+renderCustomChips();
+
 const PRODUCTION_TAGS = ["binaural","3d","layered harmony","catchy intro","catchy","earworm","anthemic","808","side chain","small room reverb","intimate","whisper vocals","double vocals"];
 const MODES = {
   niia: { label: "Dr. B's Style", color: "#00e5ff" },
@@ -359,6 +461,15 @@ const MODES = {
 };
 let mode = "niia";
 let lastCopyText = "";
+let lastLyricsText = "";
+
+function formatLyrics(raw) {
+  return raw.split(/\n\s*\n/).map(st => {
+    const t = st.trim();
+    if (!t) return "";
+    return /^\[[^\]]+\]/.test(t) ? t : "[Verse]\n" + t;
+  }).filter(Boolean).join("\n\n");
+}
 
 function refreshStack() {
   const no808 = document.getElementById("no808").checked;
@@ -384,9 +495,16 @@ function val(id) { return document.getElementById(id).value.trim(); }
 function generate() {
   const concept = val("concept"), genre = val("genre"), vocal = val("vocal"),
         bpm = val("bpm"), language = val("language"), references = val("references"),
-        sections = val("sections"), no808 = document.getElementById("no808").checked;
+        sections = val("sections"), no808 = document.getElementById("no808").checked,
+        lyrics = val("lyrics");
 
   if (!concept && !genre) return;
+
+  lastLyricsText = lyrics ? formatLyrics(lyrics) : "";
+  const lyricsHtml = lastLyricsText
+    ? '<div class="out-section-label spaced">Lyrics · Paste into Suno Custom Mode</div>' +
+      '<div class="out-box lyrics">' + esc(lastLyricsText) + '</div>'
+    : "";
 
   const body = document.getElementById("out-body");
   document.getElementById("out-mode-label").textContent = MODES[mode].label + " Output";
@@ -411,7 +529,8 @@ function generate() {
       '<div class="out-section-label">Style Box · Paste into Suno</div>' +
       '<div class="out-box">' + esc(styleBox) + '</div>' +
       '<div class="out-section-label">Structure</div>' +
-      '<div class="out-box structure">' + esc(structure) + '</div>';
+      '<div class="out-box structure">' + esc(structure) + '</div>' +
+      lyricsHtml;
   } else {
     const parts = [];
     if (genre) parts.push("Style: " + genre);
@@ -427,8 +546,13 @@ function generate() {
     parts.push("Song Structure: " + structure);
     const full = parts.join("\n\n");
     lastCopyText = full;
-    body.innerHTML = '<div class="out-box brief">' + esc(full) + '</div>';
+    body.innerHTML = '<div class="out-box brief">' + esc(full) + '</div>' + lyricsHtml;
   }
+
+  const lyBtn = document.getElementById("copy-lyrics-btn");
+  lyBtn.style.display = lastLyricsText ? "" : "none";
+  lyBtn.textContent = "Copy Lyrics";
+  lyBtn.classList.remove("copied");
 
   document.getElementById("footer-note").textContent =
     "Catalog: Pharoah Phoenix LLC · Late Blo0om · " + (language || "English") + " · " + (bpm ? bpm + " BPM" : "no BPM set");
@@ -443,6 +567,14 @@ function copyOut() {
     const b = document.getElementById("copy-btn");
     b.textContent = "Copied ✓"; b.classList.add("copied");
     setTimeout(() => { b.textContent = "Copy"; b.classList.remove("copied"); }, 2000);
+  });
+}
+
+function copyLyrics() {
+  navigator.clipboard.writeText(lastLyricsText).then(() => {
+    const b = document.getElementById("copy-lyrics-btn");
+    b.textContent = "Copied ✓"; b.classList.add("copied");
+    setTimeout(() => { b.textContent = "Copy Lyrics"; b.classList.remove("copied"); }, 2000);
   });
 }
 
