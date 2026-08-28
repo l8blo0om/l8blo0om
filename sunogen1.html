@@ -188,6 +188,11 @@
       <div class="preset-group-label">Song</div>
       <div class="chips">
         <button type="button" class="chip" onclick="applyPreset('gospelShowstopper',this)">Gospel Showstopper</button>
+        <button type="button" class="chip" onclick="applyPreset('deepHouse90',this)">90s Deep House</button>
+        <button type="button" class="chip" onclick="applyPreset('altRock90',this)">90s Alt Rock Anthem</button>
+        <button type="button" class="chip" onclick="applyPreset('maqamSoul',this)">Neo-Soul × Maqam</button>
+        <button type="button" class="chip" onclick="applyPreset('celestialDream',this)">Celestial Dream Pop</button>
+        <button type="button" class="chip" onclick="applyPreset('bhangra',this)">Bhangra</button>
       </div>
     </div>
   </div>
@@ -270,6 +275,51 @@ const PRESETS = {
   sopranoVirtuoso: {
     kind: "voice",
     vocal: "virtuosic Black female soprano, second-soprano agility with first-soprano power, microtonal inflections and pitch bending, blue-note bends, coloratura runs, seamless register transitions with no break, breathy whisper to full operatic power, sustained soaring high notes, intricate ornamentation, rich harmonic overtones, vocal texture as storytelling, gospel-rooted runs with classical precision"
+  },
+  deepHouse90: {
+    kind: "song",
+    genre: "90s deep house, dance pop",
+    bpm: "122",
+    concept: "hypnotic repetitive melancholic groove — observing a woman's daily ritual from a distance, mysterious, beautiful, unknowable",
+    vocal: "female, airy, half-spoken half-sung, deadpan storytelling, wordless looped melodic chant as the hook",
+    sections: "Intro Hook, Verse, Hook, Verse, Hook, Outro Fade",
+    extra: "sparse house kick, shimmering hi-hats, minimal bassline, light piano stabs, hooky la-da-dee vocal loop, hypnotic repetition"
+  },
+  altRock90: {
+    kind: "song",
+    genre: "90s alternative rock, post-grunge, folk rock",
+    bpm: "134",
+    concept: "waking up feeling the weight of the world, crying out to the universe for answers, exhausted hope, spiritual yearning",
+    vocal: "female, powerful belt, raspy edges, starts restrained and builds to full-throated wail, repeated vocal build escalating into scream-sing release",
+    sections: "Verse, Pre-Chorus, Chorus, Verse, Chorus, Bridge Breakdown, Climactic Outro",
+    extra: "acoustic guitar driven, electric guitar layers, driving drums entering mid-song, organic live-feeling, no polish, cathartic release through the bridge"
+  },
+  maqamSoul: {
+    kind: "song",
+    genre: "neo-soul, Arabic maqam fusion, spiritual R&B",
+    bpm: "82",
+    concept: "devotional intimate aching sweetness, sacred love — you are my home, my qibla, the direction I turn toward; love as orientation, as prayer, as arrival",
+    vocal: "female, warm and smoky, melismatic runs with Arabic-inflected ornamentation, tender not performative, bridge opens into extended mawwal-style improvisation",
+    sections: "Verse, Chorus, Verse, Chorus, Mawwal Bridge, Final Chorus",
+    extra: "brushed drums, fretless bass, Rhodes electric piano, oud texture woven through, call-and-response between voice and instrument, Maqam Rast or Bayati tonality, raised and lowered microtones, sparse verses with fuller layered chorus"
+  },
+  celestialDream: {
+    kind: "song",
+    genre: "ethereal dream pop, cinematic indie pop, celestial art pop",
+    bpm: "104",
+    concept: "luminous soaring otherworldly tenderness — love as light, not weight; lanterns, crescent moon, light through latticed windows",
+    vocal: "female, layered, crystalline, lead clear and forward, harmonies stacked like light refracting, breathy on verses, full and open on chorus, pure tone with no rasp",
+    sections: "Verse, Chorus, Verse, Chorus, Stripped Bridge, Final Chorus, Outro",
+    extra: "propulsive driving 8th-note pulse under an airy arrangement, shimmering synth pads, harp plucks, distant Arabic melodic fragment in the high register like a remembered call to prayer, reverb-soaked but never muddy, choruses open wide like a ceiling disappearing, outro voices multiply and build upward"
+  },
+  bhangra: {
+    kind: "song",
+    genre: "Bhangra, Punjabi folk fusion, celebratory world pop",
+    bpm: "140",
+    concept: "jubilant communal full-body joy — love as celebration, not a whisper. a wedding, this is joy",
+    vocal: "female lead, strong and bright, call-and-response moments, bold vowels, confident delivery, rapid and rhythmically precise on verses, expansive proclamation on chorus",
+    sections: "Percussion Intro, Verse, Chorus, Verse, Chorus, Tumbi Bridge, Final Chorus, Outro",
+    extra: "dhol drum as heartbeat and spine, tumbi string pluck on the melodic hook, dholak layered underneath, punchy bass, brass stabs on the chorus, handclaps throughout, percussion-forward intro, bridge drops to tumbi and voice before the dhol crashes back in, ends on a peak not a fade"
   },
   gospelShowstopper: {
     kind: "song",
