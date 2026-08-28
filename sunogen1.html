@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<title>Suno Prompt Generator — Late Blo0om</title>
+<style>
+  :root {
+    --bg: #050507;
+    --panel: #0a0a0a;
+    --border: #1e1e1e;
+    --text: #e8e0d4;
+    --muted: #666;
+    --faint: #444;
+    --niia: #00e5ff;
+    --grey: #c9a063;
+    --accent: var(--niia);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    border-bottom: 1px solid #1a1a1a;
+    padding: 32px 40px;
+    background: linear-gradient(180deg, #0a0a0c 0%, #050507 100%);
+  }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+    font-family: monospace; transition: color 0.3s;
+  }
+  h1 { font-family: 'Jost', sans-serif; font-weight: 200; letter-spacing: 0.04em; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.02em; line-height: 1.1; }
+  h1 em { color: var(--accent); transition: color 0.3s; }
+  .tagline { font-size: 12px; color: var(--muted); margin-top: 12px; font-family: monospace; }
+  main { padding: 32px 40px 80px; max-width: 900px; }
+  label {
+    display: block; font-size: 11px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 10px; font-family: monospace;
+  }
+  label span { color: #555; text-transform: none; letter-spacing: 0.05em; }
+  input, textarea, select {
+    width: 100%; background: #0f0f0f; border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 16px; color: var(--text);
+    font-size: 14px; font-family: 'Outfit', sans-serif; outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { resize: vertical; line-height: 1.6; }
+  .field { margin-bottom: 24px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .row-13 { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+  @media (max-width: 640px) { .row, .row-13 { grid-template-columns: 1fr; } main, header { padding-left: 20px; padding-right: 20px; } }
+
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  @media (max-width: 640px) { .mode-grid { grid-template-columns: 1fr; } }
+  .mode-btn {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; cursor: pointer; text-align: left;
+    font-family: 'Outfit', sans-serif; color: var(--text); transition: all 0.2s;
+  }
+  .mode-btn .m-name { font-size: 16px; margin-bottom: 4px; }
+  .mode-btn .m-sub { font-size: 11px; color: var(--muted); font-family: monospace; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .mode-btn .m-desc { font-size: 12px; color: #888; line-height: 1.5; }
+  .mode-btn.active-niia { border-color: var(--niia); background: rgba(0,229,255,0.06); }
+  .mode-btn.active-niia .m-name { color: var(--niia); }
+  .mode-btn.active-grey { border-color: var(--grey); background: rgba(201,160,99,0.06); }
+  .mode-btn.active-grey .m-name { color: var(--grey); }
+
+  .stack-note {
+    background: var(--panel); border: 1px solid #1a1a1a; border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 24px; font-size: 12px;
+    color: var(--muted); font-family: monospace; line-height: 1.6;
+  }
+  .stack-note strong { color: var(--accent); }
+  .check-row {
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    font-size: 13px; color: #888; font-family: monospace; margin-bottom: 24px;
+  }
+  .check-row input { width: auto; accent-color: var(--accent); }
+
+  #generate {
+    background: var(--accent); color: var(--bg); border: none; border-radius: 8px;
+    padding: 14px 32px; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+    font-family: monospace; transition: all 0.2s;
+  }
+  #generate:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  #output { margin-top: 40px; display: none; }
+  .out-card {
+    background: var(--panel); border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(0,229,255,0.2);
+  }
+  .out-header {
+    padding: 20px 32px; border-bottom: 1px solid #1a1a1a;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .out-label {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent); font-family: monospace;
+  }
+  #copy-btn {
+    background: #151515; border: 1px solid #2a2a2a; color: #888;
+    border-radius: 6px; padding: 8px 20px; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+    font-family: monospace; transition: all 0.2s;
+  }
+  #copy-btn.copied { background: #1a3a1a; border-color: #34d399; color: #34d399; }
+  .out-body { padding: 32px; }
+  .out-section-label {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #555; margin-bottom: 12px; font-family: monospace;
+  }
+  .out-box {
+    background: var(--bg); border: 1px solid rgba(0,229,255,0.13);
+    border-radius: 8px; padding: 20px; font-family: monospace;
+    font-size: 14px; line-height: 1.7; word-break: break-word;
+    margin-bottom: 24px; white-space: pre-wrap;
+  }
+  .out-box.structure { color: #888; font-size: 13px; border-color: #1a1a1a; margin-bottom: 0; }
+  .out-box.brief { font-family: 'Outfit', sans-serif; line-height: 1.8; margin-bottom: 0; }
+  .footer-note {
+    margin-top: 16px; font-size: 11px; color: var(--faint);
+    font-family: monospace; letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow" id="eyebrow">Late Blo0om / Suno Studio</div>
+  <h1>Suno Prompt<br><em id="h1-em">Generator</em></h1>
+  <div style="margin-top:18px"><a href="index.html" style="color:#666;font-family:monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none">&larr; lateblooom.com</a></div>
+  <div class="tagline">Two style modes · Tag-dense or production-brief · Suno-ready output</div>
+</header>
+
+<main>
+  <label>Style Mode</label>
+  <div class="mode-grid">
+    <button class="mode-btn active-niia" id="btn-niia" onclick="setMode('niia')">
+      <div class="m-name">Dr. B's Style</div>
+      <div class="m-sub">Comma-delineated · Tag-dense · Production-loaded</div>
+      <div class="m-desc">Suno-readable. Stacks descriptors. Heavy on production values.</div>
+    </button>
+    <button class="mode-btn" id="btn-grey" onclick="setMode('grey')">
+      <div class="m-name">Grey's Style</div>
+      <div class="m-sub">Production-brief · Paragraph form · Reference-heavy</div>
+      <div class="m-desc">Conventional structure. Reads like a producer's notes.</div>
+    </button>
+  </div>
+
+  <div class="field">
+    <label>Song Concept / Mood</label>
+    <textarea id="concept" rows="3" placeholder="e.g. confession from a dark room that ends up on stadium speakers, mythological undertone"></textarea>
+  </div>
+
+  <div class="row field">
+    <div>
+      <label>Genre / Style Tags</label>
+      <input id="genre" placeholder="e.g. dark cinematic pop, neo-soul, 90s deep house">
+    </div>
+    <div>
+      <label>BPM</label>
+      <input id="bpm" placeholder="e.g. 95">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Vocal Direction</label>
+    <input id="vocal" placeholder="e.g. female lead, raspy edges, gospel cry on climax, breathy confessional">
+  </div>
+
+  <div class="row-13 field">
+    <div>
+      <label>Language</label>
+      <select id="language">
+        <option>English</option>
+        <option>French</option>
+        <option>Spanish</option>
+        <option>Portuguese</option>
+        <option>Italian</option>
+        <option>Multilingual</option>
+      </select>
+    </div>
+    <div>
+      <label>Reference Artists</label>
+      <input id="references" placeholder="e.g. Rihanna, Nina Simone, Sade">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Custom Structure <span>(optional · comma-separated sections)</span></label>
+    <input id="sections" placeholder="e.g. Intro, Verse, Pre-Chorus, Chorus, Bridge, Final Chorus">
+  </div>
+
+  <label class="check-row" id="no808-row">
+    <input type="checkbox" id="no808">
+    Exclude 808 from production tags (use for acoustic / classical / vintage)
+  </label>
+
+  <div class="stack-note" id="stack-note">
+    <strong>Auto-included production stack:</strong><br>
+    <span id="stack-list"></span>
+  </div>
+
+  <button id="generate" onclick="generate()">Generate Prompt</button>
+
+  <div id="output">
+    <div class="out-card" id="out-card">
+      <div class="out-header">
+        <div class="out-label" id="out-mode-label">Dr. B's Style Output</div>
+        <button id="copy-btn" onclick="copyOut()">Copy</button>
+      </div>
+      <div class="out-body" id="out-body"></div>
+    </div>
+    <div class="footer-note" id="footer-note"></div>
+  </div>
+</main>
+
+<script>
+const PRODUCTION_TAGS = ["binaural","3d","layered harmony","catchy intro","catchy","earworm","anthemic","808","side chain","small room reverb","intimate","whisper vocals","double vocals"];
+const MODES = {
+  niia: { label: "Dr. B's Style", color: "#00e5ff" },
+  grey: { label: "Grey's Style", color: "#c9a063" }
+};
+let mode = "niia";
+let lastCopyText = "";
+
+function refreshStack() {
+  const no808 = document.getElementById("no808").checked;
+  document.getElementById("stack-list").textContent =
+    PRODUCTION_TAGS.filter(t => !(no808 && t === "808")).join(", ");
+}
+document.getElementById("no808").addEventListener("change", refreshStack);
+refreshStack();
+
+function setMode(m) {
+  mode = m;
+  const c = MODES[m].color;
+  document.documentElement.style.setProperty("--accent", c);
+  document.getElementById("btn-niia").className = "mode-btn" + (m === "niia" ? " active-niia" : "");
+  document.getElementById("btn-grey").className = "mode-btn" + (m === "grey" ? " active-grey" : "");
+  document.getElementById("no808-row").style.display = m === "niia" ? "flex" : "none";
+  document.getElementById("stack-note").style.display = m === "niia" ? "block" : "none";
+  document.getElementById("output").style.display = "none";
+}
+
+function val(id) { return document.getElementById(id).value.trim(); }
+
+function generate() {
+  const concept = val("concept"), genre = val("genre"), vocal = val("vocal"),
+        bpm = val("bpm"), language = val("language"), references = val("references"),
+        sections = val("sections"), no808 = document.getElementById("no808").checked;
+
+  if (!concept && !genre) return;
+
+  const body = document.getElementById("out-body");
+  document.getElementById("out-mode-label").textContent = MODES[mode].label + " Output";
+  document.getElementById("out-card").style.borderColor = MODES[mode].color + "33";
+
+  if (mode === "niia") {
+    const tags = [];
+    if (genre) tags.push(...genre.split(",").map(t => t.trim()).filter(Boolean));
+    if (vocal) tags.push(...vocal.split(",").map(t => t.trim()).filter(Boolean));
+    if (language && language.toLowerCase() !== "english") tags.push(language + " vocals");
+    if (bpm) tags.push(bpm + " BPM");
+    tags.push(...PRODUCTION_TAGS.filter(t => !(no808 && t === "808")));
+    if (references) tags.push(...references.split(",").map(t => t.trim() + " influence").filter(Boolean));
+    if (concept) tags.push(concept);
+    const styleBox = tags.join(", ");
+    const structure = sections
+      ? sections.split(",").map(s => "[" + s.trim() + "]").join(" → ")
+      : "[Intro] → [Verse] → [Pre-Chorus] → [Chorus] → [Verse] → [Chorus] → [Bridge] → [Outro]";
+    lastCopyText = styleBox;
+    body.innerHTML =
+      '<div class="out-section-label">Style Box · Paste into Suno</div>' +
+      '<div class="out-box">' + esc(styleBox) + '</div>' +
+      '<div class="out-section-label">Structure</div>' +
+      '<div class="out-box structure">' + esc(structure) + '</div>';
+  } else {
+    const parts = [];
+    if (genre) parts.push("Style: " + genre);
+    if (concept) parts.push("Mood / Concept: " + concept);
+    if (vocal) parts.push("Vocal Direction: " + vocal);
+    if (bpm) parts.push("Tempo: " + bpm + " BPM");
+    if (language) parts.push("Language: " + language);
+    if (references) parts.push("Reference Artists: " + references);
+    const structure = sections
+      ? sections.split(",").map(s => s.trim()).join(" → ")
+      : "Intro → Verse → Pre-Chorus → Chorus → Verse → Chorus → Bridge → Final Chorus";
+    parts.push("Song Structure: " + structure);
+    const full = parts.join("\n\n");
+    lastCopyText = full;
+    body.innerHTML = '<div class="out-box brief">' + esc(full) + '</div>';
+  }
+
+  document.getElementById("footer-note").textContent =
+    "Catalog: Pharoah Phoenix LLC · Late Blo0om · " + (language || "English") + " · " + (bpm ? bpm + " BPM" : "no BPM set");
+  document.getElementById("output").style.display = "block";
+  document.getElementById("copy-btn").textContent = "Copy";
+  document.getElementById("copy-btn").classList.remove("copied");
+  document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function copyOut() {
+  navigator.clipboard.writeText(lastCopyText).then(() => {
+    const b = document.getElementById("copy-btn");
+    b.textContent = "Copied ✓"; b.classList.add("copied");
+    setTimeout(() => { b.textContent = "Copy"; b.classList.remove("copied"); }, 2000);
+  });
+}
+
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+</script>
+</body>
+</html>
