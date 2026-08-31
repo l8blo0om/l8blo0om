@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FDO Vault — Suno Prompt Agent v2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+:root{
+  --bg:#09090c;--surface:#111116;--surface2:#17171e;--surface3:#1e1e28;
+  --border:#272732;--border2:#333345;
+  --accent:#b8f040;--accent-dim:rgba(184,240,64,0.12);
+  --purple:#8b5cf6;--purple-dim:rgba(139,92,246,0.15);
+  --orange:#f97316;--red:#ef4444;--blue:#38bdf8;--blue-dim:rgba(56,189,248,0.12);
+  --text:#e2e2ee;--muted:#64647a;--muted2:#44445a;
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.35}
+
+/* HEADER */
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.1em;color:var(--accent);line-height:1}
+.logo-sub{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:1px}
+.badge{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.13em;padding:4px 10px;border-radius:2px;text-transform:uppercase}
+.bg{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent)}
+.bp{background:var(--purple-dim);color:var(--purple);border:1px solid var(--purple)}
+.bb{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue)}
+.badge-row{display:flex;gap:7px;align-items:center}
+
+/* MODE TOGGLE */
+.mode-bar{background:var(--surface);border-bottom:2px solid var(--border);padding:0 28px;display:flex;align-items:stretch;gap:0}
+.mode-btn{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.12em;padding:12px 24px;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s;text-transform:uppercase}
+.mode-btn.active-fdo{color:var(--accent);border-bottom-color:var(--accent)}
+.mode-btn.active-heritage{color:var(--blue);border-bottom-color:var(--blue)}
+.mode-btn:hover:not(.active-fdo):not(.active-heritage){color:var(--text)}
+.mode-label{font-family:'Space Mono',monospace;font-size:.52rem;color:var(--muted);padding:0 16px;display:flex;align-items:center;letter-spacing:.1em}
+
+/* LAYOUT */
+.app{display:grid;grid-template-columns:480px 1fr;min-height:calc(100vh - 110px)}
+.panel{padding:22px 26px;overflow-y:auto}
+.panel-left{border-right:1px solid var(--border)}
+.panel-right{background:var(--bg)}
+
+/* FRAMEWORK PANELS */
+.fw{display:none}
+.fw.active{display:block}
+
+/* SECTION */
+.sec{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin:18px 0 10px}
+.sec.heritage{color:var(--blue)}
+.sec::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec:first-child{margin-top:0}
+
+/* FIELDS */
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.field label{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+input[type=text],input[type=number],select,textarea{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.82rem;padding:8px 11px;border-radius:4px;width:100%;outline:none;transition:border-color .15s,box-shadow .15s;appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-dim)}
+.fw-heritage input:focus,.fw-heritage select:focus,.fw-heritage textarea:focus{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-dim)}
+select{cursor:pointer}
+select option{background:#1a1a24}
+textarea{resize:vertical;min-height:68px;line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:4px}
+.chip{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.05em;padding:5px 9px;border-radius:3px;border:1px solid var(--border2);background:var(--surface2);color:var(--muted);cursor:pointer;transition:all .12s;user-select:none;white-space:nowrap}
+.chip:hover{border-color:var(--purple);color:var(--text)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#09090c;font-weight:700}
+.chip.on-blue{background:var(--blue-dim);border-color:var(--blue);color:var(--blue);font-weight:700}
+.chip.on-purple{background:var(--purple-dim);border-color:var(--purple);color:#c4b5fd}
+
+/* PRESETS */
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2px}
+.preset-btn{font-family:'Space Mono',monospace;font-size:.56rem;padding:6px 12px;border-radius:3px;border:1px solid var(--border2);background:var(--surface3);color:var(--muted);cursor:pointer;transition:all .15s;letter-spacing:.07em}
+.preset-btn:hover{border-color:var(--orange);color:var(--orange)}
+.preset-btn.heritage-preset:hover{border-color:var(--blue);color:var(--blue)}
+
+/* GEN BTN */
+.gen-btn{width:100%;padding:14px;background:var(--accent);color:#09090c;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.18em;border:none;border-radius:4px;cursor:pointer;transition:all .2s;margin-top:8px}
+.gen-btn:hover{background:#ccff44;transform:translateY(-1px);box-shadow:0 4px 20px rgba(184,240,64,.28)}
+.gen-btn.heritage-gen{background:var(--blue)}
+.gen-btn.heritage-gen:hover{background:#7dd3fc;box-shadow:0 4px 20px rgba(56,189,248,.28)}
+
+/* OUTPUT */
+.output-box{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px;font-family:'Space Mono',monospace;font-size:.7rem;line-height:1.85;color:var(--text);white-space:pre-wrap;word-break:break-word;min-height:220px;transition:border-color .3s}
+.output-box.empty{color:var(--muted);font-style:italic}
+.output-box.has-content{border-color:var(--border2)}
+
+.char-bar{height:3px;background:var(--border);border-radius:2px;margin:7px 0 4px;overflow:hidden}
+.char-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s ease,background .3s}
+.char-meta{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.56rem;color:var(--muted)}
+.warn{color:var(--orange)}.over{color:var(--red)}.good{color:var(--accent)}
+
+.action-row{display:flex;gap:8px;margin-top:9px}
+.action-btn{flex:1;padding:9px 12px;border-radius:4px;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.08em;cursor:pointer;transition:all .15s;border:1px solid var(--border2);background:var(--surface2);color:var(--muted)}
+.action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.action-btn.primary{background:var(--surface3);color:var(--text);border-color:var(--border2)}
+.action-btn.primary:hover{background:var(--accent);color:#09090c;border-color:var(--accent)}
+
+/* METERS */
+.meter-grid{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.meter-row{display:flex;align-items:center;gap:10px}
+.meter-name{font-family:'Space Mono',monospace;font-size:.56rem;color:var(--muted);width:115px;flex-shrink:0}
+.meter-track{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.meter-fill{height:100%;background:var(--accent);border-radius:2px;width:0%;transition:width .6s ease}
+.meter-fill.mid{background:var(--orange)}.meter-fill.low{background:var(--red)}
+.meter-val{font-family:'Space Mono',monospace;font-size:.56rem;color:var(--accent);width:30px;text-align:right}
+
+/* HISTORY */
+.history-list{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.history-item{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:9px 13px;cursor:pointer;transition:border-color .15s}
+.history-item:hover{border-color:var(--purple)}
+.history-tag{font-family:'Space Mono',monospace;font-size:.56rem;color:var(--purple);margin-bottom:3px}
+.history-preview{font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* TIP */
+.tip-box{background:var(--surface3);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:4px;padding:11px 13px;font-size:.73rem;color:var(--muted);line-height:1.65;margin-top:4px}
+.tip-box.heritage-tip{border-left-color:var(--blue)}
+.tip-box strong{color:var(--text)}
+
+/* STRUCTURE */
+.struct-box{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:14px;font-family:'Space Mono',monospace;font-size:.67rem;color:var(--muted);font-style:italic;min-height:70px;white-space:pre-wrap}
+
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+@media(max-width:900px){.app{grid-template-columns:1fr}.panel-left{border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="logo-sub">FDO Vault</div>
+    <div class="logo">Suno Agent v2</div>
+  </div>
+  <div class="badge-row">
+    <div class="badge bg">Standalone</div>
+    <div class="badge bp">FDO Framework</div>
+    <div class="badge bb">Heritage Framework</div>
+  </div>
+</div>
+
+<!-- MODE TOGGLE -->
+<div class="mode-bar">
+  <span class="mode-label">FRAMEWORK →</span>
+  <button class="mode-btn active-fdo" id="btn-fdo" onclick="switchMode('fdo')">⚡ FDO — Production Stack</button>
+  <button class="mode-btn" id="btn-heritage" onclick="switchMode('heritage')">🎙 Heritage — Historical Authentic</button>
+</div>
+
+<div class="app">
+<!-- ========== LEFT PANEL ========== -->
+<div class="panel panel-left">
+
+<!-- ===================== FDO FRAMEWORK ===================== -->
+<div class="fw active" id="fw-fdo">
+
+  <div class="sec">Quick Presets</div>
+  <div class="presets">
+    <button class="preset-btn" onclick="loadFDO('fdo')">⚡ FDO / Two Left</button>
+    <button class="preset-btn" onclick="loadFDO('euroedm')">🪩 M41S0N Euro EDM</button>
+    <button class="preset-btn" onclick="loadFDO('neosoul')">🌀 Neo Soul</button>
+    <button class="preset-btn" onclick="loadFDO('afrobeat')">🌍 Afrobeat</button>
+    <button class="preset-btn" onclick="loadFDO('darkpop')">🌑 Dark Pop</button>
+    <button class="preset-btn" onclick="loadFDO('jazz')">🎷 Jazz Octet</button>
+    <button class="preset-btn" onclick="loadFDO('reggaeton')">🔥 Reggaeton</button>
+    <button class="preset-btn" onclick="loadFDO('bossanova')">🌺 Bossa Nova</button>
+    <button class="preset-btn" onclick="loadFDO('trap')">💀 Trap</button>
+    <button class="preset-btn" onclick="clearFDO()">✕ Clear</button>
+  </div>
+
+  <div class="sec">Core Identity</div>
+  <div class="g2">
+    <div class="field"><label>Primary Genre</label>
+      <select id="f-genre">
+        <option>Memphis Hip-Hop</option><option>Trap</option><option>Hip Hop</option>
+        <option>Cloud Rap</option><option>UK Drill</option><option>Phonk</option>
+        <option>R&B</option><option>Neo Soul</option><option>Quiet Storm</option>
+        <option>Soul</option><option>Gospel</option><option>Funk</option>
+        <option>Disco</option><option>Eurodance</option><option>Euro EDM Disco</option>
+        <option>House</option><option>Tech House</option><option>Techno</option>
+        <option>Synthwave</option><option>Dance-pop</option><option>Dark Pop</option>
+        <option>Dream Pop</option><option>Indie Pop</option><option>Afrobeat</option>
+        <option>Dancehall</option><option>Reggae</option><option>Reggaeton</option>
+        <option>Latin</option><option>Samba</option><option>Bossa Nova</option>
+        <option>Jazz</option><option>Jazz Fusion</option><option>Cool Jazz</option>
+        <option>Bebop</option><option>Smooth Jazz</option><option>Blues</option>
+        <option>Folk</option><option>Americana</option><option>Country</option>
+        <option>Rock</option><option>Indie Rock</option><option>Progressive Metal</option>
+        <option>Experimental</option><option>Ambient</option><option>Lo-Fi</option>
+        <option>Downtempo</option><option>World</option>
+      </select>
+    </div>
+    <div class="field"><label>Fusion / Custom</label><input type="text" id="f-custom" placeholder="e.g. zoukglam, tropic noir..."/></div>
+  </div>
+  <div class="g3">
+    <div class="field"><label>BPM</label><input type="text" id="f-bpm" placeholder="130"/></div>
+    <div class="field"><label>Key / Mode</label>
+      <select id="f-key">
+        <option value="">— none —</option><option>minor key</option><option>major key</option>
+        <option>harmonic minor</option><option>dorian mode</option><option>pentatonic</option>
+      </select>
+    </div>
+    <div class="field"><label>Feel</label>
+      <select id="f-feel">
+        <option value="">— none —</option><option>half-time feel</option>
+        <option>four-on-the-floor</option><option>swung rhythm</option>
+        <option>syncopated</option><option>offbeat groove</option><option>polyrhythmic</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec">Vocal Architecture</div>
+  <div class="g2">
+    <div class="field"><label>Voice Type</label>
+      <select id="f-voice">
+        <option value="">— none —</option><option>deep male vocal</option>
+        <option>booming chest voice</option><option>male vocal</option>
+        <option>raspy male vocal</option><option>female vocal</option>
+        <option>soulful female vocal</option><option>breathy female vocal</option>
+        <option>rich alto female</option><option>soprano female vocal</option>
+        <option>duet male and female</option><option>choir</option>
+        <option>spoken word</option><option>no vocal instrumental</option>
+      </select>
+    </div>
+    <div class="field"><label>Vocal Tone</label>
+      <select id="f-vtone">
+        <option value="">— none —</option><option>vocal tone: warm</option>
+        <option>vocal tone: raspy</option><option>vocal style: soulful</option>
+        <option>vocal style: husky</option><option>vocal style: breathy</option>
+        <option>vocal style: ethereal</option><option>vocal style: deadpan</option>
+        <option>vocal expression: emotional</option><option>authoritative delivery</option>
+        <option>bars land behind the beat</option><option>melismatic phrasing</option>
+      </select>
+    </div>
+  </div>
+  <div class="field"><label>Vocal FX & Layering</label>
+  <div class="chips" id="f-vfx">
+    <span class="chip" data-v="doubled vocals">Doubled Vocals</span>
+    <span class="chip" data-v="whisper vocals">Whisper Vocals</span>
+    <span class="chip" data-v="layered harmony">Layered Harmony</span>
+    <span class="chip" data-v="stacked harmonies">Stacked Harmonies</span>
+    <span class="chip" data-v="backup vocals">Backup Vocals</span>
+    <span class="chip" data-v="call and response">Call &amp; Response</span>
+    <span class="chip" data-v="vocal fry">Vocal Fry</span>
+    <span class="chip" data-v="echoing vocals">Echoing Vocals</span>
+    <span class="chip" data-v="vocoder voice">Vocoder</span>
+    <span class="chip" data-v="auto-tune">Auto-Tune</span>
+    <span class="chip" data-v="vibrato">Vibrato</span>
+    <span class="chip" data-v="ad libs">Ad Libs</span>
+    <span class="chip" data-v="harmonizer">Harmonizer</span>
+    <span class="chip" data-v="vocal chop">Vocal Chop</span>
+    <span class="chip" data-v="slapback delay on select bars">Slapback Delay on Bars</span>
+    <span class="chip" data-v="dry close mic vocal">Dry Close Mic</span>
+    <span class="chip" data-v="subharmonics">Subharmonics</span>
+  </div></div>
+
+  <div class="sec">Reverb Stack</div>
+  <div class="chips" id="f-reverb">
+    <span class="chip" data-v="room reverb">Room</span>
+    <span class="chip" data-v="plate reverb">Plate</span>
+    <span class="chip" data-v="plate reverb on ad-libs only">Plate (ad-libs)</span>
+    <span class="chip" data-v="small room reverb on vocals">Small Room Vox</span>
+    <span class="chip" data-v="hall reverb">Hall</span>
+    <span class="chip" data-v="spring reverb">Spring</span>
+    <span class="chip" data-v="cathedral reverb">Cathedral</span>
+    <span class="chip" data-v="reverse reverb">Reverse Reverb</span>
+    <span class="chip" data-v="lush reverb">Lush Reverb</span>
+    <span class="chip" data-v="ambient reverb wash">Ambient Wash</span>
+  </div>
+
+  <div class="sec">Panning & Spatial</div>
+  <div class="chips" id="f-spatial">
+    <span class="chip" data-v="panning automation">Panning Automation</span>
+    <span class="chip" data-v="stereo widening">Stereo Widening</span>
+    <span class="chip" data-v="mid-side">Mid-Side</span>
+    <span class="chip" data-v="3D spatial">3D Spatial</span>
+    <span class="chip" data-v="binaural">Binaural</span>
+    <span class="chip" data-v="ping-pong delay">Ping-Pong Delay</span>
+    <span class="chip" data-v="stereo-panned percussion">Stereo-Panned Perc</span>
+    <span class="chip" data-v="wide stereo image">Wide Stereo Image</span>
+  </div>
+
+  <div class="sec">EQ — Cut Highs / Warmth</div>
+  <div class="chips" id="f-eq">
+    <span class="chip" data-v="low-pass filter">Low-Pass Filter</span>
+    <span class="chip" data-v="tape saturation">Tape Saturation</span>
+    <span class="chip" data-v="analog warmth">Analog Warmth</span>
+    <span class="chip" data-v="warm dark mix">Warm Dark Mix</span>
+    <span class="chip" data-v="rolled-off top end">Rolled-Off Top End</span>
+    <span class="chip" data-v="tube distortion">Tube Distortion</span>
+    <span class="chip" data-v="analog saturation">Analog Saturation</span>
+    <span class="chip" data-v="vinyl crackle">Vinyl Crackle</span>
+    <span class="chip" data-v="vintage console">Vintage Console</span>
+    <span class="chip" data-v="warm preamps">Warm Preamps</span>
+    <span class="chip" data-v="low-mid saturation">Low-Mid Saturation</span>
+    <span class="chip" data-v="notch filter">Notch Filter</span>
+  </div>
+
+  <div class="sec">Dynamics & Master Chain</div>
+  <div class="chips" id="f-dyn">
+    <span class="chip" data-v="sidechain">Sidechain</span>
+    <span class="chip" data-v="multiband compression">Multiband Compression</span>
+    <span class="chip" data-v="limiter">Limiter</span>
+    <span class="chip" data-v="natural compression">Natural Compression</span>
+    <span class="chip" data-v="studio quality">Studio Quality</span>
+    <span class="chip" data-v="streaming ready">Streaming Ready</span>
+    <span class="chip" data-v="mastered">Mastered</span>
+    <span class="chip" data-v="high production quality">High Production Quality</span>
+    <span class="chip" data-v="live band feel">Live Band Feel</span>
+    <span class="chip" data-v="hi-fi">Hi-Fi</span>
+    <span class="chip" data-v="dynamic range">Dynamic Range</span>
+  </div>
+
+  <div class="sec">Drums & Bass</div>
+  <div class="chips" id="f-drums">
+    <span class="chip" data-v="808">808</span>
+    <span class="chip" data-v="hard 808 long decay">Hard 808 Long Decay</span>
+    <span class="chip" data-v="sub bass">Sub Bass</span>
+    <span class="chip" data-v="sub bass rumble">Sub Bass Rumble</span>
+    <span class="chip" data-v="sparse snare dry and sharp">Sparse Dry Snare</span>
+    <span class="chip" data-v="punchy snare">Punchy Snare</span>
+    <span class="chip" data-v="rimshots">Rimshots</span>
+    <span class="chip" data-v="minimal hi-hats">Minimal Hi-Hats</span>
+    <span class="chip" data-v="deliberate negative space">Negative Space</span>
+    <span class="chip" data-v="finger snaps">Finger Snaps</span>
+    <span class="chip" data-v="hand claps">Hand Claps</span>
+    <span class="chip" data-v="jazz brushes">Jazz Brushes</span>
+    <span class="chip" data-v="MPC drums">MPC Drums</span>
+    <span class="chip" data-v="boom bap drums">Boom Bap Drums</span>
+    <span class="chip" data-v="congas">Congas</span>
+    <span class="chip" data-v="djembe">Djembe</span>
+    <span class="chip" data-v="handpan">Handpan</span>
+    <span class="chip" data-v="groovy bassline">Groovy Bassline</span>
+    <span class="chip" data-v="upright bass">Upright Bass</span>
+  </div>
+
+  <div class="sec">Instruments</div>
+  <div class="chips" id="f-instr">
+    <span class="chip" data-v="piano">Piano</span>
+    <span class="chip" data-v="rhodes piano">Rhodes Piano</span>
+    <span class="chip" data-v="electric piano">Electric Piano</span>
+    <span class="chip" data-v="organ">Organ</span>
+    <span class="chip" data-v="synth pad">Synth Pad</span>
+    <span class="chip" data-v="ambient pad">Ambient Pad</span>
+    <span class="chip" data-v="saw lead">Saw Lead</span>
+    <span class="chip" data-v="pluck synth">Pluck Synth</span>
+    <span class="chip" data-v="arpeggiator">Arpeggiator</span>
+    <span class="chip" data-v="acoustic guitar">Acoustic Guitar</span>
+    <span class="chip" data-v="electric guitar">Electric Guitar</span>
+    <span class="chip" data-v="saxophone">Saxophone</span>
+    <span class="chip" data-v="trumpet">Trumpet</span>
+    <span class="chip" data-v="muted trumpet">Muted Trumpet</span>
+    <span class="chip" data-v="horn section">Horn Section</span>
+    <span class="chip" data-v="strings legato">Strings Legato</span>
+    <span class="chip" data-v="violin">Violin</span>
+    <span class="chip" data-v="cello">Cello</span>
+    <span class="chip" data-v="oud">Oud</span>
+    <span class="chip" data-v="kaban plucked motif">Kaban Plucked</span>
+    <span class="chip" data-v="masenqo bowed string">Masenqo</span>
+    <span class="chip" data-v="kalimba">Kalimba</span>
+    <span class="chip" data-v="glockenspiel">Glockenspiel</span>
+    <span class="chip" data-v="steelpan">Steelpan</span>
+    <span class="chip" data-v="harmonica">Harmonica</span>
+    <span class="chip" data-v="marimba">Marimba</span>
+    <span class="chip" data-v="vibraphone">Vibraphone</span>
+    <span class="chip" data-v="mellotron">Mellotron</span>
+    <span class="chip" data-v="drone">Drone</span>
+  </div>
+
+  <div class="sec">Mood & Earworm</div>
+  <div class="chips" id="f-mood">
+    <span class="chip" data-v="catchy hook">Catchy Hook</span>
+    <span class="chip" data-v="earworm">Earworm</span>
+    <span class="chip" data-v="anthemic">Anthemic</span>
+    <span class="chip" data-v="hypnotic">Hypnotic</span>
+    <span class="chip" data-v="building intensity">Building Intensity</span>
+    <span class="chip" data-v="powerful outro">Powerful Outro</span>
+    <span class="chip" data-v="emotional bridge">Emotional Bridge</span>
+    <span class="chip" data-v="climactic">Climactic</span>
+    <span class="chip" data-v="melancholic">Melancholic</span>
+    <span class="chip" data-v="nostalgic">Nostalgic</span>
+    <span class="chip" data-v="euphoric">Euphoric</span>
+    <span class="chip" data-v="dreamy">Dreamy</span>
+    <span class="chip" data-v="uplifting">Uplifting</span>
+    <span class="chip" data-v="cinematic">Cinematic</span>
+    <span class="chip" data-v="dancefloor-ready">Dancefloor-Ready</span>
+    <span class="chip" data-v="dynamic contrast">Dynamic Contrast</span>
+  </div>
+
+  <div class="field" style="margin-top:12px"><label>Atmosphere / Vibe</label>
+    <textarea id="f-atmo" placeholder="e.g. cold Ohio winter night, ancestral warmth, late night studio..."></textarea>
+  </div>
+  <div class="field"><label>Song Concept / Context</label>
+    <textarea id="f-ctx" placeholder="e.g. CPA exam grind anthem, Somali diaspora themes, Pooh Shiesty delivery..."></textarea>
+  </div>
+  <button class="gen-btn" onclick="buildFDO()">⚡ BUILD FDO PROMPT</button>
+</div><!-- /fw-fdo -->
+
+<!-- ===================== HERITAGE FRAMEWORK ===================== -->
+<div class="fw" id="fw-heritage">
+
+  <div class="sec heritage">Quick Presets</div>
+  <div class="presets">
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('lofi1')">🌙 LoFi NYC 1993</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('lofi2')">🌊 LoFi Surf 1966</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('lofi3')">🤠 LoFi Wild West</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('psych1')">⚡ Psych Rock Soul</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('memphis')">🎸 Memphis Soul 1971</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('tripop')">🌫 Trip Hop Bristol</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('dnb')">💀 Drum &amp; Bass 1996</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('britpop1')">🇬🇧 Britpop 1965</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('madchester')">🐝 Madchester 1992</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('irish')">🍀 Irish Folk 1970s</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('beachboys')">🌅 LA Pop 1966</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('muscleshoals')">🔥 Muscle Shoals 1973</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('motown')">🎵 Motown 1965</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('bluenote')">🎷 Blue Note 1953</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('glam')">💎 Glam Rock 1973</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('tomwaits')">🥃 Tom Waits Experimental</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('afrodub')">🌍 Afro Dub Modern</button>
+    <button class="preset-btn heritage-preset" onclick="loadHeritage('hotclub')">🎻 Hot Club Jazz 1934</button>
+    <button class="preset-btn" onclick="clearHeritage()">✕ Clear</button>
+  </div>
+
+  <div class="sec heritage">Production Quality</div>
+  <div class="g2">
+    <div class="field"><label>Production Level</label>
+      <select id="h-prod">
+        <option>Lo fi production</option>
+        <option>Radio ready production</option>
+        <option>Classic production</option>
+        <option>High end production</option>
+        <option>Analog production</option>
+      </select>
+    </div>
+    <div class="field"><label>Tempo Feel</label>
+      <select id="h-tempo">
+        <option value="">— none —</option>
+        <option>Uptempo</option>
+        <option>smooth stately tempo</option>
+        <option>smooth uptempo</option>
+        <option>smooth tempo</option>
+        <option>mellow tempo</option>
+        <option>chill downtempo</option>
+        <option>loose live swing feel</option>
+        <option>fast breakbeats</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec heritage">Era & Geography</div>
+  <div class="g2">
+    <div class="field"><label>Year / Era</label>
+      <input type="text" id="h-era" placeholder="e.g. 1966, 1973, mid 1990's, late 1970s..."/>
+    </div>
+    <div class="field"><label>Location / City / Region</label>
+      <input type="text" id="h-loc" placeholder="e.g. Memphis, Bristol, Laurel Canyon, New York..."/>
+    </div>
+  </div>
+
+  <div class="sec heritage">Studio & Label Heritage</div>
+  <div class="g2">
+    <div class="field"><label>Recording Studio(s)</label>
+      <input type="text" id="h-studio" placeholder="e.g. Van Gelder, Olympic, Columbia Studio B..."/>
+    </div>
+    <div class="field"><label>Record Label(s)</label>
+      <input type="text" id="h-label" placeholder="e.g. Blue Note, Atlantic, Motown, Ninja Tune..."/>
+    </div>
+  </div>
+  <div class="field"><label>Producer / Engineer Reference</label>
+    <input type="text" id="h-producer" placeholder="e.g. Brian Wilson, Jerry Wexler, Nellee Hooper, Tom Waits..."/>
+  </div>
+
+  <div class="sec heritage">Gear & Equipment</div>
+  <div class="field"><label>Key Instruments / Gear (comma separated)</label>
+    <input type="text" id="h-gear" placeholder="e.g. Fender Rhodes, Mellotron, Fairlight CMI, Rickenbacker, Neumann microphones..."/>
+  </div>
+  <div class="field"><label>Guitar / Keys Specifics</label>
+    <input type="text" id="h-guitars" placeholder="e.g. Telecaster, Stratocaster, Les Paul, jangle pop guitar, 12 string..."/>
+  </div>
+
+  <div class="sec heritage">Rhythm Section</div>
+  <div class="field"><label>Drum Style</label>
+    <select id="h-drums">
+      <option value="">— none —</option>
+      <option>1950's drums</option>
+      <option>1960's drums</option>
+      <option>1970's snare</option>
+      <option>1970's gated snare</option>
+      <option>1980's gated snare</option>
+      <option>British Invasion 1960's drums</option>
+      <option>mid 1990's drums</option>
+      <option>modern tight drums</option>
+      <option>jazz brushes</option>
+      <option>mellow jazz brush drums</option>
+      <option>tight snare</option>
+      <option>mellow snare</option>
+      <option>2 drum sets panned left and right</option>
+      <option>breakbeats</option>
+      <option>fast breakbeats 160 to 180 BPM</option>
+      <option>tom-heavy drums</option>
+      <option>brushes stately swing tempo</option>
+    </select>
+  </div>
+  <div class="field"><label>Bass Style</label>
+    <select id="h-bass">
+      <option value="">— none —</option>
+      <option>upright bass</option>
+      <option>clean deep bass</option>
+      <option>tight clean bass</option>
+      <option>funky bass</option>
+      <option>tight deep bass</option>
+      <option>dub bass</option>
+      <option>heavy basslines</option>
+      <option>syncopated bassline</option>
+      <option>round synth bass</option>
+      <option>fuzz square wave synth bass</option>
+    </select>
+  </div>
+
+  <div class="sec heritage">Vocals</div>
+  <div class="g2">
+    <div class="field"><label>Lead Vocal</label>
+      <select id="h-leadv">
+        <option value="">— none —</option>
+        <option>female vocals mellow and detached</option>
+        <option>female vocals mellow and seductive</option>
+        <option>female sweet voice warm voice</option>
+        <option>female whisper voice warm voice</option>
+        <option>female dark voice warm voice</option>
+        <option>smokey but strong urban female vocals mellow and smooth</option>
+        <option>female voices clear and strong</option>
+        <option>soulful female lead vocal</option>
+        <option>male vocals ecstatic and unhinged</option>
+        <option>dark male vocals baritone and gritty</option>
+        <option>smokey dark male vocals tenor and gritty</option>
+        <option>gravely rough baritone lead vocal</option>
+        <option>single male vocals tight and harmonized</option>
+        <option>double tracked layered male group vocals tight and harmonized</option>
+        <option>layered male vocals tight and harmonized</option>
+        <option>whispery male vocals mellow and doubletracked</option>
+        <option>gravelly male vocals Irish accented tight and harmonized</option>
+        <option>classy male vocals mellow and restrained</option>
+        <option>ambiguous single tracked male lead vocals</option>
+        <option>Male lead vocal with global south accents</option>
+        <option>Intro spoken vocal heavy echo</option>
+      </select>
+    </div>
+    <div class="field"><label>Background Vocals</label>
+      <select id="h-bgv">
+        <option value="">— none —</option>
+        <option>background gospel singers female dark voices</option>
+        <option>background harmonies male group voices</option>
+        <option>female backing vocals tight and harmonized</option>
+        <option>female dreamy double tracked voices</option>
+        <option>layered multi timbral background harmonies</option>
+        <option>backing vocals tight harmonized and heavily flanged in choruses</option>
+        <option>harmonies on chorus</option>
+        <option>background oo ahhh harmonies</option>
+        <option>Female operatic background vocals reverb and delay</option>
+        <option>church vibes background gospel singers</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec heritage">Signature Always-On Tags</div>
+  <div class="chips" id="h-always">
+    <span class="chip on-blue" data-v="side chain">Side Chain</span>
+    <span class="chip on-blue" data-v="3D">3D</span>
+    <span class="chip on-blue" data-v="Binaural">Binaural</span>
+    <span class="chip on-blue" data-v="analog">Analog</span>
+  </div>
+
+  <div class="sec heritage">Compression & Microphone</div>
+  <div class="chips" id="h-compress">
+    <span class="chip" data-v="classic tape compression">Classic Tape Compression</span>
+    <span class="chip" data-v="old school tape compression">Old School Tape Compression</span>
+    <span class="chip" data-v="British compression">British Compression</span>
+    <span class="chip" data-v="natural compression">Natural Compression</span>
+    <span class="chip" data-v="tube microphones">Tube Microphones</span>
+    <span class="chip" data-v="Neumann microphones">Neumann Microphones</span>
+    <span class="chip" data-v="ribbon microphones">Ribbon Microphones</span>
+    <span class="chip" data-v="tube microphone">Tube Microphone</span>
+  </div>
+
+  <div class="sec heritage">FX & Texture</div>
+  <div class="chips" id="h-fx">
+    <span class="chip" data-v="reverb">Reverb</span>
+    <span class="chip" data-v="delay">Delay</span>
+    <span class="chip" data-v="slapback reverb">Slapback Reverb</span>
+    <span class="chip" data-v="natural room sound">Natural Room Sound</span>
+    <span class="chip" data-v="natural ballroom reverb">Natural Ballroom Reverb</span>
+    <span class="chip" data-v="minimal reverb">Minimal Reverb</span>
+    <span class="chip" data-v="dub effects">Dub Effects</span>
+    <span class="chip" data-v="heavy dynamics">Heavy Dynamics</span>
+    <span class="chip" data-v="smooth dynamics">Smooth Dynamics</span>
+    <span class="chip" data-v="chorus effect">Chorus Effect</span>
+    <span class="chip" data-v="phased Hammond organ">Phased Hammond</span>
+    <span class="chip" data-v="fuzz guitar">Fuzz Guitar</span>
+    <span class="chip" data-v="tremolo guitar">Tremolo Guitar</span>
+    <span class="chip" data-v="flanged">Flanged</span>
+    <span class="chip" data-v="live sound">Live Sound</span>
+    <span class="chip" data-v="with instrumental melodic introduction">Melodic Intro</span>
+    <span class="chip" data-v="ambient breaks">Ambient Breaks</span>
+    <span class="chip" data-v="Dub Mariachi horn breaks with echo">Dub Mariachi Horn Breaks</span>
+  </div>
+
+  <div class="sec heritage">Extra Instruments / Horns / Strings</div>
+  <div class="chips" id="h-extras">
+    <span class="chip" data-v="horns trumpets">Horns &amp; Trumpets</span>
+    <span class="chip" data-v="8 piece string section">8-Piece Strings</span>
+    <span class="chip" data-v="string octet backing">String Octet</span>
+    <span class="chip" data-v="deep cello and string section">Deep Cello Strings</span>
+    <span class="chip" data-v="oboes and french horns">Oboes &amp; French Horns</span>
+    <span class="chip" data-v="accordion">Accordion</span>
+    <span class="chip" data-v="marimba">Marimba</span>
+    <span class="chip" data-v="trombone">Trombone</span>
+    <span class="chip" data-v="banjo">Banjo</span>
+    <span class="chip" data-v="muted trumpet">Muted Trumpet</span>
+    <span class="chip" data-v="acoustic piano">Acoustic Piano</span>
+    <span class="chip" data-v="acoustic grand piano">Acoustic Grand Piano</span>
+    <span class="chip" data-v="acoustic 12 string">Acoustic 12-String</span>
+    <span class="chip" data-v="tin whistles">Tin Whistles</span>
+    <span class="chip" data-v="bodhran">Bodhrán</span>
+    <span class="chip" data-v="pedal steel guitar">Pedal Steel Guitar</span>
+    <span class="chip" data-v="arpeggiator">Arpeggiator</span>
+    <span class="chip" data-v="mellotron">Mellotron</span>
+    <span class="chip" data-v="distorted Minimoog Model D">Minimoog Model D</span>
+    <span class="chip" data-v="Fairlight CMI">Fairlight CMI</span>
+    <span class="chip" data-v="Farfisa organ">Farfisa Organ</span>
+    <span class="chip" data-v="cello">Cello</span>
+    <span class="chip" data-v="double bass">Double Bass</span>
+    <span class="chip" data-v="tambourines">Tambourines</span>
+    <span class="chip" data-v="clip clop percussion">Clip Clop Percussion</span>
+    <span class="chip" data-v="Roland Jupiter-4">Roland Jupiter-4</span>
+    <span class="chip" data-v="TR-808">TR-808</span>
+  </div>
+
+  <div class="field" style="margin-top:12px"><label>Mood / Vibe Descriptor</label>
+    <input type="text" id="h-mood" placeholder="e.g. mellow vibes, church vibes, urban, city pop, acid jazz, dub..."/>
+  </div>
+  <div class="field"><label>Additional Free-Form Tags</label>
+    <textarea id="h-free" placeholder="Any extra tags or phrases not covered above..."></textarea>
+  </div>
+  <button class="gen-btn heritage-gen" onclick="buildHeritage()">🎙 BUILD HERITAGE PROMPT</button>
+</div><!-- /fw-heritage -->
+
+</div><!-- /panel-left -->
+
+<!-- ========== RIGHT PANEL ========== -->
+<div class="panel panel-right">
+
+  <div class="sec" style="margin-top:0">Generated Prompt</div>
+  <div class="output-box empty" id="outputBox">
+    Configure inputs on the left and hit BUILD — your Suno prompt appears here ready to copy.
+  </div>
+  <div class="char-bar"><div class="char-fill" id="charFill" style="width:0%"></div></div>
+  <div class="char-meta">
+    <span id="charCount">0 / 1000 characters</span>
+    <span id="charStatus">—</span>
+  </div>
+  <div class="action-row">
+    <button class="action-btn primary" onclick="copyPrompt()" id="copyBtn">▲ COPY PROMPT</button>
+    <button class="action-btn" onclick="clearOutput()">✕ CLEAR</button>
+  </div>
+
+  <div class="sec" style="margin-top:20px">Prompt Quality Meters</div>
+  <div class="meter-grid">
+    <div class="meter-row"><span class="meter-name">Production</span><div class="meter-track"><div class="meter-fill" id="m-prod"></div></div><span class="meter-val" id="mv-prod">—</span></div>
+    <div class="meter-row"><span class="meter-name">Vocal Depth</span><div class="meter-track"><div class="meter-fill" id="m-vox"></div></div><span class="meter-val" id="mv-vox">—</span></div>
+    <div class="meter-row"><span class="meter-name">Spatial / Panning</span><div class="meter-track"><div class="meter-fill" id="m-spatial"></div></div><span class="meter-val" id="mv-spatial">—</span></div>
+    <div class="meter-row"><span class="meter-name">Heritage Depth</span><div class="meter-track"><div class="meter-fill" id="m-heritage"></div></div><span class="meter-val" id="mv-heritage">—</span></div>
+    <div class="meter-row"><span class="meter-name">Earworm / Mood</span><div class="meter-track"><div class="meter-fill" id="m-ear"></div></div><span class="meter-val" id="mv-ear">—</span></div>
+    <div class="meter-row"><span class="meter-name">Instrument Depth</span><div class="meter-track"><div class="meter-fill" id="m-instr"></div></div><span class="meter-val" id="mv-instr">—</span></div>
+  </div>
+
+  <div class="sec" style="margin-top:20px">Vault Tips</div>
+  <div class="tip-box" id="tips">
+    <strong>FDO Framework:</strong> Genre → Tempo/Key → Vocal chain → Reverb → Spatial/Panning → EQ warmth → Dynamics → Drums → Instruments → Mood.<br>
+    <strong>Heritage Framework:</strong> Production level → Era/Location → Studio/Label → Producer → Gear → Drums/Bass → Vocals → Always-on tags → Compression → FX.<br>
+    <strong>Low-Pass + Tape Saturation:</strong> Rolls off harsh highs and adds warmth without muddying the low end.<br>
+    <strong>Heritage secret:</strong> Real studio names, producer names, and gear references train Suno's style model toward authentic vintage sounds.<br>
+    <strong>Both frameworks always include:</strong> side chain, 3D, Binaural — these are non-negotiable for spatial depth.
+  </div>
+
+  <div class="sec" style="margin-top:20px">Lyric Structure Builder</div>
+  <div class="chips" style="margin-bottom:10px" id="structChips">
+    <span class="chip on-purple" data-struct="[Intro]">[Intro]</span>
+    <span class="chip on-purple" data-struct="[Verse]">[Verse]</span>
+    <span class="chip on-purple" data-struct="[Pre-Chorus]">[Pre-Chorus]</span>
+    <span class="chip on-purple" data-struct="[Chorus]">[Chorus]</span>
+    <span class="chip on-purple" data-struct="[Post-Chorus]">[Post-Chorus]</span>
+    <span class="chip on-purple" data-struct="[Bridge]">[Bridge]</span>
+    <span class="chip on-purple" data-struct="[Hook]">[Hook]</span>
+    <span class="chip on-purple" data-struct="[Drop]">[Drop]</span>
+    <span class="chip on-purple" data-struct="[Build]">[Build]</span>
+    <span class="chip on-purple" data-struct="[Solo]">[Solo]</span>
+    <span class="chip on-purple" data-struct="[Interlude]">[Interlude]</span>
+    <span class="chip on-purple" data-struct="[Instrumental]">[Instrumental]</span>
+    <span class="chip on-purple" data-struct="[Spoken Word]">[Spoken Word]</span>
+    <span class="chip on-purple" data-struct="[Break]">[Break]</span>
+    <span class="chip on-purple" data-struct="[Outro]">[Outro]</span>
+    <span class="chip on-purple" data-struct="[End]">[End]</span>
+    <span class="chip on-purple" data-struct="[Fade Out]">[Fade Out]</span>
+  </div>
+  <div class="struct-box" id="structBox">Click tags above to build your lyrics structure template...</div>
+  <div class="action-row" style="margin-top:8px">
+    <button class="action-btn primary" onclick="copyStruct()">▲ COPY STRUCTURE</button>
+    <button class="action-btn" onclick="clearStruct()">✕ CLEAR</button>
+  </div>
+
+  <div class="sec" style="margin-top:20px">Prompt History</div>
+  <div class="history-list" id="histList">
+    <div style="font-family:'Space Mono',monospace;font-size:.58rem;color:var(--muted)">No prompts built yet.</div>
+  </div>
+
+</div><!-- /panel-right -->
+</div><!-- /app -->
+
+<script>
+// ===== CHIP TOGGLES =====
+document.querySelectorAll('.chip[data-v]').forEach(c=>{
+  c.addEventListener('click',()=>c.classList.toggle('on'));
+});
+let structTags=[];
+document.querySelectorAll('.chip[data-struct]').forEach(c=>{
+  c.addEventListener('click',()=>{structTags.push(c.dataset.struct);renderStruct();});
+});
+function renderStruct(){
+  const b=document.getElementById('structBox');
+  b.textContent=structTags.length?structTags.join('\n'):'Click tags above to build your lyrics structure template...';
+  b.style.color=structTags.length?'var(--text)':'var(--muted)';
+  b.style.fontStyle=structTags.length?'normal':'italic';
+}
+function clearStruct(){structTags=[];renderStruct();}
+function copyStruct(){if(!structTags.length)return;navigator.clipboard.writeText(structTags.join('\n')).then(()=>{const b=event.target;b.textContent='✓ COPIED';setTimeout(()=>b.textContent='▲ COPY STRUCTURE',2000);});}
+
+// ===== MODE SWITCH =====
+let currentMode='fdo';
+function switchMode(m){
+  currentMode=m;
+  document.querySelectorAll('.fw').forEach(f=>f.classList.remove('active'));
+  document.getElementById('fw-'+m).classList.add('active');
+  document.getElementById('btn-fdo').className='mode-btn'+(m==='fdo'?' active-fdo':'');
+  document.getElementById('btn-heritage').className='mode-btn'+(m==='heritage'?' active-heritage':'');
+}
+
+// ===== HELPERS =====
+function getOn(id){return[...document.querySelectorAll('#'+id+' .chip[data-v].on')].map(c=>c.dataset.v);}
+function setSelect(id,val){const el=document.getElementById(id);for(let i=0;i<el.options.length;i++){if(el.options[i].value===val||el.options[i].text===val){el.selectedIndex=i;return;}}}
+function setInput(id,val){document.getElementById(id).value=val;}
+function setTA(id,val){document.getElementById(id).value=val;}
+function clearChips(id){document.querySelectorAll('#'+id+' .chip[data-v]').forEach(c=>c.classList.remove('on'));}
+function setChips(id,vals){clearChips(id);vals.forEach(v=>{const c=[...document.querySelectorAll('#'+id+' .chip[data-v]')].find(x=>x.dataset.v===v);if(c)c.classList.add('on');});}
+
+// ===== OUTPUT =====
+let currentPrompt='',history=[];
+function renderOutput(prompt,mode){
+  currentPrompt=prompt;
+  const box=document.getElementById('outputBox');
+  box.textContent=prompt;box.classList.remove('empty');box.classList.add('has-content');
+  const len=prompt.length;
+  const fill=document.getElementById('charFill');
+  const cnt=document.getElementById('charCount');
+  const st=document.getElementById('charStatus');
+  fill.style.width=Math.min(100,(len/1000)*100)+'%';
+  cnt.textContent=len+' / 1000 characters';
+  if(len>1000){fill.style.background='var(--red)';cnt.className='over';st.textContent='⚠ OVER LIMIT';st.className='over';}
+  else if(len>800){fill.style.background='var(--orange)';cnt.className='warn';st.textContent='⚡ APPROACHING';st.className='warn';}
+  else{fill.style.background=mode==='heritage'?'var(--blue)':'var(--accent)';cnt.className='good';st.textContent='✓ GOOD';st.className='good';}
+}
+function copyPrompt(){if(!currentPrompt)return;navigator.clipboard.writeText(currentPrompt).then(()=>{const b=document.getElementById('copyBtn');b.textContent='✓ COPIED';setTimeout(()=>b.textContent='▲ COPY PROMPT',2000);});}
+function clearOutput(){currentPrompt='';const box=document.getElementById('outputBox');box.textContent='Configure inputs on the left and hit BUILD — your Suno prompt appears here ready to copy.';box.classList.add('empty');box.classList.remove('has-content');document.getElementById('charFill').style.width='0%';document.getElementById('charCount').textContent='0 / 1000 characters';document.getElementById('charStatus').textContent='—';}
+function addHistory(label,prompt){history.unshift({label,prompt});if(history.length>10)history.pop();document.getElementById('histList').innerHTML=history.map((h,i)=>`<div class="history-item" onclick="loadHist(${i})"><div class="history-tag">▸ ${h.label}</div><div class="history-preview">${h.prompt}</div></div>`).join('');}
+function loadHist(i){renderOutput(history[i].prompt,'fdo');}
+function setMeter(id,val){const f=document.getElementById('m-'+id);const v=document.getElementById('mv-'+id);f.style.width=val+'%';f.className='meter-fill'+(val<30?' low':val<60?' mid':'');v.textContent=val+'%';}
+
+// ===== FDO BUILD =====
+function buildFDO(){
+  const genre=document.getElementById('f-custom').value.trim()||document.getElementById('f-genre').value;
+  const bpm=document.getElementById('f-bpm').value.trim();
+  const key=document.getElementById('f-key').value;
+  const feel=document.getElementById('f-feel').value;
+  const voice=document.getElementById('f-voice').value;
+  const vtone=document.getElementById('f-vtone').value;
+  const atmo=document.getElementById('f-atmo').value.trim();
+  const ctx=document.getElementById('f-ctx').value.trim();
+  const vfx=getOn('f-vfx'),rev=getOn('f-reverb'),sp=getOn('f-spatial'),eq=getOn('f-eq'),dyn=getOn('f-dyn'),drums=getOn('f-drums'),instr=getOn('f-instr'),mood=getOn('f-mood');
+  let t=[];
+  t.push(genre);
+  if(bpm)t.push(bpm+' BPM');
+  if(key)t.push(key);
+  if(feel)t.push(feel);
+  if(voice)t.push(voice);
+  if(vtone)t.push(vtone);
+  t.push(...vfx,...rev,...sp,...eq,...dyn,...drums,...instr,...mood);
+  if(atmo)t.push(atmo);
+  if(ctx)t.push(ctx.length>80?ctx.slice(0,77)+'...':ctx);
+  const seen=new Set();
+  const unique=t.filter(x=>{const k=x.toLowerCase().trim();if(!k||seen.has(k))return false;seen.add(k);return true;});
+  let p=unique.join(', ');
+  if(p.length>1000)p=p.slice(0,997)+'...';
+  renderOutput(p,'fdo');
+  const score=(arr,mx)=>Math.min(100,Math.round((arr.length/Math.max(mx,1))*100));
+  setMeter('prod',score(dyn,6));setMeter('vox',score(vfx,8));setMeter('spatial',score(sp,5));
+  setMeter('heritage',0);setMeter('ear',score(mood,7));setMeter('instr',score([...instr,...drums],10));
+  addHistory('FDO: '+genre+(bpm?' · '+bpm+'BPM':''),p);
+}
+
+// ===== HERITAGE BUILD =====
+function buildHeritage(){
+  const prod=document.getElementById('h-prod').value;
+  const tempo=document.getElementById('h-tempo').value;
+  const era=document.getElementById('h-era').value.trim();
+  const loc=document.getElementById('h-loc').value.trim();
+  const studio=document.getElementById('h-studio').value.trim();
+  const label=document.getElementById('h-label').value.trim();
+  const producer=document.getElementById('h-producer').value.trim();
+  const gear=document.getElementById('h-gear').value.trim();
+  const guitars=document.getElementById('h-guitars').value.trim();
+  const drums=document.getElementById('h-drums').value;
+  const bass=document.getElementById('h-bass').value;
+  const leadv=document.getElementById('h-leadv').value;
+  const bgv=document.getElementById('h-bgv').value;
+  const mood=document.getElementById('h-mood').value.trim();
+  const free=document.getElementById('h-free').value.trim();
+  const always=getOn('h-always'),compress=getOn('h-compress'),fx=getOn('h-fx'),extras=getOn('h-extras');
+  let t=[];
+  if(prod)t.push(prod);
+  if(tempo)t.push(tempo);
+  t.push(...always);
+  if(era)t.push(era);
+  if(loc)t.push(loc);
+  if(studio)t.push(studio);
+  if(label)t.push(label);
+  if(producer)t.push(producer);
+  if(gear)gear.split(',').forEach(g=>{const v=g.trim();if(v)t.push(v);});
+  if(guitars)guitars.split(',').forEach(g=>{const v=g.trim();if(v)t.push(v);});
+  if(drums)t.push(drums);
+  if(bass)t.push(bass);
+  if(leadv)t.push(leadv);
+  if(bgv)t.push(bgv);
+  t.push(...compress,...fx,...extras);
+  if(mood)mood.split(',').forEach(m=>{const v=m.trim();if(v)t.push(v);});
+  if(free)free.split(',').forEach(f=>{const v=f.trim();if(v)t.push(v);});
+  const seen=new Set();
+  const unique=t.filter(x=>{const k=x.toLowerCase().trim();if(!k||seen.has(k))return false;seen.add(k);return true;});
+  let p=unique.join(', ');
+  if(p.length>1000)p=p.slice(0,997)+'...';
+  renderOutput(p,'heritage');
+  const has=v=>p.toLowerCase().includes(v.toLowerCase());
+  const hScore=[studio,label,producer,era,loc].filter(Boolean).length;
+  setMeter('prod',has('production')?85:40);
+  setMeter('vox',(leadv?40:0)+(bgv?40:0));
+  setMeter('spatial',(has('3D')?34:0)+(has('Binaural')?33:0)+(has('side chain')?33:0));
+  setMeter('heritage',Math.min(100,hScore*20));
+  setMeter('ear',(has('mellow')||has('chill')||has('catchy')||has('city pop')?50:20));
+  setMeter('instr',Math.min(100,(extras.length+2)*10));
+  addHistory('Heritage: '+(era||'')+(loc?' · '+loc:''),p);
+}
+
+// ===== CLEAR HELPERS =====
+function clearFDO(){
+  ['f-vfx','f-reverb','f-spatial','f-eq','f-dyn','f-drums','f-instr','f-mood'].forEach(clearChips);
+  setSelect('f-genre','Memphis Hip-Hop');setInput('f-custom','');setInput('f-bpm','');
+  setSelect('f-key','');setSelect('f-feel','');setSelect('f-voice','');setSelect('f-vtone','');
+  setTA('f-atmo','');setTA('f-ctx','');
+}
+function clearHeritage(){
+  ['h-always','h-compress','h-fx','h-extras'].forEach(id=>{
+    document.querySelectorAll('#'+id+' .chip[data-v]').forEach(c=>{
+      if(c.classList.contains('on-blue')&&c.dataset.v!=='side chain'&&c.dataset.v!=='3D'&&c.dataset.v!=='Binaural'&&c.dataset.v!=='analog')c.classList.remove('on');
+      else if(!c.classList.contains('on-blue'))c.classList.remove('on');
+    });
+  });
+  ['h-era','h-loc','h-studio','h-label','h-producer','h-gear','h-guitars','h-mood'].forEach(id=>setInput(id,''));
+  setTA('h-free','');
+  setSelect('h-prod','Lo fi production');setSelect('h-tempo','');
+  setSelect('h-drums','');setSelect('h-bass','');setSelect('h-leadv','');setSelect('h-bgv','');
+}
+
+// ===== FDO PRESETS =====
+const FDO_PRESETS={
+  fdo:{genre:'Memphis Hip-Hop',custom:'',bpm:'130',key:'minor key',feel:'half-time feel',voice:'deep male vocal',vtone:'vocal style: deadpan',atmo:'cold Ohio winter night, ancestral warmth underneath, focused and inevitable',ctx:'CPA exam grind anthem, Somali diaspora themes, Pooh Shiesty calm authority',
+    vfx:['doubled vocals','whisper vocals','layered harmony','backup vocals','dry close mic vocal','slapback delay on select bars'],
+    rev:['room reverb','plate reverb on ad-libs only','small room reverb on vocals'],
+    sp:['panning automation','stereo widening','mid-side','3D spatial','binaural'],
+    eq:['low-pass filter','tape saturation','analog warmth','warm dark mix','rolled-off top end','low-mid saturation'],
+    dyn:['sidechain','multiband compression','limiter','studio quality','streaming ready','mastered'],
+    drums:['hard 808 long decay','sub bass rumble','sparse snare dry and sharp','minimal hi-hats','deliberate negative space'],
+    instr:['kaban plucked motif','masenqo bowed string','handpan','drone'],
+    mood:['catchy hook','earworm','anthemic','building intensity','powerful outro','hypnotic']},
+  euroedm:{genre:'Euro EDM Disco',custom:'M41S0N euro disco',bpm:'124',key:'minor key',feel:'four-on-the-floor',voice:'female vocal',vtone:'vocal style: ethereal',atmo:'neon dancefloor, European club energy, cinematic and euphoric',ctx:'M41S0N duo, disco revival with modern EDM',
+    vfx:['doubled vocals','stacked harmonies','layered harmony','ad libs','backup vocals'],
+    rev:['plate reverb','hall reverb','reverb tail controlled'],
+    sp:['panning automation','stereo widening','3D spatial','binaural','ping-pong delay'],
+    eq:['tape saturation','analog warmth'],
+    dyn:['sidechain','multiband compression','limiter','studio quality','streaming ready','mastered','hi-fi'],
+    drums:['kick drum','tight hi-hats','finger snaps','groovy bassline','sub bass'],
+    instr:['synth pad','saw lead','arpeggiator','pluck synth','riser FX'],
+    mood:['catchy hook','earworm','anthemic','euphoric','dancefloor-ready','building intensity','climactic','crowd-ready hook']},
+  neosoul:{genre:'Neo Soul',custom:'',bpm:'88',key:'minor key',feel:'swung rhythm',voice:'soulful female vocal',vtone:'vocal style: soulful',atmo:'warm late night, intimate studio, golden hour',ctx:'',
+    vfx:['doubled vocals','layered harmony','call and response','vocal fry','ad libs','vibrato'],
+    rev:['room reverb','plate reverb','small room reverb on vocals'],
+    sp:['panning automation','stereo widening','mid-side'],
+    eq:['tape saturation','analog warmth','warm dark mix','vinyl crackle'],
+    dyn:['natural compression','studio quality','streaming ready','mastered','dynamic range'],
+    drums:['rimshots','finger snaps','upright bass','groovy bassline'],
+    instr:['rhodes piano','electric piano','acoustic guitar','saxophone'],
+    mood:['catchy hook','earworm','melancholic','building intensity','emotional bridge','dynamic contrast']},
+  afrobeat:{genre:'Afrobeat',custom:'',bpm:'104',key:'major key',feel:'syncopated',voice:'female vocal',vtone:'vocal style: soulful',atmo:'vibrant, joyful, communal, sun-drenched',ctx:'',
+    vfx:['call and response','layered harmony','stacked harmonies','ad libs','backup vocals'],
+    rev:['room reverb','spring reverb','lush reverb'],
+    sp:['panning automation','stereo widening','stereo-panned percussion'],
+    eq:['analog warmth','tape saturation'],
+    dyn:['studio quality','streaming ready','mastered','live band feel'],
+    drums:['congas','djembe','hand claps','groovy bassline','upright bass'],
+    instr:['acoustic guitar','trumpet','saxophone','piano','kalimba'],
+    mood:['catchy hook','earworm','euphoric','uplifting','dancefloor-ready','anthemic']},
+  darkpop:{genre:'Dark Pop',custom:'',bpm:'100',key:'minor key',feel:'half-time feel',voice:'breathy female vocal',vtone:'vocal style: ethereal',atmo:'haunting, cinematic, nocturnal, emotionally charged',ctx:'',
+    vfx:['whisper vocals','doubled vocals','layered harmony','vocal chop','echoing vocals','harmonizer'],
+    rev:['cathedral reverb','reverse reverb','plate reverb','room reverb'],
+    sp:['panning automation','stereo widening','3D spatial','binaural','ping-pong delay'],
+    eq:['low-pass filter','tape saturation','analog warmth'],
+    dyn:['sidechain','multiband compression','limiter','studio quality','streaming ready'],
+    drums:['808','sub bass','rimshots','minimal hi-hats'],
+    instr:['synth pad','ambient pad','piano','drone'],
+    mood:['catchy hook','earworm','melancholic','cinematic','building intensity','climactic','hypnotic','dreamy']},
+  jazz:{genre:'Jazz Fusion',custom:'',bpm:'140',key:'dorian mode',feel:'swung rhythm',voice:'no vocal instrumental',vtone:'',atmo:'late night jazz club, smoky and intimate, virtuosic',ctx:'jazz octet — full band interplay',
+    vfx:[],rev:['room reverb','plate reverb','spring reverb'],
+    sp:['panning automation','stereo widening','mid-side'],
+    eq:['tape saturation','analog warmth','warm dark mix','vintage console'],
+    dyn:['natural compression','studio quality','streaming ready','live band feel','dynamic range'],
+    drums:['jazz brushes','rimshots','upright bass','congas'],
+    instr:['saxophone','trumpet','muted trumpet','vibraphone','piano','acoustic guitar'],
+    mood:['catchy hook','earworm','cinematic','building intensity','climactic','dynamic contrast']},
+  reggaeton:{genre:'Reggaeton',custom:'',bpm:'95',key:'minor key',feel:'syncopated',voice:'male vocal',vtone:'vocal tone: raspy',atmo:'club energy, Latin heat, night city vibes',ctx:'',
+    vfx:['doubled vocals','ad libs','backup vocals','call and response'],
+    rev:['room reverb','plate reverb'],
+    sp:['panning automation','stereo widening','3D spatial'],
+    eq:['tape saturation','analog warmth'],
+    dyn:['sidechain','multiband compression','limiter','studio quality','streaming ready','mastered'],
+    drums:['808','sub bass','congas','hand claps','rimshots'],
+    instr:['synth pad','piano','saxophone'],
+    mood:['catchy hook','earworm','anthemic','dancefloor-ready','crowd-ready hook','building intensity']},
+  bossanova:{genre:'Bossa Nova',custom:'',bpm:'120',key:'major key',feel:'swung rhythm',voice:'soulful female vocal',vtone:'vocal style: breathy',atmo:'beachside afternoon, breezy and romantic, sophisticated',ctx:'',
+    vfx:['doubled vocals','layered harmony','whisper vocals','vibrato'],
+    rev:['room reverb','spring reverb','small room reverb on vocals'],
+    sp:['panning automation','stereo widening','mid-side'],
+    eq:['analog warmth','tape saturation','warm dark mix'],
+    dyn:['natural compression','studio quality','streaming ready','live band feel'],
+    drums:['finger snaps','upright bass','jazz brushes','congas'],
+    instr:['acoustic guitar','piano','saxophone'],
+    mood:['earworm','dreamy','nostalgic','radiant','dynamic contrast','melancholic']},
+  trap:{genre:'Trap',custom:'',bpm:'140',key:'minor key',feel:'half-time feel',voice:'deep male vocal',vtone:'vocal tone: raspy',atmo:'dark, cold, menacing, street authority',ctx:'',
+    vfx:['doubled vocals','whisper vocals','ad libs','auto-tune','vocal fry'],
+    rev:['room reverb','plate reverb on ad-libs only','small room reverb on vocals'],
+    sp:['panning automation','stereo widening','3D spatial','binaural'],
+    eq:['low-pass filter','tape saturation','analog warmth','warm dark mix'],
+    dyn:['sidechain','multiband compression','limiter','studio quality','streaming ready','mastered'],
+    drums:['hard 808 long decay','sub bass rumble','sparse snare dry and sharp','minimal hi-hats','deliberate negative space'],
+    instr:['synth pad','piano','drone'],
+    mood:['catchy hook','earworm','anthemic','building intensity','powerful outro','hypnotic','gritty']}
+};
+function loadFDO(k){
+  const p=FDO_PRESETS[k];if(!p)return;
+  clearFDO();
+  setSelect('f-genre',p.genre);setInput('f-custom',p.custom);setInput('f-bpm',p.bpm);
+  setSelect('f-key',p.key);setSelect('f-feel',p.feel);
+  setSelect('f-voice',p.voice);setSelect('f-vtone',p.vtone);
+  setTA('f-atmo',p.atmo);setTA('f-ctx',p.ctx);
+  setChips('f-vfx',p.vfx);setChips('f-reverb',p.rev);setChips('f-spatial',p.sp);
+  setChips('f-eq',p.eq);setChips('f-dyn',p.dyn);setChips('f-drums',p.drums);
+  setChips('f-instr',p.instr);setChips('f-mood',p.mood);
+}
+
+// ===== HERITAGE PRESETS =====
+const H={
+  lofi1:{prod:'Lo fi production',tempo:'chill downtempo',era:'1993',loc:'New York',studio:'',label:'',producer:'',gear:'Roland Jupiter-4, System-100, TR-808, Fairlight CMI',guitars:'',drums:'tight snare',bass:'clean deep bass',leadv:'female vocals mellow and detached',bgv:'',mood:'mellow vibes, urban, city pop, Summer Madness',free:'gritty synths, muted trumpet at breakdown, synthétiseur',always:['side chain','3D','Binaural'],compress:['classic tape compression'],fx:['reverb'],extras:[]},
+  lofi2:{prod:'Lo fi production',tempo:'chill downtempo',era:'1966',loc:'New York',studio:'',label:'',producer:'',gear:'Fender Rhodes Piano, Farfisa organ',guitars:'clean surf guitar',drums:'tight snare',bass:'upright bass',leadv:'female vocals mellow and detached',bgv:'',mood:'mellow vibes, urban, roadhouse, blue velvet, twin peaks',free:'Summer Madness',always:['side chain','3D','Binaural'],compress:['classic tape compression'],fx:['reverb'],extras:[]},
+  lofi3:{prod:'Lo fi production',tempo:'chill downtempo',era:'1969',loc:'Wild West',studio:'',label:'',producer:'',gear:'Fender Rhodes Piano, Farfisa organ',guitars:'dark tremolo guitar',drums:'tight snare',bass:'upright bass',leadv:'female vocals mellow and seductive',bgv:'',mood:'mellow vibes, urban, roadhouse, blue velvet, twin peaks, Summertime',free:'female whisper voice',always:['side chain','3D','Binaural'],compress:[],fx:['reverb'],extras:[]},
+  psych1:{prod:'Lo fi production',tempo:'Uptempo',era:'1976',loc:'urban',studio:'',label:'',producer:'',gear:'Fender Rhodes Piano, distorted Minimoog Model D',guitars:'fuzz guitar',drums:'1970\'s snare',bass:'funky bass',leadv:'male vocals ecstatic and unhinged',bgv:'background gospel singers female dark voices',mood:'church vibes, Psychedelic, dub, acid jazz, acid soul',free:'horns, trumpets, heavy dynamics',always:['side chain','3D','Binaural'],compress:[],fx:['heavy dynamics'],extras:['horns trumpets','accordion']},
+  memphis:{prod:'Radio ready production',tempo:'Uptempo',era:'1971',loc:'Memphis',studio:'Ardent Studios',label:'',producer:'Chips Moman',gear:'Telecaster, acoustic piano',guitars:'clean acoustic guitar',drums:'1970\'s snare',bass:'tight deep bass',leadv:'dark male vocals baritone and gritty',bgv:'background gospel singers female dark voices',mood:'Memphis soul, urban, church vibes, Atlantic/Stax soul',free:'organ, horns, trumpets, heavy dynamics',always:['side chain','3D','Binaural'],compress:['classic tape compression'],fx:['heavy dynamics'],extras:['horns trumpets','acoustic piano']},
+  tripop:{prod:'Lo fi production',tempo:'chill downtempo',era:'1995',loc:'Bristol',studio:'',label:'Ninja Tune, Mo\'Wax, Wild Bunch',producer:'Nellee Hooper',gear:'Mellotron, Fender Rhodes Piano, arpeggiator',guitars:'',drums:'mellow sampled drums',bass:'funky upright bass',leadv:'',bgv:'',mood:'trip hop, downtempo, dub, ambient, acid jazz, Wall of Sound',free:'polyrhythms',always:['side chain','3D','Binaural'],compress:[],fx:['reverb','delay'],extras:['arpeggiator','mellotron']},
+  dnb:{prod:'Lo fi production',tempo:'fast breakbeats 160 to 180 BPM',era:'1996',loc:'London',studio:'',label:'',producer:'',gear:'Mellotron, arpeggiator',guitars:'',drums:'fast breakbeats 160 to 180 BPM',bass:'heavy basslines',leadv:'soulful female lead vocal',bgv:'',mood:'drum and bass, Liquid Drum and Bass, jungle, dub, reggae, rave, dancehall, ambient, acid jazz',free:'polyrhythms, chill sampled drums',always:['side chain','3D','Binaural'],compress:[],fx:['reverb','delay'],extras:['arpeggiator','mellotron']},
+  britpop1:{prod:'Lo fi production',tempo:'Uptempo',era:'1965',loc:'London',studio:'Olympic Studios',label:'',producer:'',gear:'Rickenbacker',guitars:'jangle pop guitar',drums:'British Invasion 1960\'s drums',bass:'clean bass',leadv:'layered male vocals tight and harmonized',bgv:'female dreamy double tracked voices',mood:'Britpop, Shoegaze, Dream Pop',free:'',always:['side chain','3D','Binaural'],compress:['British compression','Neumann microphones'],fx:[],extras:[]},
+  madchester:{prod:'Radio Ready production',tempo:'Uptempo',era:'1992',loc:'Manchester',studio:'Battery Studios London, Rockfield Monmouthshire',label:'Silvertone Records',producer:'John Leckie',gear:'Hammond organ',guitars:'clean rock guitar',drums:'British 1990\'s drums',bass:'deep clean bass',leadv:'whispery male vocals mellow and doubletracked',bgv:'',mood:'Madchester, Baggy, Acid Jazz, Neo Psychedelia, Indie, the Hacienda',free:'chill but tight rhythmic breaks, dub effects, understated phased Hammond organ, Northern British accent',always:['side chain','3D','Binaural'],compress:['classic British tape compression','Neumann microphones'],fx:['dub effects'],extras:['phased Hammond organ']},
+  irish:{prod:'Radio ready production',tempo:'',era:'1970s',loc:'Belfast, Dublin',studio:'',label:'RTE',producer:'',gear:'tin whistles, bodhran, accordion',guitars:'clean reverb guitars',drums:'',bass:'upright bass',leadv:'gravelly male vocals Irish accented tight and harmonized',bgv:'Irish male bright voices',mood:'Irish pub background sounds, live sound',free:'',always:['side chain','3D','Binaural'],compress:['Neumann microphones'],fx:['live sound'],extras:['tin whistles','bodhran','accordion']},
+  beachboys:{prod:'Lo fi production',tempo:'',era:'1966',loc:'Los Angeles, West Coast',studio:'Sunset Sound',label:'Capitol Records',producer:'Brian Wilson, Wrecking Crew',gear:'Neumann microphones',guitars:'jangle pop guitar, 12 string',drums:'1960\'s drums',bass:'clean tight bass',leadv:'double tracked layered male group vocals tight and harmonized',bgv:'layered multi timbral background harmonies',mood:'Los Angeles Pop, Summer Madness',free:'tambourines, clip clop percussion, oboes, french horns, string section',always:['side chain','3D','Binaural'],compress:['tape compression','Neumann microphones'],fx:['with instrumental melodic introduction'],extras:['oboes and french horns','8 piece string section','tambourines','clip clop percussion']},
+  muscleshoals:{prod:'Radio ready production',tempo:'smooth stately tempo',era:'1973',loc:'Muscle Shoals',studio:'Muscle Shoals Sound',label:'',producer:'Jerry Wexler',gear:'Telecaster',guitars:'mellow acoustic rhythm guitar',drums:'1970\'s snare',bass:'tight deep bass',leadv:'smokey dark male vocals tenor and gritty',bgv:'background gospel singers female dark voices',mood:'Alabama soul, urban, church vibes',free:'organ, horns, trumpets, smooth dynamics',always:['side chain','3D','Binaural'],compress:[],fx:['smooth dynamics'],extras:['horns trumpets','acoustic piano']},
+  motown:{prod:'Radio ready production',tempo:'smooth tempo',era:'1965',loc:'Detroit, Hitsville USA',studio:'',label:'Motown',producer:'Holland Dozier Holland',gear:'',guitars:'acoustic rhythm guitar, acoustic piano',drums:'1960\'s tight snare',bass:'tight clean melodic bass',leadv:'female voices clear and strong',bgv:'background gospel singers female voices',mood:'Pop, Soul, R&B, Motown Sound',free:'tambourines, smooth dynamics, horns',always:['side chain','3D','Binaural'],compress:[],fx:['smooth dynamics'],extras:['horns trumpets','tambourines','acoustic piano']},
+  bluenote:{prod:'Classic production',tempo:'smooth tempo',era:'1953',loc:'Greenwich Village, New York',studio:'Van Gelder Studios',label:'Blue Note Records',producer:'',gear:'Gibson 335',guitars:'deep jazz guitar',drums:'1950\'s drums',bass:'upright bass',leadv:'',bgv:'horns tight and harmonized',mood:'New York Bebop, American Jazz',free:'minimal reverb, natural room sound',always:['side chain','3D','Binaural'],compress:['old school tape compression','tube microphone'],fx:['minimal reverb','natural room sound'],extras:['acoustic piano','horns trumpets']},
+  glam:{prod:'Radio ready production',tempo:'uptempo',era:'1973',loc:'British',studio:'Ardent Studios',label:'',producer:'',gear:'Rickenbacker, Les Paul',guitars:'overdriven Rickenbackers and Les Pauls',drums:'big drums, gated snare',bass:'fuzz square wave synth bass, deep rock and roll bass',leadv:'strong double tracked male vocals tight and harmonized',bgv:'background harmonies male group voices',mood:'Power Pop, Glam, Glitter rock',free:'big guitars',always:['3D','Binaural'],compress:['British compression','Neumann microphones'],fx:[],extras:[]},
+  tomwaits:{prod:'Classic production',tempo:'loose live swing feel',era:'late 1970s',loc:'East Village, New York City',studio:'RCA 6th Ave',label:'Blue Note Records',producer:'Tom Waits',gear:'marimba, accordion, double bass, trombone, banjo, acoustic parlor piano',guitars:'tube-amps electric guitar crunch and lead, acoustic parlor guitar',drums:'1950\'s jazz drums, dry close-miked tom-heavy drums',bass:'upright bass',leadv:'gravely rough baritone lead vocal',bgv:'female and male backing vocals',mood:'Experimental Rock, Experimental jazz and blues, Musique concrète, raw exploratory human',free:'analog synth stabs, live room ambience, raw mic distortion, warm midrange, live tempo drift',always:['side chain','3D','Binaural'],compress:['old school tape compression','tube microphones'],fx:['minimal reverb','natural room sound','live sound'],extras:['marimba','accordion','trombone','banjo','acoustic piano']},
+  afrodub:{prod:'High end production',tempo:'',era:'modern',loc:'',studio:'',label:'',producer:'',gear:'',guitars:'double tracked guitar and synth leads',drums:'modern tight drums, breakbeats',bass:'dub bass',leadv:'Male lead vocal with global south accents',bgv:'Female operatic background vocals reverb and delay',mood:'Afro beat, Ishumar music, Dub Production, Chillwave, ambient breaks',free:'tambourines, Dub Mariachi horn breaks with echo, Intro spoken vocal heavy echo',always:['side chain','3D','Binaural'],compress:[],fx:['reverb','delay','ambient breaks','Dub Mariachi horn breaks with echo'],extras:['tambourines']},
+  hotclub:{prod:'Lofi production',tempo:'smooth upbeat tempo',era:'1934',loc:'',studio:'CBS Records, RKO Radio',label:'',producer:'',gear:'acoustic piano, horns',guitars:'tight trad jazz rhythm lead guitar',drums:'1930\'s drums',bass:'upright bass',leadv:'',bgv:'female backing vocals tight and harmonized',mood:'Jazz, Hot Club, natural ballroom reverb',free:'',always:['side chain','3D','Binaural'],compress:['classic tape compression','tube microphones'],fx:['natural ballroom reverb'],extras:['acoustic piano','horns trumpets']}
+};
+
+function loadHeritage(k){
+  const p=H[k];if(!p)return;
+  clearHeritage();
+  setSelect('h-prod',p.prod);setSelect('h-tempo',p.tempo);
+  setInput('h-era',p.era);setInput('h-loc',p.loc);
+  setInput('h-studio',p.studio);setInput('h-label',p.label);
+  setInput('h-producer',p.producer);setInput('h-gear',p.gear);
+  setInput('h-guitars',p.guitars);
+  setSelect('h-drums',p.drums);setSelect('h-bass',p.bass);
+  setSelect('h-leadv',p.leadv);setSelect('h-bgv',p.bgv);
+  setInput('h-mood',p.mood);setTA('h-free',p.free);
+  // always-on
+  document.querySelectorAll('#h-always .chip[data-v]').forEach(c=>{
+    if(p.always.includes(c.dataset.v))c.classList.add('on');else c.classList.remove('on');
+  });
+  setChips('h-compress',p.compress);
+  setChips('h-fx',p.fx);
+  setChips('h-extras',p.extras);
+}
+
+// ===== INIT =====
+loadFDO('fdo');
+</script>
+</body>
+</html>

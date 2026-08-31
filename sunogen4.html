@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0c;
+    --surface: #111115;
+    --surface2: #18181e;
+    --border: #2a2a35;
+    --accent: #c8f060;
+    --accent2: #7b5ea7;
+    --accent3: #ff6b35;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --danger: #ff4444;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .scanline {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+    pointer-events: none; z-index: 1000;
+  }
+
+  .header {
+    padding: 24px 28px 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 18px;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .logo span { color: var(--muted); font-size: 1rem; letter-spacing: 0.2em; font-family: 'Space Mono', monospace; display: block; margin-bottom: 2px; }
+
+  .badge {
+    background: var(--accent2);
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    height: calc(100vh - 80px);
+  }
+
+  .panel-left {
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .panel-right {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .field-group { display: flex; flex-direction: column; gap: 5px; }
+
+  label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  input, select, textarea {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    padding: 9px 12px;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+  }
+
+  select option { background: var(--surface2); }
+
+  textarea { resize: vertical; min-height: 60px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  .toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .toggle-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.06em;
+  }
+
+  .toggle-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0a0a0c;
+    font-weight: 700;
+  }
+
+  .toggle-btn:hover:not(.active) {
+    border-color: var(--accent2);
+    color: var(--text);
+  }
+
+  .generate-btn {
+    background: var(--accent);
+    color: #0a0a0c;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    margin-top: 4px;
+  }
+
+  .generate-btn:hover { background: #d4ff66; transform: translateY(-1px); }
+  .generate-btn:active { transform: translateY(0); }
+  .generate-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
+
+  .output-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .output-box.empty { color: var(--muted); font-style: italic; }
+
+  .char-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  .char-count.warn { color: var(--accent3); }
+  .char-count.over { color: var(--danger); }
+
+  .copy-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.15s;
+    width: 100%;
+  }
+
+  .copy-btn:hover { background: var(--accent); color: #0a0a0c; }
+
+  .thinking-dots {
+    display: inline-flex; gap: 4px; align-items: center;
+  }
+  .thinking-dots span {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.2s infinite;
+  }
+  .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .meter-row {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .meter {
+    flex: 1; height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .meter-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+  .meter-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--muted); width: 80px; }
+  .meter-val { font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--accent); width: 24px; text-align: right; }
+
+  .history-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .history-item:hover { border-color: var(--accent2); color: var(--text); }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+
+<div class="header">
+  <div class="logo">
+    <span>FDO VAULT</span>
+    SUNO AGENT
+  </div>
+  <div class="badge">v2.0 — PROMPT ENGINE</div>
+</div>
+
+<div class="layout">
+  <!-- LEFT PANEL: INPUTS -->
+  <div class="panel-left">
+
+    <div class="section-label">Core Identity</div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>Primary Genre</label>
+        <select id="genre">
+          <option>Memphis Hip-Hop</option>
+          <option>Trap</option>
+          <option>Euro EDM Disco</option>
+          <option>Neo Soul</option>
+          <option>Afrobeat</option>
+          <option>Reggaeton</option>
+          <option>Jazz Fusion</option>
+          <option>Dark Pop</option>
+          <option>Progressive Hip-Hop</option>
+          <option>Bossa Nova</option>
+          <option>Dancehall</option>
+          <option>R&B</option>
+          <option>Custom...</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Custom Genre / Fusion</label>
+        <input type="text" id="customGenre" placeholder="e.g. zoukglam, tropic noir..." />
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="field-group">
+        <label>BPM</label>
+        <input type="text" id="bpm" placeholder="130" />
+      </div>
+      <div class="field-group">
+        <label>Key / Mode</label>
+        <select id="key">
+          <option>Minor</option>
+          <option>Major</option>
+          <option>Harmonic Minor</option>
+          <option>Dorian</option>
+          <option>Pentatonic</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Energy</label>
+        <select id="energy">
+          <option>Low</option>
+          <option>Mid</option>
+          <option>High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section-label">Vocal Architecture</div>
+
+    <div class="grid-2">
+      <div class="field-group">
+        <label>Voice Type</label>
+        <select id="voiceType">
+          <option>Deep Male Vocal</option>
+          <option>Booming Chest Voice</option>
+          <option>Female Alto</option>
+          <option>Soulful Female</option>
+          <option>Breathy Female</option>
+          <option>Duet</option>
+          <option>Choir</option>
+          <option>No Vocal / Instrumental</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Vocal Tone</label>
+        <select id="vocalTone">
+          <option>Warm</option>
+          <option>Raspy</option>
+          <option>Soulful</option>
+          <option>Husky</option>
+          <option>Ethereal</option>
+          <option>Authoritative</option>
+          <option>Breathy</option>
+          <option>Gritty</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Vocal FX (select multiple)</label>
+      <div class="toggle-group" id="vocalFX">
+        <button class="toggle-btn active" data-val="double vocals">Double Vocals</button>
+        <button class="toggle-btn active" data-val="whisper vocals">Whisper Vocals</button>
+        <button class="toggle-btn active" data-val="layered harmony">Layered Harmony</button>
+        <button class="toggle-btn" data-val="call and response">Call & Response</button>
+        <button class="toggle-btn" data-val="backup vocals">Backup Vocals</button>
+        <button class="toggle-btn" data-val="vocal fry">Vocal Fry</button>
+        <button class="toggle-btn" data-val="vocoder">Vocoder</button>
+        <button class="toggle-btn" data-val="auto-tune">Auto-Tune</button>
+        <button class="toggle-btn active" data-val="dry close mic vocal">Dry Close Mic</button>
+        <button class="toggle-btn" data-val="stacked vocals">Stacked Vocals</button>
+      </div>
+    </div>
+
+    <div class="section-label">Production Chain</div>
+
+    <div class="field-group">
+      <label>Reverb Stack</label>
+      <div class="toggle-group" id="reverbStack">
+        <button class="toggle-btn active" data-val="room reverb">Room</button>
+        <button class="toggle-btn active" data-val="plate reverb on ad-libs only">Plate (ad-libs)</button>
+        <button class="toggle-btn active" data-val="small room reverb on vocals">Small Room Vox</button>
+        <button class="toggle-btn" data-val="hall reverb">Hall</button>
+        <button class="toggle-btn" data-val="spring reverb">Spring</button>
+        <button class="toggle-btn" data-val="cathedral reverb">Cathedral</button>
+        <button class="toggle-btn" data-val="reverse reverb">Reverse</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Panning & Spatial</label>
+      <div class="toggle-group" id="spatialTags">
+        <button class="toggle-btn active" data-val="panning automation">Panning Auto</button>
+        <button class="toggle-btn active" data-val="stereo widening">Stereo Widening</button>
+        <button class="toggle-btn active" data-val="mid-side">Mid-Side</button>
+        <button class="toggle-btn active" data-val="3D spatial">3D Spatial</button>
+        <button class="toggle-btn active" data-val="binaural">Binaural</button>
+        <button class="toggle-btn" data-val="ping-pong delay">Ping-Pong Delay</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>High-Freq Control (roll off / warm)</label>
+      <div class="toggle-group" id="eqTags">
+        <button class="toggle-btn active" data-val="low-pass filter">Low-Pass Filter</button>
+        <button class="toggle-btn active" data-val="tape saturation">Tape Saturation</button>
+        <button class="toggle-btn active" data-val="analog warmth">Analog Warmth</button>
+        <button class="toggle-btn active" data-val="warm dark mix">Warm Dark Mix</button>
+        <button class="toggle-btn active" data-val="rolled-off top end">Rolled-Off Top</button>
+        <button class="toggle-btn" data-val="vinyl crackle">Vinyl Crackle</button>
+        <button class="toggle-btn" data-val="tube distortion">Tube Distortion</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Dynamics / Master Chain</label>
+      <div class="toggle-group" id="dynamicsTags">
+        <button class="toggle-btn active" data-val="sidechain">Sidechain</button>
+        <button class="toggle-btn active" data-val="multiband compression">Multiband Compression</button>
+        <button class="toggle-btn active" data-val="limiter">Limiter</button>
+        <button class="toggle-btn active" data-val="studio quality">Studio Quality</button>
+        <button class="toggle-btn active" data-val="streaming ready">Streaming Ready</button>
+        <button class="toggle-btn active" data-val="mastered">Mastered</button>
+      </div>
+    </div>
+
+    <div class="section-label">Instrumentation</div>
+
+    <div class="field-group">
+      <label>Instruments / Textures (comma separated)</label>
+      <input type="text" id="instruments" placeholder="808, sub bass, kaban plucked motif, masenqo, handpan..." />
+    </div>
+
+    <div class="section-label">Mood & Earworm</div>
+
+    <div class="field-group">
+      <label>Emotional Signature</label>
+      <div class="toggle-group" id="moodTags">
+        <button class="toggle-btn active" data-val="catchy hook">Catchy Hook</button>
+        <button class="toggle-btn active" data-val="earworm">Earworm</button>
+        <button class="toggle-btn active" data-val="anthemic">Anthemic</button>
+        <button class="toggle-btn" data-val="melancholic">Melancholic</button>
+        <button class="toggle-btn" data-val="euphoric">Euphoric</button>
+        <button class="toggle-btn" data-val="hypnotic">Hypnotic</button>
+        <button class="toggle-btn" data-val="building intensity">Building Intensity</button>
+        <button class="toggle-btn active" data-val="powerful outro">Powerful Outro</button>
+        <button class="toggle-btn" data-val="nostalgic">Nostalgic</button>
+        <button class="toggle-btn" data-val="cinematic">Cinematic</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Atmosphere / Texture Notes (optional)</label>
+      <textarea id="atmosphere" placeholder="e.g. cold Ohio winter night, ancestral warmth underneath, late night studio, East African lineage..."></textarea>
+    </div>
+
+    <div class="field-group">
+      <label>Additional Context for AI (song concept, special requests)</label>
+      <textarea id="context" placeholder="e.g. This is for a CPA exam grind anthem with Somali diaspora themes, Pooh Shiesty delivery style, Ohio setting..."></textarea>
+    </div>
+
+    <button class="generate-btn" id="generateBtn" onclick="generatePrompt()">
+      ⚡ GENERATE SUNO PROMPT
+    </button>
+
+  </div>
+
+  <!-- RIGHT PANEL: OUTPUT -->
+  <div class="panel-right">
+
+    <div class="section-label">Output</div>
+
+    <div class="output-box empty" id="outputBox">
+      Waiting for signal... configure inputs and hit generate.
+    </div>
+
+    <div class="char-count" id="charCount">0 / 1000 characters</div>
+
+    <button class="copy-btn" id="copyBtn" onclick="copyPrompt()" style="display:none">
+      ▲ COPY TO CLIPBOARD
+    </button>
+
+    <div class="section-label">Prompt Meters</div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;" id="meters">
+      <div class="meter-row">
+        <span class="meter-label">Production</span>
+        <div class="meter"><div class="meter-fill" id="m-prod" style="width:0%"></div></div>
+        <span class="meter-val" id="mv-prod">0%</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-label">Vocal Depth</span>
+        <div class="meter"><div class="meter-fill" id="m-vox" style="width:0%"></div></div>
+        <span class="meter-val" id="mv-vox">0%</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-label">Spatial Mix</span>
+        <div class="meter"><div class="meter-fill" id="m-spatial" style="width:0%"></div></div>
+        <span class="meter-val" id="mv-spatial">0%</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-label">Earworm</span>
+        <div class="meter"><div class="meter-fill" id="m-ear" style="width:0%"></div></div>
+        <span class="meter-val" id="mv-ear">0%</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-label">Warmth / Lo-Hi</span>
+        <div class="meter"><div class="meter-fill" id="m-warm" style="width:0%"></div></div>
+        <span class="meter-val" id="mv-warm">0%</span>
+      </div>
+    </div>
+
+    <div class="section-label">History</div>
+
+    <div id="historyList" style="display:flex;flex-direction:column;gap:6px;"></div>
+
+  </div>
+</div>
+
+<script>
+  // Toggle buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => btn.classList.toggle('active'));
+  });
+
+  function getActive(groupId) {
+    return [...document.querySelectorAll(`#${groupId} .toggle-btn.active`)]
+      .map(b => b.dataset.val);
+  }
+
+  let promptHistory = [];
+  let currentPrompt = '';
+
+  async function generatePrompt() {
+    const btn = document.getElementById('generateBtn');
+    const out = document.getElementById('outputBox');
+
+    // Gather inputs
+    const genre = document.getElementById('genre').value;
+    const customGenre = document.getElementById('customGenre').value;
+    const bpm = document.getElementById('bpm').value || '130';
+    const key = document.getElementById('key').value;
+    const energy = document.getElementById('energy').value;
+    const voiceType = document.getElementById('voiceType').value;
+    const vocalTone = document.getElementById('vocalTone').value;
+    const instruments = document.getElementById('instruments').value;
+    const atmosphere = document.getElementById('atmosphere').value;
+    const context = document.getElementById('context').value;
+
+    const vocalFX = getActive('vocalFX');
+    const reverb = getActive('reverbStack');
+    const spatial = getActive('spatialTags');
+    const eq = getActive('eqTags');
+    const dynamics = getActive('dynamicsTags');
+    const mood = getActive('moodTags');
+
+    btn.disabled = true;
+    out.classList.remove('empty');
+    out.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span></div> generating...';
+    document.getElementById('copyBtn').style.display = 'none';
+
+    const systemPrompt = `You are an elite Suno AI prompt engineer with deep knowledge of the FDO Vault — a proprietary system for building production-quality music prompts.
+
+Your job: generate a single comma-delineated Suno style prompt, under 1000 characters, using ONLY verified Suno vocabulary.
+
+RULES:
+- Output ONLY the comma-separated prompt. No explanation, no headers, no quotes, no markdown.
+- Always include: ${dynamics.join(', ')}
+- Always include spatial tags: ${spatial.join(', ')}
+- Always include EQ/warmth tags: ${eq.join(', ')}  
+- Always include reverb tags: ${reverb.join(', ')}
+- Vocal processing must include: ${vocalFX.join(', ')}
+- Mood/earworm must include: ${mood.join(', ')}
+- Slapback delay should appear on select elements only
+- Keep the mix warm, dark, no harsh highs
+- Genre terms come first, then tempo/key, then vocal, then production, then instruments, then atmosphere/mood
+- Be surgical — every word must earn its place`;
+
+    const userMsg = `Generate a Suno prompt for:
+Genre: ${customGenre || genre}
+BPM: ${bpm}
+Key: ${key}
+Energy: ${energy}
+Voice: ${voiceType}
+Vocal Tone: ${vocalTone}
+${instruments ? 'Instruments/Textures: ' + instruments : ''}
+${atmosphere ? 'Atmosphere: ' + atmosphere : ''}
+${context ? 'Song Context: ' + context : ''}
+
+Make it production-grade, streaming-ready, and built to be an earworm. Under 1000 characters.`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: userMsg }]
+        })
+      });
+
+      const data = await response.json();
+      const prompt = data.content?.[0]?.text?.trim() || 'Error generating prompt.';
+
+      currentPrompt = prompt;
+      out.textContent = prompt;
+
+      // Char count
+      const len = prompt.length;
+      const cc = document.getElementById('charCount');
+      cc.textContent = `${len} / 1000 characters`;
+      cc.className = 'char-count' + (len > 900 ? ' over' : len > 750 ? ' warn' : '');
+
+      // Show copy btn
+      document.getElementById('copyBtn').style.display = 'block';
+
+      // Update meters
+      updateMeters(prompt, spatial, eq, reverb, vocalFX, mood, dynamics);
+
+      // History
+      promptHistory.unshift({ label: `${customGenre || genre} · ${bpm}BPM`, prompt });
+      if (promptHistory.length > 5) promptHistory.pop();
+      renderHistory();
+
+    } catch (err) {
+      out.textContent = 'Connection error. Check API access.';
+      out.classList.add('empty');
+    }
+
+    btn.disabled = false;
+  }
+
+  function updateMeters(prompt, spatial, eq, reverb, vocalFX, mood, dynamics) {
+    const score = (arr, keywords) => {
+      const hits = keywords.filter(k => prompt.toLowerCase().includes(k.toLowerCase())).length;
+      return Math.min(100, Math.round((hits / Math.max(arr.length, 1)) * 100));
+    };
+
+    const prodScore = score(dynamics, dynamics);
+    const voxScore = score(vocalFX, vocalFX);
+    const spatialScore = score(spatial, spatial);
+    const earScore = score(mood, mood);
+    const warmScore = score(eq, eq);
+
+    setMeter('prod', prodScore);
+    setMeter('vox', voxScore);
+    setMeter('spatial', spatialScore);
+    setMeter('ear', earScore);
+    setMeter('warm', warmScore);
+  }
+
+  function setMeter(id, val) {
+    document.getElementById(`m-${id}`).style.width = val + '%';
+    document.getElementById(`mv-${id}`).textContent = val + '%';
+  }
+
+  function renderHistory() {
+    const el = document.getElementById('historyList');
+    el.innerHTML = promptHistory.map((h, i) =>
+      `<div class="history-item" onclick="loadHistory(${i})">▸ ${h.label}</div>`
+    ).join('');
+  }
+
+  function loadHistory(i) {
+    const p = promptHistory[i].prompt;
+    currentPrompt = p;
+    const out = document.getElementById('outputBox');
+    out.textContent = p;
+    out.classList.remove('empty');
+    document.getElementById('copyBtn').style.display = 'block';
+    const len = p.length;
+    const cc = document.getElementById('charCount');
+    cc.textContent = `${len} / 1000 characters`;
+    cc.className = 'char-count' + (len > 900 ? ' over' : len > 750 ? ' warn' : '');
+  }
+
+  function copyPrompt() {
+    if (!currentPrompt) return;
+    navigator.clipboard.writeText(currentPrompt).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '✓ COPIED';
+      setTimeout(() => btn.textContent = '▲ COPY TO CLIPBOARD', 2000);
+    });
+  }
+</script>
+</body>
+</html>

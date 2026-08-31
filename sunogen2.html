@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>FDO Vault — Suno Prompt Agent</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #09090c;
+  --surface: #111116;
+  --surface2: #17171e;
+  --surface3: #1e1e28;
+  --border: #272732;
+  --border2: #333345;
+  --accent: #b8f040;
+  --accent-dim: rgba(184,240,64,0.12);
+  --purple: #8b5cf6;
+  --orange: #f97316;
+  --red: #ef4444;
+  --text: #e2e2ee;
+  --muted: #64647a;
+  --muted2: #44445a;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999;
+  opacity: 0.4;
+}
+
+/* HEADER */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+
+.logo-group { display: flex; align-items: baseline; gap: 12px; }
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.logo-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.badge-row { display: flex; gap: 8px; align-items: center; }
+
+.badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.badge-green { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); }
+.badge-purple { background: rgba(139,92,246,0.15); color: var(--purple); border: 1px solid var(--purple); }
+
+/* LAYOUT */
+.app {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  min-height: calc(100vh - 65px);
+}
+
+/* PANELS */
+.panel {
+  padding: 24px 28px;
+  overflow-y: auto;
+}
+
+.panel-left { border-right: 1px solid var(--border); }
+.panel-right { background: var(--bg); }
+
+/* SECTION HEADERS */
+.sec {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+.sec::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.sec:first-child { margin-top: 0; }
+
+/* FIELD */
+.field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+.field label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+input[type=text], input[type=number], select, textarea {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  padding: 9px 12px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+select { cursor: pointer; }
+select option { background: #1a1a24; }
+textarea { resize: vertical; min-height: 72px; line-height: 1.5; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+/* TOGGLE CHIPS */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  background: var(--surface2);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  white-space: nowrap;
+}
+.chip:hover { border-color: var(--purple); color: var(--text); }
+.chip.on { background: var(--accent); border-color: var(--accent); color: #09090c; font-weight: 700; }
+.chip.on-purple { background: rgba(139,92,246,0.2); border-color: var(--purple); color: #c4b5fd; }
+
+/* PRESET ROW */
+.presets {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px;
+}
+.preset-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  padding: 6px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  background: var(--surface3);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.08em;
+}
+.preset-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+/* GENERATE BTN */
+.gen-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--accent);
+  color: #09090c;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+.gen-btn:hover { background: #ccff44; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(184,240,64,0.3); }
+.gen-btn:active { transform: translateY(0); }
+
+/* OUTPUT */
+.output-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.output-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.85;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 240px;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.output-box.has-content { border-color: var(--border2); }
+.output-box.empty { color: var(--muted); font-style: italic; }
+
+.output-box .highlight { color: var(--accent); }
+
+.char-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 8px 0 4px;
+  overflow: hidden;
+}
+.char-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease, background 0.3s;
+}
+
+.char-meta {
+  display: flex; justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+}
+.char-meta .count { }
+.char-meta .status { }
+.warn-text { color: var(--orange); }
+.over-text { color: var(--red); }
+
+.action-row { display: flex; gap: 8px; margin-top: 10px; }
+
+.action-btn {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid var(--border2);
+  background: var(--surface2);
+  color: var(--muted);
+}
+.action-btn:hover { border-color: var(--accent); color: var(--accent); }
+.action-btn.primary { background: var(--surface3); color: var(--text); border-color: var(--border2); }
+.action-btn.primary:hover { background: var(--accent); color: #09090c; border-color: var(--accent); }
+
+/* METERS */
+.meter-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.meter-row { display: flex; align-items: center; gap: 10px; }
+.meter-name { font-family: 'Space Mono', monospace; font-size: 0.58rem; color: var(--muted); width: 110px; flex-shrink: 0; }
+.meter-track { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.meter-fill { height: 100%; background: var(--accent); border-radius: 2px; width: 0%; transition: width 0.6s ease; }
+.meter-fill.mid { background: var(--orange); }
+.meter-fill.low { background: var(--red); }
+.meter-val { font-family: 'Space Mono', monospace; font-size: 0.58rem; color: var(--accent); width: 30px; text-align: right; }
+
+/* HISTORY */
+.history-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.history-item {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.history-item:hover { border-color: var(--purple); }
+.history-tag { font-family: 'Space Mono', monospace; font-size: 0.58rem; color: var(--purple); margin-bottom: 3px; }
+.history-preview { font-size: 0.72rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* TIPS */
+.tip-box {
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.tip-box strong { color: var(--text); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .panel-left { border-right: none; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-group">
+    <div>
+      <div class="logo-sub">FDO Vault</div>
+      <div class="logo">Suno Agent</div>
+    </div>
+  </div>
+  <div class="badge-row">
+    <div class="badge badge-green">Standalone v1.0</div>
+    <div class="badge badge-purple">No API Key Needed</div>
+  </div>
+</div>
+
+<!-- APP LAYOUT -->
+<div class="app">
+
+  <!-- ========== LEFT PANEL ========== -->
+  <div class="panel panel-left">
+
+    <!-- PRESETS -->
+    <div class="sec">Quick Presets</div>
+    <div class="presets" id="presets">
+      <button class="preset-btn" onclick="loadPreset('fdo')">⚡ FDO / Two Left</button>
+      <button class="preset-btn" onclick="loadPreset('euroedm')">🪩 Euro EDM Disco</button>
+      <button class="preset-btn" onclick="loadPreset('neosoul')">🌀 Neo Soul</button>
+      <button class="preset-btn" onclick="loadPreset('afrobeat')">🌍 Afrobeat</button>
+      <button class="preset-btn" onclick="loadPreset('darkpop')">🌑 Dark Pop</button>
+      <button class="preset-btn" onclick="loadPreset('jazz')">🎷 Jazz Octet</button>
+      <button class="preset-btn" onclick="loadPreset('reggaeton')">🔥 Reggaeton Fusion</button>
+      <button class="preset-btn" onclick="loadPreset('bossanova')">🌺 Bossa Nova</button>
+      <button class="preset-btn" onclick="loadPreset('trap')">💀 Trap</button>
+      <button class="preset-btn" onclick="loadPreset('clear')">✕ Clear All</button>
+    </div>
+
+    <!-- CORE -->
+    <div class="sec">Core Identity</div>
+    <div class="grid-2">
+      <div class="field">
+        <label>Primary Genre</label>
+        <select id="genre">
+          <option>Memphis Hip-Hop</option>
+          <option>Trap</option>
+          <option>Hip Hop</option>
+          <option>Cloud Rap</option>
+          <option>UK Drill</option>
+          <option>Phonk</option>
+          <option>R&B</option>
+          <option>Neo Soul</option>
+          <option>Quiet Storm</option>
+          <option>Soul</option>
+          <option>Gospel</option>
+          <option>Funk</option>
+          <option>Disco</option>
+          <option>Eurodance</option>
+          <option>Euro EDM Disco</option>
+          <option>House</option>
+          <option>Tech House</option>
+          <option>Techno</option>
+          <option>Synthwave</option>
+          <option>Dance-pop</option>
+          <option>Dark Pop</option>
+          <option>Dream Pop</option>
+          <option>Indie Pop</option>
+          <option>Afrobeat</option>
+          <option>Dancehall</option>
+          <option>Reggae</option>
+          <option>Reggaeton</option>
+          <option>Latin</option>
+          <option>Samba</option>
+          <option>Bossa Nova</option>
+          <option>Jazz</option>
+          <option>Jazz Fusion</option>
+          <option>Cool Jazz</option>
+          <option>Bebop</option>
+          <option>Smooth Jazz</option>
+          <option>Gospel</option>
+          <option>Blues</option>
+          <option>Folk</option>
+          <option>Americana</option>
+          <option>Country</option>
+          <option>Rock</option>
+          <option>Indie Rock</option>
+          <option>Progressive Metal</option>
+          <option>Experimental</option>
+          <option>Ambient</option>
+          <option>Lo-Fi</option>
+          <option>Downtempo</option>
+          <option>World</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Fusion / Custom Genre</label>
+        <input type="text" id="customGenre" placeholder="e.g. zoukglam, tropic noir, sunsetcore..." />
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="field">
+        <label>BPM</label>
+        <input type="text" id="bpm" placeholder="e.g. 130" />
+      </div>
+      <div class="field">
+        <label>Key / Mode</label>
+        <select id="key">
+          <option value="">— none —</option>
+          <option>minor key</option>
+          <option>major key</option>
+          <option>harmonic minor</option>
+          <option>dorian mode</option>
+          <option>pentatonic</option>
+          <option>chromatic</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Feel / Time</label>
+        <select id="feel">
+          <option value="">— none —</option>
+          <option>half-time feel</option>
+          <option>four-on-the-floor</option>
+          <option>swung rhythm</option>
+          <option>syncopated</option>
+          <option>offbeat groove</option>
+          <option>waltz time</option>
+          <option>polyrhythmic</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- VOICE -->
+    <div class="sec">Vocal Architecture</div>
+    <div class="grid-2">
+      <div class="field">
+        <label>Voice Type</label>
+        <select id="voiceType">
+          <option value="">— none —</option>
+          <option>deep male vocal</option>
+          <option>booming chest voice</option>
+          <option>male vocal</option>
+          <option>raspy male vocal</option>
+          <option>female vocal</option>
+          <option>soulful female vocal</option>
+          <option>breathy female vocal</option>
+          <option>rich alto female</option>
+          <option>soprano female vocal</option>
+          <option>duet male and female</option>
+          <option>choir</option>
+          <option>gang vocals</option>
+          <option>spoken word</option>
+          <option>no vocal instrumental</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Vocal Tone</label>
+        <select id="vocalTone">
+          <option value="">— none —</option>
+          <option>vocal tone: warm</option>
+          <option>vocal tone: raspy</option>
+          <option>vocal style: soulful</option>
+          <option>vocal style: husky</option>
+          <option>vocal style: breathy</option>
+          <option>vocal style: ethereal</option>
+          <option>vocal style: gritty</option>
+          <option>vocal style: deadpan</option>
+          <option>vocal emotion: energetic</option>
+          <option>vocal expression: emotional</option>
+          <option>authoritative delivery</option>
+          <option>bars land behind the beat</option>
+          <option>melismatic phrasing</option>
+          <option>conversational flow</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Vocal FX & Layering</label>
+      <div class="chips" id="vocalFX">
+        <span class="chip" data-v="doubled vocals">Doubled Vocals</span>
+        <span class="chip" data-v="whisper vocals">Whisper Vocals</span>
+        <span class="chip" data-v="layered harmony">Layered Harmony</span>
+        <span class="chip" data-v="stacked harmonies">Stacked Harmonies</span>
+        <span class="chip" data-v="backup vocals">Backup Vocals</span>
+        <span class="chip" data-v="call and response">Call &amp; Response</span>
+        <span class="chip" data-v="vocal fry">Vocal Fry</span>
+        <span class="chip" data-v="vocal doubling">Vocal Doubling</span>
+        <span class="chip" data-v="echoing vocals">Echoing Vocals</span>
+        <span class="chip" data-v="vocoder voice">Vocoder</span>
+        <span class="chip" data-v="auto-tune">Auto-Tune</span>
+        <span class="chip" data-v="vibrato">Vibrato</span>
+        <span class="chip" data-v="falsetoo">Falsetto</span>
+        <span class="chip" data-v="ad libs">Ad Libs</span>
+        <span class="chip" data-v="harmonizer">Harmonizer</span>
+        <span class="chip" data-v="vocal chop">Vocal Chop</span>
+        <span class="chip" data-v="slapback delay on select bars">Slapback Delay on Bars</span>
+        <span class="chip" data-v="dry close mic vocal">Dry Close Mic</span>
+        <span class="chip" data-v="subharmonics">Subharmonics</span>
+        <span class="chip" data-v="beatboxing">Beatboxing</span>
+      </div>
+    </div>
+
+    <!-- REVERB -->
+    <div class="sec">Reverb Stack</div>
+    <div class="chips" id="reverbChips">
+      <span class="chip" data-v="room reverb">Room</span>
+      <span class="chip" data-v="plate reverb">Plate</span>
+      <span class="chip" data-v="plate reverb on ad-libs only">Plate (ad-libs only)</span>
+      <span class="chip" data-v="small room reverb on vocals">Small Room Vox</span>
+      <span class="chip" data-v="hall reverb">Hall</span>
+      <span class="chip" data-v="spring reverb">Spring</span>
+      <span class="chip" data-v="cathedral reverb">Cathedral</span>
+      <span class="chip" data-v="reverse reverb">Reverse Reverb</span>
+      <span class="chip" data-v="reverb tail controlled">Reverb Tail Controlled</span>
+      <span class="chip" data-v="ambient reverb wash">Ambient Wash</span>
+      <span class="chip" data-v="lush reverb">Lush Reverb</span>
+    </div>
+
+    <!-- SPATIAL / PANNING -->
+    <div class="sec">Panning & Spatial Mix</div>
+    <div class="chips" id="spatialChips">
+      <span class="chip" data-v="panning automation">Panning Automation</span>
+      <span class="chip" data-v="stereo widening">Stereo Widening</span>
+      <span class="chip" data-v="mid-side">Mid-Side</span>
+      <span class="chip" data-v="3D spatial">3D Spatial</span>
+      <span class="chip" data-v="binaural">Binaural</span>
+      <span class="chip" data-v="ping-pong delay">Ping-Pong Delay</span>
+      <span class="chip" data-v="wide stereo image">Wide Stereo Image</span>
+      <span class="chip" data-v="stereo panning">Stereo Panning</span>
+      <span class="chip" data-v="stereo-panned percussion">Stereo-Panned Percussion</span>
+    </div>
+
+    <!-- EQ / HIGH FREQ -->
+    <div class="sec">EQ — Cut High Frequencies / Warmth</div>
+    <div class="chips" id="eqChips">
+      <span class="chip" data-v="low-pass filter">Low-Pass Filter</span>
+      <span class="chip" data-v="tape saturation">Tape Saturation</span>
+      <span class="chip" data-v="analog warmth">Analog Warmth</span>
+      <span class="chip" data-v="warm dark mix">Warm Dark Mix</span>
+      <span class="chip" data-v="rolled-off top end">Rolled-Off Top End</span>
+      <span class="chip" data-v="tube distortion">Tube Distortion</span>
+      <span class="chip" data-v="analog saturation">Analog Saturation</span>
+      <span class="chip" data-v="vinyl crackle">Vinyl Crackle</span>
+      <span class="chip" data-v="tape delay">Tape Delay</span>
+      <span class="chip" data-v="vintage console">Vintage Console</span>
+      <span class="chip" data-v="warm preamps">Warm Preamps</span>
+      <span class="chip" data-v="low-mid saturation">Low-Mid Saturation</span>
+      <span class="chip" data-v="notch filter">Notch Filter</span>
+      <span class="chip" data-v="resonant filter">Resonant Filter</span>
+    </div>
+
+    <!-- DYNAMICS / MASTER -->
+    <div class="sec">Dynamics & Master Chain</div>
+    <div class="chips" id="dynamicsChips">
+      <span class="chip" data-v="sidechain">Sidechain</span>
+      <span class="chip" data-v="multiband compression">Multiband Compression</span>
+      <span class="chip" data-v="limiter">Limiter</span>
+      <span class="chip" data-v="natural compression">Natural Compression</span>
+      <span class="chip" data-v="studio quality">Studio Quality</span>
+      <span class="chip" data-v="streaming ready">Streaming Ready</span>
+      <span class="chip" data-v="mastered">Mastered</span>
+      <span class="chip" data-v="high production quality">High Production Quality</span>
+      <span class="chip" data-v="live band feel">Live Band Feel</span>
+      <span class="chip" data-v="hi-fi">Hi-Fi</span>
+      <span class="chip" data-v="dynamic range">Dynamic Range</span>
+    </div>
+
+    <!-- DRUMS & BASS -->
+    <div class="sec">Drums & Bass</div>
+    <div class="chips" id="drumsChips">
+      <span class="chip" data-v="808">808</span>
+      <span class="chip" data-v="hard 808 long decay">Hard 808 Long Decay</span>
+      <span class="chip" data-v="sub bass">Sub Bass</span>
+      <span class="chip" data-v="sub bass rumble">Sub Bass Rumble</span>
+      <span class="chip" data-v="sparse snare dry and sharp">Sparse Dry Snare</span>
+      <span class="chip" data-v="punchy snare">Punchy Snare</span>
+      <span class="chip" data-v="rimshots">Rimshots</span>
+      <span class="chip" data-v="minimal hi-hats">Minimal Hi-Hats</span>
+      <span class="chip" data-v="tight hi-hats">Tight Hi-Hats</span>
+      <span class="chip" data-v="deliberate negative space">Negative Space</span>
+      <span class="chip" data-v="finger snaps">Finger Snaps</span>
+      <span class="chip" data-v="hand claps">Hand Claps</span>
+      <span class="chip" data-v="kick drum">Kick Drum</span>
+      <span class="chip" data-v="jazz brushes">Jazz Brushes</span>
+      <span class="chip" data-v="MPC drums">MPC Drums</span>
+      <span class="chip" data-v="boom bap drums">Boom Bap Drums</span>
+      <span class="chip" data-v="congas">Congas</span>
+      <span class="chip" data-v="timbales">Timbales</span>
+      <span class="chip" data-v="djembe">Djembe</span>
+      <span class="chip" data-v="handpan">Handpan</span>
+      <span class="chip" data-v="groovy bassline">Groovy Bassline</span>
+      <span class="chip" data-v="syncopated bassline">Syncopated Bassline</span>
+      <span class="chip" data-v="upright bass">Upright Bass</span>
+      <span class="chip" data-v="bass guitar">Bass Guitar</span>
+    </div>
+
+    <!-- INSTRUMENTS -->
+    <div class="sec">Instruments & Textures</div>
+    <div class="chips" id="instrChips">
+      <span class="chip" data-v="piano">Piano</span>
+      <span class="chip" data-v="rhodes piano">Rhodes Piano</span>
+      <span class="chip" data-v="electric piano">Electric Piano</span>
+      <span class="chip" data-v="organ">Organ</span>
+      <span class="chip" data-v="synth pad">Synth Pad</span>
+      <span class="chip" data-v="ambient pad">Ambient Pad</span>
+      <span class="chip" data-v="saw lead">Saw Lead</span>
+      <span class="chip" data-v="pluck synth">Pluck Synth</span>
+      <span class="chip" data-v="arpeggiator">Arpeggiator</span>
+      <span class="chip" data-v="acoustic guitar">Acoustic Guitar</span>
+      <span class="chip" data-v="electric guitar">Electric Guitar</span>
+      <span class="chip" data-v="guitar solo">Guitar Solo</span>
+      <span class="chip" data-v="saxophone">Saxophone</span>
+      <span class="chip" data-v="trumpet">Trumpet</span>
+      <span class="chip" data-v="muted trumpet">Muted Trumpet</span>
+      <span class="chip" data-v="trombone">Trombone</span>
+      <span class="chip" data-v="horn section">Horn Section</span>
+      <span class="chip" data-v="strings legato">Strings Legato</span>
+      <span class="chip" data-v="violin">Violin</span>
+      <span class="chip" data-v="cello">Cello</span>
+      <span class="chip" data-v="oud">Oud</span>
+      <span class="chip" data-v="kaban plucked motif">Kaban Plucked</span>
+      <span class="chip" data-v="masenqo bowed string">Masenqo</span>
+      <span class="chip" data-v="kalimba">Kalimba</span>
+      <span class="chip" data-v="glockenspiel">Glockenspiel</span>
+      <span class="chip" data-v="steelpan">Steelpan</span>
+      <span class="chip" data-v="steel drums">Steel Drums</span>
+      <span class="chip" data-v="pan flute">Pan Flute</span>
+      <span class="chip" data-v="bansuri flute">Bansuri Flute</span>
+      <span class="chip" data-v="harmonica">Harmonica</span>
+      <span class="chip" data-v="accordion">Accordion</span>
+      <span class="chip" data-v="marimba">Marimba</span>
+      <span class="chip" data-v="vibraphone">Vibraphone</span>
+      <span class="chip" data-v="durbaan ceremonial drum">Durbaan</span>
+      <span class="chip" data-v="shekere">Shekere</span>
+      <span class="chip" data-v="riser FX">Riser FX</span>
+      <span class="chip" data-v="white noise swell">White Noise Swell</span>
+      <span class="chip" data-v="vinyl crackle texture">Vinyl Crackle</span>
+      <span class="chip" data-v="ocean texture">Ocean</span>
+      <span class="chip" data-v="rain texture">Rain</span>
+      <span class="chip" data-v="birds ambient">Birds</span>
+      <span class="chip" data-v="drone">Drone</span>
+    </div>
+
+    <!-- ADDITIONAL FX -->
+    <div class="sec">Additional FX</div>
+    <div class="chips" id="fxChips">
+      <span class="chip" data-v="chorus effect">Chorus</span>
+      <span class="chip" data-v="flanger">Flanger</span>
+      <span class="chip" data-v="phaser">Phaser</span>
+      <span class="chip" data-v="overdrive">Overdrive</span>
+      <span class="chip" data-v="bitcrushing">Bitcrushing</span>
+      <span class="chip" data-v="tremolo">Tremolo</span>
+      <span class="chip" data-v="pitch shift">Pitch Shift</span>
+      <span class="chip" data-v="formant shift">Formant Shift</span>
+      <span class="chip" data-v="granular">Granular</span>
+      <span class="chip" data-v="stutter">Stutter</span>
+      <span class="chip" data-v="reverse samples">Reverse Samples</span>
+      <span class="chip" data-v="time-stretch">Time-Stretch</span>
+      <span class="chip" data-v="telephone filter">Telephone Filter</span>
+      <span class="chip" data-v="high-pass filter">High-Pass Filter</span>
+      <span class="chip" data-v="band-pass filter">Band-Pass Filter</span>
+      <span class="chip" data-v="freeze">Freeze</span>
+    </div>
+
+    <!-- MOOD / EARWORM -->
+    <div class="sec">Mood, Earworm & Viral Tags</div>
+    <div class="chips" id="moodChips">
+      <span class="chip" data-v="catchy hook">Catchy Hook</span>
+      <span class="chip" data-v="earworm">Earworm</span>
+      <span class="chip" data-v="anthemic">Anthemic</span>
+      <span class="chip" data-v="hypnotic">Hypnotic</span>
+      <span class="chip" data-v="building intensity">Building Intensity</span>
+      <span class="chip" data-v="powerful outro">Powerful Outro</span>
+      <span class="chip" data-v="emotional bridge">Emotional Bridge</span>
+      <span class="chip" data-v="climactic">Climactic</span>
+      <span class="chip" data-v="orchestral build">Orchestral Build</span>
+      <span class="chip" data-v="melancholic">Melancholic</span>
+      <span class="chip" data-v="nostalgic">Nostalgic</span>
+      <span class="chip" data-v="euphoric">Euphoric</span>
+      <span class="chip" data-v="radiant">Radiant</span>
+      <span class="chip" data-v="dreamy">Dreamy</span>
+      <span class="chip" data-v="uplifting">Uplifting</span>
+      <span class="chip" data-v="cinematic">Cinematic</span>
+      <span class="chip" data-v="cosmic">Cosmic</span>
+      <span class="chip" data-v="gritty">Gritty</span>
+      <span class="chip" data-v="lo-fi edge">Lo-Fi Edge</span>
+      <span class="chip" data-v="crowd-ready hook">Crowd-Ready Hook</span>
+      <span class="chip" data-v="dancefloor-ready">Dancefloor-Ready</span>
+      <span class="chip" data-v="dynamic contrast">Dynamic Contrast</span>
+    </div>
+
+    <!-- TEXT FIELDS -->
+    <div class="sec">Atmosphere & Context</div>
+    <div class="field">
+      <label>Atmosphere / Vibe Notes</label>
+      <textarea id="atmosphere" placeholder="e.g. cold Ohio winter night, ancestral warmth underneath, late night studio energy, East African lineage..."></textarea>
+    </div>
+    <div class="field">
+      <label>Song Concept / Special Instructions</label>
+      <textarea id="context" placeholder="e.g. CPA exam grind anthem, Somali diaspora themes, Pooh Shiesty calm delivery, Memphis pocket — anything you want woven in..."></textarea>
+    </div>
+
+    <button class="gen-btn" onclick="buildPrompt()">⚡ BUILD SUNO PROMPT</button>
+
+  </div><!-- /panel-left -->
+
+  <!-- ========== RIGHT PANEL ========== -->
+  <div class="panel panel-right">
+
+    <div class="sec" style="margin-top:0">Generated Prompt</div>
+
+    <div class="output-box empty" id="outputBox">
+      Configure your inputs on the left, select your chips, and hit BUILD — your prompt appears here, ready to drop straight into Suno's Style field.
+    </div>
+
+    <div class="char-bar"><div class="char-fill" id="charFill" style="width:0%"></div></div>
+    <div class="char-meta">
+      <span id="charCount" class="count">0 / 1000 characters</span>
+      <span id="charStatus" class="status">—</span>
+    </div>
+
+    <div class="action-row">
+      <button class="action-btn primary" onclick="copyPrompt()" id="copyBtn">▲ COPY PROMPT</button>
+      <button class="action-btn" onclick="clearOutput()">✕ CLEAR</button>
+    </div>
+
+    <!-- METERS -->
+    <div class="sec">Prompt Quality Meters</div>
+    <div class="meter-grid">
+      <div class="meter-row">
+        <span class="meter-name">Production</span>
+        <div class="meter-track"><div class="meter-fill" id="m-prod"></div></div>
+        <span class="meter-val" id="mv-prod">—</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-name">Vocal Depth</span>
+        <div class="meter-track"><div class="meter-fill" id="m-vox"></div></div>
+        <span class="meter-val" id="mv-vox">—</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-name">Spatial / Panning</span>
+        <div class="meter-track"><div class="meter-fill" id="m-spatial"></div></div>
+        <span class="meter-val" id="mv-spatial">—</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-name">Earworm Score</span>
+        <div class="meter-track"><div class="meter-fill" id="m-ear"></div></div>
+        <span class="meter-val" id="mv-ear">—</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-name">Warmth / Lo-Hi</span>
+        <div class="meter-track"><div class="meter-fill" id="m-warm"></div></div>
+        <span class="meter-val" id="mv-warm">—</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-name">Instrument Depth</span>
+        <div class="meter-track"><div class="meter-fill" id="m-instr"></div></div>
+        <span class="meter-val" id="mv-instr">—</span>
+      </div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="sec">Vault Tips</div>
+    <div class="tip-box">
+      <strong>Style field:</strong> Paste the generated prompt here. Keep it under 1000 characters.<br>
+      <strong>Lyrics field:</strong> Use structure tags like [Intro], [Verse], [Chorus], [Bridge], [Outro] to control song architecture.<br>
+      <strong>Earworm tip:</strong> Repeat the hook phrase in both Verse and Chorus sections for max memorability.<br>
+      <strong>Low-Pass + Tape Saturation:</strong> These two together roll off harsh highs and add warmth without muddying the low end.<br>
+      <strong>Panning Automation + Mid-Side:</strong> Use together for a wide, breathing stereo image that translates well on streaming.<br>
+      <strong>Negative Space:</strong> Silence is a production tool. Sparse beats with deliberate gaps hit harder than busy ones.
+    </div>
+
+    <!-- STRUCTURE TAG BUILDER -->
+    <div class="sec">Lyric Structure Tag Builder</div>
+    <div class="chips" style="margin-bottom:10px;" id="structureChips">
+      <span class="chip on-purple" data-struct="[Intro]">[Intro]</span>
+      <span class="chip on-purple" data-struct="[Verse]">[Verse]</span>
+      <span class="chip on-purple" data-struct="[Pre-Chorus]">[Pre-Chorus]</span>
+      <span class="chip on-purple" data-struct="[Chorus]">[Chorus]</span>
+      <span class="chip on-purple" data-struct="[Post-Chorus]">[Post-Chorus]</span>
+      <span class="chip on-purple" data-struct="[Bridge]">[Bridge]</span>
+      <span class="chip on-purple" data-struct="[Hook]">[Hook]</span>
+      <span class="chip on-purple" data-struct="[Drop]">[Drop]</span>
+      <span class="chip on-purple" data-struct="[Break]">[Break]</span>
+      <span class="chip on-purple" data-struct="[Build]">[Build]</span>
+      <span class="chip on-purple" data-struct="[Interlude]">[Interlude]</span>
+      <span class="chip on-purple" data-struct="[Solo]">[Solo]</span>
+      <span class="chip on-purple" data-struct="[Instrumental]">[Instrumental]</span>
+      <span class="chip on-purple" data-struct="[Spoken Word]">[Spoken Word]</span>
+      <span class="chip on-purple" data-struct="[Outro]">[Outro]</span>
+      <span class="chip on-purple" data-struct="[End]">[End]</span>
+      <span class="chip on-purple" data-struct="[Fade Out]">[Fade Out]</span>
+    </div>
+    <div class="output-box" id="structureBox" style="min-height:80px;color:var(--muted);font-style:italic;font-size:0.68rem;">
+      Click structure tags above to build your lyrics template...
+    </div>
+    <div class="action-row" style="margin-top:8px;">
+      <button class="action-btn primary" onclick="copyStructure()">▲ COPY STRUCTURE</button>
+      <button class="action-btn" onclick="clearStructure()">✕ CLEAR</button>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="sec">Prompt History</div>
+    <div class="history-list" id="historyList">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);">No prompts generated yet.</div>
+    </div>
+
+  </div><!-- /panel-right -->
+</div><!-- /app -->
+
+<script>
+// ==========================================
+// CHIP TOGGLE
+// ==========================================
+document.querySelectorAll('.chip[data-v]').forEach(chip => {
+  chip.addEventListener('click', () => chip.classList.toggle('on'));
+});
+
+// Structure chips — copy on click
+let structureTags = [];
+document.querySelectorAll('.chip[data-struct]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const tag = chip.dataset.struct;
+    structureTags.push(tag);
+    renderStructure();
+  });
+});
+
+function renderStructure() {
+  const box = document.getElementById('structureBox');
+  if (structureTags.length === 0) {
+    box.textContent = 'Click structure tags above to build your lyrics template...';
+    box.style.color = 'var(--muted)';
+    box.style.fontStyle = 'italic';
+  } else {
+    box.style.color = 'var(--text)';
+    box.style.fontStyle = 'normal';
+    box.textContent = structureTags.join('\n');
+  }
+}
+
+function clearStructure() {
+  structureTags = [];
+  renderStructure();
+}
+
+function copyStructure() {
+  const text = structureTags.join('\n');
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    btn.textContent = '✓ COPIED';
+    setTimeout(() => btn.textContent = '▲ COPY STRUCTURE', 2000);
+  });
+}
+
+// ==========================================
+// GET ACTIVE CHIPS
+// ==========================================
+function getOn(groupId) {
+  return [...document.querySelectorAll(`#${groupId} .chip.on`)].map(c => c.dataset.v);
+}
+
+// ==========================================
+// BUILD PROMPT
+// ==========================================
+let history = [];
+let currentPrompt = '';
+
+function buildPrompt() {
+  // Collect all values
+  const genre = document.getElementById('genre').value;
+  const customGenre = document.getElementById('customGenre').value.trim();
+  const bpm = document.getElementById('bpm').value.trim();
+  const key = document.getElementById('key').value;
+  const feel = document.getElementById('feel').value;
+  const voiceType = document.getElementById('voiceType').value;
+  const vocalTone = document.getElementById('vocalTone').value;
+  const atmosphere = document.getElementById('atmosphere').value.trim();
+  const context = document.getElementById('context').value.trim();
+
+  const vocalFX    = getOn('vocalFX');
+  const reverb     = getOn('reverbChips');
+  const spatial    = getOn('spatialChips');
+  const eq         = getOn('eqChips');
+  const dynamics   = getOn('dynamicsChips');
+  const drums      = getOn('drumsChips');
+  const instr      = getOn('instrChips');
+  const fx         = getOn('fxChips');
+  const mood       = getOn('moodChips');
+
+  // Build ordered token array
+  let tokens = [];
+
+  // 1. Genre
+  if (customGenre) tokens.push(customGenre);
+  else tokens.push(genre);
+
+  // 2. Tempo / Key / Feel
+  if (bpm) tokens.push(`${bpm} BPM`);
+  if (key) tokens.push(key);
+  if (feel) tokens.push(feel);
+
+  // 3. Vocal
+  if (voiceType) tokens.push(voiceType);
+  if (vocalTone) tokens.push(vocalTone);
+  tokens.push(...vocalFX);
+
+  // 4. Reverb
+  tokens.push(...reverb);
+
+  // 5. Panning / Spatial
+  tokens.push(...spatial);
+
+  // 6. EQ / Warmth
+  tokens.push(...eq);
+
+  // 7. Dynamics / Master
+  tokens.push(...dynamics);
+
+  // 8. Drums / Bass
+  tokens.push(...drums);
+
+  // 9. Instruments
+  tokens.push(...instr);
+
+  // 10. Additional FX
+  tokens.push(...fx);
+
+  // 11. Mood / Earworm
+  tokens.push(...mood);
+
+  // 12. Atmosphere (natural language woven in)
+  if (atmosphere) tokens.push(atmosphere);
+
+  // 13. Context hint (abbreviated)
+  if (context) {
+    // trim to a short descriptor
+    const shortCtx = context.length > 80 ? context.substring(0, 77) + '...' : context;
+    tokens.push(shortCtx);
+  }
+
+  // Dedupe and join
+  const seen = new Set();
+  const unique = tokens.filter(t => {
+    const k = t.toLowerCase().trim();
+    if (!k || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+
+  let prompt = unique.join(', ');
+
+  // Trim to 1000 chars gracefully
+  if (prompt.length > 1000) {
+    prompt = prompt.substring(0, 997) + '...';
+  }
+
+  currentPrompt = prompt;
+
+  // Render
+  const box = document.getElementById('outputBox');
+  box.textContent = prompt;
+  box.classList.remove('empty');
+  box.classList.add('has-content');
+
+  updateCharCount(prompt.length);
+  updateMeters({ spatial, eq, reverb, vocalFX, mood, dynamics, instr, drums });
+  addHistory(customGenre || genre, bpm, prompt);
+}
+
+// ==========================================
+// CHAR COUNT
+// ==========================================
+function updateCharCount(len) {
+  const fill = document.getElementById('charFill');
+  const count = document.getElementById('charCount');
+  const status = document.getElementById('charStatus');
+
+  const pct = Math.min(100, (len / 1000) * 100);
+  fill.style.width = pct + '%';
+
+  if (len > 1000) {
+    fill.style.background = 'var(--red)';
+    count.className = 'count over-text';
+    status.textContent = '⚠ OVER LIMIT';
+    status.className = 'status over-text';
+  } else if (len > 800) {
+    fill.style.background = 'var(--orange)';
+    count.className = 'count warn-text';
+    status.textContent = '⚡ APPROACHING LIMIT';
+    status.className = 'status warn-text';
+  } else {
+    fill.style.background = 'var(--accent)';
+    count.className = 'count';
+    status.textContent = '✓ GOOD';
+    status.className = 'status';
+    status.style.color = 'var(--accent)';
+  }
+
+  count.textContent = `${len} / 1000 characters`;
+}
+
+// ==========================================
+// METERS
+// ==========================================
+function updateMeters({ spatial, eq, reverb, vocalFX, mood, dynamics, instr, drums }) {
+  const score = (arr, max) => Math.min(100, Math.round((arr.length / Math.max(max, 1)) * 100));
+
+  setMeter('prod',    score(dynamics, 6), '#m-prod', '#mv-prod');
+  setMeter('vox',     score(vocalFX, 8),  '#m-vox',  '#mv-vox');
+  setMeter('spatial', score(spatial, 5),  '#m-spatial', '#mv-spatial');
+  setMeter('ear',     score(mood, 7),     '#m-ear',  '#mv-ear');
+  setMeter('warm',    score(eq, 6),       '#m-warm', '#mv-warm');
+  setMeter('instr',   score([...instr, ...drums], 10), '#m-instr', '#mv-instr');
+}
+
+function setMeter(id, val, fillSel, valSel) {
+  const fill = document.querySelector(fillSel);
+  const label = document.querySelector(valSel);
+  fill.style.width = val + '%';
+  fill.className = 'meter-fill' + (val < 30 ? ' low' : val < 60 ? ' mid' : '');
+  label.textContent = val + '%';
+}
+
+// ==========================================
+// HISTORY
+// ==========================================
+function addHistory(genre, bpm, prompt) {
+  history.unshift({ label: `${genre}${bpm ? ' · ' + bpm + 'BPM' : ''}`, prompt });
+  if (history.length > 8) history.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  const list = document.getElementById('historyList');
+  if (history.length === 0) {
+    list.innerHTML = '<div style="font-family:\'Space Mono\',monospace;font-size:0.6rem;color:var(--muted);">No prompts generated yet.</div>';
+    return;
+  }
+  list.innerHTML = history.map((h, i) => `
+    <div class="history-item" onclick="loadHistory(${i})">
+      <div class="history-tag">▸ ${h.label}</div>
+      <div class="history-preview">${h.prompt}</div>
+    </div>
+  `).join('');
+}
+
+function loadHistory(i) {
+  const p = history[i].prompt;
+  currentPrompt = p;
+  const box = document.getElementById('outputBox');
+  box.textContent = p;
+  box.classList.remove('empty');
+  box.classList.add('has-content');
+  updateCharCount(p.length);
+}
+
+// ==========================================
+// COPY
+// ==========================================
+function copyPrompt() {
+  if (!currentPrompt) return;
+  navigator.clipboard.writeText(currentPrompt).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ COPIED TO CLIPBOARD';
+    setTimeout(() => btn.textContent = '▲ COPY PROMPT', 2000);
+  });
+}
+
+function clearOutput() {
+  currentPrompt = '';
+  const box = document.getElementById('outputBox');
+  box.textContent = 'Configure your inputs on the left, select your chips, and hit BUILD — your prompt appears here.';
+  box.classList.add('empty');
+  box.classList.remove('has-content');
+  document.getElementById('charFill').style.width = '0%';
+  document.getElementById('charCount').textContent = '0 / 1000 characters';
+  document.getElementById('charStatus').textContent = '—';
+  document.getElementById('charStatus').style.color = 'var(--muted)';
+  ['prod','vox','spatial','ear','warm','instr'].forEach(id => {
+    document.getElementById(`m-${id}`).style.width = '0%';
+    document.getElementById(`mv-${id}`).textContent = '—';
+  });
+}
+
+// ==========================================
+// PRESETS
+// ==========================================
+function clearAllChips() {
+  document.querySelectorAll('.chip[data-v].on').forEach(c => c.classList.remove('on'));
+}
+
+function activateChips(values) {
+  values.forEach(v => {
+    const chip = [...document.querySelectorAll('.chip[data-v]')].find(c => c.dataset.v === v);
+    if (chip) chip.classList.add('on');
+  });
+}
+
+function setSelect(id, val) {
+  const el = document.getElementById(id);
+  for (let i = 0; i < el.options.length; i++) {
+    if (el.options[i].value === val || el.options[i].text === val) {
+      el.selectedIndex = i; return;
+    }
+  }
+}
+
+function setInput(id, val) { document.getElementById(id).value = val; }
+function setTextarea(id, val) { document.getElementById(id).value = val; }
+
+const PRESETS = {
+  fdo: {
+    genre: 'Memphis Hip-Hop', customGenre: '', bpm: '130', key: 'minor key', feel: 'half-time feel',
+    voiceType: 'deep male vocal', vocalTone: 'vocal style: deadpan',
+    atmosphere: 'cold Ohio winter night, ancestral warmth underneath, focused and inevitable',
+    context: 'CPA exam grind anthem, Somali diaspora themes, Pooh Shiesty calm authority delivery',
+    chips: [
+      'doubled vocals','whisper vocals','layered harmony','backup vocals','dry close mic vocal','slapback delay on select bars',
+      'room reverb','plate reverb on ad-libs only','small room reverb on vocals',
+      'panning automation','stereo widening','mid-side','3D spatial','binaural',
+      'low-pass filter','tape saturation','analog warmth','warm dark mix','rolled-off top end','low-mid saturation',
+      'sidechain','multiband compression','limiter','studio quality','streaming ready','mastered',
+      'hard 808 long decay','sub bass rumble','sparse snare dry and sharp','minimal hi-hats','deliberate negative space',
+      'kaban plucked motif','masenqo bowed string','handpan','durbaan ceremonial drum','drone','vinyl crackle texture',
+      'catchy hook','earworm','anthemic','building intensity','powerful outro','hypnotic'
+    ]
+  },
+  euroedm: {
+    genre: 'Euro EDM Disco', customGenre: 'M41S0N euro disco', bpm: '124', key: 'minor key', feel: 'four-on-the-floor',
+    voiceType: 'female vocal', vocalTone: 'vocal style: ethereal',
+    atmosphere: 'neon dancefloor, European club energy, cinematic and euphoric',
+    context: 'M41S0N duo project, disco revival with modern EDM production',
+    chips: [
+      'doubled vocals','stacked harmonies','layered harmony','ad libs','backup vocals',
+      'plate reverb','hall reverb','reverb tail controlled',
+      'panning automation','stereo widening','3D spatial','binaural','ping-pong delay',
+      'tape saturation','analog warmth',
+      'sidechain','multiband compression','limiter','studio quality','streaming ready','mastered','hi-fi',
+      'kick drum','tight hi-hats','finger snaps','groovy bassline','sub bass',
+      'synth pad','saw lead','arpeggiator','pluck synth','riser FX',
+      'catchy hook','earworm','anthemic','euphoric','dancefloor-ready','building intensity','climactic','crowd-ready hook'
+    ]
+  },
+  neosoul: {
+    genre: 'Neo Soul', customGenre: '', bpm: '88', key: 'minor key', feel: 'swung rhythm',
+    voiceType: 'soulful female vocal', vocalTone: 'vocal style: soulful',
+    atmosphere: 'warm late night, intimate studio, golden hour light',
+    context: '',
+    chips: [
+      'doubled vocals','layered harmony','call and response','vocal fry','ad libs','vibrato',
+      'room reverb','plate reverb','small room reverb on vocals',
+      'panning automation','stereo widening','mid-side',
+      'tape saturation','analog warmth','warm dark mix','vinyl crackle texture',
+      'natural compression','studio quality','streaming ready','mastered','dynamic range',
+      'rimshots','finger snaps','upright bass','groovy bassline',
+      'rhodes piano','electric piano','acoustic guitar','saxophone',
+      'catchy hook','earworm','melancholic','building intensity','emotional bridge','dynamic contrast'
+    ]
+  },
+  afrobeat: {
+    genre: 'Afrobeat', customGenre: '', bpm: '104', key: 'major key', feel: 'syncopated',
+    voiceType: 'female vocal', vocalTone: 'vocal style: soulful',
+    atmosphere: 'vibrant, joyful, communal energy, sun-drenched',
+    context: '',
+    chips: [
+      'call and response','layered harmony','stacked harmonies','ad libs','backup vocals',
+      'room reverb','spring reverb','lush reverb',
+      'panning automation','stereo widening','stereo-panned percussion',
+      'analog warmth','tape saturation',
+      'studio quality','streaming ready','mastered','live band feel',
+      'congas','djembe','shekere','timbales','hand claps','syncopated bassline','groovy bassline',
+      'acoustic guitar','trumpet','saxophone','piano','kalimba',
+      'catchy hook','earworm','euphoric','uplifting','dancefloor-ready','anthemic','dynamic contrast'
+    ]
+  },
+  darkpop: {
+    genre: 'Dark Pop', customGenre: '', bpm: '100', key: 'minor key', feel: 'half-time feel',
+    voiceType: 'breathy female vocal', vocalTone: 'vocal style: ethereal',
+    atmosphere: 'haunting, cinematic, nocturnal, emotionally charged',
+    context: '',
+    chips: [
+      'whisper vocals','doubled vocals','layered harmony','vocal chop','echoing vocals','harmonizer',
+      'cathedral reverb','reverse reverb','plate reverb','room reverb',
+      'panning automation','stereo widening','3D spatial','binaural','ping-pong delay',
+      'low-pass filter','tape saturation','analog warmth',
+      'sidechain','multiband compression','limiter','studio quality','streaming ready',
+      '808','sub bass','rimshots','minimal hi-hats',
+      'synth pad','ambient pad','piano','riser FX','drone','white noise swell',
+      'catchy hook','earworm','melancholic','cinematic','building intensity','climactic','hypnotic','dreamy'
+    ]
+  },
+  jazz: {
+    genre: 'Jazz Fusion', customGenre: '', bpm: '140', key: 'dorian mode', feel: 'swung rhythm',
+    voiceType: 'no vocal instrumental', vocalTone: '',
+    atmosphere: 'late night jazz club, smoky and intimate, virtuosic',
+    context: 'jazz octet — full band interplay, solos, rich harmonic texture',
+    chips: [
+      'room reverb','plate reverb','spring reverb',
+      'panning automation','stereo widening','mid-side',
+      'tape saturation','analog warmth','warm dark mix','vintage console',
+      'natural compression','studio quality','streaming ready','live band feel','dynamic range',
+      'jazz brushes','rimshots','upright bass','syncopated bassline','congas',
+      'saxophone','trumpet','muted trumpet','trombone','horn section','piano','vibraphone','acoustic guitar',
+      'catchy hook','earworm','cinematic','building intensity','climactic','dynamic contrast'
+    ]
+  },
+  reggaeton: {
+    genre: 'Reggaeton', customGenre: '', bpm: '95', key: 'minor key', feel: 'syncopated',
+    voiceType: 'male vocal', vocalTone: 'vocal tone: raspy',
+    atmosphere: 'club energy, Latin heat, night city vibes',
+    context: '',
+    chips: [
+      'doubled vocals','ad libs','backup vocals','call and response',
+      'room reverb','plate reverb',
+      'panning automation','stereo widening','3D spatial',
+      'tape saturation','analog warmth',
+      'sidechain','multiband compression','limiter','studio quality','streaming ready','mastered',
+      '808','sub bass','kick drum','congas','timbales','hand claps','rimshots',
+      'synth pad','piano','saxophone',
+      'catchy hook','earworm','anthemic','dancefloor-ready','crowd-ready hook','building intensity'
+    ]
+  },
+  bossanova: {
+    genre: 'Bossa Nova', customGenre: '', bpm: '120', key: 'major key', feel: 'swung rhythm',
+    voiceType: 'soulful female vocal', vocalTone: 'vocal style: breathy',
+    atmosphere: 'beachside afternoon, breezy and romantic, sophisticated',
+    context: '',
+    chips: [
+      'doubled vocals','layered harmony','whisper vocals','vibrato',
+      'room reverb','spring reverb','small room reverb on vocals',
+      'panning automation','stereo widening','mid-side',
+      'analog warmth','tape saturation','warm dark mix',
+      'natural compression','studio quality','streaming ready','live band feel',
+      'finger snaps','upright bass','jazz brushes','congas',
+      'acoustic guitar','piano','saxophone','flute',
+      'earworm','dreamy','nostalgic','radiant','dynamic contrast','melancholic'
+    ]
+  },
+  trap: {
+    genre: 'Trap', customGenre: '', bpm: '140', key: 'minor key', feel: 'half-time feel',
+    voiceType: 'deep male vocal', vocalTone: 'vocal tone: raspy',
+    atmosphere: 'dark, cold, menacing, street authority',
+    context: '',
+    chips: [
+      'doubled vocals','whisper vocals','ad libs','auto-tune','vocal fry',
+      'room reverb','plate reverb on ad-libs only','small room reverb on vocals',
+      'panning automation','stereo widening','3D spatial','binaural',
+      'low-pass filter','tape saturation','analog warmth','warm dark mix',
+      'sidechain','multiband compression','limiter','studio quality','streaming ready','mastered',
+      'hard 808 long decay','sub bass rumble','sparse snare dry and sharp','minimal hi-hats','deliberate negative space',
+      'synth pad','piano','drone',
+      'catchy hook','earworm','anthemic','building intensity','powerful outro','hypnotic','gritty'
+    ]
+  }
+};
+
+function loadPreset(key) {
+  if (key === 'clear') {
+    clearAllChips();
+    setSelect('genre', 'Memphis Hip-Hop');
+    setInput('customGenre', '');
+    setInput('bpm', '');
+    setSelect('key', '');
+    setSelect('feel', '');
+    setSelect('voiceType', '');
+    setSelect('vocalTone', '');
+    setTextarea('atmosphere', '');
+    setTextarea('context', '');
+    return;
+  }
+
+  const p = PRESETS[key];
+  if (!p) return;
+
+  clearAllChips();
+  setSelect('genre', p.genre);
+  setInput('customGenre', p.customGenre);
+  setInput('bpm', p.bpm);
+  setSelect('key', p.key);
+  setSelect('feel', p.feel);
+  setSelect('voiceType', p.voiceType);
+  setSelect('vocalTone', p.vocalTone);
+  setTextarea('atmosphere', p.atmosphere);
+  setTextarea('context', p.context);
+  activateChips(p.chips);
+}
+
+// Load FDO preset by default
+loadPreset('fdo');
+</script>
+</body>
+</html>
