@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://lateblooom.com/playlists.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playlists — Late Blooom</title>
+<meta name="description" content="Late Blooom playlists for every mood — meditation, workout, cooking, empowerment anthems, and Latin drama. 197 songs across five moods.">
+<meta property="og:title" content="Playlists — Late Blooom">
+<meta property="og:description" content="Five moods. 197 songs. Pick your energy.">
+<meta property="og:image" content="https://lateblooom.com/pl/latin.jpg">
+<meta property="og:url" content="https://lateblooom.com/playlists.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lateblooom.com/pl/latin.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@property --hue { syntax: '<number>'; inherits: true; initial-value: 35; }
+html { animation: huecycle 22s linear infinite; }
+@keyframes huecycle { to { --hue: 395; } }
+:root {
+  --black:#050508; --card:#0e0e16; --border:rgba(255,255,255,0.09);
+  --text:#f2f0ea; --muted:#8f8fa6;
+  --accent:hsl(var(--hue),85%,62%); --accent-soft:hsl(var(--hue),85%,72%);
+  --serif:'Jost',sans-serif; --sans:'Outfit',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--text);font-family:var(--sans);line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border)}
+.nav-brand img{height:34px;display:block}
+.nav-back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav-back:hover{color:var(--accent-soft)}
+
+.head{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 1rem}
+h1{font-family:var(--serif);font-weight:200;letter-spacing:.06em;
+   font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.04;margin-bottom:.5rem}
+.sub{color:var(--muted);font-size:.95rem;font-weight:300;max-width:52ch}
+.stats{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft);margin-top:1rem}
+
+.grid{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 3rem;
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
+.pl{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;
+    display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
+.pl:hover{border-color:var(--accent);transform:translateY(-3px)}
+
+/* facade: cover + play button; the Spotify iframe is only created on click,
+   so five embeds never load at once (that is what crashed Safari before) */
+.pl-art{position:relative;aspect-ratio:1;background:#07070d;cursor:pointer}
+.pl-art img{width:100%;height:100%;object-fit:cover;display:block}
+.pl-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+         background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55))}
+.pl-play span{width:62px;height:62px;border-radius:50%;background:var(--accent);color:#07070d;
+   display:flex;align-items:center;justify-content:center;font-size:1.5rem;padding-left:4px;
+   box-shadow:0 8px 30px rgba(0,0,0,.5);transition:transform .2s}
+.pl-art:hover .pl-play span{transform:scale(1.09)}
+.pl-art iframe{width:100%;height:100%;border:0;display:block}
+
+.pl-body{padding:1.1rem 1.2rem 1.3rem}
+.pl-mood{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:.4rem}
+.pl-name{font-family:var(--serif);font-weight:300;font-size:1.25rem;line-height:1.2;margin-bottom:.3rem}
+.pl-meta{font-size:.8rem;color:var(--muted);margin-bottom:.9rem}
+.pl-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn-sm{font-size:.74rem;letter-spacing:.06em;padding:8px 14px;border-radius:4px;text-decoration:none;
+        border:1px solid var(--border);color:var(--text);transition:all .18s}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent-soft)}
+.btn-sm.solid{background:var(--accent);color:#07070d;border-color:var(--accent);font-weight:600}
+.btn-sm.solid:hover{filter:brightness(1.12);color:#07070d}
+
+.share{max-width:1100px;margin:0 auto 3.5rem;padding:1.6rem 2rem;border-top:1px solid var(--border)}
+.share h2{font-family:var(--serif);font-weight:300;font-size:1.4rem;margin-bottom:.4rem}
+.share p{color:var(--muted);font-size:.88rem;max-width:60ch}
+.copyrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.copybtn{font-size:.72rem;letter-spacing:.06em;padding:8px 14px;border-radius:4px;cursor:pointer;
+  background:var(--card);border:1px solid var(--border);color:var(--text);font-family:var(--sans)}
+.copybtn:hover{border-color:var(--accent);color:var(--accent-soft)}
+
+.foot{max-width:1100px;margin:0 auto 3rem;padding:1.5rem 2rem;border-top:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.foot a{color:var(--accent-soft);text-decoration:none;font-size:.85rem}
+@media(max-width:600px){.grid{padding:1.2rem 1.1rem 2rem}.head{padding:1.8rem 1.1rem .8rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="Late Blooom"></a>
+  <a href="index.html" class="nav-back">← Home</a>
+</nav>
+
+<section class="head">
+  <h1>Pick your energy</h1>
+  <p class="sub">Five playlists built around what you're actually doing — not what genre it is. Every one of them is Late Blooom.</p>
+  <p class="stats">197 songs · five moods · four languages</p>
+</section>
+
+<section class="grid" id="grid"></section>
+
+<section class="share">
+  <h2>Share one</h2>
+  <p>Copy a link straight to your story, or grab the sticker pack to drop on a photo.</p>
+  <div class="copyrow" id="copyrow"></div>
+</section>
+
+<div class="foot">
+  <a href="index.html">← Back to lateblooom.com</a>
+  <a href="pitch.html">License this music →</a>
+</div>
+
+<script>
+const PLAYLISTS = [
+  { slug:"relax",   mood:"Relaxing",     name:"Relax & Unwind 🌙",      tag:"Meditation",
+    n:47, len:"~2h45", id:"1i0e8gDst7jspQbtHjXvAe" },
+  { slug:"grind",   mood:"Grinding",     name:"Grind Mode 💪",          tag:"Empowered Anthems",
+    n:59, len:"~3h30", id:"1DMm8U70DQyYv5pyCCrF6y" },
+  { slug:"cooking", mood:"Cooking",      name:"Cooking Vibes 🍳",       tag:"Mundo Latino",
+    n:35, len:"~1h49", id:"17t3oCfAwJogw2kbUzkgx1" },
+  { slug:"workout", mood:"Working out",  name:"Workout 🔥",             tag:"Turn Up",
+    n:22, len:"~1h16", id:"3LFfiJN4kjtMu4KpN4AqvK" },
+  { slug:"latin",   mood:"Latin drama",  name:"Latin Drama 🌹",         tag:"Flamenco & Fire",
+    n:34, len:"~2h",   id:"67YrV3fNimU6G5exy3A7Ng" },
+];
+
+const grid = document.getElementById('grid');
+PLAYLISTS.forEach(p => {
+  const url = `https://open.spotify.com/playlist/${p.id}`;
+  const card = document.createElement('div');
+  card.className = 'pl';
+  card.innerHTML = `
+    <div class="pl-art" data-id="${p.id}" role="button" tabindex="0" aria-label="Play ${p.name}">
+      <img src="pl/${p.slug}.jpg" alt="${p.name} playlist cover" width="500" height="500" loading="lazy" decoding="async">
+      <div class="pl-play"><span>▶</span></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-mood">${p.mood}</div>
+      <div class="pl-name">${p.name}</div>
+      <div class="pl-meta">${p.tag} · ${p.n} songs · ${p.len}</div>
+      <div class="pl-links">
+        <a class="btn-sm solid" href="${url}" target="_blank" rel="noopener">Open in Spotify</a>
+        <button class="btn-sm" data-copy="${url}">Copy link</button>
+      </div>
+    </div>`;
+  grid.appendChild(card);
+});
+
+// one player at a time — swapping the iframe in on click keeps memory flat
+let live = null;
+function openPlayer(art){
+  if (art.dataset.on) return;
+  if (live) { live.innerHTML = live.dataset.facade; delete live.dataset.on; }
+  art.dataset.facade = art.innerHTML;
+  art.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/${art.dataset.id}?utm_source=generator"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy" title="Spotify playlist"></iframe>`;
+  art.dataset.on = "1";
+  live = art;
+}
+grid.addEventListener('click', e => {
+  const art = e.target.closest('.pl-art');
+  if (art) openPlayer(art);
+  const btn = e.target.closest('[data-copy]');
+  if (btn) {
+    navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+      const t = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(() => btn.textContent = t, 1800);
+    });
+  }
+});
+grid.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('pl-art')) {
+    e.preventDefault(); openPlayer(e.target);
+  }
+});
+
+// share row
+const row = document.getElementById('copyrow');
+PLAYLISTS.forEach(p => {
+  const b = document.createElement('button');
+  b.className = 'copybtn';
+  b.dataset.copy = `https://open.spotify.com/playlist/${p.id}`;
+  b.textContent = `Copy ${p.mood}`;
+  row.appendChild(b);
+});
+const all = document.createElement('button');
+all.className = 'copybtn';
+all.textContent = 'Copy all five';
+all.onclick = () => {
+  const txt = PLAYLISTS.map(p => `${p.name} — ${p.tag}\nhttps://open.spotify.com/playlist/${p.id}`).join('\n\n');
+  navigator.clipboard.writeText(txt).then(() => {
+    all.textContent = '✓ Copied all'; setTimeout(() => all.textContent = 'Copy all five', 1800);
+  });
+};
+row.appendChild(all);
+row.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (!b) return;
+  navigator.clipboard.writeText(b.dataset.copy).then(() => {
+    const t = b.textContent; b.textContent = '✓ Copied';
+    setTimeout(() => b.textContent = t, 1800);
+  });
+});
+</script>
+</body>
+</html>
