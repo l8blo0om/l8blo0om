@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://l8blo0om.com/sitemap.xml
+Sitemap: https://lateblooom.com/sitemap.xml
