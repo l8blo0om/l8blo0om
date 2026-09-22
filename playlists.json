@@ -1,0 +1,89 @@
+{
+  "_README": "Adding a playlist = one object here. Nothing else to edit. slug must match SITE/pl/<slug>.jpg. Platform keys: spotify, youtube, apple, amazon, tidal — any that are missing simply don't render a button.",
+  "playlists": [
+    {
+      "slug": "relax",
+      "mood": "Relaxing",
+      "name": "Relax & Unwind 🌙",
+      "tag": "Meditation",
+      "blurb": "Deep, balancing meditation and yoga instrumentals — breathe, stretch, drift.",
+      "songs": 47,
+      "length": "~2h45",
+      "albums": ["CENTER & BALANCE", "CENTER + BALANCE, Vol. 2"],
+      "spotify": "1i0e8gDst7jspQbtHjXvAe",
+      "youtube": "PLakUbzLDF0gI"
+    },
+    {
+      "slug": "grind",
+      "mood": "Grinding",
+      "name": "Grind Mode 💪",
+      "tag": "Empowered Anthems",
+      "blurb": "Goddess-energy anthems to get it done — Wonder Black Woman into the Blown Away groove.",
+      "songs": 59,
+      "length": "~3h30",
+      "albums": ["THE WONDER BLACK WOMAN, Vol. 1", "BLOWN AWAY YET?"],
+      "spotify": "1DMm8U70DQyYv5pyCCrF6y",
+      "youtube": "PLV0Q29AnWomk"
+    },
+    {
+      "slug": "cooking",
+      "mood": "Cooking",
+      "name": "Cooking Vibes 🍳",
+      "tag": "Mundo Latino",
+      "blurb": "Spanish-language heat for the kitchen — reggaetón, Latin pop y más.",
+      "songs": 35,
+      "length": "~1h49",
+      "albums": ["CÁSATE CONMIGO, BENI!"],
+      "spotify": "17t3oCfAwJogw2kbUzkgx1",
+      "youtube": "PLDnX9Km6a2zk"
+    },
+    {
+      "slug": "workout",
+      "mood": "Working out",
+      "name": "Workout 🔥",
+      "tag": "Turn Up",
+      "blurb": "Short, sharp, and loud. For going harder than you planned to.",
+      "songs": 22,
+      "length": "~1h16",
+      "albums": ["VEXXXED"],
+      "spotify": "3LFfiJN4kjtMu4KpN4AqvK",
+      "youtube": "PLHxyqryP0b6I"
+    },
+    {
+      "slug": "latin",
+      "mood": "Latin drama",
+      "name": "Latin Drama 🌹",
+      "tag": "Flamenco & Fire",
+      "blurb": "Every feeling at full volume. Flamenco, fire, and no apologies.",
+      "songs": 34,
+      "length": "~2h",
+      "albums": ["Reina de Drama??? Yo??"],
+      "spotify": "67YrV3fNimU6G5exy3A7Ng",
+      "youtube": "PLGcGmtUAum20"
+    },
+    {
+      "slug": "kizomba",
+      "mood": "Kizomba",
+      "name": "Kizomba 💃",
+      "tag": "Comme Ça",
+      "blurb": "All three Comme Ça volumes — French and Portuguese, built for the dance floor.",
+      "songs": 53,
+      "length": "~3h",
+      "albums": ["Comme Ça? Vol. 1", "Comme Ça? Vol. 2", "Comme Ça? Vol. 3"],
+      "spotify": "4I0WPsA4bctDmiIwXpVtqk",
+      "youtube": "PLWHmVM-IWqeM"
+    },
+    {
+      "slug": "portugues",
+      "mood": "Português",
+      "name": "Português 🇵🇹",
+      "tag": "Kizomba Lusófona",
+      "blurb": "The Portuguese-language kizomba cut, start to finish.",
+      "songs": 16,
+      "length": "57m",
+      "albums": ["Comme Ça? Vol. 2", "Comme Ça? Vol. 3"],
+      "spotify": "0G5Rc97bBLTAxK5MUe8ecH",
+      "youtube": "PLIRX2qqDZlTQ"
+    }
+  ]
+}

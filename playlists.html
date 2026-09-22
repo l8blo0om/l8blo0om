@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Playlists — Late Blooom</title>
-<meta name="description" content="Late Blooom playlists for every mood — meditation, workout, cooking, empowerment anthems, and Latin drama. 197 songs across five moods.">
+<meta name="description" content="Late Blooom playlists for every mood — meditation, grind, cooking, workout, Latin drama, kizomba, and Portuguese. 266 songs across seven moods.">
 <meta property="og:title" content="Playlists — Late Blooom">
-<meta property="og:description" content="Five moods. 197 songs. Pick your energy.">
+<meta property="og:description" content="Seven moods. 266 songs. Pick your energy.">
 <meta property="og:image" content="https://lateblooom.com/pl/latin.jpg">
 <meta property="og:url" content="https://lateblooom.com/playlists.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -88,8 +88,8 @@ h1{font-family:var(--serif);font-weight:200;letter-spacing:.06em;
 
 <section class="head">
   <h1>Pick your energy</h1>
-  <p class="sub">Five playlists built around what you're actually doing — not what genre it is. Every one of them is Late Blooom.</p>
-  <p class="stats">197 songs · five moods · four languages</p>
+  <p class="sub">Playlists built around what you're actually doing — not what genre it is. Every one of them is Late Blooom.</p>
+  <p class="stats" id="stats">Loading…</p>
 </section>
 
 <section class="grid" id="grid"></section>
@@ -106,40 +106,72 @@ h1{font-family:var(--serif);font-weight:200;letter-spacing:.06em;
 </div>
 
 <script>
-const PLAYLISTS = [
-  { slug:"relax",   mood:"Relaxing",     name:"Relax & Unwind 🌙",      tag:"Meditation",
-    n:47, len:"~2h45", id:"1i0e8gDst7jspQbtHjXvAe" },
-  { slug:"grind",   mood:"Grinding",     name:"Grind Mode 💪",          tag:"Empowered Anthems",
-    n:59, len:"~3h30", id:"1DMm8U70DQyYv5pyCCrF6y" },
-  { slug:"cooking", mood:"Cooking",      name:"Cooking Vibes 🍳",       tag:"Mundo Latino",
-    n:35, len:"~1h49", id:"17t3oCfAwJogw2kbUzkgx1" },
-  { slug:"workout", mood:"Working out",  name:"Workout 🔥",             tag:"Turn Up",
-    n:22, len:"~1h16", id:"3LFfiJN4kjtMu4KpN4AqvK" },
-  { slug:"latin",   mood:"Latin drama",  name:"Latin Drama 🌹",         tag:"Flamenco & Fire",
-    n:34, len:"~2h",   id:"67YrV3fNimU6G5exy3A7Ng" },
-];
+let PLAYLISTS = [];
 
 const grid = document.getElementById('grid');
-PLAYLISTS.forEach(p => {
-  const url = `https://open.spotify.com/playlist/${p.id}`;
-  const card = document.createElement('div');
-  card.className = 'pl';
-  card.innerHTML = `
-    <div class="pl-art" data-id="${p.id}" role="button" tabindex="0" aria-label="Play ${p.name}">
-      <img src="pl/${p.slug}.jpg" alt="${p.name} playlist cover" width="500" height="500" loading="lazy" decoding="async">
-      <div class="pl-play"><span>▶</span></div>
-    </div>
-    <div class="pl-body">
-      <div class="pl-mood">${p.mood}</div>
-      <div class="pl-name">${p.name}</div>
-      <div class="pl-meta">${p.tag} · ${p.n} songs · ${p.len}</div>
-      <div class="pl-links">
-        <a class="btn-sm solid" href="${url}" target="_blank" rel="noopener">Open in Spotify</a>
-        <button class="btn-sm" data-copy="${url}">Copy link</button>
+
+function render(){
+  grid.innerHTML = '';
+  PLAYLISTS.forEach(p => {
+    const sp = p.spotify ? `https://open.spotify.com/playlist/${p.spotify}` : null;
+    const yt = p.youtube ? `https://www.youtube.com/playlist?list=${p.youtube}` : null;
+    const card = document.createElement('div');
+    card.className = 'pl';
+    card.innerHTML = `
+      <div class="pl-art"${p.spotify ? ` data-id="${p.spotify}" role="button" tabindex="0" aria-label="Play ${p.name}"` : ''}>
+        <img src="pl/${p.slug}.jpg" alt="${p.name} playlist cover" width="500" height="500" loading="lazy" decoding="async">
+        ${p.spotify ? '<div class="pl-play"><span>&#9654;</span></div>' : ''}
       </div>
-    </div>`;
-  grid.appendChild(card);
-});
+      <div class="pl-body">
+        <div class="pl-mood">${p.mood}</div>
+        <div class="pl-name">${p.name}</div>
+        <div class="pl-meta">${p.tag} &middot; ${p.songs} songs &middot; ${p.length}</div>
+        <div class="pl-links">
+          ${sp ? `<a class="btn-sm solid" href="${sp}" target="_blank" rel="noopener">Spotify</a>` : ''}
+          ${yt ? `<a class="btn-sm" href="${yt}" target="_blank" rel="noopener">YouTube</a>` : ''}
+          ${sp ? `<button class="btn-sm" data-copy="${sp}">Copy link</button>` : ''}
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderShare(){
+  const row = document.getElementById('copyrow');
+  row.innerHTML = '';
+  PLAYLISTS.filter(p => p.spotify).forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'copybtn';
+    b.dataset.copy = `https://open.spotify.com/playlist/${p.spotify}`;
+    b.textContent = `Copy ${p.mood}`;
+    row.appendChild(b);
+  });
+  const all = document.createElement('button');
+  all.className = 'copybtn';
+  all.textContent = `Copy all ${PLAYLISTS.length}`;
+  all.onclick = () => {
+    const txt = PLAYLISTS.filter(p=>p.spotify)
+      .map(p => `${p.name} - ${p.tag}\nhttps://open.spotify.com/playlist/${p.spotify}`).join('\n\n');
+    navigator.clipboard.writeText(txt).then(() => {
+      const t = all.textContent; all.textContent = '\u2713 Copied all';
+      setTimeout(() => all.textContent = t, 1800);
+    });
+  };
+  row.appendChild(all);
+}
+
+fetch('playlists.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    PLAYLISTS = d.playlists || [];
+    render(); renderShare();
+    const songs = PLAYLISTS.reduce((n,p) => n + (p.songs||0), 0);
+    document.getElementById('stats').textContent =
+      `${songs} songs \u00b7 ${PLAYLISTS.length} moods \u00b7 four languages`;
+    document.getElementById('allCount').textContent =
+      `All ${PLAYLISTS.length} playlists \u00b7 ${songs} songs \u2192`;
+  })
+  .catch(() => { grid.innerHTML = '<p style="color:var(--muted)">Playlists are loading slowly — try a refresh.</p>'; });
 
 // one player at a time — swapping the iframe in on click keeps memory flat
 let live = null;
@@ -170,15 +202,6 @@ grid.addEventListener('keydown', e => {
   }
 });
 
-// share row
-const row = document.getElementById('copyrow');
-PLAYLISTS.forEach(p => {
-  const b = document.createElement('button');
-  b.className = 'copybtn';
-  b.dataset.copy = `https://open.spotify.com/playlist/${p.id}`;
-  b.textContent = `Copy ${p.mood}`;
-  row.appendChild(b);
-});
 const all = document.createElement('button');
 all.className = 'copybtn';
 all.textContent = 'Copy all five';

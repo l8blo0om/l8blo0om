@@ -1995,26 +1995,25 @@
     <p class="section-label reveal">Playlists</p>
     <h2 class="section-title reveal">Pick your energy</h2>
     <p class="section-desc reveal">Built around what you're doing, not what genre it is.</p>
-    <div class="pls-grid">
-      <a class="pls-card" href="playlists.html">
-        <img src="pl/relax.jpg" alt="Relax &amp; Unwind playlist" width="500" height="500" loading="lazy" decoding="async">
-        <div class="pls-t"><div class="pls-mood">Relaxing</div><div class="pls-n">Relax &amp; Unwind 🌙</div><div class="pls-c">47 songs</div></div></a>
-      <a class="pls-card" href="playlists.html">
-        <img src="pl/grind.jpg" alt="Grind Mode playlist" width="500" height="500" loading="lazy" decoding="async">
-        <div class="pls-t"><div class="pls-mood">Grinding</div><div class="pls-n">Grind Mode 💪</div><div class="pls-c">59 songs</div></div></a>
-      <a class="pls-card" href="playlists.html">
-        <img src="pl/cooking.jpg" alt="Cooking Vibes playlist" width="500" height="500" loading="lazy" decoding="async">
-        <div class="pls-t"><div class="pls-mood">Cooking</div><div class="pls-n">Cooking Vibes 🍳</div><div class="pls-c">35 songs</div></div></a>
-      <a class="pls-card" href="playlists.html">
-        <img src="pl/workout.jpg" alt="Workout playlist" width="500" height="500" loading="lazy" decoding="async">
-        <div class="pls-t"><div class="pls-mood">Working out</div><div class="pls-n">Workout 🔥</div><div class="pls-c">22 songs</div></div></a>
-      <a class="pls-card" href="playlists.html">
-        <img src="pl/latin.jpg" alt="Latin Drama playlist" width="500" height="500" loading="lazy" decoding="async">
-        <div class="pls-t"><div class="pls-mood">Latin drama</div><div class="pls-n">Latin Drama 🌹</div><div class="pls-c">34 songs</div></div></a>
-    </div>
-    <a class="pls-all" href="playlists.html">All five playlists · 197 songs →</a>
+    <div class="pls-grid" id="plsGrid"></div>
+    <a class="pls-all" href="playlists.html" id="plsAll">All playlists →</a>
   </div>
 </section>
+<script>
+fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
+  const g=document.getElementById('plsGrid');
+  (d.playlists||[]).forEach(p=>{
+    const a=document.createElement('a');
+    a.className='pls-card'; a.href='playlists.html';
+    a.innerHTML=`<img src="pl/${p.slug}.jpg" alt="${p.name} playlist" width="500" height="500" loading="lazy" decoding="async">`+
+      `<div class="pls-t"><div class="pls-mood">${p.mood}</div>`+
+      `<div class="pls-n">${p.name}</div><div class="pls-c">${p.songs} songs</div></div>`;
+    g.appendChild(a);
+  });
+  const n=(d.playlists||[]).length, s=(d.playlists||[]).reduce((t,p)=>t+(p.songs||0),0);
+  document.getElementById('plsAll').textContent=`All ${n} playlists \u00b7 ${s} songs \u2192`;
+}).catch(()=>{});
+</script>
 
 <!-- ═══════════ DELUXE ═══════════ -->
 <section class="deluxe-section" id="deluxe">
