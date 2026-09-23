@@ -6,24 +6,133 @@
       "mood": "Relaxing",
       "name": "Relax & Unwind 🌙",
       "tag": "Meditation",
-      "blurb": "Deep, balancing meditation and yoga instrumentals — breathe, stretch, drift.",
+      "blurb": "Deep, balancing meditation & yoga instrumentals — breathe, stretch, drift.",
       "songs": 47,
       "length": "~2h45",
-      "albums": ["CENTER & BALANCE", "CENTER + BALANCE, Vol. 2"],
+      "albums": [
+        "CENTER & BALANCE",
+        "CENTER + BALANCE, Vol. 2"
+      ],
       "spotify": "1i0e8gDst7jspQbtHjXvAe",
-      "youtube": "PLakUbzLDF0gI"
+      "youtube": "PLakUbzLDF0gI",
+      "tracks": [
+        {
+          "album": "CENTER & BALANCE",
+          "songs": [
+            "CALM",
+            "COMPLEX",
+            "CHILL",
+            "COOL",
+            "COLORFUL",
+            "CHILDLIKE",
+            "CREATIVE",
+            "CENTERED",
+            "CONTENT",
+            "COMPOSED",
+            "CONTEMPLATIVE",
+            "COLLECTED",
+            "COZY",
+            "CAREFREE",
+            "CELESTIAL",
+            "CANDESCENT",
+            "CURRENT",
+            "CEREMONIAL",
+            "CLEAR",
+            "CARING",
+            "COMPASSIONATE",
+            "CONNECTED",
+            "CAREFUL",
+            "CHERISHED"
+          ]
+        }
+      ],
+      "note": "On Spotify this also includes all of CENTER + BALANCE, Vol. 2 (the “A-word” volume) for the full 2h45m."
     },
     {
       "slug": "grind",
       "mood": "Grinding",
       "name": "Grind Mode 💪",
       "tag": "Empowered Anthems",
-      "blurb": "Goddess-energy anthems to get it done — Wonder Black Woman into the Blown Away groove.",
+      "blurb": "Goddess-energy anthems to get it done — WONDER BLACK WOMAN into the BLOWN AWAY groove.",
       "songs": 59,
       "length": "~3h30",
-      "albums": ["THE WONDER BLACK WOMAN, Vol. 1", "BLOWN AWAY YET?"],
+      "albums": [
+        "THE WONDER BLACK WOMAN, Vol. 1",
+        "BLOWN AWAY YET?"
+      ],
       "spotify": "1DMm8U70DQyYv5pyCCrF6y",
-      "youtube": "PLV0Q29AnWomk"
+      "youtube": "PLV0Q29AnWomk",
+      "tracks": [
+        {
+          "album": "THE WONDER BLACK WOMAN, Vol. 1",
+          "songs": [
+            "PEACH PREACHER (Remix)",
+            "WONDER WOMAN",
+            "WHO STOLE THE MONA LISA",
+            "TWICE",
+            "BLACK SUPER WOMAN",
+            "SO AMAZING",
+            "TOO BLESSED",
+            "BRING A SWEATER",
+            "COME SEE",
+            "MILK",
+            "LAST STRAW",
+            "LOST",
+            "ALL I EVER WANTED",
+            "A SONG FOR LANGSTON (RIVERS)",
+            "COUNT THE WAYS",
+            "CONSTELLATION",
+            "BYE FELICIA",
+            "ALL ROADS LEAD HOME",
+            "CHOSEN",
+            "BE STRONG",
+            "GET IT TOGETHER",
+            "KING SIZE BED",
+            "EMPTY CUP",
+            "WONDER WOMAN (Live in Charlotte)"
+          ]
+        },
+        {
+          "album": "BLOWN AWAY YET?",
+          "songs": [
+            "Friday Night Live",
+            "That's Not It",
+            "Summday",
+            "Even Ricky Cries",
+            "You Sleep I Creep",
+            "Watery Minor",
+            "Carried Away",
+            "Life Is Still Nice Without You",
+            "Fuck Everyone Everywhere",
+            "All Alone",
+            "Ditch This",
+            "Lo Fi State of Mind",
+            "Do It Well",
+            "Sometimes Literally Nothing Is Wrong",
+            "Now We Just Wait for Him to Slip Up",
+            "Unconditional Lovers",
+            "Friyay",
+            "Henry the 14th",
+            "Not My Circus",
+            "Spring Fever",
+            "Wonder of Wednesday",
+            "TBD",
+            "Latin Lover Playbook",
+            "Lo Que Haría Por Tu Cuerpo",
+            "My First Mistake",
+            "Zy's Groove",
+            "Apparently In This Mood",
+            "Eazzzzy E",
+            "Whatever Is in Your Eyes",
+            "Thompkins Square",
+            "Long Time No Do",
+            "Dave Matthews Jitterbug",
+            "Pensive Sheryl Crow Shit",
+            "Head Scratcher",
+            "I've Got A 70s Theme Song"
+          ]
+        }
+      ]
     },
     {
       "slug": "cooking",
@@ -33,57 +142,267 @@
       "blurb": "Spanish-language heat for the kitchen — reggaetón, Latin pop y más.",
       "songs": 35,
       "length": "~1h49",
-      "albums": ["CÁSATE CONMIGO, BENI!"],
+      "albums": [
+        "CÁSATE CONMIGO, BENI!"
+      ],
       "spotify": "17t3oCfAwJogw2kbUzkgx1",
-      "youtube": "PLDnX9Km6a2zk"
+      "youtube": "PLDnX9Km6a2zk",
+      "tracks": [
+        {
+          "album": "CÁSATE CONMIGO, BENI!",
+          "songs": [
+            "LIBRES",
+            "TRAMPOSO",
+            "NENE",
+            "SUAVECITO",
+            "LUZ VERDE",
+            "GUSTALEGUSTA",
+            "MÁS PROFUNDO",
+            "TU PASTEL",
+            "DECIME JEFA",
+            "CONTINUIDAD",
+            "RESPONDAME",
+            "ME BLOQUEASTE???",
+            "YA NO",
+            "VAMPIRO",
+            "GRACIAS",
+            "QUIERES??",
+            "SERPIENTE",
+            "NENA MORENA",
+            "FEMININA DIVINA",
+            "CADA RINCÓN",
+            "EL PROBLÈMA",
+            "ÁTAME",
+            "MASDURO",
+            "LIBRES (L8 NITE MIX)",
+            "SUAVECITO (L8 NITE ENCORE)",
+            "NENE (NOT 2 L8 MIX)",
+            "AT 51, I KNOW WHAT I WANT",
+            "MÁS PROFUNDO (L8 NITE MIX)",
+            "FEMININA DIVINA (L8 NITE BURN)",
+            "MASDURO (L8 NITE BURN)",
+            "AHORA SINCERO (L8 NITE SERENADE)",
+            "HOMEGOING",
+            "LO QUE HARÍA POR TU CUERPO",
+            "FIEBRE DE PRIMAVERA",
+            "MOISTEST"
+          ]
+        }
+      ]
     },
     {
       "slug": "workout",
       "mood": "Working out",
       "name": "Workout 🔥",
       "tag": "Turn Up",
-      "blurb": "Short, sharp, and loud. For going harder than you planned to.",
+      "blurb": "High-energy rock & attitude built for the gym grind. Explicit.",
       "songs": 22,
       "length": "~1h16",
-      "albums": ["VEXXXED"],
+      "albums": [
+        "VEXXXED"
+      ],
       "spotify": "3LFfiJN4kjtMu4KpN4AqvK",
-      "youtube": "PLHxyqryP0b6I"
+      "youtube": "PLHxyqryP0b6I",
+      "tracks": [
+        {
+          "album": "VEXXXED",
+          "songs": [
+            "PTSD",
+            "Anti-Fetish",
+            "We don't talk about it",
+            "X my ♥ (Hope to die)",
+            "Panic attack",
+            "Lay down your flowers (feat. Alpha Wolf)",
+            "There's no place like home",
+            "Extremist",
+            "Default",
+            "Trauma Euphoria",
+            "It's not the end",
+            "DMT",
+            "Nepotism"
+          ]
+        }
+      ]
     },
     {
       "slug": "latin",
       "mood": "Latin drama",
       "name": "Latin Drama 🌹",
       "tag": "Flamenco & Fire",
-      "blurb": "Every feeling at full volume. Flamenco, fire, and no apologies.",
+      "blurb": "Flamenco fire, salsa y drama — passion turned all the way up.",
       "songs": 34,
       "length": "~2h",
-      "albums": ["Reina de Drama??? Yo??"],
+      "albums": [
+        "Reina de Drama??? Yo??"
+      ],
       "spotify": "67YrV3fNimU6G5exy3A7Ng",
-      "youtube": "PLGcGmtUAum20"
+      "youtube": "PLGcGmtUAum20",
+      "tracks": [
+        {
+          "album": "REINA DE DRAMA??? YO??",
+          "songs": [
+            "SOLA! SOLA! SOLA!",
+            "MAMBO KING",
+            "MORENA INSANA",
+            "ROMPECORAZONES FLAMENCOS",
+            "RUMBA DE CELOS",
+            "SERPIENTE",
+            "ENROLLADA EN TU DEDO",
+            "ROI",
+            "CADDY",
+            "LA MALQUERIDA",
+            "LAGRIMAS ESTUPIDAS",
+            "RESPÓNDEME",
+            "DO YOU!",
+            "LA DIOSA MALDITA",
+            "DOS",
+            "GRACIAS",
+            "SOLO CUERPOS",
+            "NENE",
+            "VIEQUES",
+            "CORAZÓN ROTO Y ABIERTO",
+            "LA IRONIA",
+            "LA TASA",
+            "RESISTIR",
+            "NO MARECES",
+            "INOPPORTUNE OPPORTUNIST",
+            "MATA TE MIRANDOTE",
+            "SOLO NUBES",
+            "PAJAREANDO",
+            "PA' VOS",
+            "¡QUE HISTORIA!",
+            "GOODBYE",
+            "ROI (Live en Sevilla)",
+            "LEJOS AHORA",
+            "GRACIAS (INSTRUMENTAL)"
+          ]
+        }
+      ]
     },
     {
       "slug": "kizomba",
       "mood": "Kizomba",
       "name": "Kizomba 💃",
       "tag": "Comme Ça",
-      "blurb": "All three Comme Ça volumes — French and Portuguese, built for the dance floor.",
+      "blurb": "Slow-burn kizomba, zouk & konpa — the full Comme Ça? trilogy, French into Portuguese.",
       "songs": 53,
       "length": "~3h",
-      "albums": ["Comme Ça? Vol. 1", "Comme Ça? Vol. 2", "Comme Ça? Vol. 3"],
+      "albums": [
+        "Comme Ça? Vol. 1",
+        "Comme Ça? Vol. 2",
+        "Comme Ça? Vol. 3"
+      ],
       "spotify": "4I0WPsA4bctDmiIwXpVtqk",
-      "youtube": "PLWHmVM-IWqeM"
+      "youtube": "PLWHmVM-IWqeM",
+      "tracks": [
+        {
+          "album": "Comme Ça? Vol. 1 (French)",
+          "songs": [
+            "COMME ÇA?",
+            "HABITUE-TOI",
+            "ÊTRE LIBRES",
+            "LES NÔTRES",
+            "TU M'HABITERAS",
+            "TON CORPS",
+            "MILAGRO CAUCHEMAR",
+            "TROUS NOIRS",
+            "RAREMENT",
+            "DEMAIN ET TOI",
+            "PETIT GOUT",
+            "TAIS-TOI",
+            "SAPIOSEXUELLE",
+            "3 DROGUES",
+            "LUS ET NUS",
+            "CELLE QUI J'AIME",
+            "DANSE AVEC UNE STATUE"
+          ]
+        },
+        {
+          "album": "Comme Ça? Vol. 2 (French / Portuguese)",
+          "songs": [
+            "CANDY CRUSH",
+            "FIÈVRE DE PRINTEMPS",
+            "LA MOITEUR",
+            "CASCO VIEJO",
+            "SEM BATIDA",
+            "MAÎTRE DE FEU",
+            "SEXY SIDE QUEST",
+            "MARCOS O MEDICO",
+            "JE M'EN FOUS",
+            "DEMAIN ENFIN AUJOURD'HUI",
+            "VIVE UM POUCO",
+            "DANSE!",
+            "QUINTA QUENTE",
+            "NOS TEUS OLHOS",
+            "EMPATE",
+            "EVAN",
+            "TIROU A RAINHA",
+            "PARFOIS, RIEN NE CLOCHE",
+            "DIZES VAI EMBORA",
+            "EVANGELHO DE PAULO"
+          ]
+        },
+        {
+          "album": "Comme Ça? Vol. 3 (Portuguese)",
+          "songs": [
+            "VOU ESPERAR",
+            "CANDELA",
+            "QUEM É DOIDO?",
+            "DEPOIS",
+            "TEMPERATURA",
+            "NADA DE RUIN",
+            "LIBRES",
+            "NEGAO",
+            "LUZ VERDE",
+            "MAIS PROFUNDO",
+            "DIVINA FEMININA",
+            "GOSTA",
+            "AQUELA QUI AMO",
+            "CANDELA (Dancefloor Heat Mix)",
+            "CANDELA (Boudoir Mix)",
+            "CANDELA (Midnight Ritual Instrumental)"
+          ]
+        }
+      ]
     },
     {
       "slug": "portugues",
       "mood": "Português",
       "name": "Português 🇵🇹",
       "tag": "Kizomba Lusófona",
-      "blurb": "The Portuguese-language kizomba cut, start to finish.",
+      "blurb": "The Portuguese-language side of the kizomba world — Comme Ça? Vol. 3.",
       "songs": 16,
       "length": "57m",
-      "albums": ["Comme Ça? Vol. 2", "Comme Ça? Vol. 3"],
+      "albums": [
+        "Comme Ça? Vol. 2",
+        "Comme Ça? Vol. 3"
+      ],
       "spotify": "0G5Rc97bBLTAxK5MUe8ecH",
-      "youtube": "PLIRX2qqDZlTQ"
+      "youtube": "PLIRX2qqDZlTQ",
+      "tracks": [
+        {
+          "album": "Comme Ça? Vol. 3",
+          "songs": [
+            "VOU ESPERAR",
+            "CANDELA",
+            "QUEM É DOIDO?",
+            "DEPOIS",
+            "TEMPERATURA",
+            "NADA DE RUIN",
+            "LIBRES",
+            "NEGAO",
+            "LUZ VERDE",
+            "MAIS PROFUNDO",
+            "DIVINA FEMININA",
+            "GOSTA",
+            "AQUELA QUI AMO",
+            "CANDELA (Dancefloor Heat Mix)",
+            "CANDELA (Boudoir Mix)",
+            "CANDELA (Midnight Ritual Instrumental)"
+          ]
+        }
+      ],
+      "note": "These songs also appear inside the Kizomba playlist above."
     }
   ]
 }
