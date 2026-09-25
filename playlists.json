@@ -1,70 +1,205 @@
 {
-  "_README": "Adding a playlist = one object here. Nothing else to edit. slug must match SITE/pl/<slug>.jpg. Platform keys: spotify, youtube, apple, amazon, tidal — any that are missing simply don't render a button.",
+  "_README": "Adding a playlist = one object here. Nothing else to edit. slug must match SITE/pl/<slug>.jpg. Platform keys: spotify, youtube, apple, amazon, tidal — any missing key simply doesn't render a button.",
   "playlists": [
     {
-      "slug": "relax",
-      "mood": "Relaxing",
-      "name": "Relax & Unwind 🌙",
-      "tag": "Meditation",
-      "blurb": "Deep, balancing meditation & yoga instrumentals — breathe, stretch, drift.",
-      "songs": 47,
-      "length": "~2h45",
+      "slug": "wining",
+      "mood": "Wining & dining",
+      "name": "Wining & Dining 🍷",
+      "tag": "98 songs",
+      "blurb": "Grown & sexy dinner mix — sultry jazz, mellow early cuts, soulful anthems. Pour something.",
+      "songs": 98,
+      "length": "98 songs · Spotify  |  98 · YouTube",
       "albums": [
-        "CENTER & BALANCE",
-        "CENTER + BALANCE, Vol. 2"
+        "Touché Pussycat Vol. 1",
+        "Touché Pussycat Vol. 2",
+        "It Begins Here",
+        "The Wonder Black Woman, Vol. 1"
       ],
-      "spotify": "1i0e8gDst7jspQbtHjXvAe",
-      "youtube": "PLakUbzLDF0gI",
+      "spotify": "1LE0ACrm4WhwVsIpscrQwj",
+      "youtube": "PLcYEPA0mh4ks",
       "tracks": [
         {
-          "album": "CENTER & BALANCE",
+          "album": "Touché Pussycat Vol. 1",
           "songs": [
-            "CALM",
-            "COMPLEX",
-            "CHILL",
-            "COOL",
-            "COLORFUL",
-            "CHILDLIKE",
-            "CREATIVE",
-            "CENTERED",
-            "CONTENT",
-            "COMPOSED",
-            "CONTEMPLATIVE",
-            "COLLECTED",
-            "COZY",
-            "CAREFREE",
-            "CELESTIAL",
-            "CANDESCENT",
-            "CURRENT",
-            "CEREMONIAL",
-            "CLEAR",
-            "CARING",
-            "COMPASSIONATE",
-            "CONNECTED",
-            "CAREFUL",
-            "CHERISHED"
+            "JAMMY JAM",
+            "STAR PLAYER",
+            "LISA LISA CULTISH JAM",
+            "LIVE A LITTLE",
+            "YOU DREW A QUEEN",
+            "SOMETIMES LITERALLY NOTHING IS WRONG",
+            "JASON CLOUDS AWAY",
+            "SAY IT",
+            "THE GODMOTHER",
+            "I GOT A 70'S THEME SONG",
+            "EARNING NOT YEARNING",
+            "TOMORROW. I MEAN TODAY",
+            "FRIDAY NIGHTLIFE",
+            "FRIDAY NIGHT ALIVE",
+            "TOMPKINS SQUARE PARK",
+            "BEDDIE BYE",
+            "THATS NOT IT",
+            "YOU SLEEP I CREEP",
+            "JUST LET ME",
+            "CLOCK A FELLA",
+            "AT 51 I KNOW WHAT I WANT",
+            "SEXY SIDE QUEST",
+            "ITS COMPLEX II",
+            "ITS COMPLEX (REMIX)",
+            "I DONT GIVE ADAM",
+            "SLEEPLESS MONDAY",
+            "FORGIVENESS NOT PERSIMMON",
+            "LONG TIME NO DO",
+            "IRON CHEF CHALLENGE",
+            "ALL ALONE",
+            "BAILE",
+            "UH OHHHH",
+            "IT IS WHAT IT IS",
+            "LoFi STATE OF MIND",
+            "SUMMDAY"
+          ]
+        },
+        {
+          "album": "Touché Pussycat Vol. 2",
+          "songs": [
+            "WHO STOLE THE MONA LISA?",
+            "SEASONS",
+            "ALL I EVER WANTED",
+            "LOST",
+            "CAGED BIIRD",
+            "21",
+            "LEAVING",
+            "KIND",
+            "WINDOWS",
+            "USELESS",
+            "USELESS (remix version)",
+            "BETTER OFF ALONE (LIVE)",
+            "IMPOSSIBLE IS POSSIBLE",
+            "GONE",
+            "LOOKING",
+            "WEATHERMAN",
+            "FOUND A LOVE",
+            "THICK",
+            "COME SEE",
+            "STAR BY STAR",
+            "COUGAR CHANT",
+            "EMPTY CUP",
+            "BUT I",
+            "RAIN MAKES THE FLOWERS GROW",
+            "THIN LINE",
+            "STRONG",
+            "BUSINESS HOURS"
+          ]
+        },
+        {
+          "album": "It Begins Here",
+          "songs": [
+            "MAYBE",
+            "WEATHERMAN",
+            "LOST",
+            "LIFE",
+            "KIND",
+            "ALL",
+            "21",
+            "THIN",
+            "STRONG",
+            "THAT TIME IN THE 70s WHEN WE ROBBED A BANK",
+            "STAR PLAYER",
+            "LOOKING"
+          ]
+        },
+        {
+          "album": "The Wonder Black Woman, Vol. 1",
+          "songs": [
+            "PEACH PREACHER (Remix)",
+            "WONDER WOMAN",
+            "WHO STOLE THE MONA LISA",
+            "TWICE",
+            "BLACK SUPER WOMAN",
+            "SO AMAZING",
+            "TOO BLESSED",
+            "BRING A SWEATER",
+            "COME SEE",
+            "MILK",
+            "LAST STRAW",
+            "LOST",
+            "ALL I EVER WANTED",
+            "A SONG FOR LANGSTON (RIVERS)",
+            "COUNT THE WAYS",
+            "CONSTELLATION",
+            "BYE FELICIA",
+            "ALL ROADS LEAD HOME",
+            "CHOSEN",
+            "BE STRONG",
+            "GET IT TOGETHER",
+            "KING SIZE BED",
+            "EMPTY CUP",
+            "WONDER WOMAN (Live in Charlotte)"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "caribbean",
+      "mood": "Caribbean",
+      "name": "Caribbean 🌴",
+      "tag": "Island & Afro Grooves",
+      "blurb": "Soca, island heat & Afro grooves.",
+      "songs": 46,
+      "length": "46 songs · Spotify  |  22 · YouTube",
+      "albums": [
+        "2 Good X",
+        "Afromantic Antisocialite (24 tracks)"
+      ],
+      "spotify": "7BMfYwiOW39HDyBLY1i6Ho",
+      "youtube": "PLWYUvcvVfkq0",
+      "tracks": [
+        {
+          "album": "2 Good X",
+          "songs": [
+            "PIE",
+            "BANANAS",
+            "HEAT",
+            "COUGAR CHANT",
+            "GREEN LIGHT",
+            "WTH?????",
+            "NICE ONE",
+            "ALL I EVER WANTED",
+            "AS IS",
+            "GROOVY",
+            "MY OWN WOMAN",
+            "NO DRAMA",
+            "2 GOOD X",
+            "CONTINUITY",
+            "MOTH",
+            "REARVIEW (feat. SIA LATERSON)",
+            "THE TERRIBLE TUESDAYS",
+            "TAKE THE KNOT OUT",
+            "THE GREAT ABOUT FACE",
+            "YA MUDDA SCUNT",
+            "COUGAR CHANT (SOCAWAVE REMIX)",
+            "MY OWN WOMAN (ACOUSTIC REMIX)"
           ]
         }
       ],
-      "note": "On Spotify this also includes all of CENTER + BALANCE, Vol. 2 (the “A-word” volume) for the full 2h45m."
+      "note": "Afromantic Antisocialite is on Spotify but not yet on YouTube Music, so the YouTube version is 2 Good X only."
     },
     {
-      "slug": "grind",
-      "mood": "Grinding",
-      "name": "Grind Mode 💪",
-      "tag": "Empowered Anthems",
-      "blurb": "Goddess-energy anthems to get it done — WONDER BLACK WOMAN into the BLOWN AWAY groove.",
+      "slug": "empowered",
+      "mood": "Empowered",
+      "name": "Empowered 💪",
+      "tag": "Wonder Black Woman × Blown Away",
+      "blurb": "Goddess-energy anthems meet lo-fi confidence.",
       "songs": 59,
-      "length": "~3h30",
+      "length": "59 songs · both platforms",
       "albums": [
-        "THE WONDER BLACK WOMAN, Vol. 1",
-        "BLOWN AWAY YET?"
+        "The Wonder Black Woman, Vol. 1",
+        "Blown Away Yet?"
       ],
       "spotify": "1DMm8U70DQyYv5pyCCrF6y",
       "youtube": "PLV0Q29AnWomk",
       "tracks": [
         {
-          "album": "THE WONDER BLACK WOMAN, Vol. 1",
+          "album": "The Wonder Black Woman, Vol. 1",
           "songs": [
             "PEACH PREACHER (Remix)",
             "WONDER WOMAN",
@@ -93,7 +228,7 @@
           ]
         },
         {
-          "album": "BLOWN AWAY YET?",
+          "album": "Blown Away Yet?",
           "songs": [
             "Friday Night Live",
             "That's Not It",
@@ -135,21 +270,239 @@
       ]
     },
     {
-      "slug": "cooking",
-      "mood": "Cooking",
-      "name": "Cooking Vibes 🍳",
-      "tag": "Mundo Latino",
-      "blurb": "Spanish-language heat for the kitchen — reggaetón, Latin pop y más.",
-      "songs": 35,
-      "length": "~1h49",
+      "slug": "funstrumental",
+      "mood": "Instrumental",
+      "name": "Funstrumental 🎛️",
+      "tag": "Blown Away × Lowkey Kinda Lit",
+      "blurb": "Fun instrumentals & lo-fi funk to work, drive, or vibe to.",
+      "songs": 55,
+      "length": "55 songs · both platforms",
       "albums": [
-        "CÁSATE CONMIGO, BENI!"
+        "Blown Away Yet?",
+        "Lowkey Kinda Lit: 70s"
       ],
-      "spotify": "17t3oCfAwJogw2kbUzkgx1",
-      "youtube": "PLDnX9Km6a2zk",
+      "spotify": "1Z9QjAUwyVIjCuNGlYKKSS",
+      "youtube": "PLX_fdCnESvrM",
       "tracks": [
         {
-          "album": "CÁSATE CONMIGO, BENI!",
+          "album": "Blown Away Yet?",
+          "songs": [
+            "Friday Night Live",
+            "That's Not It",
+            "Summday",
+            "Even Ricky Cries",
+            "You Sleep I Creep",
+            "Watery Minor",
+            "Carried Away",
+            "Life Is Still Nice Without You",
+            "Fuck Everyone Everywhere",
+            "All Alone",
+            "Ditch This",
+            "Lo Fi State of Mind",
+            "Do It Well",
+            "Sometimes Literally Nothing Is Wrong",
+            "Now We Just Wait for Him to Slip Up",
+            "Unconditional Lovers",
+            "Friyay",
+            "Henry the 14th",
+            "Not My Circus",
+            "Spring Fever",
+            "Wonder of Wednesday",
+            "TBD",
+            "Latin Lover Playbook",
+            "Lo Que Haría Por Tu Cuerpo",
+            "My First Mistake",
+            "Zy's Groove",
+            "Apparently In This Mood",
+            "Eazzzzy E",
+            "Whatever Is in Your Eyes",
+            "Thompkins Square",
+            "Long Time No Do",
+            "Dave Matthews Jitterbug",
+            "Pensive Sheryl Crow Shit",
+            "Head Scratcher",
+            "I've Got A 70s Theme Song"
+          ]
+        },
+        {
+          "album": "Lowkey Kinda Lit: 70s",
+          "songs": [
+            "Lowkey Kinda Lit: 70s",
+            "Soul Flow",
+            "The A Plus Team",
+            "The Funk Spot",
+            "Sexy Stalker",
+            "The Corner",
+            "Mellow Car Chase",
+            "Running the Streets",
+            "Starseed Sunrise",
+            "Chocolate City Lines",
+            "Ain't No Walk in the Park",
+            "Lost in My Groove",
+            "Ancestral Waters",
+            "Skyline Sunset",
+            "City! Night! Life!",
+            "Black Light Funkadelic",
+            "Pull Up (Midnight Dreams)",
+            "City at Night",
+            "Kool School",
+            "Night Insider"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "meditation",
+      "mood": "Meditation",
+      "name": "Meditation / Cosmic 🌙",
+      "tag": "88 songs",
+      "blurb": "Breathe, stretch, drift — balancing instrumentals and the cosmic slow-burn.",
+      "songs": 88,
+      "length": "88 songs · Spotify  |  39 · YouTube",
+      "albums": [
+        "Center & Balance",
+        "Center + Balance, Vol. 2 (23 tracks — the A-words)",
+        "Unlocking the Son",
+        "Narrow + Supple (26 instrumentals, BPM-tagged)"
+      ],
+      "spotify": "1i0e8gDst7jspQbtHjXvAe",
+      "youtube": "PLakUbzLDF0gI",
+      "tracks": [
+        {
+          "album": "Center & Balance",
+          "songs": [
+            "CALM",
+            "COMPLEX",
+            "CHILL",
+            "COOL",
+            "COLORFUL",
+            "CHILDLIKE",
+            "CREATIVE",
+            "CENTERED",
+            "CONTENT",
+            "COMPOSED",
+            "CONTEMPLATIVE",
+            "COLLECTED",
+            "COZY",
+            "CAREFREE",
+            "CELESTIAL",
+            "CANDESCENT",
+            "CURRENT",
+            "CEREMONIAL",
+            "CLEAR",
+            "CARING",
+            "COMPASSIONATE",
+            "CONNECTED",
+            "CAREFUL",
+            "CHERISHED"
+          ]
+        },
+        {
+          "album": "Center + Balance, Vol. 2 (23 tracks — the A-words)",
+          "songs": [
+            "AMAZED",
+            "AMAZING",
+            "ALIGHT",
+            "ALIVE",
+            "ABUNDANT",
+            "ALIGNED",
+            "ATTUNED",
+            "ALERT",
+            "ALCHEMIZED",
+            "AWARE",
+            "AWASH"
+          ]
+        },
+        {
+          "album": "Unlocking the Son",
+          "songs": [
+            "BLACK NIGHT",
+            "UNDERWORLD HUMMMM",
+            "GALAXY GAL",
+            "LILLITH SHADOW",
+            "WORLD BEHIND THE WORLD",
+            "ZODIAK BLACCC",
+            "ONE THING",
+            "BLACKKKEST MOON",
+            "BLACK MOON COME BACK",
+            "CHOSEN",
+            "ONE THING (REMIX)",
+            "BLACK NIGHT (REMIX)",
+            "STILL NOT A HATER",
+            "WORK MISTRESS (WHO ARE YOU)",
+            "FLIPPED SCRIPT"
+          ]
+        },
+        {
+          "album": "Narrow + Supple (26 instrumentals, BPM-tagged)",
+          "songs": [
+            "KALIMBA (130 BPM)",
+            "OPPOSITION (140 BPM)",
+            "EXPANSION (145 BPM)",
+            "CONTINUOUS WAVE (145 BPM)",
+            "ASCENDING WALTZ (160 BPM)",
+            "RELEASE (180 BPM)"
+          ]
+        }
+      ],
+      "note": "Center + Balance Vol. 2 and Narrow + Supple aren't on YouTube Music yet, so YouTube has Center & Balance + Unlocking the Son (39). Partial tracklists shown for those two — full lists on Spotify."
+    },
+    {
+      "slug": "latin",
+      "mood": "Latin",
+      "name": "Latin / Mundo 🌹",
+      "tag": "Cásate × Reina de Drama",
+      "blurb": "Spanish fire — reggaetón, flamenco, salsa y drama.",
+      "songs": 69,
+      "length": "69 songs · both platforms",
+      "albums": [
+        "Reina de Drama??? Yo??",
+        "Cásate Conmigo, Beni!"
+      ],
+      "spotify": "67YrV3fNimU6G5exy3A7Ng",
+      "youtube": "PLGcGmtUAum20",
+      "tracks": [
+        {
+          "album": "Reina de Drama??? Yo??",
+          "songs": [
+            "SOLA! SOLA! SOLA!",
+            "MAMBO KING",
+            "MORENA INSANA",
+            "ROMPECORAZONES FLAMENCOS",
+            "RUMBA DE CELOS",
+            "SERPIENTE",
+            "ENROLLADA EN TU DEDO",
+            "ROI",
+            "CADDY",
+            "LA MALQUERIDA",
+            "LAGRIMAS ESTUPIDAS",
+            "RESPÓNDEME",
+            "DO YOU!",
+            "LA DIOSA MALDITA",
+            "DOS",
+            "GRACIAS",
+            "SOLO CUERPOS",
+            "NENE",
+            "VIEQUES",
+            "CORAZÓN ROTO Y ABIERTO",
+            "LA IRONIA",
+            "LA TASA",
+            "RESISTIR",
+            "NO MARECES",
+            "INOPPORTUNE OPPORTUNIST",
+            "MATA TE MIRANDOTE",
+            "SOLO NUBES",
+            "PAJAREANDO",
+            "PA' VOS",
+            "¡QUE HISTORIA!",
+            "GOODBYE",
+            "ROI (Live en Sevilla)",
+            "LEJOS AHORA",
+            "GRACIAS (INSTRUMENTAL)"
+          ]
+        },
+        {
+          "album": "Cásate Conmigo, Beni!",
           "songs": [
             "LIBRES",
             "TRAMPOSO",
@@ -191,106 +544,17 @@
       ]
     },
     {
-      "slug": "workout",
-      "mood": "Working out",
-      "name": "Workout 🔥",
-      "tag": "Turn Up",
-      "blurb": "High-energy rock & attitude built for the gym grind. Explicit.",
-      "songs": 22,
-      "length": "~1h16",
-      "albums": [
-        "VEXXXED"
-      ],
-      "spotify": "3LFfiJN4kjtMu4KpN4AqvK",
-      "youtube": "PLHxyqryP0b6I",
-      "tracks": [
-        {
-          "album": "VEXXXED",
-          "songs": [
-            "PTSD",
-            "Anti-Fetish",
-            "We don't talk about it",
-            "X my ♥ (Hope to die)",
-            "Panic attack",
-            "Lay down your flowers (feat. Alpha Wolf)",
-            "There's no place like home",
-            "Extremist",
-            "Default",
-            "Trauma Euphoria",
-            "It's not the end",
-            "DMT",
-            "Nepotism"
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "latin",
-      "mood": "Latin drama",
-      "name": "Latin Drama 🌹",
-      "tag": "Flamenco & Fire",
-      "blurb": "Flamenco fire, salsa y drama — passion turned all the way up.",
-      "songs": 34,
-      "length": "~2h",
-      "albums": [
-        "Reina de Drama??? Yo??"
-      ],
-      "spotify": "67YrV3fNimU6G5exy3A7Ng",
-      "youtube": "PLGcGmtUAum20",
-      "tracks": [
-        {
-          "album": "REINA DE DRAMA??? YO??",
-          "songs": [
-            "SOLA! SOLA! SOLA!",
-            "MAMBO KING",
-            "MORENA INSANA",
-            "ROMPECORAZONES FLAMENCOS",
-            "RUMBA DE CELOS",
-            "SERPIENTE",
-            "ENROLLADA EN TU DEDO",
-            "ROI",
-            "CADDY",
-            "LA MALQUERIDA",
-            "LAGRIMAS ESTUPIDAS",
-            "RESPÓNDEME",
-            "DO YOU!",
-            "LA DIOSA MALDITA",
-            "DOS",
-            "GRACIAS",
-            "SOLO CUERPOS",
-            "NENE",
-            "VIEQUES",
-            "CORAZÓN ROTO Y ABIERTO",
-            "LA IRONIA",
-            "LA TASA",
-            "RESISTIR",
-            "NO MARECES",
-            "INOPPORTUNE OPPORTUNIST",
-            "MATA TE MIRANDOTE",
-            "SOLO NUBES",
-            "PAJAREANDO",
-            "PA' VOS",
-            "¡QUE HISTORIA!",
-            "GOODBYE",
-            "ROI (Live en Sevilla)",
-            "LEJOS AHORA",
-            "GRACIAS (INSTRUMENTAL)"
-          ]
-        }
-      ]
-    },
-    {
       "slug": "kizomba",
       "mood": "Kizomba",
       "name": "Kizomba 💃",
       "tag": "Comme Ça",
-      "blurb": "Slow-burn kizomba, zouk & konpa — the full Comme Ça? trilogy, French into Portuguese.",
+      "blurb": "Slow-burn kizomba, zouk & konpa — the full trilogy, French into Portuguese.",
       "songs": 53,
-      "length": "~3h",
+      "length": "53 songs · both platforms",
       "albums": [
-        "Comme Ça? Vol. 1",
-        "Comme Ça? Vol. 2",
-        "Comme Ça? Vol. 3"
+        "Comme Ça? Vol. 1 (French)",
+        "Comme Ça? Vol. 2 (French / Portuguese)",
+        "Comme Ça? Vol. 3 (Portuguese)"
       ],
       "spotify": "4I0WPsA4bctDmiIwXpVtqk",
       "youtube": "PLWHmVM-IWqeM",
@@ -370,11 +634,10 @@
       "mood": "Português",
       "name": "Português 🇵🇹",
       "tag": "Kizomba Lusófona",
-      "blurb": "The Portuguese-language side of the kizomba world — Comme Ça? Vol. 3.",
+      "blurb": "The Portuguese-language side of the kizomba world.",
       "songs": 16,
-      "length": "57m",
+      "length": "16 songs · both platforms",
       "albums": [
-        "Comme Ça? Vol. 2",
         "Comme Ça? Vol. 3"
       ],
       "spotify": "0G5Rc97bBLTAxK5MUe8ecH",
@@ -402,7 +665,7 @@
           ]
         }
       ],
-      "note": "These songs also appear inside the Kizomba playlist above."
+      "note": "These songs also live inside the Kizomba playlist above."
     }
   ]
 }
