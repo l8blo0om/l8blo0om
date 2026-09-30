@@ -196,12 +196,19 @@ fetch('playlists.json?v=' + Date.now())
     PLAYLISTS = d.playlists || [];
     render(); renderShare();
     const songs = PLAYLISTS.reduce((n,p) => n + (p.songs||0), 0);
-    document.getElementById('stats').textContent =
+    const statsEl = document.getElementById('stats');
+    if (statsEl) statsEl.textContent =
       `${songs} songs \u00b7 ${PLAYLISTS.length} moods \u00b7 four languages`;
-    document.getElementById('allCount').textContent =
+    // this element only exists on the homepage; its absence must not blank the grid
+    const all = document.getElementById('allCount');
+    if (all) all.textContent =
       `All ${PLAYLISTS.length} playlists \u00b7 ${songs} songs \u2192`;
   })
-  .catch(() => { grid.innerHTML = '<p style="color:var(--muted)">Playlists are loading slowly — try a refresh.</p>'; });
+  .catch(err => {
+    console.error('playlists:', err);
+    if (!grid.children.length)
+      grid.innerHTML = '<p style="color:var(--muted)">Playlists are loading slowly — try a refresh.</p>';
+  });
 
 // one player at a time — swapping the iframe in on click keeps memory flat
 let live = null;
