@@ -1650,13 +1650,14 @@
 <nav id="navbar">
   <a href="#" class="nav-brand"><img src="logo.png" alt="Late Blooom"></a>
   <ul class="nav-links" id="navLinks">
+    <li><a href="#music" data-i18n="nav_music">Music</a></li>
     <li><a href="#listen">Listen</a></li>
     <li><a href="#playlists">Playlists</a></li>
     <li><a href="longplays.html">Long Plays</a></li>
-    <li><a href="#music" data-i18n="nav_music">Music</a></li>
+    <li><a href="#deluxe">Deluxe</a></li>
     <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
-    <li><a href="#stories">Stories</a></li>
     <li><a href="#licensing" data-i18n="nav_licensing">Licensing</a></li>
+    <li><a href="#stories">Stories</a></li>
     <li><a href="#about" data-i18n="nav_about">About</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     <li><a href="catalog.html">Lyrics</a></li>
@@ -1690,6 +1691,15 @@
 </nav>
 
 <!-- ═══════════ FEATURED VIDEO ═══════════ -->
+
+
+<!-- ═══════════ COVER TICKER ═══════════ -->
+<div class="tk-wrap" aria-label="Album covers">
+  <div class="tk-track"><a class="tk-i" href="the-wonder-black-woman-vol-1.html" title="THE WONDER BLACK WOMAN, Vol. 1"><img width="150" height="150" decoding="async" src="tk/the-wonder-black-woman-vol-1-web.jpg" alt="THE WONDER BLACK WOMAN, Vol. 1" loading="lazy"></a>
+        <a class="tk-i" href="the-wonder-black-woman-vol-1.html" title="THE WONDER BLACK WOMAN, Vol. 1"><img width="150" height="150" decoding="async" src="tk/the-wonder-black-woman-vol-1-web.jpg" alt="THE WONDER BLACK WOMAN, Vol. 1" loading="lazy"></a>
+        <a class="tk-i" href="2-good-x.html" title="2 Good X"><img width="150" height="150" decoding="async" src="tk/2-good-x-web.jpg" alt="2 Good X" loading="lazy"></a><a class="tk-i" href="afromantic-antisocialite.html" title="Afromantic Antisocialite"><img width="150" height="150" decoding="async" src="tk/afromantic-antisocialite-web.jpg" alt="Afromantic Antisocialite" loading="lazy"></a><a class="tk-i" href="blown-away-yet.html" title="Blown Away Yet"><img width="150" height="150" decoding="async" src="tk/blown-away-yet-web.jpg" alt="Blown Away Yet" loading="lazy"></a><a class="tk-i" href="casate-conmigo-beni.html" title="Casate Conmigo Beni"><img width="150" height="150" decoding="async" src="tk/casate-conmigo-beni-web.jpg" alt="Casate Conmigo Beni" loading="lazy"></a><a class="tk-i" href="center-balance-vol-2.html" title="Center Balance Vol 2"><img width="150" height="150" decoding="async" src="tk/center-balance-vol-2-web.jpg" alt="Center Balance Vol 2" loading="lazy"></a><a class="tk-i" href="center-balance.html" title="Center Balance"><img width="150" height="150" decoding="async" src="tk/center-balance-web.jpg" alt="Center Balance" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-1.html" title="Comme Ca Vol 1"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-1-web.jpg" alt="Comme Ca Vol 1" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-2.html" title="Comme Ca Vol 2"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-2-web.jpg" alt="Comme Ca Vol 2" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-3.html" title="Comme Ca Vol 3"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-3-web.jpg" alt="Comme Ca Vol 3" loading="lazy"></a><a class="tk-i" href="it-begins-here.html" title="It Begins Here"><img width="150" height="150" decoding="async" src="tk/it-begins-here-web.jpg" alt="It Begins Here" loading="lazy"></a><a class="tk-i" href="lowkey-kinda-lit-70s.html" title="Lowkey Kinda Lit 70S"><img width="150" height="150" decoding="async" src="tk/lowkey-kinda-lit-70s-web.jpg" alt="Lowkey Kinda Lit 70S" loading="lazy"></a><a class="tk-i" href="reality-check-please.html" title="Reality Check Please"><img width="150" height="150" decoding="async" src="tk/reality-check-please-web.jpg" alt="Reality Check Please" loading="lazy"></a><a class="tk-i" href="reina-de-drama-yo.html" title="Reina De Drama Yo"><img width="150" height="150" decoding="async" src="tk/reina-de-drama-yo-web.jpg" alt="Reina De Drama Yo" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-1.html" title="Touche Pussycat Vol 1"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-1-web.jpg" alt="Touche Pussycat Vol 1" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-2.html" title="Touche Pussycat Vol 2"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-2-web.jpg" alt="Touche Pussycat Vol 2" loading="lazy"></a><a class="tk-i" href="unlocking-the-son.html" title="Unlocking The Son"><img width="150" height="150" decoding="async" src="tk/unlocking-the-son-web.jpg" alt="Unlocking The Son" loading="lazy"></a><a class="tk-i" href="vexxxed.html" title="Vexxxed"><img width="150" height="150" decoding="async" src="tk/vexxxed-web.jpg" alt="Vexxxed" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-LUDeq9zswO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-WMsHi5NcXe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-e8SwAoodqL.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-ubnN7zVQLD.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-5xthc3pKxe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-62sgHmoiJO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-NZLlkJH6D9.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-kLhaDGD16B.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="2-good-x.html" title="2 Good X"><img width="150" height="150" decoding="async" src="tk/2-good-x-web.jpg" alt="2 Good X" loading="lazy"></a><a class="tk-i" href="afromantic-antisocialite.html" title="Afromantic Antisocialite"><img width="150" height="150" decoding="async" src="tk/afromantic-antisocialite-web.jpg" alt="Afromantic Antisocialite" loading="lazy"></a><a class="tk-i" href="blown-away-yet.html" title="Blown Away Yet"><img width="150" height="150" decoding="async" src="tk/blown-away-yet-web.jpg" alt="Blown Away Yet" loading="lazy"></a><a class="tk-i" href="casate-conmigo-beni.html" title="Casate Conmigo Beni"><img width="150" height="150" decoding="async" src="tk/casate-conmigo-beni-web.jpg" alt="Casate Conmigo Beni" loading="lazy"></a><a class="tk-i" href="center-balance-vol-2.html" title="Center Balance Vol 2"><img width="150" height="150" decoding="async" src="tk/center-balance-vol-2-web.jpg" alt="Center Balance Vol 2" loading="lazy"></a><a class="tk-i" href="center-balance.html" title="Center Balance"><img width="150" height="150" decoding="async" src="tk/center-balance-web.jpg" alt="Center Balance" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-1.html" title="Comme Ca Vol 1"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-1-web.jpg" alt="Comme Ca Vol 1" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-2.html" title="Comme Ca Vol 2"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-2-web.jpg" alt="Comme Ca Vol 2" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-3.html" title="Comme Ca Vol 3"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-3-web.jpg" alt="Comme Ca Vol 3" loading="lazy"></a><a class="tk-i" href="it-begins-here.html" title="It Begins Here"><img width="150" height="150" decoding="async" src="tk/it-begins-here-web.jpg" alt="It Begins Here" loading="lazy"></a><a class="tk-i" href="lowkey-kinda-lit-70s.html" title="Lowkey Kinda Lit 70S"><img width="150" height="150" decoding="async" src="tk/lowkey-kinda-lit-70s-web.jpg" alt="Lowkey Kinda Lit 70S" loading="lazy"></a><a class="tk-i" href="reality-check-please.html" title="Reality Check Please"><img width="150" height="150" decoding="async" src="tk/reality-check-please-web.jpg" alt="Reality Check Please" loading="lazy"></a><a class="tk-i" href="reina-de-drama-yo.html" title="Reina De Drama Yo"><img width="150" height="150" decoding="async" src="tk/reina-de-drama-yo-web.jpg" alt="Reina De Drama Yo" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-1.html" title="Touche Pussycat Vol 1"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-1-web.jpg" alt="Touche Pussycat Vol 1" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-2.html" title="Touche Pussycat Vol 2"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-2-web.jpg" alt="Touche Pussycat Vol 2" loading="lazy"></a><a class="tk-i" href="unlocking-the-son.html" title="Unlocking The Son"><img width="150" height="150" decoding="async" src="tk/unlocking-the-son-web.jpg" alt="Unlocking The Son" loading="lazy"></a><a class="tk-i" href="vexxxed.html" title="Vexxxed"><img width="150" height="150" decoding="async" src="tk/vexxxed-web.jpg" alt="Vexxxed" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-LUDeq9zswO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-WMsHi5NcXe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-e8SwAoodqL.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-ubnN7zVQLD.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-5xthc3pKxe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-62sgHmoiJO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-NZLlkJH6D9.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-kLhaDGD16B.jpg" alt="Late Blooom" loading="lazy"></a></div>
+</div>
+
 
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -1749,93 +1759,8 @@ fetch('longplays.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
     vids.length + ' videos · ' + hrs + '+ hours · ' + ch + ' chapters';
 }).catch(()=>{ document.getElementById('lpWrap').style.display='none'; });
 </script>
-<section class="listen-section" id="listen">
-  <div class="listen-inner">
-    <p class="section-label reveal">Stream</p>
-    <h2 class="section-title reveal">Listen now</h2>
-    <p class="section-desc reveal">Play directly below, or jump to your favorite platform.</p>
 
-    <div class="soundcloud-wrap reveal">
-      <iframe
-        src="https://open.spotify.com/embed/artist/1qTG2R27hginyxgtuZSHhA?utm_source=generator&theme=0"
-        width="100%" height="450" frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </div>
 
-    <div class="listen-cta reveal">
-      <a href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank" rel="noopener">🎧 Spotify</a>
-      <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener">🍎 Apple Music</a>
-      <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">🔊 SoundCloud</a>
-      <a href="https://music.amazon.com/search/L8%20Blo0om" target="_blank" rel="noopener">📦 Amazon Music</a>
-    </div>
-
-    <p class="yt-albums-label reveal">Stream on YouTube</p>
-    <div class="yt-albums-grid reveal">
-      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kU5D0_8b84alBrrRASfK21kXCnDHQ7bvw&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
-      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kZvEafhsm36NXZ4DDotQodLr43uhKY6wU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
-      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_ktOq14tia2lbv3yuafPFDBdgKQhJk8Y4k&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
-      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kKpB61ZVeEOR1ob57yB-SlmSA0GRBGFxg&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
-      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_lhTFdbokzjLcInoSsjIswP_BXbjYXEikU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-  </div>
-</section>
-<!-- ═══════════ PLAYLISTS ═══════════ -->
-<style>
-.pls-section{padding:3rem 2rem;border-top:1px solid var(--border)}
-.pls-inner{max-width:1100px;margin:0 auto}
-.pls-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:1.6rem}
-.pls-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;background:var(--card);transition:border-color .22s,transform .22s}
-.pls-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.pls-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
-.pls-t{padding:.7rem .8rem .85rem}
-.pls-mood{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-soft)}
-.pls-n{font-size:.92rem;font-weight:500;margin-top:.15rem;line-height:1.25}
-.pls-c{font-size:.74rem;color:var(--muted)}
-.pls-all{display:inline-block;margin-top:1.4rem;font-size:.8rem;color:var(--accent-soft);text-decoration:none}
-.pls-all:hover{text-decoration:underline}
-</style>
-<section class="pls-section" id="playlists">
-  <div class="pls-inner">
-    <p class="section-label reveal">Playlists</p>
-    <h2 class="section-title reveal">Pick your energy</h2>
-    <p class="section-desc reveal">Built around what you're doing, not what genre it is.</p>
-    <div class="pls-grid" id="plsGrid"></div>
-    <a class="pls-all" href="playlists.html" id="plsAll">All playlists →</a>
-  </div>
-</section>
-<script>
-fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
-  const g=document.getElementById('plsGrid');
-  (d.playlists||[]).forEach(p=>{
-    const a=document.createElement('a');
-    a.className='pls-card'; a.href='playlists.html';
-    a.innerHTML=`<img src="pl/${p.slug}.jpg" alt="${p.name} playlist" width="500" height="500" loading="lazy" decoding="async">`+
-      `<div class="pls-t"><div class="pls-mood">${p.mood}</div>`+
-      `<div class="pls-n">${p.name}</div><div class="pls-c">${p.songs} songs</div></div>`;
-    g.appendChild(a);
-  });
-  const n=(d.playlists||[]).length, s=(d.playlists||[]).reduce((t,p)=>t+(p.songs||0),0);
-  document.getElementById('plsAll').textContent=`All ${n} playlists \u00b7 ${s} songs \u2192`;
-}).catch(()=>{});
-</script>
-<!-- ═══════════ SPOTIFY PLAYER ═══════════ -->
-<section class="spotify-hero">
-  <iframe
-    src="https://open.spotify.com/embed/artist/1qTG2R27hginyxgtuZSHhA?utm_source=generator&theme=0"
-    width="100%" height="380" frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-</section>
-<!-- ═══════════ COVER TICKER ═══════════ -->
-<div class="tk-wrap" aria-label="Album covers" style="border-bottom:none">
-  <div class="tk-track"><a class="tk-i" href="the-wonder-black-woman-vol-1.html" title="THE WONDER BLACK WOMAN, Vol. 1"><img width="150" height="150" decoding="async" src="tk/the-wonder-black-woman-vol-1-web.jpg" alt="THE WONDER BLACK WOMAN, Vol. 1" loading="lazy"></a>
-        <a class="tk-i" href="the-wonder-black-woman-vol-1.html" title="THE WONDER BLACK WOMAN, Vol. 1"><img width="150" height="150" decoding="async" src="tk/the-wonder-black-woman-vol-1-web.jpg" alt="THE WONDER BLACK WOMAN, Vol. 1" loading="lazy"></a>
-        <a class="tk-i" href="2-good-x.html" title="2 Good X"><img width="150" height="150" decoding="async" src="tk/2-good-x-web.jpg" alt="2 Good X" loading="lazy"></a><a class="tk-i" href="afromantic-antisocialite.html" title="Afromantic Antisocialite"><img width="150" height="150" decoding="async" src="tk/afromantic-antisocialite-web.jpg" alt="Afromantic Antisocialite" loading="lazy"></a><a class="tk-i" href="blown-away-yet.html" title="Blown Away Yet"><img width="150" height="150" decoding="async" src="tk/blown-away-yet-web.jpg" alt="Blown Away Yet" loading="lazy"></a><a class="tk-i" href="casate-conmigo-beni.html" title="Casate Conmigo Beni"><img width="150" height="150" decoding="async" src="tk/casate-conmigo-beni-web.jpg" alt="Casate Conmigo Beni" loading="lazy"></a><a class="tk-i" href="center-balance-vol-2.html" title="Center Balance Vol 2"><img width="150" height="150" decoding="async" src="tk/center-balance-vol-2-web.jpg" alt="Center Balance Vol 2" loading="lazy"></a><a class="tk-i" href="center-balance.html" title="Center Balance"><img width="150" height="150" decoding="async" src="tk/center-balance-web.jpg" alt="Center Balance" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-1.html" title="Comme Ca Vol 1"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-1-web.jpg" alt="Comme Ca Vol 1" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-2.html" title="Comme Ca Vol 2"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-2-web.jpg" alt="Comme Ca Vol 2" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-3.html" title="Comme Ca Vol 3"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-3-web.jpg" alt="Comme Ca Vol 3" loading="lazy"></a><a class="tk-i" href="it-begins-here.html" title="It Begins Here"><img width="150" height="150" decoding="async" src="tk/it-begins-here-web.jpg" alt="It Begins Here" loading="lazy"></a><a class="tk-i" href="lowkey-kinda-lit-70s.html" title="Lowkey Kinda Lit 70S"><img width="150" height="150" decoding="async" src="tk/lowkey-kinda-lit-70s-web.jpg" alt="Lowkey Kinda Lit 70S" loading="lazy"></a><a class="tk-i" href="reality-check-please.html" title="Reality Check Please"><img width="150" height="150" decoding="async" src="tk/reality-check-please-web.jpg" alt="Reality Check Please" loading="lazy"></a><a class="tk-i" href="reina-de-drama-yo.html" title="Reina De Drama Yo"><img width="150" height="150" decoding="async" src="tk/reina-de-drama-yo-web.jpg" alt="Reina De Drama Yo" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-1.html" title="Touche Pussycat Vol 1"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-1-web.jpg" alt="Touche Pussycat Vol 1" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-2.html" title="Touche Pussycat Vol 2"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-2-web.jpg" alt="Touche Pussycat Vol 2" loading="lazy"></a><a class="tk-i" href="unlocking-the-son.html" title="Unlocking The Son"><img width="150" height="150" decoding="async" src="tk/unlocking-the-son-web.jpg" alt="Unlocking The Son" loading="lazy"></a><a class="tk-i" href="vexxxed.html" title="Vexxxed"><img width="150" height="150" decoding="async" src="tk/vexxxed-web.jpg" alt="Vexxxed" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-LUDeq9zswO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-WMsHi5NcXe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-e8SwAoodqL.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-ubnN7zVQLD.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-5xthc3pKxe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-62sgHmoiJO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-NZLlkJH6D9.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-kLhaDGD16B.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="2-good-x.html" title="2 Good X"><img width="150" height="150" decoding="async" src="tk/2-good-x-web.jpg" alt="2 Good X" loading="lazy"></a><a class="tk-i" href="afromantic-antisocialite.html" title="Afromantic Antisocialite"><img width="150" height="150" decoding="async" src="tk/afromantic-antisocialite-web.jpg" alt="Afromantic Antisocialite" loading="lazy"></a><a class="tk-i" href="blown-away-yet.html" title="Blown Away Yet"><img width="150" height="150" decoding="async" src="tk/blown-away-yet-web.jpg" alt="Blown Away Yet" loading="lazy"></a><a class="tk-i" href="casate-conmigo-beni.html" title="Casate Conmigo Beni"><img width="150" height="150" decoding="async" src="tk/casate-conmigo-beni-web.jpg" alt="Casate Conmigo Beni" loading="lazy"></a><a class="tk-i" href="center-balance-vol-2.html" title="Center Balance Vol 2"><img width="150" height="150" decoding="async" src="tk/center-balance-vol-2-web.jpg" alt="Center Balance Vol 2" loading="lazy"></a><a class="tk-i" href="center-balance.html" title="Center Balance"><img width="150" height="150" decoding="async" src="tk/center-balance-web.jpg" alt="Center Balance" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-1.html" title="Comme Ca Vol 1"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-1-web.jpg" alt="Comme Ca Vol 1" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-2.html" title="Comme Ca Vol 2"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-2-web.jpg" alt="Comme Ca Vol 2" loading="lazy"></a><a class="tk-i" href="comme-ca-vol-3.html" title="Comme Ca Vol 3"><img width="150" height="150" decoding="async" src="tk/comme-ca-vol-3-web.jpg" alt="Comme Ca Vol 3" loading="lazy"></a><a class="tk-i" href="it-begins-here.html" title="It Begins Here"><img width="150" height="150" decoding="async" src="tk/it-begins-here-web.jpg" alt="It Begins Here" loading="lazy"></a><a class="tk-i" href="lowkey-kinda-lit-70s.html" title="Lowkey Kinda Lit 70S"><img width="150" height="150" decoding="async" src="tk/lowkey-kinda-lit-70s-web.jpg" alt="Lowkey Kinda Lit 70S" loading="lazy"></a><a class="tk-i" href="reality-check-please.html" title="Reality Check Please"><img width="150" height="150" decoding="async" src="tk/reality-check-please-web.jpg" alt="Reality Check Please" loading="lazy"></a><a class="tk-i" href="reina-de-drama-yo.html" title="Reina De Drama Yo"><img width="150" height="150" decoding="async" src="tk/reina-de-drama-yo-web.jpg" alt="Reina De Drama Yo" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-1.html" title="Touche Pussycat Vol 1"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-1-web.jpg" alt="Touche Pussycat Vol 1" loading="lazy"></a><a class="tk-i" href="touche-pussycat-vol-2.html" title="Touche Pussycat Vol 2"><img width="150" height="150" decoding="async" src="tk/touche-pussycat-vol-2-web.jpg" alt="Touche Pussycat Vol 2" loading="lazy"></a><a class="tk-i" href="unlocking-the-son.html" title="Unlocking The Son"><img width="150" height="150" decoding="async" src="tk/unlocking-the-son-web.jpg" alt="Unlocking The Son" loading="lazy"></a><a class="tk-i" href="vexxxed.html" title="Vexxxed"><img width="150" height="150" decoding="async" src="tk/vexxxed-web.jpg" alt="Vexxxed" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-LUDeq9zswO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-WMsHi5NcXe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-e8SwAoodqL.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/VIERNES-ubnN7zVQLD.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-5xthc3pKxe.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-62sgHmoiJO.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-NZLlkJH6D9.jpg" alt="Late Blooom" loading="lazy"></a><a class="tk-i" href="index.html#deluxe"><img width="150" height="150" decoding="async" src="tk/WINEHAUS-kLhaDGD16B.jpg" alt="Late Blooom" loading="lazy"></a></div>
-</div>
 <!-- ═══════════ MUSIC CATALOG ═══════════ -->
 <section class="music" id="music">
   <div class="music-inner">
@@ -2028,6 +1953,156 @@ fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
   setActive();
 })();
 </script>
+<!-- ═══════════ LISTEN ═══════════ -->
+
+
+<!-- ═══════════ STORIES ═══════════ -->
+<section class="stories-section" id="stories">
+  <div style="max-width:820px;margin:0 auto;padding:5rem 2rem;text-align:center;">
+    <p class="section-label reveal">The Blog</p>
+    <h2 class="section-title reveal">Learn the stories behind the music</h2>
+    <p class="section-desc reveal" style="max-width:52ch;margin-left:auto;margin-right:auto;">Every song comes from somewhere — a moment, a person, a joke, a wound. Step into the world behind the catalog.</p>
+    <a href="stories.html" class="btn-glow" style="margin-top:2rem;">Enter the Stories →</a>
+  </div>
+</section>
+
+<!-- ═══════════ SPOTIFY PLAYER ═══════════ -->
+<section class="spotify-hero">
+  <iframe
+    src="https://open.spotify.com/embed/artist/1qTG2R27hginyxgtuZSHhA?utm_source=generator&theme=0"
+    width="100%" height="380" frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</section>
+
+<!-- ═══════════ LICENSING ═══════════ -->
+<section class="licensing" id="licensing">
+  <div class="licensing-inner">
+    <p class="section-label reveal">Sync &amp; Licensing</p>
+    <h2 class="section-title reveal">Original music, ready for placement</h2>
+    <p class="section-desc reveal">Reels, films, ads, podcasts, games, hold music, branded content — every song on this site is available for sync. One artist, one contact, cleared fast. Multilingual, multi-genre, one-stop.</p>
+
+    <div class="licensing-grid reveal">
+      <div class="licensing-services stagger">
+        <div class="service-item">
+          <div class="service-icon"></div>
+          <div>
+            <h4>Sync Placements</h4>
+            <p>Film, TV, streaming — music with atmosphere and emotional precision.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"></div>
+          <div>
+            <h4>Brand Campaigns</h4>
+            <p>Ads, branded content, and campaign soundtracks across moods and genres.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"></div>
+          <div>
+            <h4>Digital &amp; Social</h4>
+            <p>Podcasts, YouTube, social content, creators, and indie projects.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"></div>
+          <div>
+            <h4>Custom Compositions</h4>
+            <p>Tailored music for trailers, promos, and projects needing original work.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="licensing-cta">
+        <p class="accent" style="font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.9rem;">Music Supervisors &amp; Brands</p>
+        <h3>If you're looking for music with character, atmosphere, and range — start here.</h3>
+        <p>Browse the catalog, identify tracks of interest, and reach out with project details for licensing inquiries, usage requests, or custom needs.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+          <a href="pitch.html" class="btn-glow">See the Sync One-Sheet →</a>
+          <a href="#music" class="btn">Browse for Licensing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="listen-section" id="listen">
+  <div class="listen-inner">
+    <p class="section-label reveal">Stream</p>
+    <h2 class="section-title reveal">Listen now</h2>
+    <p class="section-desc reveal">Play directly below, or jump to your favorite platform.</p>
+
+    <div class="soundcloud-wrap reveal">
+      <iframe
+        src="https://open.spotify.com/embed/artist/1qTG2R27hginyxgtuZSHhA?utm_source=generator&theme=0"
+        width="100%" height="450" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="listen-cta reveal">
+      <a href="https://open.spotify.com/artist/1qTG2R27hginyxgtuZSHhA" target="_blank" rel="noopener">🎧 Spotify</a>
+      <a href="https://music.apple.com/search?term=L8+Blo0om" target="_blank" rel="noopener">🍎 Apple Music</a>
+      <a href="https://soundcloud.com/l8blo0om" target="_blank" rel="noopener">🔊 SoundCloud</a>
+      <a href="https://music.amazon.com/search/L8%20Blo0om" target="_blank" rel="noopener">📦 Amazon Music</a>
+    </div>
+
+    <p class="yt-albums-label reveal">Stream on YouTube</p>
+    <div class="yt-albums-grid reveal">
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kU5D0_8b84alBrrRASfK21kXCnDHQ7bvw&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kZvEafhsm36NXZ4DDotQodLr43uhKY6wU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_ktOq14tia2lbv3yuafPFDBdgKQhJk8Y4k&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kKpB61ZVeEOR1ob57yB-SlmSA0GRBGFxg&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+      <div class="yt-album-embed"><iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_lhTFdbokzjLcInoSsjIswP_BXbjYXEikU&rel=0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PLAYLISTS ═══════════ -->
+<style>
+.pls-section{padding:3rem 2rem;border-top:1px solid var(--border)}
+.pls-inner{max-width:1100px;margin:0 auto}
+.pls-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-top:1.6rem}
+.pls-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;background:var(--card);transition:border-color .22s,transform .22s}
+.pls-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.pls-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.pls-t{padding:.7rem .8rem .85rem}
+.pls-mood{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-soft)}
+.pls-n{font-size:.92rem;font-weight:500;margin-top:.15rem;line-height:1.25}
+.pls-c{font-size:.74rem;color:var(--muted)}
+.pls-all{display:inline-block;margin-top:1.4rem;font-size:.8rem;color:var(--accent-soft);text-decoration:none}
+.pls-all:hover{text-decoration:underline}
+</style>
+<section class="pls-section" id="playlists">
+  <div class="pls-inner">
+    <p class="section-label reveal">Playlists</p>
+    <h2 class="section-title reveal">Pick your energy</h2>
+    <p class="section-desc reveal">Built around what you're doing, not what genre it is.</p>
+    <div class="pls-grid" id="plsGrid"></div>
+    <a class="pls-all" href="playlists.html" id="plsAll">All playlists →</a>
+  </div>
+</section>
+<script>
+fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
+  const g=document.getElementById('plsGrid');
+  (d.playlists||[]).forEach(p=>{
+    const a=document.createElement('a');
+    a.className='pls-card'; a.href='playlists.html';
+    a.innerHTML=`<img src="pl/${p.slug}.jpg" alt="${p.name} playlist" width="500" height="500" loading="lazy" decoding="async">`+
+      `<div class="pls-t"><div class="pls-mood">${p.mood}</div>`+
+      `<div class="pls-n">${p.name}</div><div class="pls-c">${p.songs} songs</div></div>`;
+    g.appendChild(a);
+  });
+  const n=(d.playlists||[]).length, s=(d.playlists||[]).reduce((t,p)=>t+(p.songs||0),0);
+  document.getElementById('plsAll').textContent=`All ${n} playlists \u00b7 ${s} songs \u2192`;
+}).catch(()=>{});
+</script>
+
 <!-- ═══════════ DELUXE ═══════════ -->
 <section class="deluxe-section" id="deluxe">
   <div class="deluxe-inner">
@@ -2079,6 +2154,7 @@ fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
     </div>
   </div>
 </section>
+
 <!-- ═══════════ VIDEOS ═══════════ -->
 <section class="videos" id="videos">
   <div style="max-width:1100px;margin:0 auto;">
@@ -2130,6 +2206,7 @@ fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
   });
 })();
 </script>
+
 <!-- ═══════════ SHORTS ═══════════ -->
 <section class="videos" id="shorts" style="border-top:1px solid var(--border)">
   <div style="max-width:1100px;margin:0 auto;">
@@ -2173,66 +2250,7 @@ fetch('playlists.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
   });
 })();
 </script>
-<!-- ═══════════ STORIES ═══════════ -->
-<section class="stories-section" id="stories">
-  <div style="max-width:820px;margin:0 auto;padding:5rem 2rem;text-align:center;">
-    <p class="section-label reveal">The Blog</p>
-    <h2 class="section-title reveal">Learn the stories behind the music</h2>
-    <p class="section-desc reveal" style="max-width:52ch;margin-left:auto;margin-right:auto;">Every song comes from somewhere — a moment, a person, a joke, a wound. Step into the world behind the catalog.</p>
-    <a href="stories.html" class="btn-glow" style="margin-top:2rem;">Enter the Stories →</a>
-  </div>
-</section>
-<!-- ═══════════ LICENSING ═══════════ -->
-<section class="licensing" id="licensing">
-  <div class="licensing-inner">
-    <p class="section-label reveal">Sync &amp; Licensing</p>
-    <h2 class="section-title reveal">Original music, ready for placement</h2>
-    <p class="section-desc reveal">Reels, films, ads, podcasts, games, hold music, branded content — every song on this site is available for sync. One artist, one contact, cleared fast. Multilingual, multi-genre, one-stop.</p>
 
-    <div class="licensing-grid reveal">
-      <div class="licensing-services stagger">
-        <div class="service-item">
-          <div class="service-icon"></div>
-          <div>
-            <h4>Sync Placements</h4>
-            <p>Film, TV, streaming — music with atmosphere and emotional precision.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"></div>
-          <div>
-            <h4>Brand Campaigns</h4>
-            <p>Ads, branded content, and campaign soundtracks across moods and genres.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"></div>
-          <div>
-            <h4>Digital &amp; Social</h4>
-            <p>Podcasts, YouTube, social content, creators, and indie projects.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"></div>
-          <div>
-            <h4>Custom Compositions</h4>
-            <p>Tailored music for trailers, promos, and projects needing original work.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="licensing-cta">
-        <p class="accent" style="font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.9rem;">Music Supervisors &amp; Brands</p>
-        <h3>If you're looking for music with character, atmosphere, and range — start here.</h3>
-        <p>Browse the catalog, identify tracks of interest, and reach out with project details for licensing inquiries, usage requests, or custom needs.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-          <a href="pitch.html" class="btn-glow">See the Sync One-Sheet →</a>
-          <a href="#music" class="btn">Browse for Licensing</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section><!-- ═══════════ LISTEN ═══════════ -->
 
 
 <!-- ═══════════ ABOUT ═══════════ -->
