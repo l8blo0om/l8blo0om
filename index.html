@@ -1565,7 +1565,7 @@
 .lp-wrap:hover .lp-track{animation-play-state:paused}
 @keyframes lpscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.lp-track{animation:none;overflow-x:auto}}
-.lp-i{flex:0 0 auto;width:270px;text-decoration:none;color:inherit;display:block;
+.lp-i{flex:0 0 auto;width:340px;text-decoration:none;color:inherit;display:block;
   border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--card);
   transition:transform .25s,border-color .25s}
 .lp-i:hover{transform:translateY(-4px);border-color:var(--lp-hue,var(--accent))}
@@ -1582,7 +1582,9 @@
 .lp-meta{padding:.6rem .75rem .75rem}
 .lp-name{font-size:.88rem;font-weight:500;line-height:1.25;margin-bottom:.15rem}
 .lp-scene{font-size:.72rem;color:var(--muted);line-height:1.35}
-@media(max-width:600px){.lp-head{padding:1rem 1.1rem .2rem}.lp-i{width:230px}}
+@media(max-width:600px){.lp-head{padding:1rem 1.1rem .2rem}.lp-i{width:290px}}
+.lp-track.lp-hold{animation-play-state:paused}
+.lp-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .tk-wrap{position:relative;overflow:hidden;background:#07070d;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .tk-wrap::before,.tk-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
 .tk-wrap::before{left:0;background:linear-gradient(90deg,#07070d,transparent)}
@@ -1728,29 +1730,75 @@
 fetch('longplays.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
   const vids = d.videos || [];
   const track = document.getElementById('lpTrack');
-  const card = v => {
+
+  // Live players, but never all at once. 50 simultaneous YouTube iframes is what
+  // crashed Safari before — each one costs real memory. Only cards actually on
+  // screen hold a player; the rest fall back to a thumbnail.
+  const MAX_LIVE = 5;
+  const live = [];
+
+  const thumb = v =>
+    '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="' +
+    v.name.replace(/"/g,'&quot;') + '" width="320" height="180" loading="lazy" decoding="async">' +
+    '<div class="lp-play"><i></i></div>';
+
+  function mount(el){
+    if (el.dataset.live) return;
+    while (live.length >= MAX_LIVE) unmount(live.shift());
+    const v = JSON.parse(el.dataset.v);
+    el.querySelector('.lp-thumb').innerHTML =
+      '<iframe src="https://www.youtube.com/embed/' + v.id +
+      '?rel=0&modestbranding=1&playsinline=1&mute=1&loop=1&playlist=' + v.id +
+      '" title="' + v.name.replace(/"/g,'&quot;') +
+      '" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    el.dataset.live = '1';
+    live.push(el);
+  }
+  function unmount(el){
+    if (!el || !el.dataset.live) return;
+    const v = JSON.parse(el.dataset.v);
+    el.querySelector('.lp-thumb').innerHTML = thumb(v);
+    delete el.dataset.live;
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) mount(e.target);
+      else { const i = live.indexOf(e.target); if (i > -1) live.splice(i,1); unmount(e.target); }
+    });
+  }, { root: document.getElementById('lpWrap'), threshold: 0.6 });
+
+  const card = (v, dupe) => {
     const a = document.createElement('a');
     a.className = 'lp-i';
     a.href = 'https://youtu.be/' + v.id;
     a.target = '_blank'; a.rel = 'noopener';
     a.title = v.name + ' — ' + v.scene;
+    a.dataset.v = JSON.stringify({id:v.id, name:v.name});
     a.style.setProperty('--lp-hue', v.hue || 'var(--accent)');
     a.innerHTML =
-      '<div class="lp-thumb">' +
-        '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="' +
-          v.name.replace(/"/g,'&quot;') + '" width="320" height="180" loading="lazy" decoding="async">' +
-        '<div class="lp-play"><i></i></div>' +
+      '<div class="lp-thumb">' + thumb(v) +
         '<span class="lp-badge">' + (v.kind === 'mix' ? '2 hr mix' : 'album') + '</span>' +
       '</div>' +
       '<div class="lp-meta">' +
         '<div class="lp-name">' + v.name + '</div>' +
         '<div class="lp-scene">' + v.scene + ' · ' + v.chapters + ' chapters</div>' +
       '</div>';
+    // clicking the player area shouldn't yank you to YouTube mid-watch
+    a.addEventListener('click', e => { if (a.dataset.live && e.target.closest('.lp-thumb')) e.preventDefault(); });
+    if (!dupe) io.observe(a);
     return a;
   };
-  // two passes through the list so the strip loops seamlessly
-  vids.forEach(v => track.appendChild(card(v)));
-  vids.forEach(v => { const c = card(v); c.setAttribute('aria-hidden','true'); c.tabIndex = -1; track.appendChild(c); });
+
+  vids.forEach(v => track.appendChild(card(v, false)));
+  // second pass makes the loop seamless; these never mount players
+  vids.forEach(v => { const c = card(v, true); c.setAttribute('aria-hidden','true'); c.tabIndex = -1; track.appendChild(c); });
+
+  // hold the belt still while you're actually watching something
+  const wrap = document.getElementById('lpWrap');
+  wrap.addEventListener('pointerenter', () => track.classList.add('lp-hold'));
+  wrap.addEventListener('pointerleave', () => track.classList.remove('lp-hold'));
+
   const hrs = Math.round(vids.reduce((n,v) => n + (v.kind === 'mix' ? 2 : 1.2), 0));
   const ch  = vids.reduce((n,v) => n + (v.chapters||0), 0);
   document.getElementById('lpStat').textContent =
