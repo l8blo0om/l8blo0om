@@ -4,7 +4,7 @@
 <link rel="canonical" href="https://lateblooom.com/catalog.html">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L8 BLO0M — Collected Lyrics</title>
+<title>Late Blooom — Collected Lyrics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -128,7 +128,7 @@ html, body {
 <body>
 <div class="container">
   <div class="masthead">
-    <h1>L8 BLO0M</h1>
+    <h1>Late Blooom</h1>
     <div class="tagline">— collected lyrics —</div>
   </div>
   <div class="search-wrap">
@@ -138,7 +138,7 @@ html, body {
   <div class="songs" id="songs">
     <div class="loading">Loading lyrics…</div>
   </div>
-  <div class="footer">L8 BLO0M · lyrics · 🌺</div>
+  <div class="footer">Late Blooom · lyrics · 🌺</div>
 </div>
 
 <script>
@@ -151,7 +151,7 @@ function parseArchive(text) {
   const lines = text.split(/\r?\n/);
   const songs = [];
   let i = 0;
-  while (i < lines.length && !/^L8 BLO0M: COLLECTED LYRICS$/i.test(lines[i].trim())) i++;
+  while (i < lines.length && !/^Late Blooom: COLLECTED LYRICS$/i.test(lines[i].trim())) i++;
   if (i < lines.length) i++;
   while (i < lines.length) {
     while (i < lines.length && lines[i].trim() === '') i++;
