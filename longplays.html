@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://lateblooom.com/longplays.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Plays — Late Blooom</title>
+<meta name="description" content="Every long-form Late Blooom video — eleven themed two-hour mixes and fifteen full albums, each set over one slow looping scene. Hours at a time.">
+<meta property="og:title" content="Long Plays — Late Blooom">
+<meta property="og:description" content="Hours at a time. Eleven two-hour mixes, fifteen full albums.">
+<meta property="og:image" content="https://lateblooom.com/pl/wining.jpg">
+<meta property="og:url" content="https://lateblooom.com/longplays.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lateblooom.com/pl/wining.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@property --hue { syntax: '<number>'; inherits: true; initial-value: 35; }
+html { animation: huecycle 22s linear infinite; }
+@keyframes huecycle { to { --hue: 395; } }
+:root{
+  --black:#050508; --card:#0e0e16; --border:rgba(255,255,255,0.09);
+  --text:#f2f0ea; --muted:#8f8fa6;
+  --accent:hsl(var(--hue),85%,62%); --accent-soft:hsl(var(--hue),85%,72%);
+  --serif:'Jost',sans-serif; --sans:'Outfit',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--text);font-family:var(--sans);line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border)}
+.nav-brand img{height:34px;display:block}
+.nav-back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav-back:hover{color:var(--accent-soft)}
+
+.head{max-width:1250px;margin:0 auto;padding:2.5rem 2rem .5rem}
+h1{font-family:var(--serif);font-weight:200;letter-spacing:.06em;
+   font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.04;margin-bottom:.5rem}
+.sub{color:var(--muted);font-size:.95rem;font-weight:300;max-width:56ch}
+.stats{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft);margin-top:1rem}
+
+.filters{max-width:1250px;margin:0 auto;padding:1.2rem 2rem .4rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.f{font-family:var(--sans);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+   padding:8px 15px;border-radius:999px;cursor:pointer;background:var(--card);
+   border:1px solid var(--border);color:var(--muted);transition:all .18s}
+.f:hover{border-color:var(--accent);color:var(--accent-soft)}
+.f.on{background:var(--accent);border-color:var(--accent);color:#07070d;font-weight:600}
+
+h2.grp{max-width:1250px;margin:2.2rem auto .2rem;padding:0 2rem;
+  font-family:var(--serif);font-weight:200;letter-spacing:.05em;font-size:clamp(1.3rem,3.4vw,1.9rem)}
+p.grpsub{max-width:1250px;margin:0 auto 1rem;padding:0 2rem;color:var(--muted);font-size:.88rem}
+
+.grid{max-width:1250px;margin:0 auto;padding:.6rem 2rem 2rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.6rem}
+.v{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;
+   display:flex;flex-direction:column;transition:border-color .22s,transform .22s}
+.v:hover{border-color:var(--vh,var(--accent));transform:translateY(-3px)}
+.v-thumb{position:relative;aspect-ratio:16/9;background:#07070d;cursor:pointer}
+.v-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.v-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.v-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.45))}
+.v-play i{width:58px;height:58px;border-radius:50%;background:rgba(10,10,16,.76);
+  border:1.5px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;
+  transition:transform .2s}
+.v-play i::after{content:'';border-left:16px solid #fff;border-top:9px solid transparent;
+  border-bottom:9px solid transparent;margin-left:4px}
+.v-thumb:hover .v-play i{transform:scale(1.08)}
+.v-badge{position:absolute;left:9px;top:9px;font-size:.6rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;color:#07070d;background:var(--vh,var(--accent))}
+.v-flag{position:absolute;right:9px;top:9px;font-size:.58rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;background:rgba(9,9,14,.85);
+  color:var(--text);border:1px solid var(--border)}
+.v-body{padding:.95rem 1.1rem 1.2rem}
+.v-name{font-family:var(--serif);font-weight:300;font-size:1.22rem;line-height:1.18;margin-bottom:.2rem}
+.v-scene{font-size:.76rem;letter-spacing:.06em;color:var(--accent-soft);margin-bottom:.5rem}
+.v-blurb{font-size:.83rem;color:var(--muted);line-height:1.5;margin-bottom:.85rem}
+.v-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn-sm{font-family:var(--sans);font-size:.73rem;letter-spacing:.06em;padding:8px 14px;border-radius:4px;
+  text-decoration:none;border:1px solid var(--border);color:var(--text);background:transparent;
+  cursor:pointer;transition:all .18s}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent-soft)}
+.btn-sm.solid{background:var(--accent);color:#07070d;border-color:var(--accent);font-weight:600}
+.btn-sm.solid:hover{filter:brightness(1.12);color:#07070d}
+.v-stat{font-size:.72rem;color:var(--muted);opacity:.75;margin-top:.7rem}
+
+.foot{max-width:1250px;margin:1rem auto 3rem;padding:1.5rem 2rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.foot a{color:var(--accent-soft);text-decoration:none;font-size:.85rem}
+.note{max-width:1250px;margin:0 auto;padding:0 2rem 1rem;color:var(--muted);font-size:.8rem;opacity:.8}
+@media(max-width:600px){
+  .head{padding:1.8rem 1.1rem .4rem}.grid{padding:.6rem 1.1rem 2rem}
+  .filters,h2.grp,p.grpsub,.foot,.note{padding-left:1.1rem;padding-right:1.1rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="Late Blooom"></a>
+  <a href="index.html" class="nav-back">← Home</a>
+</nav>
+
+<section class="head">
+  <h1>Hours at a time</h1>
+  <p class="sub">Every long-form video on the channel — themed two-hour mixes and full albums, each set over one slow, looping scene.</p>
+  <p class="stats" id="stats">Loading…</p>
+</section>
+
+<div class="filters" id="filters"></div>
+
+<h2 class="grp">Two-hour mixes</h2>
+<p class="grpsub">Cross-album playlists, played straight through over one scene.</p>
+<div class="grid" id="mixes"></div>
+
+<h2 class="grp">Full albums</h2>
+<p class="grpsub">One album, front to back, in official track order.</p>
+<div class="grid" id="albums"></div>
+
+<p class="note" id="note"></p>
+
+<div class="foot">
+  <a href="index.html">← Back to lateblooom.com</a>
+  <a href="playlists.html">Playlists →</a>
+  <a href="pitch.html">License this music →</a>
+</div>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// One player at a time. A gallery of 26 live iframes is what took the site
+// down on iOS before — opening a new one releases the last.
+let current = null;
+function play(thumb){
+  if (thumb.dataset.on) return;
+  if (current && current !== thumb) release(current);
+  const id = thumb.dataset.id, name = thumb.dataset.name;
+  thumb.dataset.facade = thumb.innerHTML;
+  thumb.innerHTML =
+    '<iframe src="https://www.youtube.com/embed/' + id +
+    '?rel=0&modestbranding=1&playsinline=1&autoplay=1" title="' + esc(name) +
+    '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  thumb.dataset.on = '1';
+  current = thumb;
+}
+function release(thumb){
+  if (!thumb || !thumb.dataset.on) return;
+  thumb.innerHTML = thumb.dataset.facade;
+  delete thumb.dataset.on;
+}
+
+let VIDS = [];
+let filter = 'all';
+
+function cardFor(v){
+  const el = document.createElement('div');
+  el.className = 'v';
+  el.id = 'v-' + v.id;
+  el.style.setProperty('--vh', v.hue || 'var(--accent)');
+  el.innerHTML =
+    '<div class="v-thumb" data-id="' + v.id + '" data-name="' + esc(v.name) + '" role="button" tabindex="0" aria-label="Play ' + esc(v.name) + '">' +
+      '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="' + esc(v.name) +
+        '" width="480" height="360" loading="lazy" decoding="async">' +
+      '<div class="v-play"><i></i></div>' +
+      '<span class="v-badge">' + (v.kind === 'mix' ? '2 hr mix' : 'album') + '</span>' +
+      (v.unreleased ? '<span class="v-flag">Unreleased</span>' :
+       v.explicit   ? '<span class="v-flag">Explicit</span>' : '') +
+    '</div>' +
+    '<div class="v-body">' +
+      '<div class="v-name">' + esc(v.name) + '</div>' +
+      '<div class="v-scene">' + esc(v.scene) + '</div>' +
+      '<p class="v-blurb">' + esc(v.blurb) + '</p>' +
+      '<div class="v-links">' +
+        '<a class="btn-sm solid" href="https://youtu.be/' + v.id + '" target="_blank" rel="noopener">Watch on YouTube</a>' +
+        '<button class="btn-sm" data-copy="https://youtu.be/' + v.id + '">Copy link</button>' +
+      '</div>' +
+      '<p class="v-stat">' + v.chapters + ' chapters</p>' +
+    '</div>';
+  return el;
+}
+
+function render(){
+  const mixes = document.getElementById('mixes');
+  const albums = document.getElementById('albums');
+  mixes.innerHTML = ''; albums.innerHTML = '';
+  current = null;
+  const show = VIDS.filter(v =>
+    filter === 'all' ? true :
+    filter === 'mix' ? v.kind === 'mix' :
+    filter === 'album' ? v.kind === 'album' :
+    filter === 'new' ? v.unreleased : true);
+  show.filter(v => v.kind === 'mix').forEach(v => mixes.appendChild(cardFor(v)));
+  show.filter(v => v.kind === 'album').forEach(v => albums.appendChild(cardFor(v)));
+  document.querySelectorAll('h2.grp')[0].style.display = show.some(v=>v.kind==='mix') ? '' : 'none';
+  document.querySelectorAll('p.grpsub')[0].style.display = show.some(v=>v.kind==='mix') ? '' : 'none';
+  document.querySelectorAll('h2.grp')[1].style.display = show.some(v=>v.kind==='album') ? '' : 'none';
+  document.querySelectorAll('p.grpsub')[1].style.display = show.some(v=>v.kind==='album') ? '' : 'none';
+}
+
+fetch('longplays.json?v=' + Date.now()).then(r => r.json()).then(d => {
+  VIDS = d.videos || [];
+  const hrs = Math.round(VIDS.reduce((n,v) => n + (v.kind === 'mix' ? 2 : 1.2), 0));
+  const ch  = VIDS.reduce((n,v) => n + (v.chapters||0), 0);
+  document.getElementById('stats').textContent =
+    VIDS.length + ' videos · ' + hrs + '+ hours · ' + ch + ' chapters';
+
+  const F = [['all','Everything'],['mix','Two-hour mixes'],['album','Full albums'],['new','Unreleased']];
+  const bar = document.getElementById('filters');
+  F.forEach(([k,label]) => {
+    const b = document.createElement('button');
+    b.className = 'f' + (k === 'all' ? ' on' : '');
+    b.textContent = label;
+    b.onclick = () => {
+      filter = k;
+      [...bar.children].forEach(c => c.classList.toggle('on', c === b));
+      render();
+    };
+    bar.appendChild(b);
+  });
+
+  render();
+
+  const un = VIDS.filter(v => v.unreleased).map(v => v.name);
+  document.getElementById('note').textContent = un.length
+    ? 'Not on streaming yet: ' + un.join(' · ') + '. Chapters are timestamped inside each video on YouTube.'
+    : 'Chapters are timestamped inside each video on YouTube.';
+
+  // deep link: /longplays.html#v-<id> opens that one
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) { el.scrollIntoView({block:'center'}); play(el.querySelector('.v-thumb')); }
+  }
+}).catch(() => {
+  document.getElementById('stats').textContent = 'Videos are loading slowly — try a refresh.';
+});
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('.v-thumb');
+  if (t) { play(t); return; }
+  const b = e.target.closest('[data-copy]');
+  if (b) navigator.clipboard.writeText(b.dataset.copy).then(() => {
+    const was = b.textContent; b.textContent = '✓ Copied';
+    setTimeout(() => b.textContent = was, 1700);
+  });
+});
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('v-thumb')) {
+    e.preventDefault(); play(e.target);
+  }
+});
+</script>
+</body>
+</html>

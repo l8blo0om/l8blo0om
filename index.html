@@ -1653,6 +1653,7 @@
     <li><a href="#music" data-i18n="nav_music">Music</a></li>
     <li><a href="#listen">Listen</a></li>
     <li><a href="#playlists">Playlists</a></li>
+    <li><a href="longplays.html">Long Plays</a></li>
     <li><a href="#deluxe">Deluxe</a></li>
     <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
     <li><a href="#licensing" data-i18n="nav_licensing">Licensing</a></li>
@@ -1721,7 +1722,7 @@
 <div class="lp-head">
   <h2>Hours at a time</h2>
   <span id="lpStat">&nbsp;</span>
-  <a href="https://www.youtube.com/@L8Blo0om" target="_blank" rel="noopener">All on YouTube →</a>
+  <a href="longplays.html">Open the library →</a>
 </div>
 <div class="lp-wrap" id="lpWrap" aria-label="Long-form videos">
   <div class="lp-track" id="lpTrack"></div>
@@ -1730,75 +1731,28 @@
 fetch('longplays.json?v=' + Date.now()).then(r=>r.json()).then(d=>{
   const vids = d.videos || [];
   const track = document.getElementById('lpTrack');
-
-  // Live players, but never all at once. 50 simultaneous YouTube iframes is what
-  // crashed Safari before — each one costs real memory. Only cards actually on
-  // screen hold a player; the rest fall back to a thumbnail.
-  const MAX_LIVE = 5;
-  const live = [];
-
-  const thumb = v =>
-    '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="' +
-    v.name.replace(/"/g,'&quot;') + '" width="320" height="180" loading="lazy" decoding="async">' +
-    '<div class="lp-play"><i></i></div>';
-
-  function mount(el){
-    if (el.dataset.live) return;
-    while (live.length >= MAX_LIVE) unmount(live.shift());
-    const v = JSON.parse(el.dataset.v);
-    el.querySelector('.lp-thumb').innerHTML =
-      '<iframe src="https://www.youtube.com/embed/' + v.id +
-      '?rel=0&modestbranding=1&playsinline=1&mute=1&loop=1&playlist=' + v.id +
-      '" title="' + v.name.replace(/"/g,'&quot;') +
-      '" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    el.dataset.live = '1';
-    live.push(el);
-  }
-  function unmount(el){
-    if (!el || !el.dataset.live) return;
-    const v = JSON.parse(el.dataset.v);
-    el.querySelector('.lp-thumb').innerHTML = thumb(v);
-    delete el.dataset.live;
-  }
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) mount(e.target);
-      else { const i = live.indexOf(e.target); if (i > -1) live.splice(i,1); unmount(e.target); }
-    });
-  }, { root: document.getElementById('lpWrap'), threshold: 0.6 });
-
   const card = (v, dupe) => {
     const a = document.createElement('a');
     a.className = 'lp-i';
-    a.href = 'https://youtu.be/' + v.id;
-    a.target = '_blank'; a.rel = 'noopener';
+    a.href = 'longplays.html#v-' + v.id;      // opens the gallery, playing this one
     a.title = v.name + ' — ' + v.scene;
-    a.dataset.v = JSON.stringify({id:v.id, name:v.name});
     a.style.setProperty('--lp-hue', v.hue || 'var(--accent)');
     a.innerHTML =
-      '<div class="lp-thumb">' + thumb(v) +
+      '<div class="lp-thumb">' +
+        '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="' +
+          v.name.replace(/"/g,'&quot;') + '" width="320" height="180" loading="lazy" decoding="async">' +
+        '<div class="lp-play"><i></i></div>' +
         '<span class="lp-badge">' + (v.kind === 'mix' ? '2 hr mix' : 'album') + '</span>' +
       '</div>' +
       '<div class="lp-meta">' +
         '<div class="lp-name">' + v.name + '</div>' +
         '<div class="lp-scene">' + v.scene + ' · ' + v.chapters + ' chapters</div>' +
       '</div>';
-    // clicking the player area shouldn't yank you to YouTube mid-watch
-    a.addEventListener('click', e => { if (a.dataset.live && e.target.closest('.lp-thumb')) e.preventDefault(); });
-    if (!dupe) io.observe(a);
+    if (dupe) { a.setAttribute('aria-hidden','true'); a.tabIndex = -1; }
     return a;
   };
-
   vids.forEach(v => track.appendChild(card(v, false)));
-  // second pass makes the loop seamless; these never mount players
-  vids.forEach(v => { const c = card(v, true); c.setAttribute('aria-hidden','true'); c.tabIndex = -1; track.appendChild(c); });
-
-  // hold the belt still while you're actually watching something
-  const wrap = document.getElementById('lpWrap');
-  wrap.addEventListener('pointerenter', () => track.classList.add('lp-hold'));
-  wrap.addEventListener('pointerleave', () => track.classList.remove('lp-hold'));
-
+  vids.forEach(v => track.appendChild(card(v, true)));   // second pass = seamless loop
   const hrs = Math.round(vids.reduce((n,v) => n + (v.kind === 'mix' ? 2 : 1.2), 0));
   const ch  = vids.reduce((n,v) => n + (v.chapters||0), 0);
   document.getElementById('lpStat').textContent =
