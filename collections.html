@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://lateblooom.com/collections.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sync Collections — Late Blooom</title>
+<meta name="description" content="Curated music collections for film, TV, advertising and branded content. Wellness, Latin, Caribbean, kizomba, jazz, instrumental and more — one-stop clearance, direct artist contact.">
+<meta property="og:title" content="Sync Collections — Late Blooom">
+<meta property="og:description" content="Nine curated collections for supervisors and editors. One artist, one contact, cleared fast.">
+<meta property="og:image" content="https://lateblooom.com/pl/wining.jpg">
+<meta property="og:url" content="https://lateblooom.com/collections.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lateblooom.com/pl/wining.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@property --hue { syntax: '<number>'; inherits: true; initial-value: 35; }
+html { animation: huecycle 22s linear infinite; }
+@keyframes huecycle { to { --hue: 395; } }
+:root{
+  --black:#050508; --card:#0e0e16; --border:rgba(255,255,255,0.09);
+  --text:#f2f0ea; --muted:#8f8fa6;
+  --accent:hsl(var(--hue),85%,62%); --accent-soft:hsl(var(--hue),85%,72%);
+  --serif:'Jost',sans-serif; --sans:'Outfit',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--text);font-family:var(--sans);line-height:1.6}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border)}
+.nav-brand img{height:34px;display:block}
+.nav-back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav-back:hover{color:var(--accent-soft)}
+
+.head{max-width:1200px;margin:0 auto;padding:2.6rem 2rem .4rem}
+h1{font-family:var(--serif);font-weight:200;letter-spacing:.06em;
+   font-size:clamp(2.1rem,6vw,3.5rem);line-height:1.04;margin-bottom:.55rem}
+.sub{color:var(--muted);font-size:1rem;font-weight:300;max-width:60ch}
+.onestop{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;padding:9px 16px;
+  border:1px solid var(--accent);border-radius:999px;font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent-soft);font-weight:600}
+
+.filters{max-width:1200px;margin:0 auto;padding:1.3rem 2rem .3rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.f{font-family:var(--sans);font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;
+   padding:8px 15px;border-radius:999px;cursor:pointer;background:var(--card);
+   border:1px solid var(--border);color:var(--muted);transition:all .18s}
+.f:hover{border-color:var(--accent);color:var(--accent-soft)}
+.f.on{background:var(--accent);border-color:var(--accent);color:#07070d;font-weight:600}
+
+.grid{max-width:1200px;margin:0 auto;padding:1rem 2rem 2rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.5rem}
+.c{background:var(--card);border:1px solid var(--border);border-radius:12px;
+   padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;
+   transition:border-color .22s,transform .22s}
+.c:hover{border-color:var(--accent);transform:translateY(-3px)}
+.c-name{font-family:var(--serif);font-weight:300;font-size:1.5rem;line-height:1.15;margin-bottom:.35rem}
+.c-line{font-size:.9rem;color:var(--muted);line-height:1.5;margin-bottom:1rem}
+.c-spec{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.chip{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;padding:4px 10px;
+  border-radius:3px;border:1px solid var(--border);color:var(--muted)}
+.chip.k{border-color:var(--accent);color:var(--accent-soft);font-weight:600}
+.chip.x{border-color:#8a4a4a;color:#d59a9a}
+.c-for{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:.4rem}
+ul.uses{list-style:none;font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+ul.uses li::before{content:'— ';opacity:.5}
+.c-note{font-size:.78rem;color:var(--muted);opacity:.85;line-height:1.45;margin-bottom:1rem;
+  padding-left:.7rem;border-left:2px solid var(--border)}
+.c-albums{font-size:.75rem;color:var(--muted);opacity:.7;line-height:1.5;margin-bottom:1.1rem}
+.c-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto}
+.btn{font-family:var(--sans);font-size:.76rem;letter-spacing:.05em;padding:10px 16px;border-radius:4px;
+  text-decoration:none;border:1px solid var(--border);color:var(--text);background:transparent;
+  cursor:pointer;transition:all .18s;display:inline-block}
+.btn:hover{border-color:var(--accent);color:var(--accent-soft)}
+.btn.solid{background:var(--accent);color:#07070d;border-color:var(--accent);font-weight:600}
+.btn.solid:hover{filter:brightness(1.12);color:#07070d}
+
+.rights{max-width:1200px;margin:1rem auto 0;padding:1.6rem 2rem;border-top:1px solid var(--border)}
+.rights h2{font-family:var(--serif);font-weight:300;font-size:1.4rem;margin-bottom:.6rem}
+.rights p{color:var(--muted);font-size:.88rem;max-width:72ch;margin-bottom:.5rem}
+.rights b{color:var(--text);font-weight:500}
+.foot{max-width:1200px;margin:1.5rem auto 3rem;padding:1.5rem 2rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.foot a{color:var(--accent-soft);text-decoration:none;font-size:.85rem}
+@media(max-width:600px){
+  .head{padding:1.9rem 1.1rem .3rem}.grid{padding:1rem 1.1rem 2rem;grid-template-columns:1fr}
+  .filters,.rights,.foot{padding-left:1.1rem;padding-right:1.1rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="Late Blooom"></a>
+  <a href="pitch.html" class="nav-back">The one-sheet →</a>
+</nav>
+
+<section class="head">
+  <h1>Music, sorted by what you're making</h1>
+  <p class="sub">Nine collections instead of one catalogue. Each is a set of albums built around the same feeling, so you can hear whether it fits in about a minute — then ask for the cue you actually need.</p>
+  <div class="onestop">One-stop · master + publishing</div>
+</section>
+
+<div class="filters" id="filters"></div>
+<div class="grid" id="grid"></div>
+
+<section class="rights">
+  <h2>Rights, plainly</h2>
+  <p><b>One-stop clearance.</b> Master and publishing are both held by Pharoah Phoenix LLC. One contact, one signature, no chain of permissions.</p>
+  <p><b>Written by one person.</b> All lyrics and compositions by Dr. Nicole Aimee Bishop (ASCAP). AI-assisted production is disclosed where applicable.</p>
+  <p><b>Formats.</b> WAV and stems available on request. Clean versions of explicit material available on request.</p>
+  <p id="hold"></p>
+</section>
+
+<div class="foot">
+  <a href="index.html">← lateblooom.com</a>
+  <a href="pitch.html">The one-sheet →</a>
+  <a href="playlists.html">Playlists →</a>
+</div>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MAIL = 'l8blo0om@gmail.com';
+let COLS = [], filter = 'all';
+
+function mailto(c){
+  const subject = 'Sync inquiry — ' + c.name + ' — Late Blooom';
+  const body = [
+    'Collection: ' + c.name,
+    '',
+    'Project:',
+    'Media type (film / TV / ad / social / game):',
+    'Scene or usage:',
+    'Territory & term:',
+    'Timeline:',
+    'Budget range:',
+    '',
+    'Anything specific you need (instrumental, clean version, stems, alt length)?'
+  ].join('\\n');
+  return 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
+
+function card(c){
+  const el = document.createElement('div');
+  el.className = 'c';
+  el.innerHTML =
+    '<div class="c-name">' + esc(c.name) + '</div>' +
+    '<p class="c-line">' + esc(c.line) + '</p>' +
+    '<div class="c-spec">' +
+      '<span class="chip k">' + c.tracks + ' tracks</span>' +
+      '<span class="chip">' + esc(c.vocal) + '</span>' +
+      (c.languages && c.languages !== '—' ? '<span class="chip">' + esc(c.languages) + '</span>' : '') +
+      (c.explicit ? '<span class="chip x">Explicit</span>' : '<span class="chip">Clean</span>') +
+    '</div>' +
+    '<div class="c-for">Works for</div>' +
+    '<ul class="uses">' + c.for.map(u => '<li>' + esc(u) + '</li>').join('') + '</ul>' +
+    (c.note ? '<p class="c-note">' + esc(c.note) + '</p>' : '') +
+    '<p class="c-albums">' + c.albums.map(esc).join(' · ') + '</p>' +
+    '<div class="c-links">' +
+      '<a class="btn solid" href="' + mailto(c) + '">Request cues</a>' +
+      (c.listen ? '<a class="btn" href="https://open.spotify.com/playlist/' + c.listen + '" target="_blank" rel="noopener">Hear it</a>' : '') +
+      (c.video ? '<a class="btn" href="longplays.html#v-' + c.video + '">Two-hour sample</a>' : '') +
+    '</div>';
+  return el;
+}
+
+function render(){
+  const g = document.getElementById('grid');
+  g.innerHTML = '';
+  COLS.filter(c =>
+    filter === 'all' ? true :
+    filter === 'instrumental' ? c.vocal === 'Instrumental' :
+    filter === 'clean' ? !c.explicit :
+    filter === 'multilingual' ? (c.languages && c.languages !== '—' && c.languages !== 'English') : true
+  ).forEach(c => g.appendChild(card(c)));
+}
+
+fetch('collections.json?v=' + Date.now()).then(r => r.json()).then(d => {
+  COLS = d.collections || [];
+  const F = [['all','All collections'],['instrumental','Instrumental only'],
+             ['clean','Clean only'],['multilingual','Non-English']];
+  const bar = document.getElementById('filters');
+  F.forEach(([k,label]) => {
+    const b = document.createElement('button');
+    b.className = 'f' + (k === 'all' ? ' on' : '');
+    b.textContent = label;
+    b.onclick = () => { filter = k; [...bar.children].forEach(x => x.classList.toggle('on', x === b)); render(); };
+    bar.appendChild(b);
+  });
+  render();
+  const total = COLS.reduce((n,c) => n + c.tracks, 0);
+  document.querySelector('.sub').insertAdjacentHTML('beforeend',
+    ' <span style="color:var(--accent-soft)">' + COLS.length + ' collections · ' + total + ' tracks.</span>');
+}).catch(() => {
+  document.getElementById('grid').innerHTML =
+    '<p style="color:var(--muted)">Collections are loading slowly — try a refresh, or email ' + MAIL + '.</p>';
+});
+</script>
+</body>
+</html>
