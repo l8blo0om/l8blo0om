@@ -229,24 +229,26 @@
     {
       "n": 21,
       "kind": "album",
-      "id": "IrPzHko1g3o",
+      "id": "pC3bYKaZFpY",
       "name": "COMME ÇA? Vol. 2",
       "scene": "Moonlit Beach Bar in St. Barth",
       "sub": "Full Album",
       "blurb": "Kizomba slow grooves for a packed dance floor on the sand in St. Barth, moon glowing over the water, bodies close.",
       "chapters": 20,
-      "hue": "#3e5fa8"
+      "hue": "#3e5fa8",
+      "_superseded": "IrPzHko1g3o"
     },
     {
       "n": 22,
       "kind": "album",
-      "id": "GLLSDbkPotA",
+      "id": "Ff21Fhlcly0",
       "name": "COMME ÇA? Vol. 3",
       "scene": "Night Walk Through Salvador",
       "sub": "Full Album",
       "blurb": "A slow night walk through the streets of Salvador da Bahia: drums on one corner, dancing on the next, the city alive around you.",
       "chapters": 16,
-      "hue": "#8a5a2b"
+      "hue": "#8a5a2b",
+      "_superseded": "GLLSDbkPotA"
     },
     {
       "n": 23,
@@ -273,24 +275,81 @@
     {
       "n": 25,
       "kind": "album",
-      "id": "00ouFRGoW1E",
+      "id": "zOBQT8kte-w",
       "name": "2 GOOD X",
       "scene": "Murals of St. Maarten",
       "sub": "Full Album",
       "blurb": "Rolling past the painted walls of St. Maarten — conch shells, pelicans, portraits and turquoise waves in the Caribbean sun.",
       "chapters": 22,
-      "hue": "#1f7f8f"
+      "hue": "#1f7f8f",
+      "_superseded": "00ouFRGoW1E"
     },
     {
       "n": 26,
       "kind": "album",
-      "id": "yJISsQuMpKY",
+      "id": "Khv_7d41T_g",
       "name": "UNLOCKING THE SON",
       "scene": "Rise Into the Cosmos",
       "sub": "Full Album",
       "blurb": "The whole UNLOCKING THE SON album, front to back, rising into the cosmos.",
       "chapters": 15,
-      "hue": "#5b6ee0"
+      "hue": "#5b6ee0",
+      "_superseded": "yJISsQuMpKY"
+    },
+    {
+      "n": 27,
+      "kind": "album",
+      "id": "ic7c9PeoXfE",
+      "name": "LOWKEY KINDA LIT: 70S",
+      "scene": "Late-Night Funk, Front to Back",
+      "sub": "Full Album",
+      "blurb": "The whole LOWKEY KINDA LIT: 70s album by Late Blooom, front to back.",
+      "chapters": 20,
+      "hue": "#b8562b"
+    },
+    {
+      "n": 28,
+      "kind": "album",
+      "id": "1_tLLCDfxMo",
+      "name": "THE WONDER BLACK WOMAN, VOL. 1",
+      "scene": "Driving the West Side Highway at Sunset",
+      "sub": "Full Album",
+      "blurb": "The whole THE WONDER BLACK WOMAN, Vol. 1 album by Late Blooom, front to back.",
+      "chapters": 24,
+      "hue": "#b8562b"
+    },
+    {
+      "n": 29,
+      "kind": "album",
+      "id": "iGDWOw-q1gw",
+      "name": "REINA DE DRAMA",
+      "scene": "Sunset to Midnight in Paris",
+      "sub": "Full Album",
+      "blurb": "The whole REINA DE DRAMA album by Late Blooom, front to back.",
+      "chapters": 25,
+      "hue": "#b8562b"
+    },
+    {
+      "n": 30,
+      "kind": "album",
+      "id": "0Vu_yEaKsZQ",
+      "name": "BLOWN AWAY YET?",
+      "scene": "Mountain Pass at Golden Hour",
+      "sub": "Full Album",
+      "blurb": "The whole BLOWN AWAY YET? album by Late Blooom, front to back.",
+      "chapters": 25,
+      "hue": "#b8562b"
+    },
+    {
+      "n": 31,
+      "kind": "album",
+      "id": "5jLR7bctfgU",
+      "name": "REALITY CHECK, PLEASE?",
+      "scene": "Rockabilly Ride Through the Cornfields",
+      "sub": "Full Album",
+      "blurb": "The whole REALITY CHECK, PLEASE? album by Late Blooom, front to back.",
+      "chapters": 14,
+      "hue": "#b8562b"
     }
   ]
 }
